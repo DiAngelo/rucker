@@ -2,25 +2,35 @@
     #Media Object
 \*------------------------------------*/
 
-/**
- * Place any image- and text-like content side-by-side, as per:
- * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
- */
-
-$rk-attr-name--media:       'media' !default;
-$rk-attr-name--media-image: 'img'   !default;
-$rk-attr-name--media-body:  'body'  !default;
+$rk-attr-name--media:           'media' !default;
+$rk-attr-name--media-image:     'img'   !default;
+$rk-attr-name--media-body:      'body'  !default;
+$rk-attr-name--media-reversed:  'rev'   !default;
 
 $rk-metrics--media-gutter: $rk-metrics-spacing--base;
+
+//
+// Define silent classes
+//
 
 %o-media{ 
   @extend %u-clearfix;
   display: block;
 }
+
   %o-media__image {
     float: left;
     margin-right: $rk-metrics--media-gutter;
   }
+
+  %o-media__body {
+    overflow:hidden;
+  }
+
+/** 
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
 
 #{'[' + $rk-attr-name--object + '~="' + $rk-attr-name--media + '"]'} {
   @extend %o-media;  
@@ -31,7 +41,6 @@ $rk-metrics--media-gutter: $rk-metrics-spacing--base;
   }
 
   #{'[' + $rk-attr-name--object + '~="' + $rk-attr-name--media + '__' + $rk-attr-name--media-body + '"]'} { 
-    font-size: $rk-typo-size--heading;
-    margin-bottom: $rk-metrics-spacing--base;
+    @extend %o-media__body;
   }
 
