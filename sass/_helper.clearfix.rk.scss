@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #CLEARFIX
+\*------------------------------------*/
+
+/**
+ * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ */
+
+%u-clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+}
+
+#{'[' + $rk-attr-name--helper + '~="clearfix"]'} {
+  @extend %u-clearfix;
+}

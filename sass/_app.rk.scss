@@ -2,6 +2,9 @@
 // Load the inversed triangle layers in the corresponding order
 //
 
+// CSS Naming convention:
+// https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
+
 @import "conf.settings.rk";
 @import "conf.attributes.rk";
 @import "conf.text.rk";
@@ -9,6 +12,10 @@
 
 @import "generic.reset.rk";
 
+@import "obj.media.rk";
+
+
+@import "helper.clearfix.rk";
 @import "helper.text.rk";
 @import "helper.typo.rk";
 
