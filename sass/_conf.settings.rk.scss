@@ -2,4 +2,22 @@
 // Globally used settings
 //
 
-$rk-metrics-spacing--base: 20px;
+$rk-basic-modifiers: 'tiny', 'small', 'base', 'large', 'huge';
+
+$rk-spacing-modifiers: (
+  #{nth($rk-basic-modifiers, 1)}: 'xs', /* tiny  */
+  #{nth($rk-basic-modifiers, 2)}: 'sm', /* small */
+  #{nth($rk-basic-modifiers, 3)}: 'md', /* base  */
+  #{nth($rk-basic-modifiers, 4)}: 'lg', /* large */
+  #{nth($rk-basic-modifiers, 5)}: 'hg'  /* huge  */
+);
+
+$rk-spacing-map: (
+  #{nth($rk-basic-modifiers, 1)}:  5px, /* tiny  */
+  #{nth($rk-basic-modifiers, 2)}: 10px, /* small */
+  #{nth($rk-basic-modifiers, 3)}: 20px, /* base  */
+  #{nth($rk-basic-modifiers, 4)}: 30px, /* large */
+  #{nth($rk-basic-modifiers, 5)}: 50px, /* huge  */
+);
+
+$rk-spacing--base: map-get($rk-spacing-map, 'base');
