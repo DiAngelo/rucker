@@ -2,7 +2,17 @@
 // Globally used settings
 //
 
-$rk-basic-modifiers: 'tiny', 'small', 'base', 'large', 'huge';
+// Define modifiers tha we generally apply to components
+// to change it's specific value
+$rkBasicModifiers: 'tiny', 'small', 'base', 'large', 'huge';
+
+// The smallest spacing value for the first modifier
+$rkSpacing__start: 5px;
+
+// The step to increase to the next modifier
+$rkSpacing__step: 5px;
+
+
 
 $rk-spacing-modifiers: (
   #{nth($rk-basic-modifiers, 1)}: 'xs', /* tiny  */

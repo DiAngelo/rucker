@@ -1,0 +1,25 @@
+//
+// Metrics functions
+//
+
+@function fnModifiersMap($_inStart, $_inStep, $_inProgressiveIncrement: false) {
+
+  $mapResponse: ();
+  
+  $lastVal: $_inStart;
+
+  @each $item in $rkBasicModifiers {
+    $index: index($rkBasicModifiers, $item) - 1;
+    $val: $lastVal + $index * $rkSpacing__step;
+
+    @if $_inProgressiveIncrement {
+      $lastVal: $val;
+    }
+    
+    $mapResponse: map-merge($mapResponse, ($item: $val));
+  }
+
+  @return $mapResponse;
+}
+
+$rkMapSpacing: fnModifiersMap($rkSpacing__start, $rkSpacing__step, true);
