@@ -1,0 +1,28 @@
+//
+// Media mixins
+//
+
+//
+// Generate media modifiers
+//
+
+@mixin mxMediaModifiers() {
+
+  $rkMapMediaSpacing: fnModifiersMap(5px, 5px, false);
+
+//  @debug $rkMapMediaSpacing;
+
+  @each $key,$val in $rkMapMediaSpacing {
+    /* Media object with #{$key} modifier */
+    .media--#{map-get($rkModifiersNaming, $key)} {
+
+      > .media__img { margin-right: $val; }
+
+      &.media--rev > .media__img {
+        margin-right: 0;
+        margin-left: $val;
+      }
+    }
+  }
+
+}

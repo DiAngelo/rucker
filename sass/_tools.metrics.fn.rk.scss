@@ -10,6 +10,7 @@
 
   @each $item in $rkBasicModifiers {
     $index: index($rkBasicModifiers, $item) - 1;
+
     $val: $lastVal + $index * $rkSpacing__step;
 
     @if $_inProgressiveIncrement {
@@ -23,3 +24,6 @@
 }
 
 $rkMapSpacing: fnModifiersMap($rkSpacing__start, $rkSpacing__step, true);
+// @debug $rkMapSpacing;
+
+$rk-spacing--base: map-get($rkMapSpacing, 'base');

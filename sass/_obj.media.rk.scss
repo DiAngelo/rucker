@@ -2,45 +2,82 @@
     #Media Object
 \*------------------------------------*/
 
-$rk-attr-name--media:           'media' !default;
-$rk-attr-name--media-image:     'img'   !default;
-$rk-attr-name--media-body:      'body'  !default;
-$rk-attr-name--media-reversed:  'rev'   !default;
-
-$rk-metrics--media-gutter: $rk-spacing--base;
-
-//
-// Define silent classes
-//
-
-%o-media{ 
-  @extend %u-clearfix;
-  display: block;
-}
-
-  %o-media__image {
-    float: left;
-    margin-right: $rk-metrics--media-gutter;
-  }
-
-  %o-media__body {
-    overflow:hidden;
-  }
-
 /** 
  * Place any image- and text-like content side-by-side, as per:
  * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
 
-#{'[' + $rk-attr-name--object + '~="' + $rk-attr-name--media + '"]'} {
-  @extend %o-media;  
+$rkAttrName--media:           'media' !default;
+$rkAttrName--mediaImage:     'img'   !default;
+$rkAttrName--mediaBody:      'body'  !default;
+$rkAttrName--mediaReversed:  'rev'   !default;
+$rkAttrName--mediaSticked:   'stkd'  !default;
+
+
+$rk-attr-name--media:           'media' !default;
+$rk-attr-name--media-image:     'img'   !default;
+$rk-attr-name--media-body:      'body'  !default;
+$rk-attr-name--media-reversed:  'rev'   !default;
+$rk-attr-name--media-sticked:   'stkd'  !default;
+
+$rk-metrics--media-gutter: $rk-spacing--base;
+
+$rkMedia--useReversed : true !default;
+$rkMedia--useSticked  : true !default;
+$rkMedia--useModifiers: true !default;
+
+
+//
+// Define silent classes
+//
+
+%oMedia { 
+  @extend %u-clearfix;
+  display: block;
 }
 
-  #{'[' + $rk-attr-name--object + '~="' + $rk-attr-name--media + '__' + $rk-attr-name--media-image + '"]'} { 
-    @extend %o-media__image;
+  %oMedia__image {
+    float: left;
+    margin-right: $rk-metrics--media-gutter;
   }
 
-  #{'[' + $rk-attr-name--object + '~="' + $rk-attr-name--media + '__' + $rk-attr-name--media-body + '"]'} { 
-    @extend %o-media__body;
+  %oMedia__body {
+    overflow:hidden;
   }
 
+%oMedia--rev {
+  %oMedia__image {
+    float: right;
+    margin-right: 0;
+    margin-left: $rk-metrics--media-gutter;
+  }
+}
+
+
+#{fnAttributeRule('object', $rkAttrName--media)} {
+  @extend %oMedia;  
+}
+
+  #{fnAttributeRule('object', fnBEM($rkAttrName--media, $rkAttrName--mediaImage))} {
+    @extend %oMedia__image;
+  }
+
+  #{fnAttributeRule('object', fnBEM($rkAttrName--media, $rkAttrName--mediaBody))} {
+    @extend %oMedia__body;
+  }
+
+@if $rkMedia--useReversed {
+  #{fnAttributeRule('object', fnBEM($rkAttrName--media, $rkAttrName--mediaReversed))} {
+    @extend %oMedia--rev;  
+  }  
+}
+
+
+@if $rkMedia--useModifiers {
+  @include mxMediaModifiers();
+}
+
+
+#{fnAttributeRule('object', 'test')} {
+  color: red;
+}

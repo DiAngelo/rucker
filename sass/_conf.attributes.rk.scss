@@ -9,6 +9,13 @@
 // Generic attributes
 //
 
+$rkMapAttributesNaming: (
+  helper: 'hlp',
+  object: 'obj',
+  component: 'com',
+  module: 'mod'
+) !default;
+
 $rk-attr--helper:     "hlp" !default;
 
 $rk-attr--object:     "obj" !default;

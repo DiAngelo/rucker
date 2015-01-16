@@ -4,7 +4,16 @@
 
 // Define modifiers tha we generally apply to components
 // to change it's specific value
-$rkBasicModifiers: 'tiny', 'small', 'base', 'large', 'huge';
+$rkBasicModifiers: 'tiny', 'small', 'base', 'large', 'huge' !default;
+
+// naming convention for modifiers
+$rkModifiersNaming: (
+  #{nth($rkBasicModifiers, 1)}: 'xs', // tiny  
+  #{nth($rkBasicModifiers, 2)}: 'sm', // small 
+  #{nth($rkBasicModifiers, 3)}: 'md', // base
+  #{nth($rkBasicModifiers, 4)}: 'lg', // large 
+  #{nth($rkBasicModifiers, 5)}: 'hg'  // huge  
+) !default;
 
 // The smallest spacing value for the first modifier
 $rkSpacing__start: 5px;
@@ -12,22 +21,3 @@ $rkSpacing__start: 5px;
 // The step to increase to the next modifier
 $rkSpacing__step: 5px;
 
-
-
-$rk-spacing-modifiers: (
-  #{nth($rk-basic-modifiers, 1)}: 'xs', /* tiny  */
-  #{nth($rk-basic-modifiers, 2)}: 'sm', /* small */
-  #{nth($rk-basic-modifiers, 3)}: 'md', /* base  */
-  #{nth($rk-basic-modifiers, 4)}: 'lg', /* large */
-  #{nth($rk-basic-modifiers, 5)}: 'hg'  /* huge  */
-);
-
-$rk-spacing-map: (
-  #{nth($rk-basic-modifiers, 1)}:  5px, /* tiny  */
-  #{nth($rk-basic-modifiers, 2)}: 10px, /* small */
-  #{nth($rk-basic-modifiers, 3)}: 20px, /* base  */
-  #{nth($rk-basic-modifiers, 4)}: 30px, /* large */
-  #{nth($rk-basic-modifiers, 5)}: 50px, /* huge  */
-);
-
-$rk-spacing--base: map-get($rk-spacing-map, 'base');

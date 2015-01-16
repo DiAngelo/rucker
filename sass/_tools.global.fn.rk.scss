@@ -1,0 +1,33 @@
+//
+// Global functions
+//
+
+//
+// Generate an attribute rule
+//
+// TODO: comment parameters
+// TODO: use variable vor 'data'
+//
+@function fnAttributeRule ($_inType, $_inAttribute)
+{
+  $x: map-get($rkMapAttributesNaming, $_inType);
+  @return '[data-' + $x + '~="'+$_inAttribute+'"]';
+}
+
+//
+// Generate an BEM element
+//
+//  $_inBase      - Main block name
+//  $_inAttribute - The attribute tu be added to the main element
+//  $_inIsElement - TRUE - is element use "__" ; FALSE - is modifier use "--"
+//
+@function fnBEM ($_inBlock, $_inAttribute, $_inIsElement: true)
+{
+  $splitter: '--';
+  @if ($_inIsElement) {
+    $splitter: '__';
+  }
+  $response: $_inBlock + $splitter + $_inAttribute;
+
+  @return $response;
+}
