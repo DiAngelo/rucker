@@ -21,3 +21,6 @@ $rkSpacing__start: 5px;
 // The step to increase to the next modifier
 $rkSpacing__step: 5px;
 
+$rkMapSpacing: fnModifiersMap($rkSpacing__start, $rkSpacing__step, true);
+
+$rkSpacing-base: map-get($rkMapSpacing, 'base');

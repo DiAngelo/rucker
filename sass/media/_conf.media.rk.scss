@@ -10,7 +10,7 @@ $rkAttrName-mediaReversed:  'rev'   !default;
 $rkAttrName-mediaSticked:   'stkd'  !default;
 
 // The gutter used near the image
-$rkMetrics-mediaGutter: $rk-spacing--base !default;
+$rkMetrics-mediaGutter: $rkSpacing-base !default;
 
 // Media Object's  flags
 $rkMedia-useReversed : true !default;

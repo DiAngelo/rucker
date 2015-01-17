@@ -22,8 +22,3 @@
 
   @return $mapResponse;
 }
-
-$rkMapSpacing: fnModifiersMap($rkSpacing__start, $rkSpacing__step, true);
-// @debug $rkMapSpacing;
-
-$rk-spacing--base: map-get($rkMapSpacing, 'base');

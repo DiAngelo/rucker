@@ -5,21 +5,42 @@
 // CSS Naming convention:
 // https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
 
+// Virtual layer
+// Prepare functions used to generate values for Settings layer
+@import "tools.metrics.fn.rk";
+
+// Settings layer
+// Default configuration values
 @import "conf.settings.rk";
 @import "conf.attributes.rk";
 @import "conf.text.rk";
 @import "typography/conf.typo.rk";
 @import "media/conf.media.rk";
 
+// Tools layer
+// Functions and mixins
 @import "tools.global.fn.rk";
-@import "tools.metrics.fn.rk";
 @import "media/tools.media.rk";
 
+// Generic layer
+// Reset and normalize - if needed
 @import "generic.reset.rk";
 
+// Base layer
+// Rules for HTML tags
+
+// Objects layer
+// Sketch objects with no style
 @import "media/obj.media.rk";
 
+// Components layer
+// Objects with style
 
+// Modules layer
+// Compound by more components
+
+// Trumps layer
+// Helpers and fixes
 @import "helper.clearfix.rk";
 @import "helper.text.rk";
 @import "typography/helper.typo.rk";

@@ -11,7 +11,7 @@
  */
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading"]'} { 
   font-size: $rk-typo-size--heading;
-  margin-bottom: $rk-spacing--base;
+  margin-bottom: $rkSpacing-base;
 }
 
 /* Larger headings */
