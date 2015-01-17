@@ -9,6 +9,7 @@
 /* 
  * 10. Heading 
  */
+
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading"]'} { 
   font-size: $rkTypoSize--heading;
   margin-bottom: $rkSpacing-base;
@@ -35,3 +36,5 @@
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--small--"]'} { 
   font-size: $rkTypoSize--heading-small-xx;
 }
+
+
