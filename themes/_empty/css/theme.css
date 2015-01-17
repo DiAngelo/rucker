@@ -1,0 +1,54 @@
+/*
+Error: File to import not found or unreadable: ../../sass/core.
+       Load path: /home/diangelo/rucker/sass
+        on line 9 of _empty/sass/theme.scss
+
+4:  * Copy the structure of this theme to start a new one
+5:  *\/
+6: 
+7: @import "conf.theme";
+8: 
+9: @import "../../sass/core";
+
+Backtrace:
+_empty/sass/theme.scss:9
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/import_node.rb:66:in `import'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/import_node.rb:28:in `imported_file'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/import_node.rb:37:in `css_import?'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/base.rb:36:in `send'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/stack.rb:79:in `with_base'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/stack.rb:115:in `with_frame'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/stack.rb:79:in `with_base'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:167:in `visit_children'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/base.rb:36:in `send'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:8:in `send'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/engine.rb:285:in `render_with_sourcemap'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/exec/sass_scss.rb:396:in `run'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/exec/sass_scss.rb:62:in `process_result'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/exec/base.rb:52:in `parse'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/../lib/sass/exec/base.rb:19:in `parse!'
+/usr/lib64/ruby/gems/1.8/gems/sass-3.4.5/bin/sass:13
+/usr/bin/sass:23:in `load'
+/usr/bin/sass:23
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../../sass/core.\A        Load path: /home/diangelo/rucker/sass\A         on line 9 of _empty/sass/theme.scss\A \A 4:  * Copy the structure of this theme to start a new one\A 5:  */\A 6: \A 7: @import \"conf.theme\";\A 8: \A 9: @import \"../../sass/core\";"; }
