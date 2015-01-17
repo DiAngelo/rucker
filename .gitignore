@@ -1,3 +1,4 @@
 tmp/
 themes/.sass-cache
 themes/default/css
+themes/*/css
