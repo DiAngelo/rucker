@@ -1,3 +1,7 @@
+/*------------------------------------*\
+    #Base Typography
+\*------------------------------------*/
+
 /**
  * Typography helpers
  *
@@ -10,31 +14,16 @@
  * 10. Heading 
  */
 
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading"]'} { 
-  font-size: $rkTypoSize--heading;
-  margin-bottom: $rkSpacing-base;
-}
+#{fnRuleTypo(h1, false)} { @extend %h1; }
+#{fnRuleTypo(h2, false)} { @extend %h2; }
+#{fnRuleTypo(h3, false)} { @extend %h3; }
+#{fnRuleTypo(h4, false)} { @extend %h4; }
+#{fnRuleTypo(h5, false)} { @extend %h5; }
+#{fnRuleTypo(h6, false)} { @extend %h6; }
 
-/* Larger headings */
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--large"]'} { 
-  font-size: $rkTypoSize--heading-large;
-}
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--large+"]'} { 
-  font-size: $rkTypoSize--heading-large-x;
-}
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--large++"]'} { 
-  font-size: $rkTypoSize--heading-large-xx;
-}
+@include mxTypoModifiers();
 
-/* Smaller headings */
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--small"]'} { 
-  font-size: $rkTypoSize--heading-small;
-}
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--small-"]'} { 
-  font-size: $rkTypoSize--heading-small-x;
-}
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--small--"]'} { 
-  font-size: $rkTypoSize--heading-small-xx;
-}
-
-
+/* 
+ * 20. Lead
+ * todo
+ */

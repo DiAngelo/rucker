@@ -9,7 +9,7 @@
 @function fnRuleTypo($_inAttr, $_inIsElem: true) {
 
   $bem: fnBEM(heading, $_inAttr, $_inIsElem);
-  $response: fnAttributeRule(object, $bem);
+  $response: fnAttributeRule(helper, $bem);
 
   @return $response;
 }
@@ -32,5 +32,3 @@
   }
 
 }
-
-@include mxTypoModifiers();

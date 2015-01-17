@@ -2,9 +2,16 @@
 // Basic typography tags
 //
 
-h1 {}
-h2 {}
-h3 {}
-h4 {}
-h5 {}
-h6 {}
+%h1 { font-size: $rkTypoSize-h1; }
+%h2 { font-size: $rkTypoSize-h2; }
+%h3 { font-size: $rkTypoSize-h3; }
+%h4 { font-size: $rkTypoSize-h4; }
+%h5 { font-size: $rkTypoSize-h5; }
+%h6 { font-size: $rkTypoSize-h6; }
+
+h1 { @extend %h1; }
+h2 { @extend %h2; }
+h3 { @extend %h3; }
+h4 { @extend %h4; }
+h5 { @extend %h5; }
+h6 { @extend %h6; }
