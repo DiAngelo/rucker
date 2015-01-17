@@ -72,7 +72,7 @@
   }
 
 @if $rkMedia-useReversed {
-  #{fnRuleMO($rkAttrName-mediaReversed, false))} {
+  #{fnRuleMO($rkAttrName-mediaReversed, false)} {
     @extend %oMedia-rev;  
   }  
 }
