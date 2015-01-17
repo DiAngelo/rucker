@@ -10,28 +10,28 @@
  * 10. Heading 
  */
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading"]'} { 
-  font-size: $rk-typo-size--heading;
+  font-size: $rkTypoSize--heading;
   margin-bottom: $rkSpacing-base;
 }
 
 /* Larger headings */
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--large"]'} { 
-  font-size: $rk-typo-size--heading-large;
+  font-size: $rkTypoSize--heading-large;
 }
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--large+"]'} { 
-  font-size: $rk-typo-size--heading-large-x;
+  font-size: $rkTypoSize--heading-large-x;
 }
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--large++"]'} { 
-  font-size: $rk-typo-size--heading-large-xx;
+  font-size: $rkTypoSize--heading-large-xx;
 }
 
 /* Smaller headings */
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--small"]'} { 
-  font-size: $rk-typo-size--heading-small;
+  font-size: $rkTypoSize--heading-small;
 }
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--small-"]'} { 
-  font-size: $rk-typo-size--heading-small-x;
+  font-size: $rkTypoSize--heading-small-x;
 }
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-typography-prefix + '-heading--small--"]'} { 
-  font-size: $rk-typo-size--heading-small-xx;
+  font-size: $rkTypoSize--heading-small-xx;
 }

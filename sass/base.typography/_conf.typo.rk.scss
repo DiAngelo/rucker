@@ -1,0 +1,27 @@
+//
+// Typography settings
+//
+
+$rkTypoSize--base: 16px !default;
+
+$rkTypoSize--h1: 2.5rem !default;
+$rkTypoSize--h2:  2rem  !default;
+$rkTypoSize--h3: 1.5rem !default;
+$rkTypoSize--h4: 1.2rem !default;
+$rkTypoSize--h5:  1rem  !default;
+$rkTypoSize--h6:  .8rem !default;
+
+$rkTypoSize-mapModifiers: fnModifiersMap(16px, 6px );
+
+@debug $rkTypoSize-mapModifiers;
+
+$rkTypoSize-heading: 1.5rem;
+
+$rkTypoSize--heading-large   :  $rkTypoSize--heading * 3 /  2;
+$rkTypoSize--heading-large-x :  $rkTypoSize--heading * 2     ;
+$rkTypoSize--heading-large-xx:  $rkTypoSize--heading * 3     ;
+$rkTypoSize--heading-small   :  $rkTypoSize--heading * 9 / 12;
+$rkTypoSize--heading-small-x :  $rkTypoSize--heading * 2 /  3;
+$rkTypoSize--heading-small-xx:  $rkTypoSize--heading * 7 / 12;
+
+$rk-typo-name: sans-serif;

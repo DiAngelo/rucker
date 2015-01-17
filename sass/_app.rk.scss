@@ -12,6 +12,7 @@
 
 // Virtual layer
 // Prepare functions used to generate values for Settings layer
+@import "tools.global.fn.rk";
 @import "tools.metrics.fn.rk";
 
 // Settings layer
@@ -19,18 +20,18 @@
 @import "conf.settings.rk";
 @import "conf.attributes.rk";
 @import "conf.text.rk";
-@import "typography/conf.typo.rk";
+@import "base.typography/conf.typo.rk";
 @import "objects.media/conf.media.rk";
 
 // Tools layer
 // Functions and mixins
-@import "tools.global.fn.rk";
 @import "objects.media/tools.media.rk";
 
 // Base layer
 // Reset and normalize - if needed
 // Rules for HTML tags
 @import "generic.reset.rk";
+@import "base.typography/base.typo.rk";
 
 
 // Objects layer
@@ -47,6 +48,6 @@
 // Helpers and fixes
 @import "helper.clearfix.rk";
 @import "helper.text.rk";
-@import "typography/helper.typo.rk";
+@import "base.typography/helper.typo.rk";
 
 
