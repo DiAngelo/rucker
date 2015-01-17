@@ -1,0 +1,34 @@
+//
+// Typography tools
+//
+
+//
+// fnRuleTypo
+// Generate typography related rule
+//
+@function fnRuleTypo($_inAttr, $_inIsElem: true) {
+
+  $bem: fnBEM(heading, $_inAttr, $_inIsElem);
+  $response: fnAttributeRule(object, $bem);
+
+  @return $response;
+}
+
+
+//
+// mxTypoModifiers
+// Generate typography modifiers
+//
+
+@mixin mxTypoModifiers() {
+
+  $rkMapTypoSpacing: fnModifiersMap(14px, 4px, false);
+
+  @each $key,$val in $rkMapTypoSpacing {
+    /* Media object with #{$key} modifier */
+    #{fnRuleTypo(map-get($rkModifiersNaming, $key), false)} {
+			font-size: $val;    
+    }
+  }
+
+}
