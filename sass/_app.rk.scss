@@ -1,9 +1,14 @@
 //
 // Load the inversed triangle layers in the corresponding order
 //
+// We group entities by their final specificity
+//
 
-// CSS Naming convention:
+// SCSS Naming convention - camel-case:
 // https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
+//
+// CSS Naming convention - BEM style - no uppercase letters
+//
 
 // Virtual layer
 // Prepare functions used to generate values for Settings layer
@@ -15,23 +20,22 @@
 @import "conf.attributes.rk";
 @import "conf.text.rk";
 @import "typography/conf.typo.rk";
-@import "media/conf.media.rk";
+@import "objects.media/conf.media.rk";
 
 // Tools layer
 // Functions and mixins
 @import "tools.global.fn.rk";
-@import "media/tools.media.rk";
-
-// Generic layer
-// Reset and normalize - if needed
-@import "generic.reset.rk";
+@import "objects.media/tools.media.rk";
 
 // Base layer
+// Reset and normalize - if needed
 // Rules for HTML tags
+@import "generic.reset.rk";
+
 
 // Objects layer
 // Sketch objects with no style
-@import "media/obj.media.rk";
+@import "objects.media/obj.media.rk";
 
 // Components layer
 // Objects with style
