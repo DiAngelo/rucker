@@ -7,77 +7,84 @@
  * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
 
-$rkAttrName--media:           'media' !default;
-$rkAttrName--mediaImage:     'img'   !default;
-$rkAttrName--mediaBody:      'body'  !default;
-$rkAttrName--mediaReversed:  'rev'   !default;
-$rkAttrName--mediaSticked:   'stkd'  !default;
-
-
-$rk-attr-name--media:           'media' !default;
-$rk-attr-name--media-image:     'img'   !default;
-$rk-attr-name--media-body:      'body'  !default;
-$rk-attr-name--media-reversed:  'rev'   !default;
-$rk-attr-name--media-sticked:   'stkd'  !default;
-
-$rk-metrics--media-gutter: $rk-spacing--base;
-
-$rkMedia--useReversed : true !default;
-$rkMedia--useSticked  : true !default;
-$rkMedia--useModifiers: true !default;
-
 
 //
 // Define silent classes
 //
 
+/**
+ * Media object block definition
+ */
 %oMedia { 
   @extend %u-clearfix;
   display: block;
 }
 
-  %oMedia__image {
+  /**
+   * The image element - aligned to the left
+   */
+  %oMedia_image {
     float: left;
-    margin-right: $rk-metrics--media-gutter;
+    margin-right: $rkMetrics-mediaGutter;
   }
 
-  %oMedia__body {
+  /**
+   * The body element
+   */
+  %oMedia_body {
     overflow:hidden;
   }
 
-%oMedia--rev {
-  %oMedia__image {
+
+/**
+ * The reversed modifier - align the image to the right
+ */
+%oMedia-rev {
+  %oMedia_image {
     float: right;
     margin-right: 0;
-    margin-left: $rk-metrics--media-gutter;
+    margin-left: $rkMetrics-mediaGutter;
+  }
+}
+
+/**
+ * The sticked modifier - makes the image to be sticked to the body with no space between them
+ */
+%oMedia-sticked {
+  %oMedia_image {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
 
-#{fnAttributeRule('object', $rkAttrName--media)} {
+
+#{fnAttributeRule('object', $rkAttrName-media)} {
   @extend %oMedia;  
 }
 
-  #{fnAttributeRule('object', fnBEM($rkAttrName--media, $rkAttrName--mediaImage))} {
-    @extend %oMedia__image;
+  #{fnRuleMO($rkAttrName-mediaImage)} {
+    @extend %oMedia_image;
   }
 
-  #{fnAttributeRule('object', fnBEM($rkAttrName--media, $rkAttrName--mediaBody))} {
-    @extend %oMedia__body;
+  #{fnRuleMO($rkAttrName-mediaBody)} {
+    @extend %oMedia_body;
   }
 
-@if $rkMedia--useReversed {
-  #{fnAttributeRule('object', fnBEM($rkAttrName--media, $rkAttrName--mediaReversed))} {
-    @extend %oMedia--rev;  
+@if $rkMedia-useReversed {
+  #{fnRuleMO($rkAttrName-mediaReversed, false))} {
+    @extend %oMedia-rev;  
+  }  
+}
+
+@if $rkMedia-useSticked {
+  #{fnRuleMO($rkAttrName-mediaSticked, false)} {
+    @extend %oMedia-sticked;  
   }  
 }
 
 
-@if $rkMedia--useModifiers {
+@if $rkMedia-useModifiers {
   @include mxMediaModifiers();
 }
 
-
-#{fnAttributeRule('object', 'test')} {
-  color: red;
-}

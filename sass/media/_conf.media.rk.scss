@@ -1,0 +1,18 @@
+//
+// Media Object settings layer
+//
+
+// Configure media object naming - abbreviations used
+$rkAttrName-media:          'media' !default;
+$rkAttrName-mediaImage:     'img'   !default;
+$rkAttrName-mediaBody:      'body'  !default;
+$rkAttrName-mediaReversed:  'rev'   !default;
+$rkAttrName-mediaSticked:   'stkd'  !default;
+
+// The gutter used near the image
+$rkMetrics-mediaGutter: $rk-spacing--base !default;
+
+// Media Object's  flags
+$rkMedia-useReversed : true !default;
+$rkMedia-useSticked  : true !default;
+$rkMedia-useModifiers: true !default;

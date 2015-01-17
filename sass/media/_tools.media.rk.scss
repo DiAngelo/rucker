@@ -8,7 +8,7 @@
 //
 @function fnRuleMO($_inAttr, $_inIsElem: true) {
 
-  $bem: fnBEM(media, $_inAttr, $_inIsElem);
+  $bem: fnBEM($rkAttrName-media, $_inAttr, $_inIsElem);
   $response: fnAttributeRule(object, $bem);
 
   @return $response;
@@ -34,8 +34,7 @@
       > #{fnAttributeRule(object, fnBEM(media, img, true))}
       { margin-right: $val; }
 
-      &#{fnAttributeRule(object, fnBEM(media, rev, false))} > #{fnRuleMO(img)}
-.media--rev > .media__img {
+      &#{fnAttributeRule(object, fnBEM(media, rev, false))} > #{fnRuleMO(img)} {
         margin-right: 0;
         margin-left: $val;
       }
