@@ -2,26 +2,35 @@
 // Typography settings
 //
 
-$rkTypoSize--base: 16px !default;
+$rkTypoSize-base: 16px !default;
 
-$rkTypoSize--h1: 2.5rem !default;
-$rkTypoSize--h2:  2rem  !default;
-$rkTypoSize--h3: 1.5rem !default;
-$rkTypoSize--h4: 1.2rem !default;
-$rkTypoSize--h5:  1rem  !default;
-$rkTypoSize--h6:  .8rem !default;
+$rkTypoSize-h1: 2.5rem !default;
+$rkTypoSize-h2:  2rem  !default;
+$rkTypoSize-h3: 1.5rem !default;
+$rkTypoSize-h4: 1.2rem !default;
+$rkTypoSize-h5:  1rem  !default;
+$rkTypoSize-h6:  .8rem !default;
 
-$rkTypoSize-mapModifiers: fnModifiersMap(16px, 6px );
 
-@debug $rkTypoSize-mapModifiers;
 
-$rkTypoSize-heading: 1.5rem;
+$rkTypoSize-mapModifiers: fnModifiersMap(14px, 4px);
 
-$rkTypoSize--heading-large   :  $rkTypoSize--heading * 3 /  2;
-$rkTypoSize--heading-large-x :  $rkTypoSize--heading * 2     ;
-$rkTypoSize--heading-large-xx:  $rkTypoSize--heading * 3     ;
-$rkTypoSize--heading-small   :  $rkTypoSize--heading * 9 / 12;
-$rkTypoSize--heading-small-x :  $rkTypoSize--heading * 2 /  3;
-$rkTypoSize--heading-small-xx:  $rkTypoSize--heading * 7 / 12;
+$rkTypoSize-heading: 1.5rem; // base
 
-$rk-typo-name: sans-serif;
+$rkTypoSizeHeadings: (
+  tiny:  14px,
+  small: 18px,
+  base:  24px,
+  large: 32px,
+  huge:  40px
+);
+
+$rkTypoSize-headingLarge   :  $rkTypoSize-heading * 3 /  2;
+$rkTypoSize-headingLargeX  :  $rkTypoSize-heading * 2     ;
+$rkTypoSize-headingLargeXX :  $rkTypoSize-heading * 3     ;
+$rkTypoSize-headingSmall   :  $rkTypoSize-heading * 9 / 12;
+$rkTypoSize-headingSmallX  :  $rkTypoSize-heading * 2 /  3;
+$rkTypoSize-headingSmallXX :  $rkTypoSize-heading * 7 / 12;
+
+$rkTypoFont: sans-serif;
+
