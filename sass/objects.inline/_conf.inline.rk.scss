@@ -8,7 +8,7 @@ $rkAttrName-inlineParent:		list			!default;
 $rkAttrName-inlineSplitter:	splitter	!default;
 
 // Register attribute type for 'inline'
-$rkMapAttributesNaming: fnRegisterAttribute(inline, $rkAttrType-media, $rkAttrName-media);
+$rkMapAttributesNaming: fnRegisterAttribute(inline, $rkAttrType-inline, $rkAttrName-inline);
 
 // vertical align of text inside items
 // Possible values:
