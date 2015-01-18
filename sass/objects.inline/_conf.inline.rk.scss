@@ -1,0 +1,20 @@
+//
+// Inline Object configuration
+//
+
+$rkAttrType-inline:         object 			!default;
+$rkAttrName-inline :       	inline 		!default;
+$rkAttrName-inlineParent:		list			!default;
+$rkAttrName-inlineSplitter:	splitter	!default;
+
+// Register attribute type for 'inline'
+$rkMapAttributesNaming: fnRegisterAttribute(inline, $rkAttrType-media, $rkAttrName-media);
+
+// vertical align of text inside items
+// Possible values:
+//		* top
+//		* middle (default)
+//		* bottom
+$rkInline-align: middle !default; 
+
+$rkInline-splitter: '&bull;' !default; 

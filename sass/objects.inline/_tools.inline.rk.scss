@@ -1,0 +1,21 @@
+//
+// Inline functions
+//
+
+//
+// fnRuleIO
+// Generate Inline Object related rule
+//
+@function fnRuleIO($_inAttr, $_inIsElem: true) {
+
+  $prefix: '-';
+  @if $_inIsElem {
+    $prefix: '_';
+  }
+
+  $param: $prefix + $_inAttr;
+  $response: fnAttributeRule(inline, $param);
+
+  @return $response;
+
+}

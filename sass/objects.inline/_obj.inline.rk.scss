@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    #Inline Object
+\*------------------------------------*/
+
+/** 
+ * An object that can sit next to another one of this type
+ */
+
+/**
+ * Inline object parent 
+ */
+%oInlineParent { 
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+  /**
+   * Inline object item
+   */
+	%oInlineItem { 
+		display: inline-block;
+		vertical-align: $rkInline-align;
+	}
+
+
+/**
+ * Inline object modifier to align text inisde item to top
+ */
+%oInlineTop {
+	%oInlineItem { vertical-align: top; }
+}
+
+/**
+ * Inline object modifier to align text inisde item to bottom
+ */
+%oInlineBottom {
+	%oInlineItem { vertical-align: bottom; }
+}
+
+/**
+ * Inline object modifier to use characters to split more items
+ */
+%oInlineWithSplitter {
+	%oInlineItem:before {
+		content: '#{$rkInline-splitter}';
+	}
+}
+
+
+
+
+#{fnRuleIO(parent)} { @extend %oInlineParent; }
+#{fnRuleIO(item)}  	{ @extend %oInlineItem; 	}
+
+#{fnRuleIO(top 					, false)} { @extend %oInlineTop; 					}
+#{fnRuleIO(bottom 			, false)} { @extend %oInlineBottom; 			}
+#{fnRuleIO(with-splitter, false)} { @extend %oInlineWithSplitter; }
