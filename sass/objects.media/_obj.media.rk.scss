@@ -72,7 +72,7 @@
 
 }
 
-#{fnRuleMO($rkAttrName-mediaBase)} {
+#{fnRuleMO($rkAttrName-mediaBase, false)} {
   @extend %oMedia;  
 }
 

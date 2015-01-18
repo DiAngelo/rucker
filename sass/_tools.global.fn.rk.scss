@@ -10,7 +10,7 @@
 //
 @function fnAttributeRule ($_inType, $_inAttribute)
 {
-	@if map-has-key($breakpoints, $_inType) {	
+	@if map-has-key($rkMapAttributesNaming, $_inType) {	
   	$x: map-get($rkMapAttributesNaming, $_inType);
   	@return '[data-' + $x + '~="'+$_inAttribute+'"]';
 	}

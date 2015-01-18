@@ -12,7 +12,7 @@ $rkAttrName-mediaReversed:  'rev'   !default;
 $rkAttrName-mediaSticked:   'stkd'  !default;
 
 // Register attribute type for media
-$rkMapAttributesNaming: map-merge($rkMapAttributesNaming, (media, 'o-' + $rkAttrName-media);
+$rkMapAttributesNaming: map-merge($rkMapAttributesNaming, (media: 'o-' + $rkAttrName-media));
 
 // The gutter used near the image
 $rkMetrics-mediaGutter: $rkSpacing-base !default;

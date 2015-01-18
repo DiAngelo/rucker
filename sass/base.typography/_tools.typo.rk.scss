@@ -25,7 +25,7 @@
 
   @each $key,$val in $rkMapTypoSpacing {
     /* Media object with #{$key} modifier */
-    #{fnRuleTypo(fnRuleTypo(map-get($rkModifiersNaming, $key), false))} {
+    #{fnRuleTypo(map-get($rkModifiersNaming, $key), false)} {
 			font-size: $val;    
     }
   }

@@ -8,7 +8,13 @@
 //
 @function fnRuleMO($_inAttr, $_inIsElem: true) {
 
-  $param: fnBEM('', $_inAttr, $_inIsElem);
+//  $param: fnBEM(' ', $_inAttr, $_inIsElem);
+  $prefix: '-';
+  @if $_inIsElem {
+    $prefix: '_';
+  }
+
+  $param: $prefix + $_inAttr;
   $response: fnAttributeRule(media, $param);
 
   @return $response;
@@ -27,15 +33,29 @@
 
   @each $key,$val in $rkMapMediaSpacing {
 
-    /* Media object with #{$key} modifier */
-    #{fnRuleMO(map-get($rkModifiersNaming, false)} {
+    /* Media object base with #{$key} modifier */
+    #{fnRuleMO(map-get($rkModifiersNaming, $key), false)} {
 
       > #{fnRuleMO(img)}
       { margin-right: $val; }
 
-      &#{fnRuleMO(rev, false)} > #{fnRuleMO(img)} {
-        margin-right: 0;
-        margin-left: $val;
+      &#{fnRuleMO(rev, false)} {
+        > #{fnRuleMO(img)} {
+          margin-right: 0;
+          margin-left: $val;
+        }
+      }
+
+      &#{fnRuleMO($rkAttrName-mediaBlock, false)} {
+        > #{fnRuleMO(img)}
+        { margin-bottom: $val; }
+        
+        &#{fnRuleMO(rev, false)} {
+          > #{fnRuleMO(img)} {
+            margin-bottom: 0;
+            margin-top: $val;
+          }
+        }
       }
 
     }
