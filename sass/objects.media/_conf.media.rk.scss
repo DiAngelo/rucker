@@ -15,7 +15,8 @@ $rkAttrName-mediaSticked:   'stkd'  !default;
 $rkAttrName-mediaInline:    'inline'!default;
 
 // Register attribute type for media
-fnRegisterAttribute(media, $rkAttrType-media, $rkAttrName-media);
+$rkMapAttributesNaming: fnRegisterAttribute(media, $rkAttrType-media, $rkAttrName-media);
+@debug $rkMapAttributesNaming;
 
 // The gutter used near the image
 $rkMetrics-mediaGutter: $rkSpacing-base !default;

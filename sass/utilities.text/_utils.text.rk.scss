@@ -13,7 +13,7 @@
 
 
 /* 1. Centering text */
-#{fnAttributeRule(map-get($rkAttrTypePrefixes, $rkAttrType-text), center)}         { text-align: center !important; }
+#{fnAttributeRule(text, -center)}         { text-align: center !important; }
 
 /*  2. Align text to left */
 #{'[' + $rk-attr-name--helper + '~="' + $rk-helper-text-prefix + '-left"]'}        { text-align: left   !important; }

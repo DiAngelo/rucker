@@ -9,4 +9,4 @@ $rkAttrType-text: utility;
 
 
 // Register attribute type for media
-fnRegisterAttribute(text, $rkAttrType-text, $rkAttrName-text);
+$rkMapAttributesNaming: fnRegisterAttribute(text, $rkAttrType-text, $rkAttrName-text);
