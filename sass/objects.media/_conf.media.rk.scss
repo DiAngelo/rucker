@@ -4,15 +4,29 @@
 
 // Configure media object naming - abbreviations used
 $rkAttrName-media:          'media' !default;
+$rkAttrName-mediaBase:      'base' !default;
 $rkAttrName-mediaImage:     'img'   !default;
 $rkAttrName-mediaBody:      'body'  !default;
+$rkAttrName-mediaBlock:     'block' !default;
 $rkAttrName-mediaReversed:  'rev'   !default;
 $rkAttrName-mediaSticked:   'stkd'  !default;
+
+// Register attribute type for media
+$rkMapAttributesNaming: map-merge($rkMapAttributesNaming, (media, 'o-' + $rkAttrName-media);
 
 // The gutter used near the image
 $rkMetrics-mediaGutter: $rkSpacing-base !default;
 
 // Media Object's  flags
+
+// Use media--block to display the image on top of the text
+$rkMedia-useBlock 	 : true !default;
+
+// Use media--rev to reverse the position of the image
 $rkMedia-useReversed : true !default;
+
+// Use media--stck to stick the image to text
 $rkMedia-useSticked  : true !default;
+
+// Use modifiers to change the space between image and text
 $rkMedia-useModifiers: true !default;

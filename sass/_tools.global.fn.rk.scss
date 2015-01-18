@@ -10,8 +10,14 @@
 //
 @function fnAttributeRule ($_inType, $_inAttribute)
 {
-  $x: map-get($rkMapAttributesNaming, $_inType);
-  @return '[data-' + $x + '~="'+$_inAttribute+'"]';
+	@if map-has-key($breakpoints, $_inType) {	
+  	$x: map-get($rkMapAttributesNaming, $_inType);
+  	@return '[data-' + $x + '~="'+$_inAttribute+'"]';
+	}
+
+	@else {
+		@warn "Unfortunately, no type was not found `#{$_inType}`. "
+	}
 }
 
 //

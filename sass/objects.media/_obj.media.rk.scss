@@ -32,7 +32,7 @@
    * The body element
    */
   %oMedia_body {
-    overflow:hidden;
+    overflow: hidden;
   }
 
 
@@ -57,9 +57,22 @@
   }
 }
 
+/**
+ * Media Block
+ * The image sets on top of the text
+ */
 
+%oMedia-block {
 
-#{fnAttributeRule('object', $rkAttrName-media)} {
+  %oMedia_image {
+    float: none;
+    margin-right: 0;
+    margin-bottom: $rkMetrics-mediaGutter; 
+  }
+
+}
+
+#{fnRuleMO($rkAttrName-mediaBase)} {
   @extend %oMedia;  
 }
 
@@ -83,8 +96,14 @@
   }  
 }
 
-
 @if $rkMedia-useModifiers {
   @include mxMediaModifiers();
 }
 
+
+
+@if $rkMedia-useBlock {
+  #{fnRuleMO($rkAttrName-mediaBlock, false)} {
+    @extend %oMedia-block;  
+  }  
+}
