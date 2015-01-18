@@ -12,13 +12,13 @@
 
 // Virtual layer
 // Prepare functions used to generate values for Settings layer
-@import "tools.global.fn.rk";
-@import "tools.metrics.fn.rk";
+@import "app.core/tools.global.fn.rk";
+@import "app.core/tools.metrics.fn.rk";
 
 // Settings layer
 // Default configuration values
-@import "conf.settings.rk";
-@import "conf.attributes.rk";
+@import "app.core/conf.settings.rk";
+@import "app.core/conf.attributes.rk";
 @import "utilities.text/conf.text.rk";
 @import "base.typography/conf.typo.rk";
 @import "objects.media/conf.media.rk";
@@ -27,6 +27,8 @@
 // Functions and mixins
 @import "base.typography/tools.typo.rk";
 @import "objects.media/tools.media.rk";
+
+/////////////// Start generating CSS rules
 
 // Base layer
 // Reset and normalize - if needed
