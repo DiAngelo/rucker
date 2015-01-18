@@ -19,7 +19,7 @@
 // Default configuration values
 @import "conf.settings.rk";
 @import "conf.attributes.rk";
-@import "conf.text.rk";
+@import "utilities.text/conf.text.rk";
 @import "base.typography/conf.typo.rk";
 @import "objects.media/conf.media.rk";
 
@@ -45,10 +45,10 @@
 // Modules layer
 // Compound by more components
 
-// Trumps layer
+// Master layer - highest level of specificity
 // Helpers and fixes
 @import "helper.clearfix.rk";
-@import "helper.text.rk";
+@import "utilities.text/utils.text.rk";
 @import "base.typography/helper.typo.rk";
 
 

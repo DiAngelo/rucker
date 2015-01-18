@@ -2,6 +2,8 @@
 // Media Object configuration
 //
 
+$rkAttrType-media:          object !default;
+
 // Configure media object naming - abbreviations used
 $rkAttrName-media:          'media' !default;
 $rkAttrName-mediaBase:      'base'  !default;
@@ -13,7 +15,7 @@ $rkAttrName-mediaSticked:   'stkd'  !default;
 $rkAttrName-mediaInline:    'inline'!default;
 
 // Register attribute type for media
-$rkMapAttributesNaming: map-merge($rkMapAttributesNaming, (media: 'o-' + $rkAttrName-media));
+fnRegisterAttribute(media, $rkAttrType-media, $rkAttrName-media);
 
 // The gutter used near the image
 $rkMetrics-mediaGutter: $rkSpacing-base !default;

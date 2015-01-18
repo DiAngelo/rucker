@@ -25,6 +25,13 @@ $rk-attr--component:  "com" !default;
 $rk-attr--module:     "mod" !default;
 
 
+$rkAttrTypePrefixes: (
+	object: 		'o',
+	component: 	'c',
+	module: 		'm',
+	utility: 		'u'
+); 
+
 
 //
 // Constructing the attributes names

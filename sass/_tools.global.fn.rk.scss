@@ -37,3 +37,14 @@
 
   @return $response;
 }
+
+//
+// fnRegisterAttribute
+// Registers an attribute name to be used next to 'data-'
+//
+@function fnRegisterAttribute($_inAttr, $_inType, $_inName)
+{
+  $attr: map-get($rkAttrTypePrefixes, $_inType) + '-' + $_inName;
+  $rkMapAttributesNaming: map-merge($rkMapAttributesNaming, ($_inAttr: $attr));
+  @return $rkMapAttributesNaming;
+}

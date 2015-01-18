@@ -1,0 +1,12 @@
+//
+// Text configuration file
+//
+
+// variable used in attribute naming
+$rkAttrName-text: 'txt';
+
+$rkAttrType-text: utility;
+
+
+// Register attribute type for media
+fnRegisterAttribute(text, $rkAttrType-text, $rkAttrName-text);
