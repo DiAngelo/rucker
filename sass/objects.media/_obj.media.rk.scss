@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 /** 
- * Place any image- and text-like content side-by-side, as per:
+ * Place any image and a text-like content side-by-side, or one above the other as per:
  * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
 
@@ -105,5 +105,19 @@
 @if $rkMedia-useBlock {
   #{fnRuleMO($rkAttrName-mediaBlock, false)} {
     @extend %oMedia-block;  
+  }  
+}
+
+
+
+@if $rkMedia-useInline {
+  #{fnRuleMO($rkAttrName-mediaInline, false)} {
+    #{fnRuleMO($rkAttrName-mediaImage)},
+    #{fnRuleMO($rkAttrName-mediaBody)}
+     {
+      float: none;
+      display: inline-block;
+      vertical-align: $rkMediaInline-align;
+    }
   }  
 }

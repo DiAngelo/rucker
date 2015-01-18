@@ -1,15 +1,16 @@
 //
-// Media Object settings layer
+// Media Object configuration
 //
 
 // Configure media object naming - abbreviations used
 $rkAttrName-media:          'media' !default;
-$rkAttrName-mediaBase:      'base' !default;
+$rkAttrName-mediaBase:      'base'  !default;
 $rkAttrName-mediaImage:     'img'   !default;
 $rkAttrName-mediaBody:      'body'  !default;
 $rkAttrName-mediaBlock:     'block' !default;
 $rkAttrName-mediaReversed:  'rev'   !default;
 $rkAttrName-mediaSticked:   'stkd'  !default;
+$rkAttrName-mediaInline:    'inline'!default;
 
 // Register attribute type for media
 $rkMapAttributesNaming: map-merge($rkMapAttributesNaming, (media: 'o-' + $rkAttrName-media));
@@ -30,3 +31,9 @@ $rkMedia-useSticked  : true !default;
 
 // Use modifiers to change the space between image and text
 $rkMedia-useModifiers: true !default;
+
+// Use media--inline to display image and body inline
+$rkMedia-useInline: true !default;
+
+// Vertical align of inline image and body
+$rkMediaInline-align: middle;
