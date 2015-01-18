@@ -13,23 +13,23 @@
 
 
 /* 1. Centering text */
-#{fnAttributeRule(text, -center)}         { text-align: center !important; }
+#{fnAttributeRule(text, -center)}      { text-align: center !important; }
 
 /*  2. Align text to left */
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-text-prefix + '-left"]'}        { text-align: left   !important; }
+#{fnAttributeRule(text, -left)}        { text-align: left   !important; }
 
 /*  3. Align text to right */
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-text-prefix + '-right"]'}       { text-align: right  !important; }
+#{fnAttributeRule(text, -right)}       { text-align: right  !important; }
 
 /*  4. Underline text */
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-text-prefix + '-underlined"]'}  { text-decoration: underlined !important; }
+#{fnAttributeRule(text, -underlined)}  { text-decoration: underlined !important; }
 
 /*  5. Transform text to uppercase */
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-text-prefix + '-upper"]'}       { text-transform: uppercase !important; }
+#{fnAttributeRule(text, -upper)}       { text-transform: uppercase !important; }
 
 /*  6. Transform text to lowercase */
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-text-prefix + '-lower"]'}       { text-transform: lowercase !important; }
+#{fnAttributeRule(text, -lower)}       { text-transform: lowercase !important; }
 
 /*  7. Capitalize first letter of the text */
-#{'[' + $rk-attr-name--helper + '~="' + $rk-helper-text-prefix + '-capital"]'}     { text-transform: capitalize !important; }
+#{fnAttributeRule(text, -capital)}     { text-transform: capitalize !important; }
 
