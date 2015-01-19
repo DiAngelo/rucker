@@ -1,0 +1,10 @@
+//
+// Pack Object configurations
+//
+
+$rkAttrType-pack: object !default;
+$rkAttrName-pack: pack !default;
+
+$rkMapAttributesNaming: fnRegisterAttribute(pack, $rkAttrType-band, $rkAttrName-band);
+
+

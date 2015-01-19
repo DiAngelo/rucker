@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    #Band Object
+\*------------------------------------*/
+
+%oBand {
+  display: block;
+}
+
+#{fnRuleBand(null, false)} {
+  @extend %oBand;
+}
+
+@include mxBandModifiers();
