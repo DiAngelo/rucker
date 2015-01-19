@@ -1,13 +1,13 @@
 /*------------------------------------*\
-    #Box Object
+    #Band Object
 \*------------------------------------*/
 
-%oBox {
+%oBand {
   display: block;
 }
 
-#{fnRuleBO(null, false)} {
-  @extend %oBox;
+#{fnRuleBand(null, false)} {
+  @extend %oBand;
 }
 
-@include mxBoxModifiers();
+@include mxBandModifiers();

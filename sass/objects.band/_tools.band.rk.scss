@@ -1,0 +1,47 @@
+
+//
+// Box object funtions
+//
+
+//
+// fnRuleBO
+// Generate Media Object related rule
+//
+@function fnRuleBand($_inAttr, $_inIsElem: true) {
+
+  $response: fnAttributeRule(band, null);
+
+  @if $_inAttr != null {
+    $prefix: '-';
+    @if $_inIsElem {
+      $prefix: '_';
+    }
+
+    $param: $prefix + $_inAttr;
+    $response: fnAttributeRule(band, $param);
+
+  }
+
+  @return $response;
+
+}
+
+
+//
+// mxMediaModifiers
+// Generate media modifiers
+//
+
+@mixin mxBandModifiers() {
+
+  $rkBandMediaSpacing: fnModifiersMap(5px, 5px, true);
+
+  @each $key,$val in $rkBandMediaSpacing {
+
+    /* Box Object with '#{$key}' modifier */
+    #{fnRuleBand(map-get($rkModifiersNaming, $key), false)} {
+      padding-top: $val; 
+      padding-bottom: $val;
+    }
+  }
+}

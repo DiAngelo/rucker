@@ -9,13 +9,18 @@
 //
 @function fnRuleBO($_inAttr, $_inIsElem: true) {
 
-  $prefix: '-';
-  @if $_inIsElem {
-    $prefix: '_';
-  }
+  $response: fnAttributeRule(box, null);
 
-  $param: $prefix + $_inAttr;
-  $response: fnAttributeRule(box, $param);
+  @if $_inAttr != null {
+    $prefix: '-';
+    @if $_inIsElem {
+      $prefix: '_';
+    }
+
+    $param: $prefix + $_inAttr;
+    $response: fnAttributeRule(box, $param);
+
+  }
 
   @return $response;
 
@@ -29,11 +34,11 @@
 
 @mixin mxBoxModifiers() {
 
-  $rkBoxMediaSpacing: fnModifiersMap(5px, 5px, false);
+  $rkBoxMediaSpacing: fnModifiersMap(5px, 5px, true);
 
   @each $key,$val in $rkBoxMediaSpacing {
 
-    /* Media object base with #{$key} modifier */
+    /* Box Object with '#{$key}' modifier */
     #{fnRuleBO(map-get($rkModifiersNaming, $key), false)} {
       padding: $val; 
     }

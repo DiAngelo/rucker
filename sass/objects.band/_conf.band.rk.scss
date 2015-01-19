@@ -1,0 +1,10 @@
+//
+// Box Object configurations
+//
+
+$rkAttrType-band: object !default;
+$rkAttrName-band: band !default;
+
+$rkMapAttributesNaming: fnRegisterAttribute(band, $rkAttrType-band, $rkAttrName-band);
+
+

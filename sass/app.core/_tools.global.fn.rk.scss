@@ -12,7 +12,11 @@
 {
 	@if map-has-key($rkMapAttributesNaming, $_inType) {
   	  $x: map-get($rkMapAttributesNaming, $_inType);
-  	  @return '[data-' + $x + '~="'+$_inAttribute+'"]';
+      @if $_inAttribute != null {
+        @return '[data-' + $x + '~="'+$_inAttribute+'"]';
+      } @else {
+        @return '[data-' + $x + ']'; 
+      }
 	}
 
 	@else {
