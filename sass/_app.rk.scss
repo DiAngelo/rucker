@@ -23,12 +23,14 @@
 @import "base.typography/conf.typo.rk";
 @import "objects.media/conf.media.rk";
 @import "objects.inline/conf.inline.rk";
+@import "objects.box/conf.box.rk";
 
 // Tools layer
 // Functions and mixins
 @import "base.typography/tools.typo.rk";
 @import "objects.media/tools.media.rk";
 @import "objects.inline/tools.inline.rk";
+@import "objects.box/tools.box.rk";
 
 /////////////// Start generating CSS rules
 
@@ -43,6 +45,8 @@
 // Sketch objects with no style
 @import "objects.media/obj.media.rk";
 @import "objects.inline/obj.inline.rk";
+@import "objects.box/obj.box.rk";
+
 
 // Components layer
 // Objects with style
