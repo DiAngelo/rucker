@@ -1,0 +1,10 @@
+//
+// Box Object configurations
+//
+
+$rkAttrType-box: object !default;
+$rkAttrName-box: box !default;
+
+$rkMapAttributesNaming: fnRegisterAttribute(box, $rkAttrType-box, $rkAttrName-box);
+
+
