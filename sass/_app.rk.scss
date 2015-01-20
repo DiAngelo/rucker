@@ -10,12 +10,21 @@
 // CSS Naming convention - BEM style - no uppercase letters
 //
 
-// Virtual layer
+//       ____________________
+//      /                   /
+//     /   Virtual Layer   /
+//    /___________________/
+//
 // Prepare functions used to generate values for Settings layer
+//
 @import "app.core/tools.global.fn.rk";
 @import "app.core/tools.metrics.fn.rk";
 
-// Settings layer
+//       ____________________
+//      /                   /
+//     /   Settings layer  /
+//    /___________________/
+// 
 // Default configuration values
 @import "app.core/conf.settings.rk";
 @import "app.core/conf.attributes.rk";
@@ -27,7 +36,11 @@
 @import "objects.box/conf.box.rk";
 @import "objects.band/conf.band.rk";
 
-// Tools layer
+//       ____________________
+//      /                   /
+//     /    Tools layer    /
+//    /___________________/
+//
 // Functions and mixins
 @import "base.typography/tools.typo.rk";
 @import "objects.media/tools.media.rk";
@@ -36,16 +49,28 @@
 @import "objects.box/tools.box.rk";
 @import "objects.band/tools.band.rk";
 
-/////////////// Start generating CSS rules
 
-// Base layer
+
+/////////////// Start generating CSS rules ///////////////
+
+
+
+//       ____________________
+//      /                   /
+//     /    Base layer     /
+//    /___________________/
+//
 // Reset and normalize - if needed
 // Rules for HTML tags
 @import "base.reset/base.reset.rk";
 @import "base.typography/base.typo.rk";
 
 
-// Objects layer
+//       ____________________
+//      /                   /
+//     /   Objects layer   /
+//    /___________________/
+//
 // Sketch objects with no style
 @import "objects.media/obj.media.rk";
 @import "objects.inline/obj.inline.rk";
@@ -54,13 +79,26 @@
 @import "objects.band/obj.band.rk";
 
 
-// Components layer
+//       ____________________
+//      /                   /
+//     /  Components layer /
+//    /___________________/
+// 
 // Objects with style
 
-// Modules layer
+//       ____________________
+//      /                   /
+//     /   Modules layer   /
+//    /___________________/
+//
 // Compound by more components
 
-// Master layer - highest level of specificity
+//       ____________________
+//      /                   /
+//     /    Master layer   /
+//    /___________________/
+//
+// Highest level of specificity
 // Helpers and fixes
 @import "utilities.clearfix/utils.clearfix.rk";
 @import "utilities.text/utils.text.rk";
