@@ -1,13 +1,44 @@
 /*------------------------------------*\
-    #Band Object
+    #Pack Object
 \*------------------------------------*/
 
-%oBand {
-  display: block;
+%oPack {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+  %oPackItem {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+%oPackTop {
+  %oPackItem {
+    vertical-align: top;
+  }
 }
 
-#{fnRuleBand(null, false)} {
-  @extend %oBand;
+%oPackBottom {
+  %oPackItem {
+    vertical-align: bottom;
+  }
 }
 
-@include mxBandModifiers();
+#{fnRulePack(list)} {
+  @extend %oPack;
+}
+
+#{fnRulePack(item)} {
+  @extend %oPackItem;
+}
+
+
+#{fnRulePack(top, false)} {
+  @extend %oPackTop;
+}
+
+#{fnRulePack(bottom, false)} {
+  @extend %oPackBottom;
+}
+
+@include mxPackModifiers();

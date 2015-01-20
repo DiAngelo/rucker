@@ -33,14 +33,13 @@
 
 @mixin mxPackModifiers() {
 
-  $rkPackMediaSpacing: fnModifiersMap(5px, 5px, true);
+  $rkPackMediaSpacing: fnModifiersMap(5px, 5px);
 
   @each $key,$val in $rkPackMediaSpacing {
 
-    /* Box Object with '#{$key}' modifier */
+    /* Pack Object with '#{$key}' modifier */
     #{fnRulePack(map-get($rkModifiersNaming, $key), false)} {
-      padding-top: $val; 
-      padding-bottom: $val;
+      border-spacing: $val;
     }
   }
 }

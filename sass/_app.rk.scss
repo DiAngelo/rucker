@@ -23,6 +23,7 @@
 @import "base.typography/conf.typo.rk";
 @import "objects.media/conf.media.rk";
 @import "objects.inline/conf.inline.rk";
+@import "objects.pack/conf.pack.rk";
 @import "objects.box/conf.box.rk";
 @import "objects.band/conf.band.rk";
 
@@ -31,6 +32,7 @@
 @import "base.typography/tools.typo.rk";
 @import "objects.media/tools.media.rk";
 @import "objects.inline/tools.inline.rk";
+@import "objects.pack/tools.pack.rk";
 @import "objects.box/tools.box.rk";
 @import "objects.band/tools.band.rk";
 
@@ -47,6 +49,7 @@
 // Sketch objects with no style
 @import "objects.media/obj.media.rk";
 @import "objects.inline/obj.inline.rk";
+@import "objects.pack/obj.pack.rk";
 @import "objects.box/obj.box.rk";
 @import "objects.band/obj.band.rk";
 
