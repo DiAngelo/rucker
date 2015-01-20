@@ -30,6 +30,9 @@
 @import "app.core/conf.attributes.rk";
 @import "utilities.text/conf.text.rk";
 @import "base.typography/conf.typo.rk";
+@import "layouts.wrapper/conf.wrapper.rk";
+@import "layouts.grid/conf.grid.rk";
+@import "layouts.flex/conf.flex.rk";
 @import "objects.media/conf.media.rk";
 @import "objects.inline/conf.inline.rk";
 @import "objects.pack/conf.pack.rk";
@@ -43,6 +46,9 @@
 //
 // Functions and mixins
 @import "base.typography/tools.typo.rk";
+@import "layouts.wrapper/tools.wrapper.rk";
+@import "layouts.grid/tools.grid.rk";
+@import "layouts.flex/tools.flex.rk";
 @import "objects.media/tools.media.rk";
 @import "objects.inline/tools.inline.rk";
 @import "objects.pack/tools.pack.rk";
@@ -66,6 +72,20 @@
 @import "base.typography/base.typo.rk";
 
 
+
+//       ____________________
+//      /                   /
+//     /   Layouts layer   /
+//    /___________________/
+//
+// Extracted from objects layer, 
+// elements used to define the page layout, like grid system fe.
+@import "layouts.wrapper/layouts.wrapper.rk";
+@import "layouts.grid/layouts.grid.rk";
+@import "layouts.flex/layouts.flex.rk";
+
+
+
 //       ____________________
 //      /                   /
 //     /   Objects layer   /
@@ -77,6 +97,7 @@
 @import "objects.pack/obj.pack.rk";
 @import "objects.box/obj.box.rk";
 @import "objects.band/obj.band.rk";
+
 
 
 //       ____________________
