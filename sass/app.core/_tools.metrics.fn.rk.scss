@@ -11,7 +11,7 @@
   @each $item in $rkBasicModifiers {
     $index: index($rkBasicModifiers, $item) - 1;
 
-    $val: $lastVal + $index * $rkSpacing__step;
+    $val: $lastVal + $index * $_inStep;
 
     @if $_inProgressiveIncrement {
       $lastVal: $val;

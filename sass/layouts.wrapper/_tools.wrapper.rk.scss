@@ -25,3 +25,33 @@
   @return $response;
 
 }
+
+
+
+//
+// mxWrapperModifiers
+// Generate wrapper modifiers
+//
+
+@mixin mxWrapperModifiers() {
+
+  $rkWrapperSpacing: fnModifiersMap(5px, 10px, false);
+
+  @each $key,$gutter in $rkWrapperSpacing {
+
+    /* Wrapper Layout with '#{$key}' modifier */
+    #{fnRuleWrapper(map-get($rkModifiersNaming, $key), false)} {
+      
+      padding-left:  $gutter;
+      padding-right: $gutter;
+
+      #{fnRuleWrapper(row)} {
+        margin-left:  -$gutter;
+        margin-right: -$gutter;
+      }
+
+    }
+
+  }
+
+}
