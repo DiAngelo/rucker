@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    #Wrapper Layout
+\*------------------------------------*/
+
+%lWrapperContainer {
+	max-width: $rkWrapper-maxWidth;
+	margin: 0 auto;
+	padding-left:  $rkWrapper-gutter;
+	padding-right: $rkWrapper-gutter;
+}
+
+%lWrapperRow {
+	margin-left:  -$rkWrapper-gutter;
+	margin-right: -$rkWrapper-gutter;
+}
+
+#{fnRuleWrapper(container)} {
+	@extend %lWrapperContainer;
+}
+
+#{fnRuleWrapper(row)} {
+	@extend %lWrapperRow;
+}

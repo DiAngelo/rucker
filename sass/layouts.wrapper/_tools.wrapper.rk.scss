@@ -1,3 +1,27 @@
 //
 // Wrapper Layout Tools
 //
+
+//
+// fnRuleWrapper
+// Generate Media Object related rule
+//
+@function fnRuleWrapper($_inAttr, $_inIsElem: true) {
+
+	$attr: wrapper;
+  $response: fnAttributeRule($attr, null);
+
+  @if $_inAttr != null {
+    $prefix: '-';
+    @if $_inIsElem {
+      $prefix: '_';
+    }
+
+    $param: $prefix + $_inAttr;
+    $response: fnAttributeRule($attr, $param);
+
+  }
+
+  @return $response;
+
+}

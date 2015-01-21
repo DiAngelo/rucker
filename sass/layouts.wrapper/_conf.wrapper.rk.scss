@@ -1,3 +1,11 @@
 //
 // Wrapper Layout configuration
 //
+
+$rkAttrType-wrapper: layout  !default;
+$rkAttrName-wrapper: wrapper !default;
+
+$rkMapAttributesNaming: fnRegisterAttribute(wrapper, $rkAttrType-wrapper, $rkAttrName-wrapper);
+
+$rkWrapper-maxWidth: 1100px;
+$rkWrapper-gutter:   $rkSpacing-base !default;
