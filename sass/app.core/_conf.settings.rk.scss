@@ -2,6 +2,9 @@
 // Globally used settings
 //
 
+// Basic framework namespace
+$rkNamespace: 'rk' !default;
+
 // Define modifiers tha we generally apply to components
 // to change it's specific value
 $rkBasicModifiers: 'tiny', 'small', 'base', 'large', 'huge' !default;

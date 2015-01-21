@@ -1,0 +1,29 @@
+//
+// Layouts Sizes Tools
+//
+
+//
+// mxSizesSilent
+//
+@mixin mxSizesSilent() {
+	@each $group in $rkSizesGroups {
+		@for $i from 1 to $group {
+			$selector: round($i / $group * 100);
+			/* #{$selector} */
+			%lSize-#{$selector} {
+				width: $i / $group;
+			}
+		}
+	}
+}
+
+@mixin mxSizesOutput() {
+	@each $group in $rkSizesGroups {
+		@for $i from 1 to $group {
+			$selector: round($i / $group * 100);			
+			[data-l-size="#{$rkSizesNamespace}-#{$i}/#{$group}"] {
+				@extend %lSize-#{$selector};
+			}
+		}
+	}
+}
