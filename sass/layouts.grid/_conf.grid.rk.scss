@@ -1,3 +1,9 @@
 //
 // Wrapper Layout configuration
 //
+
+$rkAttrType-grid: layout  !default;
+$rkAttrName-grid: grid !default;
+
+$rkMapAttributesNaming: fnRegisterAttribute(grid, $rkAttrType-grid, $rkAttrName-grid);
+
