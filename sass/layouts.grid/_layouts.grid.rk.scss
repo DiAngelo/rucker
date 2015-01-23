@@ -1,35 +1,49 @@
-//
-// Grid Layout
-//
+/*------------------------------------*\
+    #Grid Layout
+\*------------------------------------*/
 
 /**
  * Grid's container
  */
-%lGridContainer {
+%lGridRow {
   list-style: none;
   margin:  0; 
   padding: 0;
 }
 
 /**
- * Grid's item
- *
+ * Grid's column
  */
-%lGridItem {
+%lGridColumn {
   display: inline-block;
   vertical-align: top;
   padding-left: $rkGrid-gutter / 2;
   padding-right: $rkGrid-gutter / 2;
 }
 
+/**
+ * Grid based on float
+ */
+%lGridFloat {
 
+  > %lGridColumn {
+    float: left;
+  }
 
-#{fnRuleGrid(container)} {
-	@extend %lGridContainer;
 }
 
-#{fnRuleGrid(item)} {
-	@extend %lGridItem;
+
+
+#{fnRuleGrid(row)} {
+  @extend %lGridRow;
+}
+
+#{fnRuleGrid(float, false)} {
+  @extend %lGridFloat;
+}
+
+#{fnRuleGrid(column)} {
+  @extend %lGridColumn
 }
 
 
