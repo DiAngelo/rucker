@@ -3,8 +3,8 @@
 //
 
 // Sizes namespace used to prefix sizes
-$rkSizesNamespace: $rkNamespace;
+$rkSizesNamespace: $rkNamespace !default;
 
 // Groups of sizes for which to define units
 // fe. for group 3 we define sizes for 1/3 and 2/3
-$rkSizesGroups: 2, 3, 4;
+$rkSizesGroups: 2, 3, 4 !default;
