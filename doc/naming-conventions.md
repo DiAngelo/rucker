@@ -1,22 +1,27 @@
-Rucker web framework naming conventions
+# Rucker web framework naming conventions
 
-SASS
+### SASS
 
 We use camelCase for variables and functions
 
-Example:
+** Example: **
 
+```
 $rkrNamespace
 mxBoxModifiers()
+```
 
 
-CSS
+### CSS
 
 The generated CSS code is in dashed style
 
 
-Example:
+** Example: **
 
+```
 .foo-bar {}
 [data-foo="rkr-bar"] {}
+```
+
 
