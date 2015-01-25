@@ -16,7 +16,7 @@
       $prefix: '_';
     }
 
-    $param: $rkNsBox + $prefix + $_inAttr;
+    $param: $rkrNsBox + $prefix + $_inAttr;
     $response: fnAttributeRule(box, $param);
 
   }
@@ -33,12 +33,12 @@
 
 @mixin mxBoxModifiers() {
 
-  $rkBoxMediaSpacing: fnModifiersMap(5px, 5px, true);
+  $rkrBoxMediaSpacing: fnModifiersMap(5px, 5px, true);
 
-  @each $key,$val in $rkBoxMediaSpacing {
+  @each $key,$val in $rkrBoxMediaSpacing {
 
     /* Box Object with '#{$key}' modifier */
-    #{fnRuleBO(map-get($rkModifiersNaming, $key), false)} {
+    #{fnRuleBO(map-get($rkrModifiersNaming, $key), false)} {
       padding: $val; 
     }
   }

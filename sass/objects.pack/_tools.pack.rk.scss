@@ -16,7 +16,7 @@
       $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
+    $param: $rkrNsPack + $prefix + $_inAttr;
     $response: fnAttributeRule(pack, $param);
 
   }
@@ -33,12 +33,12 @@
 
 @mixin mxPackModifiers() {
 
-  $rkPackMediaSpacing: fnModifiersMap(5px, 5px);
+  $rkrPackMediaSpacing: fnModifiersMap(5px, 5px);
 
-  @each $key,$val in $rkPackMediaSpacing {
+  @each $key,$val in $rkrPackMediaSpacing {
 
     /* Pack Object with '#{$key}' modifier */
-    #{fnRulePack(map-get($rkModifiersNaming, $key), false)} {
+    #{fnRulePack(map-get($rkrModifiersNaming, $key), false)} {
       border-spacing: $val;
     }
   }

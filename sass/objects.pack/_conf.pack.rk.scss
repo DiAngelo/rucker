@@ -2,9 +2,12 @@
 // Pack Object configurations
 //
 
-$rkAttrType-pack: object !default;
-$rkAttrName-pack: pack !default;
+// Pack namespace
+$rkrNsPack: $rkrNamespace !default;
 
-$rkMapAttributesNaming: fnRegisterAttribute(pack, $rkAttrType-pack, $rkAttrName-pack);
+$rkrAttrTypePack: object !default;
+$rkrAttrNamePack: pack !default;
+
+$rkrMapAttributesNaming: fnRegisterAttribute(pack, $rkrAttrTypePack, $rkrAttrNamePack);
 
 

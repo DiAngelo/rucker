@@ -13,7 +13,7 @@
     $prefix: '_';
   }
 
-  $param: $prefix + $_inAttr;
+  $param: $rkrNsInline + $prefix + $_inAttr;
   $response: fnAttributeRule(inline, $param);
 
   @return $response;

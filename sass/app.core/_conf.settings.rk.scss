@@ -3,27 +3,27 @@
 //
 
 // Basic framework namespace
-$rkNamespace: 'rk' !default;
+$rkrNamespace: 'rkr' !default;
 
 // Define modifiers tha we generally apply to components
 // to change it's specific value
-$rkBasicModifiers: 'tiny', 'small', 'base', 'large', 'huge' !default;
+$rkrBasicModifiers: 'tiny', 'small', 'base', 'large', 'huge' !default;
 
 // naming convention for modifiers
-$rkModifiersNaming: (
-  #{nth($rkBasicModifiers, 1)}: 'xs', // tiny  
-  #{nth($rkBasicModifiers, 2)}: 'sm', // small 
-  #{nth($rkBasicModifiers, 3)}: 'md', // base
-  #{nth($rkBasicModifiers, 4)}: 'lg', // large 
-  #{nth($rkBasicModifiers, 5)}: 'hg'  // huge  
+$rkrModifiersNaming: (
+  #{nth($rkrBasicModifiers, 1)}: 'xs', // tiny  
+  #{nth($rkrBasicModifiers, 2)}: 'sm', // small 
+  #{nth($rkrBasicModifiers, 3)}: 'md', // base
+  #{nth($rkrBasicModifiers, 4)}: 'lg', // large 
+  #{nth($rkrBasicModifiers, 5)}: 'hg'  // huge  
 ) !default;
 
 // The smallest spacing value for the first modifier
-$rkSpacing__start: 5px;
+$rkrSpacing__start: 5px;
 
 // The step to increase to the next modifier
-$rkSpacing__step: 5px;
+$rkrSpacing__step: 5px;
 
-$rkMapSpacing: fnModifiersMap($rkSpacing__start, $rkSpacing__step, true);
+$rkrMapSpacing: fnModifiersMap($rkrSpacing__start, $rkrSpacing__step, true);
 
-$rkSpacing-base: map-get($rkMapSpacing, 'base');
+$rkrSpacing-base: map-get($rkrMapSpacing, 'base');

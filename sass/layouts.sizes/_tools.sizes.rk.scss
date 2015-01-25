@@ -9,7 +9,7 @@
 	
 	$lDefined: ();
 
-	@each $group in $rkSizesGroups {
+	@each $group in $rkrSizesGroups {
 
 		@for $i from 1 to $group {
 
@@ -34,12 +34,12 @@
 
 @mixin mxSizesOutput() {
 	
-	@each $group in $rkSizesGroups {
+	@each $group in $rkrSizesGroups {
 
 		@for $i from 1 to $group {
 
 			$selector: round($i / $group * 100);			
-			[data-l-size="#{$rkSizesNamespace}-#{$i}/#{$group}"] {
+			[data-l-size="#{$rkrSizesNamespace}-#{$i}/#{$group}"] {
 				@extend %lSize-#{$selector};
 			}
 

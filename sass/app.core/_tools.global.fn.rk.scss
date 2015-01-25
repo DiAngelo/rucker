@@ -10,8 +10,8 @@
 //
 @function fnAttributeRule ($_inType, $_inAttribute)
 {
-	@if map-has-key($rkMapAttributesNaming, $_inType) {
-  	  $x: map-get($rkMapAttributesNaming, $_inType);
+	@if map-has-key($rkrMapAttributesNaming, $_inType) {
+  	  $x: map-get($rkrMapAttributesNaming, $_inType);
       @if $_inAttribute != null {
         @return '[data-' + $x + '~="'+$_inAttribute+'"]';
       } @else {
@@ -48,7 +48,7 @@
 //
 @function fnRegisterAttribute($_inAttr, $_inType, $_inName)
 {
-  $attr: map-get($rkAttrTypePrefixes, $_inType) + '-' + $_inName;
-  $rkMapAttributesNaming: map-merge($rkMapAttributesNaming, ($_inAttr: $attr));
-  @return $rkMapAttributesNaming;
+  $attr: map-get($rkrAttrTypePrefixes, $_inType) + '-' + $_inName;
+  $rkrMapAttributesNaming: map-merge($rkrMapAttributesNaming, ($_inAttr: $attr));
+  @return $rkrMapAttributesNaming;
 }

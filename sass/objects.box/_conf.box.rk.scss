@@ -3,11 +3,11 @@
 //
 
 // Box namespace
-$rkNsBox: $rkNamespace !default;
+$rkrNsBox: $rkrNamespace !default;
 
-$rkAttrType-box: object !default;
-$rkAttrName-box: box !default;
+$rkrAttrType-box: object !default;
+$rkrAttrName-box: box !default;
 
-$rkMapAttributesNaming: fnRegisterAttribute(box, $rkAttrType-box, $rkAttrName-box);
+$rkrMapAttributesNaming: fnRegisterAttribute(box, $rkrAttrType-box, $rkrAttrName-box);
 
 

@@ -3,12 +3,12 @@
 //
 
 // Wrapper's namespace 
-$rkNsWrapper: $rkNamespace !default;
+$rkrNsWrapper: $rkrNamespace !default;
 
-$rkAttrType-wrapper: layout  !default;
-$rkAttrName-wrapper: wrapper !default;
+$rkrAttrTypeWrapper: layout  !default;
+$rkrAttrNameWrapper: wrapper !default;
 
-$rkMapAttributesNaming: fnRegisterAttribute(wrapper, $rkAttrType-wrapper, $rkAttrName-wrapper);
+$rkrMapAttributesNaming: fnRegisterAttribute(wrapper, $rkrAttrTypeWrapper, $rkrAttrNameWrapper);
 
-$rkWrapper-maxWidth: 1100px;
-$rkWrapper-gutter:   $rkSpacing-base !default;
+$rkrWrapper-maxWidth: 1100px;
+$rkrWrapper-gutter:   $rkSpacing-base !default;

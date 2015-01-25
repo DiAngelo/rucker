@@ -9,13 +9,13 @@
  * [3] Padding to left and right
  */
 %lWrapperContainer {
-	max-width: $rkWrapper-maxWidth; /* [1] */
+	max-width: $rkrWrapper-maxWidth; /* [1] */
 
 	margin-left:   auto; /* [2] */
   margin-right:  auto; /* [2] */
 
-  padding-left:  $rkWrapper-gutter; /* [3] */
-	padding-right: $rkWrapper-gutter; /* [3] */
+  padding-left:  $rkrWrapper-gutter; /* [3] */
+	padding-right: $rkrWrapper-gutter; /* [3] */
 }
 
 /**
@@ -23,8 +23,8 @@
  * Canceling container's padding value
  */
 %lWrapperRow {
-	margin-left:  -$rkWrapper-gutter;
-	margin-right: -$rkWrapper-gutter;
+	margin-left:  -$rkrWrapper-gutter;
+	margin-right: -$rkrWrapper-gutter;
 }
 
 

@@ -4,7 +4,7 @@
 
 /** 
  * Place any image and a text-like content side-by-side, or one above the other as per:
- * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * stubbornella.org/content/2010/06/25/theMedia-object-saves-hundreds-of-lines-of-code
  */
 
 
@@ -25,7 +25,7 @@
    */
   %oMedia_image {
     float: left;
-    margin-right: $rkMetrics-mediaGutter;
+    margin-right: $rkrMetricsMediaGutter;
   }
 
   /**
@@ -43,7 +43,7 @@
   %oMedia_image {
     float: right;
     margin-right: 0;
-    margin-left: $rkMetrics-mediaGutter;
+    margin-left: $rkrMetricsMediaGutter;
   }
 }
 
@@ -67,57 +67,57 @@
   %oMedia_image {
     float: none;
     margin-right: 0;
-    margin-bottom: $rkMetrics-mediaGutter; 
+    margin-bottom: $rkrMetricsMediaGutter; 
   }
 
 }
 
-#{fnRuleMO($rkAttrName-mediaBase, false)} {
+#{fnRuleMO($rkrAttrNameMediaBase, false)} {
   @extend %oMedia;  
 }
 
-  #{fnRuleMO($rkAttrName-mediaImage)} {
+  #{fnRuleMO($rkrAttrNameMediaImage)} {
     @extend %oMedia_image;
   }
 
-  #{fnRuleMO($rkAttrName-mediaBody)} {
+  #{fnRuleMO($rkrAttrNameMediaBody)} {
     @extend %oMedia_body;
   }
 
-@if $rkMedia-useReversed {
-  #{fnRuleMO($rkAttrName-mediaReversed, false)} {
+@if $rkrMedia-useReversed {
+  #{fnRuleMO($rkrAttrNameMediaReversed, false)} {
     @extend %oMedia-rev;  
   }  
 }
 
-@if $rkMedia-useSticked {
-  #{fnRuleMO($rkAttrName-mediaSticked, false)} {
-    @extend %oMedia-sticked;  
+@if $rkrMediaUseSticked {
+  #{fnRuleMO($rkrAttrNameMediaSticked, false)} {
+    @extend %oMediaSticked;  
   }  
 }
 
-@if $rkMedia-useModifiers {
+@if $rkrMediaUseModifiers {
   @include mxMediaModifiers();
 }
 
 
 
-@if $rkMedia-useBlock {
-  #{fnRuleMO($rkAttrName-mediaBlock, false)} {
+@if $rkrMediaUseBlock {
+  #{fnRuleMO($rkrAttrNameMediaBlock, false)} {
     @extend %oMedia-block;  
   }  
 }
 
 
 
-@if $rkMedia-useInline {
-  #{fnRuleMO($rkAttrName-mediaInline, false)} {
-    #{fnRuleMO($rkAttrName-mediaImage)},
-    #{fnRuleMO($rkAttrName-mediaBody)}
+@if $rkrMediaUseInline {
+  #{fnRuleMO($rkrAttrNameMediaInline, false)} {
+    #{fnRuleMO($rkrAttrNameMediaImage)},
+    #{fnRuleMO($rkrAttrNameMediaBody)}
      {
       float: none;
       display: inline-block;
-      vertical-align: $rkMediaInline-align;
+      vertical-align: $rkrMediaInlineAlign;
     }
   }  
 }

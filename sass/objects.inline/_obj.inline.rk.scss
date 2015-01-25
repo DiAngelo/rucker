@@ -20,7 +20,7 @@
    */
 	%oInlineItem { 
 		display: inline-block;
-		vertical-align: $rkInline-align;
+		vertical-align: $rkInlineAlign;
 	}
 
 
@@ -43,7 +43,7 @@
  */
 %oInlineWithSplitter {
 	%oInlineItem:before {
-		content: '#{$rkInline-splitter}';
+		content: '#{$rkInlineSplitter}';
 	}
 }
 

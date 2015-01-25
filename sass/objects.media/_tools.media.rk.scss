@@ -14,7 +14,7 @@
     $prefix: '_';
   }
 
-  $param: $rkNsMedia + $prefix + $_inAttr;
+  $param: $rkrNsMedia + $prefix + $_inAttr;
   $response: fnAttributeRule(media, $param);
 
   @return $response;
@@ -29,12 +29,12 @@
 
 @mixin mxMediaModifiers() {
 
-  $rkMapMediaSpacing: fnModifiersMap(5px, 5px, false);
+  $rkrMapMediaSpacing: fnModifiersMap(5px, 5px, false);
 
-  @each $key,$val in $rkMapMediaSpacing {
+  @each $key,$val in $rkrMapMediaSpacing {
 
     /* Media object base with #{$key} modifier */
-    #{fnRuleMO(map-get($rkModifiersNaming, $key), false)} {
+    #{fnRuleMO(map-get($rkrModifiersNaming, $key), false)} {
 
       > #{fnRuleMO(img)}
       { margin-right: $val; }
@@ -46,7 +46,7 @@
         }
       }
 
-      &#{fnRuleMO($rkAttrName-mediaBlock, false)} {
+      &#{fnRuleMO($rkAttrNameMediaBlock, false)} {
         > #{fnRuleMO(img)}
         { margin-bottom: $val; }
         

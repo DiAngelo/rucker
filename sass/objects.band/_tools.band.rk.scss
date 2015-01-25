@@ -17,7 +17,7 @@
       $prefix: '_';
     }
 
-    $param: $rkNsBand + $prefix + $_inAttr;
+    $param: $rkrNsBand + $prefix + $_inAttr;
     $response: fnAttributeRule(band, $param);
 
   }
@@ -34,12 +34,12 @@
 
 @mixin mxBandModifiers() {
 
-  $rkBandMediaSpacing: fnModifiersMap(5px, 5px, true);
+  $rkrBandMediaSpacing: fnModifiersMap(5px, 5px, true);
 
-  @each $key,$val in $rkBandMediaSpacing {
+  @each $key,$val in $rkrBandMediaSpacing {
 
     /* Box Object with '#{$key}' modifier */
-    #{fnRuleBand(map-get($rkModifiersNaming, $key), false)} {
+    #{fnRuleBand(map-get($rkrModifiersNaming, $key), false)} {
       padding-top: $val; 
       padding-bottom: $val;
     }

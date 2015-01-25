@@ -12,12 +12,12 @@
   $response: fnAttributeRule($attr, null);
 
   @if $_inAttr != null {
-    $prefix: $rkNsWrapper + '-';
+    $prefix: '-';
     @if $_inIsElem {
-      $prefix: $rkNsWrapper + '_';
+      $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
+    $param: $rkrNsWrapper + $prefix + $_inAttr;
     $response: fnAttributeRule($attr, $param);
 
   }
@@ -35,12 +35,12 @@
 
 @mixin mxWrapperModifiers() {
 
-  $rkWrapperSpacing: fnModifiersMap(5px, 10px, false);
+  $rkrWrapperSpacing: fnModifiersMap(5px, 10px, false);
 
-  @each $key,$gutter in $rkWrapperSpacing {
+  @each $key,$gutter in $rkrWrapperSpacing {
 
     /* Wrapper Layout with '#{$key}' modifier */
-    #{fnRuleWrapper(map-get($rkModifiersNaming, $key), false)} {
+    #{fnRuleWrapper(map-get($rkrModifiersNaming, $key), false)} {
       
       padding-left:  $gutter;
       padding-right: $gutter;

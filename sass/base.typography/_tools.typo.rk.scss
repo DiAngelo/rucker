@@ -8,7 +8,7 @@
 //
 @function fnRuleTypo($_inAttr, $_inIsElem: true) {
 
-  $bem: fnBEM($rkAttrName-typography, $_inAttr, $_inIsElem);
+  $bem: fnBEM($rkrAttrName-typography, $_inAttr, $_inIsElem);
   $response: fnAttributeRule(helper, $bem);
 
   @return $response;
@@ -21,11 +21,11 @@
 //
 @mixin mxTypoModifiers() {
 
-  $rkMapTypoSpacing: fnModifiersMap(14px, 4px, false);
+  $rkrMapTypoSpacing: fnModifiersMap(14px, 4px, false);
 
-  @each $key,$val in $rkMapTypoSpacing {
+  @each $key,$val in $rkrMapTypoSpacing {
     /* Media object with #{$key} modifier */
-    #{fnRuleTypo(map-get($rkModifiersNaming, $key), false)} {
+    #{fnRuleTypo(map-get($rkrModifiersNaming, $key), false)} {
 			font-size: $val;    
     }
   }
