@@ -18,7 +18,7 @@
       $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
+    $param: $rkrNsGrid + $prefix + $_inAttr;
     $response: fnAttributeRule($attr, $param);
 
   }
@@ -36,12 +36,12 @@
 
 @mixin mxGridModifiers() {
 
-  $rkGridSpacing: fnModifiersMap(5px, 10px, false);
+  $rkrGridSpacing: fnModifiersMap(5px, 10px, false);
 
-  @each $key,$gutter in $rkGridSpacing {
+  @each $key,$gutter in $rkrGridSpacing {
 
     /* Grid Layout with '#{$key}' modifier */
-    #{fnRuleGrid(map-get($rkModifiersNaming, $key), false)} {
+    #{fnRuleGrid(map-get($rkrModifiersNaming, $key), false)} {
       
       padding-left:  $gutter;
       padding-right: $gutter;
