@@ -43,13 +43,18 @@ $rkBtnColor - the color of the button
 ```
 
 *List of used abbreviations and their meaning*
+
 | Abbreviation | Word |
 | --- | --- |
 | attr | attribute |
+| com | component |
+| doc | document |
+| mod | module |
 | ns | namespace |
+| obj | object |
 | stkd | sticked |
 
-_ This table should be updated whenever new abbreviations are used _
+_This table should be updated whenever new abbreviations are used_
 
 ### Module specific variables
 
