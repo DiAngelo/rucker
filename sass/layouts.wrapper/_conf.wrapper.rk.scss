@@ -2,6 +2,9 @@
 // Wrapper Layout configuration
 //
 
+// Wrapper's namespace 
+$rkNsWrapper: $rkNamespace !default;
+
 $rkAttrType-wrapper: layout  !default;
 $rkAttrName-wrapper: wrapper !default;
 

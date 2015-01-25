@@ -16,7 +16,7 @@
       $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
+    $param: $rkNsBox + $prefix + $_inAttr;
     $response: fnAttributeRule(box, $param);
 
   }

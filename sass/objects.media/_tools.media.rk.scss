@@ -14,7 +14,7 @@
     $prefix: '_';
   }
 
-  $param: $prefix + $_inAttr;
+  $param: $rkNsMedia + $prefix + $_inAttr;
   $response: fnAttributeRule(media, $param);
 
   @return $response;

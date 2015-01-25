@@ -17,7 +17,7 @@
       $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
+    $param: $rkNsBand + $prefix + $_inAttr;
     $response: fnAttributeRule(band, $param);
 
   }

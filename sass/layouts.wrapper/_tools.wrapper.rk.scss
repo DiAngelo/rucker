@@ -8,13 +8,13 @@
 //
 @function fnRuleWrapper($_inAttr, $_inIsElem: true) {
 
-	$attr: wrapper;
+  $attr: wrapper;
   $response: fnAttributeRule($attr, null);
 
   @if $_inAttr != null {
-    $prefix: '-';
+    $prefix: $rkNsWrapper + '-';
     @if $_inIsElem {
-      $prefix: '_';
+      $prefix: $rkNsWrapper + '_';
     }
 
     $param: $prefix + $_inAttr;
