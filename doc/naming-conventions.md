@@ -41,6 +41,16 @@ GLobal variables may use only abbreviations that are easy to understand
 $rkAttName - the attribute name
 $rkBtnColor - the color of the button
 ```
+
+*List of used abbreviations and their meaning*
+| Abbreviation | Word |
+| --- | --- |
+| attr | attribute |
+| ns | namespace |
+| stkd | sticked |
+
+_ This table should be updated whenever new abbreviations are used _
+
 ### Module specific variables
 
 Use the module name right after the global namespace (rkr) so it is easier to detect when we use a module variable or a global one
