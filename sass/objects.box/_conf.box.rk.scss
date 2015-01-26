@@ -2,9 +2,12 @@
 // Box Object configurations
 //
 
-$rkAttrType-box: object !default;
-$rkAttrName-box: box !default;
+// Box namespace
+$rkrBoxNs: $rkrNamespace !default;
 
-$rkMapAttributesNaming: fnRegisterAttribute(box, $rkAttrType-box, $rkAttrName-box);
+$rkrBoxAttrType: object !default;
+$rkrBoxAttrName: box !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(box, $rkrBoxAttrType, $rkrBoxAttrName);
 
 

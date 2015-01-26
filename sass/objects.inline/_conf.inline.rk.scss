@@ -2,19 +2,22 @@
 // Inline Object configuration
 //
 
-$rkAttrType-inline:         object 			!default;
-$rkAttrName-inline :       	inline 		!default;
-$rkAttrName-inlineParent:		list			!default;
-$rkAttrName-inlineSplitter:	splitter	!default;
+// Band namespace
+$rkrInlineNs: $rkrNamespace !default;
+
+$rkrInlineAttrType:          object 	  !default;
+$rkrInlineAttrName:        	inline 		!default;
+$rkrInlineAttrNameParent:		list			!default;
+$rkrInlineAttrNameSplitter:	splitter	!default;
 
 // Register attribute type for 'inline'
-$rkMapAttributesNaming: fnRegisterAttribute(inline, $rkAttrType-inline, $rkAttrName-inline);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(inline, $rkrInlineAttrType, $rkrInlineAttrName);
 
 // vertical align of text inside items
 // Possible values:
 //		* top
 //		* middle (default)
 //		* bottom
-$rkInline-align: middle !default; 
+$rkrInlineAlign: middle !default; 
 
-$rkInline-splitter: '•' !default; 
+$rkrInlineSplitter: '•' !default; 

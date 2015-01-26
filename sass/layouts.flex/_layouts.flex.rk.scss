@@ -1,3 +1,25 @@
+/*------------------------------------*\
+    #Flex Layout
+\*------------------------------------*/
 //
-// Flex Layout
+// Silent classes
 //
+
+%lFlexWrapper {
+  display: -webkit-flex;
+  display:         flex;
+}
+
+
+
+//
+// Define rules
+//
+
+#{rkrFnFlexRule(wrapper)} {
+  @extend %lFlexWrapper;
+}
+
+
+
+@include rkrMxFlexModifiers();

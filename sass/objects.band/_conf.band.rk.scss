@@ -1,10 +1,13 @@
 //
-// Box Object configurations
+// Band Object configurations
 //
 
-$rkAttrType-band: object !default;
-$rkAttrName-band: band !default;
+// Band namespace
+$rkrBandNs: $rkrNamespace !default;
 
-$rkMapAttributesNaming: fnRegisterAttribute(band, $rkAttrType-band, $rkAttrName-band);
+$rkrBandAttrType: object !default;
+$rkrBandAttrName: band !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(band, $rkrBandAttrType, $rkrBandAttrName);
 
 

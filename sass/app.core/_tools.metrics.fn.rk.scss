@@ -2,14 +2,14 @@
 // Metrics functions
 //
 
-@function fnModifiersMap($_inStart, $_inStep, $_inProgressiveIncrement: false) {
+@function rkrFnMModifiers($_inStart, $_inStep, $_inProgressiveIncrement: false) {
 
-  $mapResponse: ();
+  $mResponse: ();
   
   $lastVal: $_inStart;
 
-  @each $item in $rkBasicModifiers {
-    $index: index($rkBasicModifiers, $item) - 1;
+  @each $item in $rkrLBasicModifiers {
+    $index: index($rkrLBasicModifiers, $item) - 1;
 
     $val: $lastVal + $index * $_inStep;
 
@@ -17,8 +17,8 @@
       $lastVal: $val;
     }
     
-    $mapResponse: map-merge($mapResponse, ($item: $val));
+    $mResponse: map-merge($mResponse, ($item: $val));
   }
 
-  @return $mapResponse;
+  @return $mResponse;
 }

@@ -3,12 +3,12 @@
 //
 
 //
-// fnRuleBO
+// rkrFnRuleBO
 // Generate Media Object related rule
 //
-@function fnRuleBO($_inAttr, $_inIsElem: true) {
+@function rkrFnBoxRule($_inAttr, $_inIsElem: true) {
 
-  $response: fnAttributeRule(box, null);
+  $response: rkrFnAttributeRule(box, null);
 
   @if $_inAttr != null {
     $prefix: '-';
@@ -16,8 +16,8 @@
       $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
-    $response: fnAttributeRule(box, $param);
+    $param: $rkrBoxNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule(box, $param);
 
   }
 
@@ -27,18 +27,18 @@
 
 
 //
-// mxMediaModifiers
+// rkrMxMediaModifiers
 // Generate media modifiers
 //
 
-@mixin mxBoxModifiers() {
+@mixin rkrMxBoxModifiers() {
 
-  $rkBoxMediaSpacing: fnModifiersMap(5px, 5px, true);
+  $mBoxMediaSpacing: rkrFnMModifiers(5px, 5px, true);
 
-  @each $key,$val in $rkBoxMediaSpacing {
+  @each $key,$val in $mBoxMediaSpacing {
 
     /* Box Object with '#{$key}' modifier */
-    #{fnRuleBO(map-get($rkModifiersNaming, $key), false)} {
+    #{rkrFnBoxRule(map-get($rkrMModifiersNaming, $key), false)} {
       padding: $val; 
     }
   }

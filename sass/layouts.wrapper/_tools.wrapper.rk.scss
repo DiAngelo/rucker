@@ -3,13 +3,13 @@
 //
 
 //
-// fnRuleWrapper
+// rkrFnRuleWrapper
 // Generate Media Object related rule
 //
-@function fnRuleWrapper($_inAttr, $_inIsElem: true) {
+@function rkrFnWrapperRule($_inAttr, $_inIsElem: true) {
 
-	$attr: wrapper;
-  $response: fnAttributeRule($attr, null);
+  $attr: wrapper;
+  $response: rkrFnAttributeRule($attr, null);
 
   @if $_inAttr != null {
     $prefix: '-';
@@ -17,8 +17,8 @@
       $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
-    $response: fnAttributeRule($attr, $param);
+    $param: $rkrWrapperNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule($attr, $param);
 
   }
 
@@ -29,23 +29,23 @@
 
 
 //
-// mxWrapperModifiers
+// rkrMxWrapperModifiers
 // Generate wrapper modifiers
 //
 
-@mixin mxWrapperModifiers() {
+@mixin rkrMxWrapperModifiers() {
 
-  $rkWrapperSpacing: fnModifiersMap(5px, 10px, false);
+  $mWrapperSpacing: fnModifiersMap(5px, 10px, false);
 
-  @each $key,$gutter in $rkWrapperSpacing {
+  @each $key,$gutter in $mWrapperSpacing {
 
     /* Wrapper Layout with '#{$key}' modifier */
-    #{fnRuleWrapper(map-get($rkModifiersNaming, $key), false)} {
+    #{rkrFnWrapperRule(map-get($rkrMModifiersNaming, $key), false)} {
       
       padding-left:  $gutter;
       padding-right: $gutter;
 
-      #{fnRuleWrapper(row)} {
+      #{rkrFnWrapperRule(row)} {
         margin-left:  -$gutter;
         margin-right: -$gutter;
       }

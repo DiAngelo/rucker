@@ -4,58 +4,29 @@
 // Define which data-[name] to use for our type of attributes
 //
 
+// HTML atribute prefix 
+$rkrAttributesHandler: 'data' !default;
+
+$rkrAttributesPrefix: $rkrAttributesHandler + '-';
+
 
 //
 // Generic attributes
 //
 
-$rkMapAttributesNaming: (
+$rkrMAttributesNaming: (
   helper: 'hlp',
   object: 'obj',
   component: 'com',
-  module: 'mod'
+  module: 'mod',
+  utility: 'utl'
 ) !default;
 
-$rk-attr--helper:     "hlp" !default;
-
-$rk-attr--object:     "obj" !default;
-
-$rk-attr--component:  "com" !default;
-
-$rk-attr--module:     "mod" !default;
-
-
-$rkAttrTypePrefixes: (
+$rkrMAttrTypePrefixes: (
 	layout:			'l',
 	object: 		'o',
 	component: 	'c',
 	module: 		'm',
 	utility: 		'u'
 ); 
-
-
-//
-// Constructing the attributes names
-//
-
-$rk-attr-name__prefix:     "data" !default;
-
-$rk-attr-name--separator:  "-";
-
-$rk-attr-name--helper:     $rk-attr-name__prefix + $rk-attr-name--separator + $rk-attr--helper ;
-
-$rk-attr-name--object:     $rk-attr-name__prefix + $rk-attr-name--separator + $rk-attr--object ;
-
-$rk-attr-name--component:  $rk-attr-name__prefix + $rk-attr-name--separator + $rk-attr--component ;
-
-$rk-attr-name--module:     $rk-attr-name__prefix + $rk-attr-name--separator + $rk-attr--module ;
-
-
-
-//
-// Possible values prefixes that suggests the data type
-//
-
-$rk-helper-text-prefix:       'text';
-$rk-helper-typography-prefix: 'typo';
 
