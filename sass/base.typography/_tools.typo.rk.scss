@@ -3,15 +3,27 @@
 //
 
 //
-// fnRuleTypo
+// fnTypoRule
 // Generate typography related rule
 //
-@function fnRuleTypo($_inAttr, $_inIsElem: true) {
+@function fnTypoRule($_inAttr, $_inIsElem: true) {
 
-  $bem: fnBEM($rkAttrName-typography, $_inAttr, $_inIsElem);
-  $response: fnAttributeRule(helper, $bem);
+  $attr: $rkTypoAttrName;
+  $response: fnAttributeRule($attr, null);
+
+  @if $_inAttr != null {
+    $prefix: '-';
+    @if $_inIsElem {
+      $prefix: '_';
+    }
+
+    $param: $prefix + $_inAttr;
+    $response: fnAttributeRule($attr, $param);
+
+  }
 
   @return $response;
+
 }
 
 
@@ -21,11 +33,11 @@
 //
 @mixin mxTypoModifiers() {
 
-  $rkMapTypoSpacing: fnModifiersMap(14px, 4px, false);
+  $mTypoSpacing: fnModifiersMap(14px, 4px, false);
 
-  @each $key,$val in $rkMapTypoSpacing {
+  @each $key,$val in $mTypoSpacing {
     /* Media object with #{$key} modifier */
-    #{fnRuleTypo(map-get($rkModifiersNaming, $key), false)} {
+    #{fnTypoRule(map-get($rkModifiersNaming, $key), false)} {
 			font-size: $val;    
     }
   }

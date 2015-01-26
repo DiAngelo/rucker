@@ -14,12 +14,12 @@
  * 10. Heading 
  */
 
-#{fnRuleTypo(heading--h1, false)} { @extend %h1; }
-#{fnRuleTypo(heading--h2, false)} { @extend %h2; }
-#{fnRuleTypo(heading--h3, false)} { @extend %h3; }
-#{fnRuleTypo(heading--h4, false)} { @extend %h4; }
-#{fnRuleTypo(heading--h5, false)} { @extend %h5; }
-#{fnRuleTypo(heading--h6, false)} { @extend %h6; }
+#{fnTypoRule(heading--h1, false)} { @extend %h1; }
+#{fnTypoRule(heading--h2, false)} { @extend %h2; }
+#{fnTypoRule(heading--h3, false)} { @extend %h3; }
+#{fnTypoRule(heading--h4, false)} { @extend %h4; }
+#{fnTypoRule(heading--h5, false)} { @extend %h5; }
+#{fnTypoRule(heading--h6, false)} { @extend %h6; }
 
 @include mxTypoModifiers();
 
@@ -27,7 +27,7 @@
  * 20. Lead
  * todo
  */
-#{fnRuleTypo(lead)} { 
-	font-size: $rkTypoSize-base;
+#{fnTypoRule(lead)} { 
+	font-size: $rkTypoSzBase;
 	padding-bottom: $rkSpacing-base;
 }
