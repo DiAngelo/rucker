@@ -11,9 +11,9 @@
   $response: rkrFnAttributeRule(box, null);
 
   @if $_inAttr != null {
-    $prefix: '-';
+    $prefix: '--';
     @if $_inIsElem {
-      $prefix: '_';
+      $prefix: '__';
     }
 
     $param: $rkrBoxNs + $prefix + $_inAttr;

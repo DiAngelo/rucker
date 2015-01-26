@@ -12,9 +12,9 @@
   $response: rkrFnAttributeRule(band, null);
 
   @if $_inAttr != null {
-    $prefix: '-';
+    $prefix: '--';
     @if $_inIsElem {
-      $prefix: '_';
+      $prefix: '__';
     }
 
     $param: $rkrBandNs + $prefix + $_inAttr;

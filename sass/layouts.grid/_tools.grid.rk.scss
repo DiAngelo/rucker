@@ -13,9 +13,9 @@
   $response: rkrFnAttributeRule($attr, null);
 
   @if $_inAttr != null {
-    $prefix: '-';
+    $prefix: '--';
     @if $_inIsElem {
-      $prefix: '_';
+      $prefix: '__';
     }
 
     $param: $rkrGridNs + $prefix + $_inAttr;
