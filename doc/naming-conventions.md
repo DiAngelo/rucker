@@ -67,4 +67,15 @@ $rkrNamespace - a global variable
 $rkrBoxNs - a variable of the "Box" module
 ```
 
+### Variable types
+
+We should use types abbreviations as a prefix so we know what type of data to expect to find in a variable
+
+| Abbreviation | Type | Example |
+| --- | --- | --- |
+| M | map | $rkrMAttributes |
+| L | list | $rkrLNames |
+| R | rules | $rkrRMain |
+
+
 
