@@ -3,13 +3,13 @@
 //
 
 //
-// mxSizesSilent
+// rkrMxSizesSilent
 //
-@mixin mxSizesSilent() {
+@mixin rkrMxSizesSilent() {
 	
 	$lDefined: ();
 
-	@each $group in $rkrSizesGroups {
+	@each $group in $rkrSizesLGroups {
 
 		@for $i from 1 to $group {
 
@@ -32,9 +32,14 @@
 
 }
 
-@mixin mxSizesOutput() {
+
+
+//
+// rkrMxSizesOutput
+//
+@mixin rkrMxSizesOutput() {
 	
-	@each $group in $rkrSizesGroups {
+	@each $group in $rkrSizesLGroups {
 
 		@for $i from 1 to $group {
 

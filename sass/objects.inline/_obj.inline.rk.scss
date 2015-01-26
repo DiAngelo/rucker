@@ -50,9 +50,9 @@
 
 
 
-#{fnRuleIO(parent)} { @extend %oInlineParent; }
-#{fnRuleIO(item)}  	{ @extend %oInlineItem; 	}
+#{rkrFnInlineRule(parent)} { @extend %oInlineParent; }
+#{rkrFnInlineRule(item)}  	{ @extend %oInlineItem; 	}
 
-#{fnRuleIO(top 					, false)} { @extend %oInlineTop; 					}
-#{fnRuleIO(bottom 			, false)} { @extend %oInlineBottom; 			}
-#{fnRuleIO(with-splitter, false)} { @extend %oInlineWithSplitter; }
+#{rkrFnInlineRule(top 					, false)} { @extend %oInlineTop; 					}
+#{rkrFnInlineRule(bottom 			, false)} { @extend %oInlineBottom; 			}
+#{rkrFnInlineRule(with-splitter, false)} { @extend %oInlineWithSplitter; }

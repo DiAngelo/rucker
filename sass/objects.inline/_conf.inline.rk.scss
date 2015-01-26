@@ -3,15 +3,15 @@
 //
 
 // Band namespace
-$rkrNsInline: $rkrNamespace !default;
+$rkrInlineNs: $rkrNamespace !default;
 
-$rkrAttrTypeInline:          object 	  !default;
-$rkrAttrNameInline:        	inline 		!default;
-$rkrAttrNameInlineParent:		list			!default;
-$rkrAttrNameInlineSplitter:	splitter	!default;
+$rkrInlineAttrType:          object 	  !default;
+$rkrInlineAttrName:        	inline 		!default;
+$rkrInlineAttrNameParent:		list			!default;
+$rkrInlineAttrNameSplitter:	splitter	!default;
 
 // Register attribute type for 'inline'
-$rkrMapAttributesNaming: fnRegisterAttribute(inline, $rkrAttrTypeInline, $rkrAttrNameInline);
+$rkrMAttributesNaming: fnRegisterAttribute(inline, $rkrInlineAttrType, $rkrInlineAttrName);
 
 // vertical align of text inside items
 // Possible values:

@@ -4,13 +4,13 @@
 
 
 //
-// fnRuleGrid
+// rkrFnRuleGrid
 // Generate Media Object related rule
 //
-@function fnRuleGrid($_inAttr, $_inIsElem: true) {
+@function rkrFnGridRule($_inAttr, $_inIsElem: true) {
 
   $attr: grid;
-  $response: fnAttributeRule($attr, null);
+  $response: rkrFnAttributeRule($attr, null);
 
   @if $_inAttr != null {
     $prefix: '-';
@@ -18,8 +18,8 @@
       $prefix: '_';
     }
 
-    $param: $rkrNsGrid + $prefix + $_inAttr;
-    $response: fnAttributeRule($attr, $param);
+    $param: $rkrGridNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule($attr, $param);
 
   }
 
@@ -30,23 +30,23 @@
 
 
 //
-// mxGridModifiers
+// rkrMxGridModifiers
 // Generate grid modifiers
 //
 
-@mixin mxGridModifiers() {
+@mixin rkrMxGridModifiers() {
 
-  $rkrGridSpacing: fnModifiersMap(5px, 10px, false);
+  $mGridSpacing: fnModifiersMap(5px, 10px, false);
 
-  @each $key,$gutter in $rkrGridSpacing {
+  @each $key,$gutter in $mGridSpacing {
 
     /* Grid Layout with '#{$key}' modifier */
-    #{fnRuleGrid(map-get($rkrModifiersNaming, $key), false)} {
+    #{rkrFnGridRule(map-get($rkrMModifiersNaming, $key), false)} {
       
       padding-left:  $gutter;
       padding-right: $gutter;
 
-      #{fnRuleGrid(row)} {
+      #{rkrFnGridRule(row)} {
         margin-left:  -$gutter;
         margin-right: -$gutter;
       }

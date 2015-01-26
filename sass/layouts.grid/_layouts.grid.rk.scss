@@ -34,15 +34,15 @@
 
 
 
-#{fnRuleGrid(row)} {
+#{rkrFnGridRule(row)} {
   @extend %lGridRow;
 }
 
-#{fnRuleGrid(float, false)} {
+#{rkrFnGridRule(float, false)} {
   @extend %lGridFloat;
 }
 
-#{fnRuleGrid(column)} {
+#{rkrFnGridRule(column)} {
   @extend %lGridColumn
 }
 

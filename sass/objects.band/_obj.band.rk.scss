@@ -6,8 +6,8 @@
   display: block;
 }
 
-#{fnRuleBand(null, false)} {
+#{rkrFnBandRule(null, false)} {
   @extend %oBand;
 }
 
-@include mxBandModifiers();
+@include fnMxBandModifiers();

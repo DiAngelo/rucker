@@ -3,12 +3,12 @@
 //
 
 // Band namespace
-$rkrNsGrid: $rkrNamespace !default;
+$rkrGridNs: $rkrNamespace !default;
 
-$rkrAttrTypeGrid: layout  !default;
-$rkrAttrNameGrid: grid !default;
+$rkrGridAttrType: layout  !default;
+$rkrGridAttrName: grid !default;
 
-$rkrMapAttributesNaming: fnRegisterAttribute(grid, $rkrAttrTypeGrid, $rkrAttrNameGrid);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(grid, $rkrGridAttrType, $rkrGridAttrName);
 
 $rkrGridGutter: 20px;
 

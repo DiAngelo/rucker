@@ -6,8 +6,8 @@
   display: block;
 }
 
-#{fnRuleBO(null, false)} {
+#{rkrFnBoxRule(null, false)} {
   @extend %oBox;
 }
 
-@include mxBoxModifiers();
+@include fnMxBoxModifiers();

@@ -3,11 +3,11 @@
 //
 
 // Band namespace
-$rkrNsBand: $rkrNamespace !default;
+$rkrBandNs: $rkrNamespace !default;
 
-$rkrAttrType-band: object !default;
-$rkrAttrName-band: band !default;
+$rkrBandAttrType: object !default;
+$rkrBandAttrName: band !default;
 
-$rkrMapAttributesNaming: fnRegisterAttribute(band, $rkrAttrType-band, $rkrAttrName-band);
+$rkrMAttributesNaming: fnRegisterAttribute(band, $rkrBandAttrType, $rkrBandAttrName);
 
 
