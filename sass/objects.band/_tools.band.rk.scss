@@ -4,10 +4,10 @@
 //
 
 //
-// rkrFnRuleBO
-// Generate Media Object related rule
+// rkrFnBandRule
+// Generate Band Object related rule
 //
-@function rkrFnRuleBand($_inAttr, $_inIsElem: true) {
+@function rkrFnBandRule($_inAttr, $_inIsElem: true) {
 
   $response: rkrFnAttributeRule(band, null);
 
@@ -33,12 +33,12 @@
 //
 @mixin rkrMxBandModifiers() {
 
-  $mBandMediaSpacing: fnModifiersMap(5px, 5px, true);
+  $mBandMediaSpacing: rkrFnMModifiers(5px, 5px, true);
 
   @each $key,$val in $mBandMediaSpacing {
 
     /* Box Object with '#{$key}' modifier */
-    #{rkrFnRuleBand(map-get($rkrMModifiersNaming, $key), false)} {
+    #{rkrFnBandRule(map-get($rkrMModifiersNaming, $key), false)} {
       padding-top: $val; 
       padding-bottom: $val;
     }

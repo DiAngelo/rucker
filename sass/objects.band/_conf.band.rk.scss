@@ -8,6 +8,6 @@ $rkrBandNs: $rkrNamespace !default;
 $rkrBandAttrType: object !default;
 $rkrBandAttrName: band !default;
 
-$rkrMAttributesNaming: fnRegisterAttribute(band, $rkrBandAttrType, $rkrBandAttrName);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(band, $rkrBandAttrType, $rkrBandAttrName);
 
 

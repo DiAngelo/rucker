@@ -8,6 +8,6 @@ $rkrBoxNs: $rkrNamespace !default;
 $rkrBoxAttrType: object !default;
 $rkrBoxAttrName: box !default;
 
-$rkrMapAttributesNaming: fnRegisterAttribute(box, $rkrBoxAttrType, $rkrBoxAttrName);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(box, $rkrBoxAttrType, $rkrBoxAttrName);
 
 

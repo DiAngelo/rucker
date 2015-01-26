@@ -44,7 +44,7 @@
 		@for $i from 1 to $group {
 
 			$selector: round($i / $group * 100);			
-			[data-l-size="#{$rkrSizesNamespace}-#{$i}/#{$group}"] {
+			[data-l-size="#{$rkrSizesNs}-#{$i}/#{$group}"] {
 				@extend %lSize-#{$selector};
 			}
 

@@ -3,11 +3,11 @@
 //
 
 // Pack namespace
-$rkrNsPack: $rkrNamespace !default;
+$rkrPackNs: $rkrNamespace !default;
 
-$rkrAttrTypePack: object !default;
-$rkrAttrNamePack: pack !default;
+$rkrPackAttrType: object !default;
+$rkrPackAttrName: pack !default;
 
-$rkrMapAttributesNaming: fnRegisterAttribute(pack, $rkrAttrTypePack, $rkrAttrNamePack);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(pack, $rkrPackAttrType, $rkrPackAttrName);
 
 

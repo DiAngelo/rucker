@@ -16,7 +16,7 @@
  * Media object block definition
  */
 %oMedia { 
-  @extend %u-clearfix;
+  @extend %uClearfix;
   display: block;
 }
 
@@ -25,7 +25,7 @@
    */
   %oMedia_image {
     float: left;
-    margin-right: $rkrMetricsMediaGutter;
+    margin-right: $rkrMediaVGutter;
   }
 
   /**
@@ -43,7 +43,7 @@
   %oMedia_image {
     float: right;
     margin-right: 0;
-    margin-left: $rkrMetricsMediaGutter;
+    margin-left: $rkrMediaVGutter;
   }
 }
 
@@ -67,57 +67,63 @@
   %oMedia_image {
     float: none;
     margin-right: 0;
-    margin-bottom: $rkrMetricsMediaGutter; 
+    margin-bottom: $rkrMediaVGutter; 
   }
 
 }
 
-#{fnRuleMO($rkrAttrNameMediaBase, false)} {
+
+
+//
+// Define rules 
+//
+
+#{rkrFnMediaRule($rkrMediaAttrNameBase, false)} {
   @extend %oMedia;  
 }
 
-  #{fnRuleMO($rkrAttrNameMediaImage)} {
+  #{rkrFnMediaRule($rkrMediaAttrNameImage)} {
     @extend %oMedia_image;
   }
 
-  #{fnRuleMO($rkrAttrNameMediaBody)} {
+  #{rkrFnMediaRule($rkrMediaAttrNameBody)} {
     @extend %oMedia_body;
   }
 
-@if $rkrMedia-useReversed {
-  #{fnRuleMO($rkrAttrNameMediaReversed, false)} {
+@if $rkrMediaBUseReversed {
+  #{rkrFnMediaRule($rkrMediaAttrNameReversed, false)} {
     @extend %oMedia-rev;  
   }  
 }
 
-@if $rkrMediaUseSticked {
-  #{fnRuleMO($rkrAttrNameMediaSticked, false)} {
+@if $rkrMediaBUseSticked {
+  #{rkrFnMediaRule($rkrMediaAttrNameSticked, false)} {
     @extend %oMediaSticked;  
   }  
 }
 
-@if $rkrMediaUseModifiers {
-  @include mxMediaModifiers();
+@if $rkrMediaBUseModifiers {
+  @include rkrMxMediaModifiers();
 }
 
 
 
-@if $rkrMediaUseBlock {
-  #{fnRuleMO($rkrAttrNameMediaBlock, false)} {
+@if $rkrMediaBUseBlock {
+  #{rkrFnMediaRule($rkrMediaAttrNameBlock, false)} {
     @extend %oMedia-block;  
   }  
 }
 
 
 
-@if $rkrMediaUseInline {
-  #{fnRuleMO($rkrAttrNameMediaInline, false)} {
-    #{fnRuleMO($rkrAttrNameMediaImage)},
-    #{fnRuleMO($rkrAttrNameMediaBody)}
+@if $rkrMediaBUseInline {
+  #{rkrFnMediaRule($rkrMediaAttrNameInline, false)} {
+    #{rkrFnMediaRule($rkrMediaAttrNameImage)},
+    #{rkrFnMediaRule($rkrMediaAttrNameBody)}
      {
       float: none;
       display: inline-block;
-      vertical-align: $rkrMediaInlineAlign;
+      vertical-align: $rkrMediaVInlineAlign;
     }
   }  
 }

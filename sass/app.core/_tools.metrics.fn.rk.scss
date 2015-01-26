@@ -8,8 +8,8 @@
   
   $lastVal: $_inStart;
 
-  @each $item in $rkrMBasicModifiers {
-    $index: index($rkrMBasicModifiers, $item) - 1;
+  @each $item in $rkrLBasicModifiers {
+    $index: index($rkrLBasicModifiers, $item) - 1;
 
     $val: $lastVal + $index * $_inStep;
 

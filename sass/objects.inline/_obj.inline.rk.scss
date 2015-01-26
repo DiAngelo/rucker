@@ -20,7 +20,7 @@
    */
 	%oInlineItem { 
 		display: inline-block;
-		vertical-align: $rkInlineAlign;
+		vertical-align: $rkrInlineAlign;
 	}
 
 
@@ -43,7 +43,7 @@
  */
 %oInlineWithSplitter {
 	%oInlineItem:before {
-		content: '#{$rkInlineSplitter}';
+		content: '#{$rkrInlineSplitter}';
 	}
 }
 
@@ -54,5 +54,5 @@
 #{rkrFnInlineRule(item)}  	{ @extend %oInlineItem; 	}
 
 #{rkrFnInlineRule(top 					, false)} { @extend %oInlineTop; 					}
-#{rkrFnInlineRule(bottom 			, false)} { @extend %oInlineBottom; 			}
-#{rkrFnInlineRule(with-splitter, false)} { @extend %oInlineWithSplitter; }
+#{rkrFnInlineRule(bottom 		  	, false)} { @extend %oInlineBottom; 			}
+#{rkrFnInlineRule(with-splitter , false)} { @extend %oInlineWithSplitter; }

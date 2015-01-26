@@ -11,7 +11,7 @@ $rkrInlineAttrNameParent:		list			!default;
 $rkrInlineAttrNameSplitter:	splitter	!default;
 
 // Register attribute type for 'inline'
-$rkrMAttributesNaming: fnRegisterAttribute(inline, $rkrInlineAttrType, $rkrInlineAttrName);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(inline, $rkrInlineAttrType, $rkrInlineAttrName);
 
 // vertical align of text inside items
 // Possible values:

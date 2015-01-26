@@ -3,12 +3,12 @@
 //
 
 //
-// fnRulePack
+// rkrFnPackRule
 // Generate Pack Object related rule
 //
-@function fnRulePack($_inAttr, $_inIsElem: true) {
+@function rkrFnPackRule($_inAttr, $_inIsElem: true) {
 
-  $response: fnAttributeRule(pack, null);
+  $response: rkrFnAttributeRule(pack, null);
 
   @if $_inAttr != null {
     $prefix: '-';
@@ -16,8 +16,8 @@
       $prefix: '_';
     }
 
-    $param: $rkrNsPack + $prefix + $_inAttr;
-    $response: fnAttributeRule(pack, $param);
+    $param: $rkrPackNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule(pack, $param);
 
   }
 
@@ -27,18 +27,18 @@
 
 
 //
-// mxMediaModifiers
+// rkrMxPackModifiers
 // Generate media modifiers
 //
 
-@mixin mxPackModifiers() {
+@mixin rkrMxPackModifiers() {
 
-  $rkrPackMediaSpacing: fnModifiersMap(5px, 5px);
+  $mPackSpacing: fnModifiersMap(5px, 5px);
 
-  @each $key,$val in $rkrPackMediaSpacing {
+  @each $key,$val in $mPackSpacing {
 
     /* Pack Object with '#{$key}' modifier */
-    #{fnRulePack(map-get($rkrModifiersNaming, $key), false)} {
+    #{rkrFnPackRule(map-get($rkrMModifiersNaming, $key), false)} {
       border-spacing: $val;
     }
   }

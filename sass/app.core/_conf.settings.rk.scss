@@ -24,6 +24,6 @@ $rkrVSpacingStart: 5px;
 // The step to increase to the next modifier
 $rkrVSpacingStep: 5px;
 
-$rkrMSpacing: fnModifiersMap($rkrVSpacingStart, $rkrVSpacingStep, true);
+$rkrMSpacing: rkrFnMModifiers($rkrVSpacingStart, $rkrVSpacingStep, true);
 
-$rkrVSpacingBase: map-get($rkrMapSpacing, 'base');
+$rkrVSpacingBase: map-get($rkrMSpacing, 'base');

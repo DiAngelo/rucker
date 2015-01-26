@@ -33,12 +33,12 @@
 
 @mixin rkrMxBoxModifiers() {
 
-  $mBoxMediaSpacing: fnModifiersMap(5px, 5px, true);
+  $mBoxMediaSpacing: rkrFnMModifiers(5px, 5px, true);
 
   @each $key,$val in $mBoxMediaSpacing {
 
     /* Box Object with '#{$key}' modifier */
-    #{rkrFnBoxRule(map-get($rkrModifiersNaming, $key), false)} {
+    #{rkrFnBoxRule(map-get($rkrMModifiersNaming, $key), false)} {
       padding: $val; 
     }
   }
