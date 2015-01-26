@@ -76,6 +76,9 @@ We should use types abbreviations as a prefix so we know what type of data to ex
 | M | map | $rkrMAttributes |
 | L | list | $rkrLNames |
 | R | rules | $rkrRMain |
+| Fn | function | rkrFnGetData () |
+| Mx | mixin | rkrMxGenerate () |
+| \_in | input | rkrMxGenerate ($_inIndex) |
 
 
 
