@@ -98,7 +98,7 @@
 
 @if $rkrMediaBUseSticked {
   #{rkrFnMediaRule($rkrMediaAttrNameSticked, false)} {
-    @extend %oMediaSticked;  
+    @extend %oMedia-sticked;  
   }  
 }
 

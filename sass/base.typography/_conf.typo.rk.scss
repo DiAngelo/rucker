@@ -8,7 +8,7 @@ $rkrTypoNs: $rkrNamespace !default;
 $rkTypoAttrType: utility  !default;
 $rkTypoAttrName: typo     !default;
 
-$rkMapAttributesNaming: fnRegisterAttribute(typo, $rkTypoAttrType, $rkTypoAttrName);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(typo, $rkTypoAttrType, $rkTypoAttrName);
 
 $rkTypoSzBase: 16px !default;
 

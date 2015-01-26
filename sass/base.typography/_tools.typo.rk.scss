@@ -3,13 +3,13 @@
 //
 
 //
-// fnTypoRule
+// rkrFnTypoRule
 // Generate typography related rule
 //
-@function fnTypoRule($_inAttr, $_inIsElem: true) {
+@function rkrFnTypoRule($_inAttr, $_inIsElem: true) {
 
-  $attr: $rkTypoAttrName;
-  $response: fnAttributeRule($attr, null);
+  $attr: typo;
+  $response: rkrFnAttributeRule($attr, null);
 
   @if $_inAttr != null {
     $prefix: '-';
@@ -17,8 +17,8 @@
       $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
-    $response: fnAttributeRule($attr, $param);
+    $param: $rkrTypoNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule($attr, $param);
 
   }
 
@@ -28,16 +28,16 @@
 
 
 //
-// mxTypoModifiers
+// rkrMxTypoModifiers
 // Generate typography modifiers
 //
-@mixin mxTypoModifiers() {
+@mixin rkrMxTypoModifiers() {
 
-  $mTypoSpacing: fnModifiersMap(14px, 4px, false);
+  $mTypoSpacing: rkrFnModifiersMap(14px, 4px, false);
 
   @each $key,$val in $mTypoSpacing {
     /* Media object with #{$key} modifier */
-    #{fnTypoRule(map-get($rkModifiersNaming, $key), false)} {
+    #{rkrFnTypoRule(map-get($rkrMModifiersNaming, $key), false)} {
 			font-size: $val;    
     }
   }
