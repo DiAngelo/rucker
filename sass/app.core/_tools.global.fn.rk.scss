@@ -8,15 +8,18 @@
 // TODO: comment parameters
 // TODO: use variable vor 'data'
 //
-@function fnAttributeRule ($_inType, $_inAttribute)
+@function rkrFnAttributeRule ($_inType, $_inAttribute)
 {
-	@if map-has-key($rkMapAttributesNaming, $_inType) {
-  	  $x: map-get($rkMapAttributesNaming, $_inType);
+	@if map-has-key($rkrMAttributesNaming, $_inType) {
+
+  	  $x: map-get($rkrMAttributesNaming, $_inType);
+
       @if $_inAttribute != null {
-        @return '[data-' + $x + '~="'+$_inAttribute+'"]';
+        @return '[' +$rkrAttributesPrefix + $x + '~="'+$_inAttribute+'"]';
       } @else {
-        @return '[data-' + $x + ']'; 
+        @return '[' + $rkrAttributesPrefix + $x + ']'; 
       }
+
 	}
 
 	@else {
@@ -31,24 +34,26 @@
 //  $_inAttribute - The attribute tu be added to the main element
 //  $_inIsElement - TRUE - is element use "__" ; FALSE - is modifier use "--"
 //
-@function fnBEM ($_inBlock, $_inAttribute, $_inIsElement: true)
+@function rkrFnBEM ($_inBlock, $_inAttribute, $_inIsElement: true)
 {
   $splitter: '--';
+
   @if ($_inIsElement) {
     $splitter: '__';
   }
+
   $response: $_inBlock + $splitter + $_inAttribute;
 
   @return $response;
 }
 
 //
-// fnRegisterAttribute
+// rkrFnRegisterAttribute
 // Registers an attribute name to be used next to 'data-'
 //
-@function fnRegisterAttribute($_inAttr, $_inType, $_inName)
+@function rkrFnRegisterAttribute($_inAttr, $_inType, $_inName)
 {
-  $attr: map-get($rkAttrTypePrefixes, $_inType) + '-' + $_inName;
-  $rkMapAttributesNaming: map-merge($rkMapAttributesNaming, ($_inAttr: $attr));
-  @return $rkMapAttributesNaming;
+  $attr: map-get($rkrMAttrTypePrefixes, $_inType) + '-' + $_inName;
+  $rkrMAttributesNaming: map-merge($rkrMAttributesNaming, ($_inAttr: $attr));
+  @return $rkrMAttributesNaming;
 }

@@ -3,10 +3,10 @@
 //
 
 // variable used in attribute naming
-$rkAttrName-text: 'txt';
+$rkrTextAttrName: 'txt';
 
-$rkAttrType-text: utility;
+$rkrTextAttrType: utility;
 
 
 // Register attribute type for media
-$rkMapAttributesNaming: fnRegisterAttribute(text, $rkAttrType-text, $rkAttrName-text);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(text, $rkrTextAttrType, $rkrTextAttrName);

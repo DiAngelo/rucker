@@ -1,3 +1,55 @@
 //
 // Grid Layout Tools
 //
+
+
+//
+// rkrFnRuleGrid
+// Generate Media Object related rule
+//
+@function rkrFnGridRule($_inAttr, $_inIsElem: true) {
+
+  $attr: grid;
+  $response: rkrFnAttributeRule($attr, null);
+
+  @if $_inAttr != null {
+    $prefix: '-';
+    @if $_inIsElem {
+      $prefix: '_';
+    }
+
+    $param: $rkrGridNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule($attr, $param);
+
+  }
+
+  @return $response;
+
+}
+
+
+
+//
+// rkrMxGridModifiers
+// Generate grid modifiers
+//
+
+@mixin rkrMxGridModifiers() {
+
+  $mGridSpacing: fnModifiersMap(5px, 10px, false);
+
+  @each $key,$gutter in $mGridSpacing {
+
+    /* Grid Layout with '#{$key}' modifier */
+    #{rkrFnGridRule(map-get($rkrMModifiersNaming, $key), false)} {
+      
+      padding-left:  $gutter;
+      padding-right: $gutter;
+
+      #{rkrFnGridRule(row)} {
+        margin-left:  -$gutter;
+        margin-right: -$gutter;
+      }
+    }
+  }
+}

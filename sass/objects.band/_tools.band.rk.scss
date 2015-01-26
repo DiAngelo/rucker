@@ -4,12 +4,12 @@
 //
 
 //
-// fnRuleBO
-// Generate Media Object related rule
+// rkrFnBandRule
+// Generate Band Object related rule
 //
-@function fnRuleBand($_inAttr, $_inIsElem: true) {
+@function rkrFnBandRule($_inAttr, $_inIsElem: true) {
 
-  $response: fnAttributeRule(band, null);
+  $response: rkrFnAttributeRule(band, null);
 
   @if $_inAttr != null {
     $prefix: '-';
@@ -17,8 +17,8 @@
       $prefix: '_';
     }
 
-    $param: $prefix + $_inAttr;
-    $response: fnAttributeRule(band, $param);
+    $param: $rkrBandNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule(band, $param);
 
   }
 
@@ -28,18 +28,17 @@
 
 
 //
-// mxMediaModifiers
+// rkrMxMediaModifiers
 // Generate media modifiers
 //
+@mixin rkrMxBandModifiers() {
 
-@mixin mxBandModifiers() {
+  $mBandMediaSpacing: rkrFnMModifiers(5px, 5px, true);
 
-  $rkBandMediaSpacing: fnModifiersMap(5px, 5px, true);
-
-  @each $key,$val in $rkBandMediaSpacing {
+  @each $key,$val in $mBandMediaSpacing {
 
     /* Box Object with '#{$key}' modifier */
-    #{fnRuleBand(map-get($rkModifiersNaming, $key), false)} {
+    #{rkrFnBandRule(map-get($rkrMModifiersNaming, $key), false)} {
       padding-top: $val; 
       padding-bottom: $val;
     }

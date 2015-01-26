@@ -6,7 +6,7 @@
  * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
  */
 
-%u-clearfix {
+%uClearfix {
 
     &:after {
         content: "";
@@ -16,6 +16,6 @@
 
 }
 
-#{'[' + $rk-attr-name--helper + '~="clearfix"]'} {
-  @extend %u-clearfix;
+#{rkrFnAttributeRule(utility, 'clearfix')} {
+  @extend %uClearfix;
 }

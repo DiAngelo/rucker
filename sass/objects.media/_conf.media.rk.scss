@@ -2,40 +2,43 @@
 // Media Object configuration
 //
 
-$rkAttrType-media:          object !default;
+// Media namespace
+$rkrMediaNs: $rkrNamespace !default;
+
+$rkrMediaAttrType:          object !default;
 
 // Configure media object naming - abbreviations used
-$rkAttrName-media:          'media' !default;
-$rkAttrName-mediaBase:      'base'  !default;
-$rkAttrName-mediaImage:     'img'   !default;
-$rkAttrName-mediaBody:      'body'  !default;
-$rkAttrName-mediaBlock:     'block' !default;
-$rkAttrName-mediaReversed:  'rev'   !default;
-$rkAttrName-mediaSticked:   'stkd'  !default;
-$rkAttrName-mediaInline:    'inline'!default;
+$rkrMediaAttrName:          'media' !default;
+$rkrMediaAttrNameBase:      'base'  !default;
+$rkrMediaAttrNameImage:     'img'   !default;
+$rkrMediaAttrNameBody:      'body'  !default;
+$rkrMediaAttrNameBlock:     'block' !default;
+$rkrMediaAttrNameReversed:  'rev'   !default;
+$rkrMediaAttrNameSticked:   'stkd'  !default;
+$rkrMediaAttrNameInline:    'inline'!default;
 
 // Register attribute type for media
-$rkMapAttributesNaming: fnRegisterAttribute(media, $rkAttrType-media, $rkAttrName-media);
+$rkrMAttributesNaming: rkrFnRegisterAttribute(media, $rkrMediaAttrType, $rkrMediaAttrName);
 
 // The gutter used near the image
-$rkMetrics-mediaGutter: $rkSpacing-base !default;
+$rkrMediaVGutter: $rkrVSpacingBase !default;
 
 // Media Object's  flags
 
 // Use media--block to display the image on top of the text
-$rkMedia-useBlock 	 : true !default;
+$rkrMediaBUseBlock 	 : true !default;
 
 // Use media--rev to reverse the position of the image
-$rkMedia-useReversed : true !default;
+$rkrMediaBUseReversed : true !default;
 
 // Use media--stck to stick the image to text
-$rkMedia-useSticked  : true !default;
+$rkrMediaBUseSticked  : true !default;
 
 // Use modifiers to change the space between image and text
-$rkMedia-useModifiers: true !default;
+$rkrMediaBUseModifiers: true !default;
 
 // Use media--inline to display image and body inline
-$rkMedia-useInline: true !default;
+$rkrMediaBUseInline: true !default;
 
 // Vertical align of inline image and body
-$rkMediaInline-align: middle;
+$rkrMediaVInlineAlign: middle;

@@ -2,6 +2,10 @@
     #Pack Object
 \*------------------------------------*/
 
+//
+// Define silent classes
+//
+
 %oPack {
   display: table;
   table-layout: fixed;
@@ -24,21 +28,27 @@
   }
 }
 
-#{fnRulePack(list)} {
+
+
+//
+// Define rules
+//
+
+#{rkrFnPackRule(list)} {
   @extend %oPack;
 }
 
-#{fnRulePack(item)} {
+#{rkrFnPackRule(item)} {
   @extend %oPackItem;
 }
 
 
-#{fnRulePack(top, false)} {
+#{rkrFnPackRule(top, false)} {
   @extend %oPackTop;
 }
 
-#{fnRulePack(bottom, false)} {
+#{rkrFnPackRule(bottom, false)} {
   @extend %oPackBottom;
 }
 
-@include mxPackModifiers();
+@include rkrMxPackModifiers();
