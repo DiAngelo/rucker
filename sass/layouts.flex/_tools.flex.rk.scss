@@ -1,3 +1,48 @@
 //
 // Flex Layout Tools
 //
+
+
+//
+// rkrFnFlexRule
+// Generate Flex Layout related rule
+//
+@function rkrFnFlexRule($_inAttr, $_inIsElem: true) {
+
+  $attr: flex;
+  $response: rkrFnAttributeRule($attr, null);
+
+  @if $_inAttr != null {
+    $prefix: '-';
+    @if $_inIsElem {
+      $prefix: '_';
+    }
+
+    $param: $rkrGridNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule($attr, $param);
+
+  }
+
+  @return $response;
+
+}
+
+
+
+//
+// rkrMxFlexModifiers
+// Generate grid modifiers
+//
+
+@mixin rkrMxFlexModifiers() {
+
+  $mFlexSpacing: fnModifiersMap(5px, 10px, false);
+
+  @each $key,$gutter in $mFlexSpacing {
+
+    /* Flex Layout with '#{$key}' modifier */
+    #{rkrFnFlexRule(map-get($rkrMModifiersNaming, $key), false)} {      
+      padding:  $gutter;
+    }
+  }
+}

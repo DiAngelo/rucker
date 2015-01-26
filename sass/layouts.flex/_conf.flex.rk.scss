@@ -1,3 +1,14 @@
 //
 // Flex Layout configuration
 //
+
+// Flex namespace
+$rkrFlexNs: $rkrNamespace !default;
+
+$rkrFlexAttrType: layout  !default;
+$rkrFlexAttrName: flex !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(flex, $rkrFlexAttrType, $rkrFlexAttrName);
+
+$rkrFlexVGutter: 20px;
+
