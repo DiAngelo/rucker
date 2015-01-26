@@ -3,19 +3,18 @@
 //
 
 //
-// fnRuleMO
+// rkrFnMediaRule
 // Generate Media Object related rule
 //
-@function fnRuleMO($_inAttr, $_inIsElem: true) {
+@function rkrFnMediaRule($_inAttr, $_inIsElem: true) {
 
-//  $param: fnBEM(' ', $_inAttr, $_inIsElem);
   $prefix: '-';
   @if $_inIsElem {
     $prefix: '_';
   }
 
-  $param: $rkrNsMedia + $prefix + $_inAttr;
-  $response: fnAttributeRule(media, $param);
+  $param: $rkrMediaNs + $prefix + $_inAttr;
+  $response: rkrFnAttributeRule(media, $param);
 
   @return $response;
 
@@ -23,43 +22,44 @@
 
 
 //
-// mxMediaModifiers
+// rkrMxMediaModifiers
 // Generate media modifiers
 //
 
-@mixin mxMediaModifiers() {
+@mixin rkrMxMediaModifiers() {
 
-  $rkrMapMediaSpacing: fnModifiersMap(5px, 5px, false);
+  $mMediaSpacing: rkrFnMModifiers(5px, 5px, false);
 
-  @each $key,$val in $rkrMapMediaSpacing {
+  @each $key,$val in $mMediaSpacing {
 
     /* Media object base with #{$key} modifier */
-    #{fnRuleMO(map-get($rkrModifiersNaming, $key), false)} {
+    #{rkrFnMediaRule(map-get($rkrMModifiersNaming, $key), false)} {
 
-      > #{fnRuleMO(img)}
+      > #{rkrFnMediaRule(img)}
       { margin-right: $val; }
 
-      &#{fnRuleMO(rev, false)} {
-        > #{fnRuleMO(img)} {
+      &#{rkrFnMediaRule(rev, false)} {
+        > #{rkrFnMediaRule(img)} {
           margin-right: 0;
           margin-left: $val;
         }
       }
 
-      &#{fnRuleMO($rkAttrNameMediaBlock, false)} {
-        > #{fnRuleMO(img)}
+      &#{rkrFnMediaRule($rkrMediaAttrNameBlock, false)} {
+        > #{rkrFnMediaRule(img)}
         { margin-bottom: $val; }
         
-        &#{fnRuleMO(rev, false)} {
-          > #{fnRuleMO(img)} {
+        &#{rkrFnMediaRule(rev, false)} {
+          > #{rkrFnMediaRule(img)} {
             margin-bottom: 0;
             margin-top: $val;
           }
         }
-      }
 
-    }
+      } // media block
 
-  }
+    } // base rule
+
+  } // @each
 
 }

@@ -13,23 +13,23 @@
 
 
 /* 1. Centering text */
-#{fnAttributeRule(text, -center)}      { text-align: center !important; }
+#{rkrFnAttributeRule(text, -center)}      { text-align: center !important; }
 
 /*  2. Align text to left */
-#{fnAttributeRule(text, -left)}        { text-align: left   !important; }
+#{rkrFnAttributeRule(text, -left)}        { text-align: left   !important; }
 
 /*  3. Align text to right */
-#{fnAttributeRule(text, -right)}       { text-align: right  !important; }
+#{rkrFnAttributeRule(text, -right)}       { text-align: right  !important; }
 
 /*  4. Underline text */
-#{fnAttributeRule(text, -underlined)}  { text-decoration: underlined !important; }
+#{rkrFnAttributeRule(text, -underlined)}  { text-decoration: underlined !important; }
 
 /*  5. Transform text to uppercase */
-#{fnAttributeRule(text, -upper)}       { text-transform: uppercase !important; }
+#{rkrFnAttributeRule(text, -upper)}       { text-transform: uppercase !important; }
 
 /*  6. Transform text to lowercase */
-#{fnAttributeRule(text, -lower)}       { text-transform: lowercase !important; }
+#{rkrFnAttributeRule(text, -lower)}       { text-transform: lowercase !important; }
 
 /*  7. Capitalize first letter of the text */
-#{fnAttributeRule(text, -capital)}     { text-transform: capitalize !important; }
+#{rkrFnAttributeRule(text, -capital)}     { text-transform: capitalize !important; }
 

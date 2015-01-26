@@ -17,8 +17,8 @@
 %lGridColumn {
   display: inline-block;
   vertical-align: top;
-  padding-left: $rkGridGutter / 2;
-  padding-right: $rkGridGutter / 2;
+  padding-left: $rkrGridVGutter / 2;
+  padding-right: $rkrGridVGutter / 2;
 }
 
 /**
@@ -34,15 +34,15 @@
 
 
 
-#{fnRuleGrid(row)} {
+#{rkrFnGridRule(row)} {
   @extend %lGridRow;
 }
 
-#{fnRuleGrid(float, false)} {
+#{rkrFnGridRule(float, false)} {
   @extend %lGridFloat;
 }
 
-#{fnRuleGrid(column)} {
+#{rkrFnGridRule(column)} {
   @extend %lGridColumn
 }
 

@@ -4,19 +4,25 @@
 // Define which data-[name] to use for our type of attributes
 //
 
+// HTML atribute prefix 
+$rkrAttributesHandler: 'data' !default;
+
+$rkrAttributesPrefix: $rkrAttributesHandler + '-';
+
 
 //
 // Generic attributes
 //
 
-$rkrMapAttributesNaming: (
+$rkrMAttributesNaming: (
   helper: 'hlp',
   object: 'obj',
   component: 'com',
-  module: 'mod'
+  module: 'mod',
+  utility: 'utl'
 ) !default;
 
-$rkrAttrTypePrefixes: (
+$rkrMAttrTypePrefixes: (
 	layout:			'l',
 	object: 		'o',
 	component: 	'c',
