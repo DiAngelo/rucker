@@ -2,13 +2,13 @@
 
 ### SASS
 
-We use camelCase for variables and functions
+We use camelCase for variables and functions so it is easier to separate SASS code from CSS that it generates.
 
 **Example:**
 
 ```
 $rkrNamespace
-mxBoxModifiers()
+rkrMxBoxModifiers()
 ```
 
 
@@ -29,6 +29,7 @@ The default variable namespace used is "rkr".
 The same namespace is used for attribute's values:
 
 ```
+$rkrNamespace
 [data-attr="rkr-value"]
 ```
 
@@ -38,8 +39,8 @@ The same namespace is used for attribute's values:
 GLobal variables may use only abbreviations that are easy to understand
 
 ```
-$rkAttName - the attribute name
-$rkBtnColor - the color of the button
+$rkrAttName - the attribute name
+$rkrBtnColor - the color of the button
 ```
 
 *List of used abbreviations and their meaning*
@@ -63,7 +64,7 @@ Use the module name right after the global namespace (rkr) so it is easier to de
 ```
 $rkrNamespace - a global variable
 
-$rkBoxNs - a variable of the "Box" module
+$rkrBoxNs - a variable of the "Box" module
 ```
 
 
