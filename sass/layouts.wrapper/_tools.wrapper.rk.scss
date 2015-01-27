@@ -12,9 +12,9 @@
   $response: rkrFnAttributeRule($attr, null);
 
   @if $_inAttr != null {
-    $prefix: '-';
+    $prefix: '--';
     @if $_inIsElem {
-      $prefix: '_';
+      $prefix: '__';
     }
 
     $param: $rkrWrapperNs + $prefix + $_inAttr;

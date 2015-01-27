@@ -12,11 +12,13 @@ $rkrMAttributesNaming: rkrFnRegisterAttribute(typo, $rkTypoAttrType, $rkTypoAttr
 
 $rkTypoSzBase: 16px !default;
 
+// @TODO: Decide if we stay with rem unit here
+
 $rkTypoSzH1: 2.5rem !default;
-$rkTypoSzH2: 2  rem !default;
+$rkTypoSzH2: 2rem   !default;
 $rkTypoSzH3: 1.5rem !default;
 $rkTypoSzH4: 1.2rem !default;
-$rkTypoSzH5: 1  rem !default;
+$rkTypoSzH5: 1rem   !default;
 $rkTypoSzH6:  .8rem !default;
 
 

@@ -8,9 +8,9 @@
 //
 @function rkrFnInlineRule($_inAttr, $_inIsElem: true) {
 
-  $prefix: '-';
+  $prefix: '--';
   @if $_inIsElem {
-    $prefix: '_';
+    $prefix: '__';
   }
 
   $param: $rkrInlineNs + $prefix + $_inAttr;
