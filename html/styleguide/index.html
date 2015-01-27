@@ -12,6 +12,8 @@
 
   @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
+  html, body { position: relative; overflow: hidden; }
+
   body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -19,7 +21,19 @@
     color:#4D4D4D;
   }
   
-  [data-o-pack~="rkr--list"] { margin: 5px 0; }
+  [data-o-page] {
+    -webkit-transition: all 1s ease-in-out 0s;
+    transition: all 1s ease-in-out 0s;
+    opacity: .01;
+  }
+
+  [data-o-page]:first-child,
+  [data-o-page]:target {
+    opacity: 1;
+  }
+
+  [data-o-pack~="rkr--list"],
+  [data-l-grid] { margin: 5px 0; }
 
   [data-l-wrapper~="rkr__container"],
   [data-l-grid~="rkr__column"],
@@ -32,10 +46,13 @@
 
   [data-o-box] > h2 { background-color: #fff; color: #333; }
 
-  a { color: #fff; text-decoration: none; }
-  a:active { color: red; }
+  #objectsBand [data-o-box] { background-color: inherit; }
+
+  nav a { color: #fff; text-decoration: none; }
+  nav a:active { color: red; }
   
   .main-nav {
+    z-index: 100;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -43,24 +60,20 @@
     padding: 10px 20px;
     background-color: #333;
     color: #eee;
+
+    -webkit-transform: translateZ( 100px );
+    transform: translateZ( 100px );
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;    
+
   }
 
   </style>
 
 </head>
 <body>
-
-  <nav class="main-nav" data-u-txt="-center">
-    <ul data-o-inline="rkr__parent rkr--with-splitter">
-      <li data-o-inline="rkr__item"><a href="#baseTypography">Base.Typography</a></li><!--
-      --><li data-o-inline="rkr__item"><a href="#layoutsGrid">Layouts.Grid</a></li><!--
-      --><li data-o-inline="rkr__item"><a href="#objectsBand">Objects.Band</a></li><!--
-      --><li data-o-inline="rkr__item"><a href="#objectsBox">Objects.Box</a></li><!--
-      --><li data-o-inline="rkr__item"><a href="#objectsMedia">Objects.Media</a></li><!--
-      --><li data-o-inline="rkr__item"><a href="#objectsPack">Objects.Pack</a></li>
-    </ul>
-  </nav>
-  
+ 
   <div id="baseTypography" data-o-page="rkr__wrapper rkr--hg">
 
     <h1>Base.Typography</h1>
@@ -92,6 +105,12 @@
       <h2 data-u-typo="rkr-heading--h5">Heading 5</h2>
       <h2 data-u-typo="rkr-heading--h6">Heading 6</h2>
       
+    </div>
+
+    <div data-l-wrapper="rkr__container" data-l-size="rkr--1/2">
+
+    <p data-u-typo="rkr_lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+
     </div>
 
   </div>
@@ -192,25 +211,25 @@
     <hr/>
     
     <div data-o-media="rkr--base rkr--hg">
-      <div data-o-media="rkr__img"><img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/139.jpg" /></div>
+      <div data-o-media="rkr__img"><img src="http://lorempixel.com/g/200/200/sports/" /></div>
       <div data-o-media="rkr__body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. </div>
     </div>
 
     <div data-o-media="rkr--base rkr--rev">
-      <div data-o-media="rkr__img"><img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/139.jpg" /></div>
+      <div data-o-media="rkr__img"><img src="http://lorempixel.com/g/200/200/city/" /></div>
       <div data-o-media="rkr__body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. </div>
     </div>
 
     <div data-o-media="rkr--block rkr--stkd">
-      <div data-o-media="rkr__img"><img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/139.jpg" /></div>
-      <div data-o-media="rkr__body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. </div>
+      <div data-o-media="rkr__img"><img src="http://lorempixel.com/g/200/200/business/" /></div>
+      <div data-o-media="rkr__body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Photos from <a href="http://lorempixel.com" target="_blank">lorempixel.com</a> </div>
     </div>
  
   </div>
 
 
 
-  <div id="objectsPack" data-o-page="rkr__wrapper rkr--hg">
+  <div id="objectsPack" data-o-page="rkr__wrapper rkr--hg" data-utl="clearfix">
     
     <h1>Objects.Pack</h1>
     <hr/>
@@ -235,6 +254,20 @@
 
   </div>
 
+
+  <!--
+   -- Main navigation 
+   -->
+  <nav class="main-nav" data-u-txt="-center">
+    <ul data-o-inline="rkr__parent rkr--with-splitter">
+      <li data-o-inline="rkr__item"><a href="#baseTypography">Base.Typography</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#layoutsGrid">Layouts.Grid</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsBand">Objects.Band</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsBox">Objects.Box</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsMedia">Objects.Media</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsPack">Objects.Pack</a></li>
+    </ul>
+  </nav>
 
 
 </body>
