@@ -19,11 +19,14 @@
     color:#4D4D4D;
   }
   
-  [data-l-wrapper~="rkr__container"],
-  [data-l-grid~="rkr__column"] 
-  { box-shadow: 0 0 3px #999 inset; }
+  [data-o-pack~="rkr--list"] { margin: 5px 0; }
 
-  [data-o-band], [data-o-box] { background-color: #777; margin: 5px 0; }
+  [data-l-wrapper~="rkr__container"],
+  [data-l-grid~="rkr__column"],
+  [data-o-pack~="rkr__item"]
+  { box-shadow: 0 0 3px #ddd inset; }
+
+  [data-o-band], [data-o-box] { background-color: #ccc; margin: 5px 0; }
   [data-o-band]:first-child { background-color: #000; color: #fff; }
   [data-o-band]:last-child { background-color: #eee; }
 
@@ -53,7 +56,8 @@
       --><li data-o-inline="rkr__item"><a href="#layoutsGrid">Layouts.Grid</a></li><!--
       --><li data-o-inline="rkr__item"><a href="#objectsBand">Objects.Band</a></li><!--
       --><li data-o-inline="rkr__item"><a href="#objectsBox">Objects.Box</a></li><!--
-      --><li data-o-inline="rkr__item"><a href="#objectsMedia">Objects.Media</a></li>
+      --><li data-o-inline="rkr__item"><a href="#objectsMedia">Objects.Media</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsPack">Objects.Pack</a></li>
     </ul>
   </nav>
   
@@ -148,8 +152,10 @@
 
   <div id="objectsBand" data-o-page="rkr__wrapper">
     
-    <h1>Objects.Band</h1>
-    <hr/>
+    <div data-o-box="rkr--hg">
+      <h1>Objects.Band</h1>
+      <hr/>
+    </div>
     
     <div data-u-txt="-center">
       <div data-o-band="rkr--hg">Band 1</div>
@@ -199,8 +205,34 @@
       <div data-o-media="rkr__img"><img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/139.jpg" /></div>
       <div data-o-media="rkr__body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. </div>
     </div>
+ 
+  </div>
 
-        
+
+
+  <div id="objectsPack" data-o-page="rkr__wrapper rkr--hg">
+    
+    <h1>Objects.Pack</h1>
+    <hr/>
+
+    <ul data-o-pack="rkr--list" data-u-txt="-center">
+      <li data-o-pack="rkr__item">Item 1</li>
+      <li data-o-pack="rkr__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</li>
+    </ul>
+    
+    <ul data-o-pack="rkr--list" data-u-txt="-center">
+      <li data-o-pack="rkr__item">Item 1</li>
+      <li data-o-pack="rkr__item">Item 2</li>
+      <li data-o-pack="rkr__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</li>
+    </ul>
+ 
+    <ul data-o-pack="rkr--list" data-u-txt="-center">
+      <li data-o-pack="rkr__item">Item 1</li>
+      <li data-o-pack="rkr__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</li>      
+      <li data-o-pack="rkr__item">Item 2</li>
+      <li data-o-pack="rkr__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</li>
+    </ul>
+
   </div>
 
 

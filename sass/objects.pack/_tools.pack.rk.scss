@@ -11,9 +11,9 @@
   $response: rkrFnAttributeRule(pack, null);
 
   @if $_inAttr != null {
-    $prefix: '-';
+    $prefix: '--';
     @if $_inIsElem {
-      $prefix: '_';
+      $prefix: '__';
     }
 
     $param: $rkrPackNs + $prefix + $_inAttr;
