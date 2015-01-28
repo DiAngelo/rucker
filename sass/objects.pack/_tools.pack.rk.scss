@@ -8,20 +8,7 @@
 //
 @function rkrFnPackRule($_inAttr, $_inIsElem: true) {
 
-  $response: rkrFnAttributeRule(pack, null);
-
-  @if $_inAttr != null {
-    $prefix: '--';
-    @if $_inIsElem {
-      $prefix: '__';
-    }
-
-    $param: $rkrPackNs + $prefix + $_inAttr;
-    $response: rkrFnAttributeRule(pack, $param);
-
-  }
-
-  @return $response;
+  @return rkrFnEntityRule(pack, $rkrPackNs, $_inAttr, $_inIsElem);  
 
 }
 

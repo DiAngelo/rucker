@@ -57,3 +57,24 @@
   $rkrMAttributesNaming: map-merge($rkrMAttributesNaming, ($_inAttr: $attr));
   @return $rkrMAttributesNaming;
 }
+
+//
+// rkrFnEntityRule
+//
+@function rkrFnEntityRule($_inEntity, $_inNs, $_inAttr, $_inIsElem: true)
+{
+  $response: rkrFnAttributeRule($_inEntity, null);
+
+  @if $_inAttr != null {
+    $prefix: '--';
+    @if $_inIsElem {
+      $prefix: '__';
+    }
+
+    $param: $_inNs + $prefix + $_inAttr;
+    $response: rkrFnAttributeRule($_inEntity, $param);
+
+  }
+
+  @return $response;
+}

@@ -8,17 +8,10 @@
 //
 @function rkrFnMediaRule($_inAttr, $_inIsElem: true) {
 
-  $prefix: '--';
-  @if $_inIsElem {
-    $prefix: '__';
-  }
-
-  $param: $rkrMediaNs + $prefix + $_inAttr;
-  $response: rkrFnAttributeRule(media, $param);
-
-  @return $response;
+  @return rkrFnEntityRule(media, $rkrMediaNs, $_inAttr, $_inIsElem);
 
 }
+
 
 
 //

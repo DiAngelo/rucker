@@ -9,21 +9,7 @@
 //
 @function rkrFnFlexRule($_inAttr, $_inIsElem: true) {
 
-  $attr: flex;
-  $response: rkrFnAttributeRule($attr, null);
-
-  @if $_inAttr != null {
-    $prefix: '-';
-    @if $_inIsElem {
-      $prefix: '_';
-    }
-
-    $param: $rkrGridNs + $prefix + $_inAttr;
-    $response: rkrFnAttributeRule($attr, $param);
-
-  }
-
-  @return $response;
+  @return rkrFnEntityRule(flex, $rkrFlexNs, $_inAttr, $_inIsElem);
 
 }
 
@@ -31,7 +17,7 @@
 
 //
 // rkrMxFlexModifiers
-// Generate grid modifiers
+// Generate flex modifiers
 //
 
 @mixin rkrMxFlexModifiers() {
