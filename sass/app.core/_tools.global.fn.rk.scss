@@ -60,6 +60,7 @@
 
 //
 // rkrFnEntityRule
+// Generate a rule based on received entity params
 //
 @function rkrFnEntityRule($_inEntity, $_inNs, $_inAttr, $_inIsElem: true)
 {
