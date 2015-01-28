@@ -74,3 +74,15 @@
   }
 
 }
+
+//
+// rkrFnResponsiveModifier
+//
+// Example:
+// .#{rkrFnResponsiveModifier(rkr, large)}{ color: red; }
+//
+@function rkrFnResponsiveModifier ($_inEntity, $_inType) {
+  $response: rkrFnBEM($_inEntity, map-get($rkrMBreakpointsNames, $_inType), false);
+  @return $response;
+}
+
