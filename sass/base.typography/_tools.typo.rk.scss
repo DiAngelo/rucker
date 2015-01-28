@@ -8,21 +8,7 @@
 //
 @function rkrFnTypoRule($_inAttr, $_inIsElem: true) {
 
-  $attr: typo;
-  $response: rkrFnAttributeRule($attr, null);
-
-  @if $_inAttr != null {
-    $prefix: '-';
-    @if $_inIsElem {
-      $prefix: '_';
-    }
-
-    $param: $rkrTypoNs + $prefix + $_inAttr;
-    $response: rkrFnAttributeRule($attr, $param);
-
-  }
-
-  @return $response;
+  @return rkrFnEntityRule(typo, $rkrTypoNs, $_inAttr, $_inIsElem);
 
 }
 
