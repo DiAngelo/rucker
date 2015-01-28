@@ -17,3 +17,6 @@ $rkrMBreakpointsNames: (
   large:  lg,      // laptop
   huge:   hg       // desktop
 ) !default;
+
+// Flag that toggles responsive mode
+$rkrBUseResponsive: true !default;

@@ -10,21 +10,24 @@ $rkTypoAttrName: typo     !default;
 
 $rkrMAttributesNaming: rkrFnRegisterAttribute(typo, $rkTypoAttrType, $rkTypoAttrName);
 
-$rkTypoSzBase: 16px !default;
+// base page font size
+$rkrTypoSzBase: 16px !default;
 
-// @TODO: Decide if we stay with rem unit here
+@if ($rkrBUseResponsive) {
+  $rkrTypoMBase: ();
+}
 
-$rkTypoSzH1: 2.5rem !default;
-$rkTypoSzH2: 2rem   !default;
-$rkTypoSzH3: 1.5rem !default;
-$rkTypoSzH4: 1.2rem !default;
-$rkTypoSzH5: 1rem   !default;
-$rkTypoSzH6:  .8rem !default;
+$rkrTypoSzH1: 2.5rem !default;
+$rkrTypoSzH2: 2rem   !default;
+$rkrTypoSzH3: 1.5rem !default;
+$rkrTypoSzH4: 1.2rem !default;
+$rkrTypoSzH5: 1rem   !default;
+$rkrTypoSzH6:  .8rem !default;
 
 
-$rkTypoSzHeading: 1.5rem; // base
+$rkrTypoSzHeading: 1.5rem; // base
 
-$rkTypoSzHeadings: (
+$rkrTypoSzHeadings: (
   tiny:  14px,
   small: 18px,
   base:  24px,
@@ -32,12 +35,12 @@ $rkTypoSzHeadings: (
   huge:  40px
 );
 
-$rkTypoSzHeadingLarge   :  $rkTypoSzHeading * 3 /  2;
-$rkTypoSzHeadingLargeX  :  $rkTypoSzHeading * 2     ;
-$rkTypoSzHeadingLargeXX :  $rkTypoSzHeading * 3     ;
-$rkTypoSzHeadingSmall   :  $rkTypoSzHeading * 9 / 12;
-$rkTypoSzHeadingSmallX  :  $rkTypoSzHeading * 2 /  3;
-$rkTypoSzHeadingSmallXX :  $rkTypoSzHeading * 7 / 12;
+$rkrTypoSzHeadingLarge   :  $rkTypoSzHeading * 3 /  2;
+$rkrTypoSzHeadingLargeX  :  $rkTypoSzHeading * 2     ;
+$rkrTypoSzHeadingLargeXX :  $rkTypoSzHeading * 3     ;
+$rkrTypoSzHeadingSmall   :  $rkTypoSzHeading * 9 / 12;
+$rkrTypoSzHeadingSmallX  :  $rkTypoSzHeading * 2 /  3;
+$rkrTypoSzHeadingSmallXX :  $rkTypoSzHeading * 7 / 12;
 
 $rkrTypoFont: sans-serif;
 

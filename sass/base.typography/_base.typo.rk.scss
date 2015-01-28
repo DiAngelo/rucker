@@ -2,12 +2,18 @@
 // Basic typography tags
 //
 
-%h1 { font-size: $rkTypoSzH1; }
-%h2 { font-size: $rkTypoSzH2; }
-%h3 { font-size: $rkTypoSzH3; }
-%h4 { font-size: $rkTypoSzH4; }
-%h5 { font-size: $rkTypoSzH5; }
-%h6 { font-size: $rkTypoSzH6; }
+html { font-size: $rkrTypoSzBase; }
+
+@if $rkrBUseResponsive {
+  /* html responsive mixin */
+}
+
+%h1 { font-size: $rkrTypoSzH1; }
+%h2 { font-size: $rkrTypoSzH2; }
+%h3 { font-size: $rkrTypoSzH3; }
+%h4 { font-size: $rkrTypoSzH4; }
+%h5 { font-size: $rkrTypoSzH5; }
+%h6 { font-size: $rkrTypoSzH6; }
 
 h1 { @extend %h1; }
 h2 { @extend %h2; }
