@@ -10,35 +10,40 @@
 
   <style>
 
-  @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+  /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);*/
 
   html, body { position: relative; overflow: hidden; }
 
   body {
+/*
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     line-height: 1.8em;
+*/    
     color:#4D4D4D;
   }
   
   [data-o-page] {
     -webkit-transition: all 1s ease-in-out 0s;
     transition: all 1s ease-in-out 0s;
-    opacity: .01;
+    opacity: 0;
+    display: none;
   }
 
   [data-o-page]:first-child,
   [data-o-page]:target {
     opacity: 1;
+    display: block;
   }
 
   [data-o-pack~="rkr--list"],
   [data-l-grid] { margin: 5px 0; }
 
   [data-l-wrapper~="rkr__container"],
-  [data-l-grid~="rkr__column"],
   [data-o-pack~="rkr__item"]
   { box-shadow: 0 0 3px #ddd inset; }
+
+  [data-l-grid~="rkr__column"] > div { background-color: #eee; text-align: center; }
 
   [data-o-band], [data-o-box] { background-color: #ccc; margin: 5px 0; }
   [data-o-band]:first-child { background-color: #000; color: #fff; }
@@ -122,47 +127,52 @@
     <hr/>
 
     <ul data-l-grid="rkr__row">
-      <li data-l-grid="rkr__column" data-l-size="rkr--1/2">data</li><!-- 
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/2">
+        <div>Grid 1.1 1/2</div>
+      </li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--1/2">
-        content</li>  
+        <div>Grid 1.2 1/2</div>
+      </li>  
     </ul>
 
     <ul data-l-grid="rkr__row">
-      <li data-l-grid="rkr__column" data-l-size="rkr--1/3">data</li><!-- 
-   --><li data-l-grid="rkr__column" data-l-size="rkr--1/3"> 
-        content</li><!-- 
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/3">
+        <div>Grid 2.1 1/3</div>
+      </li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--1/3">
-        content</li>
+        <div>Grid 2.2 1/3</div>     
+      </li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--1/3"><div>Grid 2.3 1/3</div></li>
     </ul>
 
     <ul data-l-grid="rkr__row">
-      <li data-l-grid="rkr__column" data-l-size="rkr--1/3">data</li><!-- 
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/3"><div>Grid 3.1 1/3</div></li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--2/3">
-        content</li>  
+        <div>Grid 3.2 2/3</div></li>  
     </ul>
 
     <ul data-l-grid="rkr__row">
-      <li data-l-grid="rkr__column" data-l-size="rkr--1/4">data</li><!-- 
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/4"><div>Grid 4.1 1/4</div></li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--1/4">
-        content</li><!-- 
+        <div>Grid 4.2 1/4</div></li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--1/4"> 
-        content</li><!-- 
+        <div>Grid 4.3 1/4</div></li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--1/4">
-        content</li>
+        <div>Grid 4.4 1/4</div></li>
     </ul>
 
     <ul data-l-grid="rkr__row">
-      <li data-l-grid="rkr__column" data-l-size="rkr--1/4">data</li><!-- 
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/4"><div>Grid 5.1 1/4</div></li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--2/4">
-        content</li><!-- 
+        <div>Grid 5.2 2/4</div></li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--1/4"> 
-        content</li>
+        <div>Grid 5.3 1/4</div></li>
     </ul>
 
     <ul data-l-grid="rkr__row">
-      <li data-l-grid="rkr__column" data-l-size="rkr--1/4">data</li><!-- 
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/4"><div>Grid 6.1 1/4</div></li><!-- 
    --><li data-l-grid="rkr__column" data-l-size="rkr--3/4">
-        content</li>
+        <div>Grid 6.2 3/4</div></li>
     </ul>
 
   </div>
