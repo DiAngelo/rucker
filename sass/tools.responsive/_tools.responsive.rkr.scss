@@ -10,59 +10,59 @@
 //
 @mixin rkrMxResponsive ($_inMap) {
 
-	$from: map-get($_inMap, from);
-	$to: map-get($_inMap, to);
+  $from: map-get($_inMap, from);
+  $to: map-get($_inMap, to);
 
-	$fromSize:	null;
-	$toSize: 		null;
+  $fromSize:  null;
+  $toSize:     null;
 
-	@if $from != null {
+  @if $from != null {
 
-		@if map-has-key($rkrMBreakpoints, $from) {		
+    @if map-has-key($rkrMBreakpoints, $from) {    
 
-			$fromSize: map-get($rkrMBreakpoints, $from);
+      $fromSize: map-get($rkrMBreakpoints, $from);
 
-		} @else {
+    } @else {
 
-			@warn 'No breakpoint found from ' + $from;
+      @warn 'No breakpoint found from ' + $from;
 
-		}
-	}
+    }
+  }
 
-	@if $to != null {
+  @if $to != null {
 
-		@if map-has-key($rkrMBreakpoints, $from) {		
+    @if map-has-key($rkrMBreakpoints, $from) {    
 
-			$toSize: map-get($rkrMBreakpoints, $to);
+      $toSize: map-get($rkrMBreakpoints, $to);
 
-		} @else {
+    } @else {
 
-			@warn 'No breakpoint found to ' + $to;
+      @warn 'No breakpoint found to ' + $to;
 
-		}
+    }
 
-	}
+  }
 
-	$mqCondition: '(';
+  $mqCondition: '(';
 
-	@if $fromSize != null {
-		
-		$mqCondition: $mqCondition + 'min-width: ' + $fromSize;
+  @if $fromSize != null {
+    
+    $mqCondition: $mqCondition + 'min-width: ' + $fromSize;
 
-		@if $toSize != null {
+    @if $toSize != null {
 
-			$mqCondition: $mqCondition + ') and (max-width: ' + $toSize;
+      $mqCondition: $mqCondition + ') and (max-width: ' + $toSize;
 
-		}
+    }
 
-	}
+  }
 
-	$mqCondition: $mqCondition + ')';
+  $mqCondition: $mqCondition + ')';
 
-	@debug $mqCondition;
-	
-	@media #{$mqCondition} {
-		@content;
-	}
+  @debug $mqCondition;
+
+  @media #{$mqCondition} {
+    @content;
+  }
 
 }

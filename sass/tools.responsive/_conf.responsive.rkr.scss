@@ -3,17 +3,17 @@
 //
 
 $rkrMBreakpoints: (
-	tiny:		320px,	// mobile portrait
-	small: 	480px,	// mobile landscape
-	medium:	768px,	// iPad & tablet
-	large:	930px,  // laptop
-	huge:	 1280px		// desktop
+  tiny:   320px,   // mobile portrait
+  small:  480px,   // mobile landscape
+  medium: 768px,   // iPad & tablet
+  large:  930px,   // laptop
+  huge:  1280px    // desktop
 ) !default;
 
 $rkrMBreakpointsNames: (
-	tiny:		xs,			// mobile portrait
-	small: 	sm,			// mobile landscape
-	medium:	md,			// iPad & tablet
-	large:	lg, 		// laptop
-	huge:	  hg			// desktop
+  tiny:   xs,      // mobile portrait
+  small:  sm,      // mobile landscape
+  medium: md,      // iPad & tablet
+  large:  lg,      // laptop
+  huge:   hg       // desktop
 ) !default;

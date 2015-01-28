@@ -28,6 +28,7 @@
 // Default configuration values
 @import "app.core/conf.settings.rk";
 @import "app.core/conf.attributes.rk";
+@import "tools.responsive/conf.responsive.rkr";
 @import "utilities.text/conf.text.rk";
 @import "base.typography/conf.typo.rk";
 @import "layouts.sizes/conf.sizes.rk";
@@ -47,6 +48,7 @@
 //    /___________________/
 //
 // Functions and mixins
+@import "tools.responsive/tools.responsive.rkr";
 @import "base.typography/tools.typo.rk";
 @import "layouts.sizes/tools.sizes.rk";
 @import "layouts.wrapper/tools.wrapper.rk";
