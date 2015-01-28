@@ -43,15 +43,25 @@
 
   }
 
-  $mqCondition: '(';
-
   @if $fromSize != null {
     
-    $mqCondition: $mqCondition + 'min-width: ' + $fromSize;
+    $mqCondition: '(min-width: ' + $fromSize + ')';
 
     @if $toSize != null {
 
-      $mqCondition: $mqCondition + ') and (max-width: ' + $toSize;
+      $mqCondition: $mqCondition + ' and (max-width: ' + $toSize + ')';
+
+    }
+
+  } @else {
+
+    @if $toSize != null {
+
+      $mqCondition: '(max-width: ' + $toSize + ')';
+
+    } @else {
+
+      @warn 'Could not create media query as both parameters are null';
 
     }
 
