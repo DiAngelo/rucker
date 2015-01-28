@@ -1,6 +1,5 @@
-
 //
-// Box object funtions
+// Band object funtions
 //
 
 //
@@ -9,27 +8,15 @@
 //
 @function rkrFnBandRule($_inAttr, $_inIsElem: true) {
 
-  $response: rkrFnAttributeRule(band, null);
-
-  @if $_inAttr != null {
-    $prefix: '-';
-    @if $_inIsElem {
-      $prefix: '_';
-    }
-
-    $param: $rkrBandNs + $prefix + $_inAttr;
-    $response: rkrFnAttributeRule(band, $param);
-
-  }
-
-  @return $response;
+  @return rkrFnEntityRule(band, $rkrBandNs, $_inAttr, $_inIsElem);
 
 }
 
 
+
 //
-// rkrMxMediaModifiers
-// Generate media modifiers
+// rkrMxBandModifiers
+// Generate band modifiers
 //
 @mixin rkrMxBandModifiers() {
 

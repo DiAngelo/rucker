@@ -44,7 +44,11 @@
 %oInlineWithSplitter {
 	%oInlineItem:before {
 		content: '#{$rkrInlineSplitter}';
+    margin: 0 5px;
 	}
+  %oInlineItem:first-child:before {
+    content: '';
+  }  
 }
 
 

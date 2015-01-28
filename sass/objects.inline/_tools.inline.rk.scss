@@ -8,14 +8,6 @@
 //
 @function rkrFnInlineRule($_inAttr, $_inIsElem: true) {
 
-  $prefix: '-';
-  @if $_inIsElem {
-    $prefix: '_';
-  }
-
-  $param: $rkrInlineNs + $prefix + $_inAttr;
-  $response: rkrFnAttributeRule(inline, $param);
-
-  @return $response;
+  @return rkrFnEntityRule(inline, $rkrInlineNs, $_inAttr, $_inIsElem); 
 
 }

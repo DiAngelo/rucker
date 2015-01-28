@@ -4,25 +4,11 @@
 
 //
 // rkrFnRuleWrapper
-// Generate Media Object related rule
+// Generate Wrapper Object related rule
 //
 @function rkrFnWrapperRule($_inAttr, $_inIsElem: true) {
 
-  $attr: wrapper;
-  $response: rkrFnAttributeRule($attr, null);
-
-  @if $_inAttr != null {
-    $prefix: '-';
-    @if $_inIsElem {
-      $prefix: '_';
-    }
-
-    $param: $rkrWrapperNs + $prefix + $_inAttr;
-    $response: rkrFnAttributeRule($attr, $param);
-
-  }
-
-  @return $response;
+  @return rkrFnEntityRule(wrapper, $rkrWrapperNs, $_inAttr, $_inIsElem);
 
 }
 

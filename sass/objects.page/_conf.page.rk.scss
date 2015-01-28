@@ -1,0 +1,11 @@
+//
+// PAge object configuration
+//
+
+// Page's namespace 
+$rkrPageNs: $rkrNamespace !default;
+
+$rkrPageAttrType: object  !default;
+$rkrPageAttrName: page !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(page, $rkrPageAttrType, $rkrPageAttrName);
