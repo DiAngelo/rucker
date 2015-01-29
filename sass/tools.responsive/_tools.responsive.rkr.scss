@@ -18,9 +18,9 @@
 
   @if $from != null {
 
-    @if map-has-key($rkrMBreakpoints, $from) {    
+    @if map-has-key($rkrRwdMBreakpoints, $from) {    
 
-      $fromSize: map-get($rkrMBreakpoints, $from);
+      $fromSize: map-get($rkrRwdMBreakpoints, $from);
 
     } @else {
 
@@ -31,9 +31,9 @@
 
   @if $to != null {
 
-    @if map-has-key($rkrMBreakpoints, $from) {    
+    @if map-has-key($rkrRwdMBreakpoints, $from) {    
 
-      $toSize: map-get($rkrMBreakpoints, $to);
+      $toSize: map-get($rkrRwdMBreakpoints, $to);
 
     } @else {
 
@@ -85,8 +85,8 @@
 // Example:
 // .#{rkrFnResponsiveModifier(rkr, large)}{ color: red; }
 //
-@function rkrFnResponsiveModifier ($_inEntity, $_inType) {
-  $response: rkrFnBEM($_inEntity, map-get($rkrMBreakpointsNames, $_inType), false);
+@function rkrFnRwdModifier($_inEntity, $_inType) {
+  $response: rkrFnBEM($_inEntity, map-get($rkrRwdMBreakpointsNames, $_inType), false);
   @return $response;
 }
 

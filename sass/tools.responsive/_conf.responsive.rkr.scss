@@ -2,7 +2,7 @@
 // Responsive settings
 //
 
-$rkrMBreakpoints: (
+$rkrRwdMBreakpoints: (
   tiny:   320px,   // mobile portrait
   small:  480px,   // mobile landscape
   medium: 768px,   // iPad & tablet
@@ -10,7 +10,7 @@ $rkrMBreakpoints: (
   huge:  1280px    // desktop
 ) !default;
 
-$rkrMBreakpointsNames: (
+$rkrRwdMBreakpointsNames: (
   tiny:   xs,      // mobile portrait
   small:  sm,      // mobile landscape
   medium:   md,      // iPad & tablet
@@ -19,7 +19,8 @@ $rkrMBreakpointsNames: (
 ) !default;
 
 // Flag that toggles responsive mode
-$rkrBResponsive: true !default;
+$rkrRwdBActive: true !default;
 
 // Flag that indicates if we use mobile-first (true - default) or desktop-first (false)
-$rkrBResponsiveMobileFirst: true !default;
+$rkrRwdBMobileFirst: true !default;
+
