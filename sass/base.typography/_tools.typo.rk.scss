@@ -8,21 +8,7 @@
 //
 @function rkrFnTypoRule($_inAttr, $_inIsElem: true) {
 
-  $attr: typo;
-  $response: rkrFnAttributeRule($attr, null);
-
-  @if $_inAttr != null {
-    $prefix: '-';
-    @if $_inIsElem {
-      $prefix: '_';
-    }
-
-    $param: $rkrTypoNs + $prefix + $_inAttr;
-    $response: rkrFnAttributeRule($attr, $param);
-
-  }
-
-  @return $response;
+  @return rkrFnEntityRule(typo, $rkrTypoNs, $_inAttr, $_inIsElem);
 
 }
 
@@ -33,7 +19,7 @@
 //
 @mixin rkrMxTypoModifiers() {
 
-  $mTypoSpacing: rkrFnModifiersMap(14px, 4px, false);
+  $mTypoSpacing: rkrFnMModifiers(14px, 4px, false);
 
   @each $key,$val in $mTypoSpacing {
     /* Media object with #{$key} modifier */
@@ -42,4 +28,68 @@
     }
   }
 
+}
+
+
+
+//
+// rkrMxTypoHtmlFs
+//
+@mixin rkrMxTypoHtmlFs ($_inSz) {
+
+  html { font-size: $_inSz; }
+
+}
+
+
+
+//
+// rkrMxTypoResponsiveBase
+//
+@mixin rkrMxTypoResponsiveBase {
+  
+  @if $rkrTypoBResponsive {
+    
+    @each $type,$szVal in $rkrTypoMSzBase {
+      
+      @if $rkrRwdBMobileFirst {
+      
+        @if $type == tiny {
+        
+          /* Work with mobile first principle */
+          @include rkrMxTypoHtmlFs($szVal);
+        
+        } @else {
+      
+          @include rkrMxResponsive((from: $type)) {
+            @include rkrMxTypoHtmlFs($szVal);
+          }
+
+        }      
+
+      } @else {
+      
+        @if $type == huge {
+        
+          /* work with destop first principle */
+          @include rkrMxTypoHtmlFs($szVal);
+        
+        } @else {
+      
+          @include rkrMxResponsive((to: $type)) {
+            @include rkrMxTypoHtmlFs($szVal);
+          }
+
+        }  
+      
+      } // @else
+      
+    } // @each
+  
+  } @else {
+  
+    @include rkrMxTypoHtmlFs($rkrTypoSzBase);
+  
+  }
+  
 }

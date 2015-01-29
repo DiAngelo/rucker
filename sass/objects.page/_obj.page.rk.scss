@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    #Page Object
+\*------------------------------------*/
+
+/**
+ * Page container
+ */
+%lPageWrapper {
+	width: 100%; 
+  height: 100%;
+  overflow: auto;
+}
+
+
+//
+// Display rules
+//
+
+#{rkrFnPageRule(wrapper)} {
+	@extend %lPageWrapper;
+}
+
+
+
+@include rkrMxPageModifiers();

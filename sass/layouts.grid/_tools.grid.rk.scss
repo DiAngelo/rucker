@@ -9,21 +9,7 @@
 //
 @function rkrFnGridRule($_inAttr, $_inIsElem: true) {
 
-  $attr: grid;
-  $response: rkrFnAttributeRule($attr, null);
-
-  @if $_inAttr != null {
-    $prefix: '-';
-    @if $_inIsElem {
-      $prefix: '_';
-    }
-
-    $param: $rkrGridNs + $prefix + $_inAttr;
-    $response: rkrFnAttributeRule($attr, $param);
-
-  }
-
-  @return $response;
+  @return rkrFnEntityRule(grid, $rkrGridNs, $_inAttr, $_inIsElem);
 
 }
 
