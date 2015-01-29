@@ -2,11 +2,9 @@
 // Basic typography tags
 //
 
-html { font-size: $rkrTypoSzBase; }
+// html { font-size: $rkrTypoSzBase; }
 
-@if $rkrBUseResponsive {
-  /* html responsive mixin */
-}
+@include rkrMxTypoResponsiveBase();
 
 %h1 { font-size: $rkrTypoSzH1; }
 %h2 { font-size: $rkrTypoSzH2; }

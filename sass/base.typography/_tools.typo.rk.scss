@@ -19,7 +19,7 @@
 //
 @mixin rkrMxTypoModifiers() {
 
-  $mTypoSpacing: rkrFnModifiersMap(14px, 4px, false);
+  $mTypoSpacing: rkrFnMModifiers(14px, 4px, false);
 
   @each $key,$val in $mTypoSpacing {
     /* Media object with #{$key} modifier */
@@ -28,4 +28,57 @@
     }
   }
 
+}
+
+
+
+//
+// rkrMxTypoResponsiveBase
+//
+@mixin rkrMxTypoResponsiveBase {
+  
+  @if $rkrTypoBResponsive {
+    
+    @each $type,$szVal in $rkrTypoMSzBase {
+      
+      @if $rkrBResponsiveMobileFirst {
+      
+        @if $type == tiny {
+        
+          /* Work with mobile first principle */
+          html { font-size: $szVal; }
+        
+        } @else {
+      
+          @include rkrMxResponsive((from: $type)) {
+            html { font-size: $szVal; }
+          }
+
+        }      
+
+      } @else {
+      
+        @if $type == huge {
+        
+          /* work with destop first principle */
+          html { font-size: $szVal; }
+        
+        } @else {
+      
+          @include rkrMxResponsive((to: $type)) {
+            html { font-size: $szVal; }
+          }
+
+        }  
+      
+      } // @else
+      
+    } // @each
+  
+  } @else {
+  
+    html { font-size: $rkrTypoSzBase; }
+  
+  }
+  
 }

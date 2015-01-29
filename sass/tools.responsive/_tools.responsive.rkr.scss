@@ -43,6 +43,8 @@
 
   }
 
+  $mqCondition: '';
+
   @if $fromSize != null {
     
     $mqCondition: '(min-width: ' + $fromSize + ')';
@@ -67,7 +69,9 @@
 
   }
 
-  $mqCondition: $mqCondition + ')';
+  $mqCondition: $mqCondition;
+
+//  @debug $mqCondition;
 
   @media #{$mqCondition} {
     @content;

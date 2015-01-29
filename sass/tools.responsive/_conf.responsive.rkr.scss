@@ -13,10 +13,13 @@ $rkrMBreakpoints: (
 $rkrMBreakpointsNames: (
   tiny:   xs,      // mobile portrait
   small:  sm,      // mobile landscape
-  medium: md,      // iPad & tablet
+  medium:   md,      // iPad & tablet
   large:  lg,      // laptop
   huge:   hg       // desktop
 ) !default;
 
 // Flag that toggles responsive mode
-$rkrBUseResponsive: true !default;
+$rkrBResponsive: true !default;
+
+// Flag that indicates if we use mobile-first (true - default) or desktop-first (false)
+$rkrBResponsiveMobileFirst: true !default;

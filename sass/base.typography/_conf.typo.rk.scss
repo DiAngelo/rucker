@@ -10,12 +10,25 @@ $rkTypoAttrName: typo     !default;
 
 $rkrMAttributesNaming: rkrFnRegisterAttribute(typo, $rkTypoAttrType, $rkTypoAttrName);
 
-// base page font size
-$rkrTypoSzBase: 16px !default;
+// typography specific flag to toggle responsive mode
+$rkrTypoBResponsive: false;//$rkrBResponsive !default;
 
-@if ($rkrBUseResponsive) {
-  $rkrTypoMBase: ();
+// map that contains font sizes to use for each responsive state
+$rkrTypoMSzBase: rkrFnMModifiers(12px, 2px, false);
+
+// base page font size
+$rkrTypoSzBase: map-get($rkrTypoMSzBase, medium) !default;
+
+@if $rkrTypoBResponsive {
+
+  @if $rkrBResponsiveMobileFirst {
+    $rkrTypoSzBase: map-get($rkrTypoMSzBase, tiny);
+  } @else {
+    $rkrTypoSzBase: map-get($rkrTypoMSzBase, huge);
+  }
+  
 }
+
 
 $rkrTypoSzH1: 2.5rem !default;
 $rkrTypoSzH2: 2rem   !default;
@@ -35,12 +48,12 @@ $rkrTypoSzHeadings: (
   huge:  40px
 );
 
-$rkrTypoSzHeadingLarge   :  $rkTypoSzHeading * 3 /  2;
-$rkrTypoSzHeadingLargeX  :  $rkTypoSzHeading * 2     ;
-$rkrTypoSzHeadingLargeXX :  $rkTypoSzHeading * 3     ;
-$rkrTypoSzHeadingSmall   :  $rkTypoSzHeading * 9 / 12;
-$rkrTypoSzHeadingSmallX  :  $rkTypoSzHeading * 2 /  3;
-$rkrTypoSzHeadingSmallXX :  $rkTypoSzHeading * 7 / 12;
+$rkrTypoSzHeadingLarge   :  $rkrTypoSzHeading * 3 /  2;
+$rkrTypoSzHeadingLargeX  :  $rkrTypoSzHeading * 2     ;
+$rkrTypoSzHeadingLargeXX :  $rkrTypoSzHeading * 3     ;
+$rkrTypoSzHeadingSmall   :  $rkrTypoSzHeading * 9 / 12;
+$rkrTypoSzHeadingSmallX  :  $rkrTypoSzHeading * 2 /  3;
+$rkrTypoSzHeadingSmallXX :  $rkrTypoSzHeading * 7 / 12;
 
 $rkrTypoFont: sans-serif;
 

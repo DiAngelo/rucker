@@ -7,7 +7,7 @@ $rkrNamespace: 'rkr' !default;
 
 // Define modifiers tha we generally apply to components
 // to change it's specific value
-$rkrLBasicModifiers: 'tiny', 'small', 'base', 'large', 'huge' !default;
+$rkrLBasicModifiers: tiny, small, medium, large, huge !default;
 
 // naming convention for modifiers
 $rkrMModifiersNaming: (
