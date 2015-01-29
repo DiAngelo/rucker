@@ -19,7 +19,8 @@
 
 				/* #{$selector} */
 				%lSize-#{$selector} {
-					width: $i / $group;
+					$val: $i / $group * 100;
+					width:  #{$val + '%'};
 				}
 
 				$lDefined: append($lDefined, $selector);
@@ -44,7 +45,7 @@
 		@for $i from 1 to $group {
 
 			$selector: round($i / $group * 100);			
-			[data-l-size="#{$rkrSizesNs}-#{$i}/#{$group}"] {
+			[data-l-size="#{$rkrSizesNs}--#{$i}/#{$group}"] {
 				@extend %lSize-#{$selector};
 			}
 

@@ -1,0 +1,37 @@
+//
+// Page object tools
+//
+
+//
+// rkrFnPageRule
+// Generate Media Object related rule
+//
+@function rkrFnPageRule($_inAttr, $_inIsElem: true) {
+
+  @return rkrFnEntityRule(page, $rkrPageNs, $_inAttr, $_inIsElem);
+
+}
+
+
+
+//
+// rkrMxPageModifiers
+// Generate page modifiers that indicates how much space we have around the page
+//
+
+@mixin rkrMxPageModifiers() {
+
+  $mPageSpacing: rkrFnMModifiers(5px, 10px, false);
+
+  @each $key,$gutter in $mPageSpacing {
+
+    /* Wrapper Layout with '#{$key}' modifier */
+    #{rkrFnPageRule(map-get($rkrMModifiersNaming, $key), false)} {
+      
+      padding:  $gutter;
+
+    }
+
+  }
+
+}

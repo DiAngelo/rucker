@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+  <title>RKR Styleguide</title>
+  
+  <link rel="stylesheet" href="../../themes/default/css/theme.css">
+
+  <style>
+
+  /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);*/
+
+  html, body { position: relative; overflow: hidden; }
+
+  body {
+/*
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8em;
+*/    
+    color:#4D4D4D;
+  }
+  
+  [data-o-page] {
+    -webkit-transition: all 1s ease-in-out 0s;
+    transition: all 1s ease-in-out 0s;
+    opacity: 0;
+    display: none;
+  }
+
+  [data-o-page]:first-child,
+  [data-o-page]:target {
+    opacity: 1;
+    display: block;
+  }
+
+  [data-o-pack~="rkr--list"],
+  [data-l-grid] { margin: 5px 0; }
+
+  [data-l-wrapper~="rkr__container"],
+  [data-o-pack~="rkr__item"]
+  { box-shadow: 0 0 3px #ddd inset; }
+
+  [data-l-grid~="rkr__column"] > div { background-color: #eee; text-align: center; }
+
+  [data-o-band], [data-o-box] { background-color: #ccc; margin: 5px 0; }
+  [data-o-band]:first-child { background-color: #000; color: #fff; }
+  [data-o-band]:last-child { background-color: #eee; }
+
+  [data-o-box] > h2 { background-color: #fff; color: #333; }
+
+  #objectsBand [data-o-box] { background-color: inherit; }
+
+  nav a { color: #fff; text-decoration: none; }
+  nav a:active { color: red; }
+  
+  .main-nav {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #eee;
+
+    -webkit-transform: translateZ( 100px );
+    transform: translateZ( 100px );
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;    
+
+  }
+
+  </style>
+
+</head>
+<body>
+ 
+  <div id="baseTypography" data-o-page="rkr__wrapper rkr--hg">
+
+    <h1>Base.Typography</h1>
+    <hr/>
+
+    <div data-l-wrapper="rkr__container" data-l-size="rkr--1/3" data-u-txt="-center">
+      
+      <h2>Heading Tags</h2>
+      <hr/>
+      
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+      
+    </div>
+
+    <div data-l-wrapper="rkr__container">
+      
+      <h2>Heading Helpers</h2>
+      <hr/>
+      
+      <h2 data-u-typo="rkr-heading--h1">Heading 1</h2>
+      <h2 data-u-typo="rkr-heading--h2">Heading 2</h2>
+      <h2 data-u-typo="rkr-heading--h3">Heading 3</h2>
+      <h2 data-u-typo="rkr-heading--h4">Heading 4</h2>
+      <h2 data-u-typo="rkr-heading--h5">Heading 5</h2>
+      <h2 data-u-typo="rkr-heading--h6">Heading 6</h2>
+      
+    </div>
+
+    <div data-l-wrapper="rkr__container" data-l-size="rkr--1/2">
+
+    <p data-u-typo="rkr_lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div id="layoutsGrid" data-o-page="rkr__wrapper rkr--hg">
+    <h1>Layouts.Grid</h1>
+    <hr/>
+
+    <ul data-l-grid="rkr__row">
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/2">
+        <div>Grid 1.1 1/2</div>
+      </li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--1/2">
+        <div>Grid 1.2 1/2</div>
+      </li>  
+    </ul>
+
+    <ul data-l-grid="rkr__row">
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/3">
+        <div>Grid 2.1 1/3</div>
+      </li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--1/3">
+        <div>Grid 2.2 1/3</div>     
+      </li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--1/3"><div>Grid 2.3 1/3</div></li>
+    </ul>
+
+    <ul data-l-grid="rkr__row">
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/3"><div>Grid 3.1 1/3</div></li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--2/3">
+        <div>Grid 3.2 2/3</div></li>  
+    </ul>
+
+    <ul data-l-grid="rkr__row">
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/4"><div>Grid 4.1 1/4</div></li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--1/4">
+        <div>Grid 4.2 1/4</div></li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--1/4"> 
+        <div>Grid 4.3 1/4</div></li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--1/4">
+        <div>Grid 4.4 1/4</div></li>
+    </ul>
+
+    <ul data-l-grid="rkr__row">
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/4"><div>Grid 5.1 1/4</div></li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--2/4">
+        <div>Grid 5.2 2/4</div></li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--1/4"> 
+        <div>Grid 5.3 1/4</div></li>
+    </ul>
+
+    <ul data-l-grid="rkr__row">
+      <li data-l-grid="rkr__column" data-l-size="rkr--1/4"><div>Grid 6.1 1/4</div></li><!-- 
+   --><li data-l-grid="rkr__column" data-l-size="rkr--3/4">
+        <div>Grid 6.2 3/4</div></li>
+    </ul>
+
+  </div>
+
+
+
+  <div id="objectsBand" data-o-page="rkr__wrapper">
+    
+    <div data-o-box="rkr--hg">
+      <h1>Objects.Band</h1>
+      <hr/>
+    </div>
+    
+    <div data-u-txt="-center">
+      <div data-o-band="rkr--hg">Band 1</div>
+      <div data-o-band="rkr--lg">Band 2</div>
+      <div data-o-band="rkr--md">Band 3</div>
+      <div data-o-band="rkr--sm">Band 4</div>
+      <div data-o-band="rkr--xs">Band 5</div>    
+    </div>
+    
+  </div>
+
+
+
+  <div id="objectsBox" data-o-page="rkr__wrapper rkr--hg">
+    
+    <h1>Objects.Box</h1>
+    <hr/>
+    
+    <div data-u-txt="-center">
+      <div data-o-box="rkr--hg"><h2>Box 1<h2></div>
+      <div data-o-box="rkr--lg"><h2>Box 2<h2></div>
+      <div data-o-box="rkr--md"><h2>Box 3<h2></div>
+      <div data-o-box="rkr--sm"><h2>Box 4<h2></div>
+      <div data-o-box="rkr--xs"><h2>Box 5<h2></div>
+    </div>
+        
+  </div>
+
+
+
+  <div id="objectsMedia" data-o-page="rkr__wrapper rkr--hg">
+    
+    <h1>Objects.Media</h1>
+    <hr/>
+    
+    <div data-o-media="rkr--base rkr--hg">
+      <div data-o-media="rkr__img"><img src="http://lorempixel.com/g/200/200/sports/" /></div>
+      <div data-o-media="rkr__body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. </div>
+    </div>
+
+    <div data-o-media="rkr--base rkr--rev">
+      <div data-o-media="rkr__img"><img src="http://lorempixel.com/g/200/200/city/" /></div>
+      <div data-o-media="rkr__body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. </div>
+    </div>
+
+    <div data-o-media="rkr--block rkr--stkd">
+      <div data-o-media="rkr__img"><img src="http://lorempixel.com/g/200/200/business/" /></div>
+      <div data-o-media="rkr__body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Photos from <a href="http://lorempixel.com" target="_blank">lorempixel.com</a> </div>
+    </div>
+ 
+  </div>
+
+
+
+  <div id="objectsPack" data-o-page="rkr__wrapper rkr--hg" data-utl="clearfix">
+    
+    <h1>Objects.Pack</h1>
+    <hr/>
+
+    <ul data-o-pack="rkr--list" data-u-txt="-center">
+      <li data-o-pack="rkr__item">Item 1</li>
+      <li data-o-pack="rkr__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</li>
+    </ul>
+    
+    <ul data-o-pack="rkr--list" data-u-txt="-center">
+      <li data-o-pack="rkr__item">Item 1</li>
+      <li data-o-pack="rkr__item">Item 2</li>
+      <li data-o-pack="rkr__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</li>
+    </ul>
+ 
+    <ul data-o-pack="rkr--list" data-u-txt="-center">
+      <li data-o-pack="rkr__item">Item 1</li>
+      <li data-o-pack="rkr__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</li>      
+      <li data-o-pack="rkr__item">Item 2</li>
+      <li data-o-pack="rkr__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</li>
+    </ul>
+
+  </div>
+
+
+  <!--
+   -- Main navigation 
+   -->
+  <nav class="main-nav" data-u-txt="-center">
+    <ul data-o-inline="rkr__parent rkr--with-splitter">
+      <li data-o-inline="rkr__item"><a href="#baseTypography">Base.Typography</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#layoutsGrid">Layouts.Grid</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsBand">Objects.Band</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsBox">Objects.Box</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsMedia">Objects.Media</a></li><!--
+      --><li data-o-inline="rkr__item"><a href="#objectsPack">Objects.Pack</a></li>
+    </ul>
+  </nav>
+
+
+</body>
+</html>

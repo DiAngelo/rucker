@@ -10,6 +10,7 @@
   display: table;
   table-layout: fixed;
   width: 100%;
+  list-style: none;
 }
   %oPackItem {
     display: table-cell;
@@ -34,7 +35,7 @@
 // Define rules
 //
 
-#{rkrFnPackRule(list)} {
+#{rkrFnPackRule(list, false)} {
   @extend %oPack;
 }
 
