@@ -1,0 +1,92 @@
+//
+// Responsive Tools
+//
+
+//
+// rkrMxResponsive
+//
+// Example:
+// @include rkrMxResponsive ((from: small, to: large)) { body { color: red; } };
+//
+@mixin rkrMxResponsive ($_inMap) {
+
+  $from: map-get($_inMap, from);
+  $to: map-get($_inMap, to);
+
+  $fromSize:  null;
+  $toSize:     null;
+
+  @if $from != null {
+
+    @if map-has-key($rkrRwdMBreakpoints, $from) {    
+
+      $fromSize: map-get($rkrRwdMBreakpoints, $from);
+
+    } @else {
+
+      @warn 'No breakpoint found from ' + $from;
+
+    }
+  }
+
+  @if $to != null {
+
+    @if map-has-key($rkrRwdMBreakpoints, $from) {    
+
+      $toSize: map-get($rkrRwdMBreakpoints, $to);
+
+    } @else {
+
+      @warn 'No breakpoint found to ' + $to;
+
+    }
+
+  }
+
+  $mqCondition: '';
+
+  @if $fromSize != null {
+    
+    $mqCondition: '(min-width: ' + $fromSize + ')';
+
+    @if $toSize != null {
+
+      $mqCondition: $mqCondition + ' and (max-width: ' + $toSize + ')';
+
+    }
+
+  } @else {
+
+    @if $toSize != null {
+
+      $mqCondition: '(max-width: ' + $toSize + ')';
+
+    } @else {
+
+      @warn 'Could not create media query as both parameters are null';
+
+    }
+
+  }
+
+  $mqCondition: $mqCondition;
+
+//  @debug $mqCondition;
+
+  @media #{$mqCondition} {
+    @content;
+  }
+
+}
+
+//
+// rkrFnResponsiveModifier
+//
+// Example:
+// .#{rkrFnResponsiveModifier(rkr, large)}{ color: red; }
+//
+@function rkrFnRwdModifier($_inEntity, $_inType) {
+  $response: rkrFnBEM($_inEntity, map-get($rkrRwdMBreakpointsNames, $_inType), false);
+  @return $response;
+}
+
