@@ -11,7 +11,7 @@ $rkTypoAttrName: typo     !default;
 $rkrMAttributesNaming: rkrFnRegisterAttribute(typo, $rkTypoAttrType, $rkTypoAttrName);
 
 // typography specific flag to toggle responsive mode
-$rkrTypoBResponsive: false;//$rkrBResponsive !default;
+$rkrTypoBResponsive: $rkrRwdBActive !default;
 
 // map that contains font sizes to use for each responsive state
 $rkrTypoMSzBase: rkrFnMModifiers(12px, 2px, false);
@@ -21,7 +21,7 @@ $rkrTypoSzBase: map-get($rkrTypoMSzBase, medium) !default;
 
 @if $rkrTypoBResponsive {
 
-  @if $rkrBResponsiveMobileFirst {
+  @if $rkrRwdBMobileFirst {
     $rkrTypoSzBase: map-get($rkrTypoMSzBase, tiny);
   } @else {
     $rkrTypoSzBase: map-get($rkrTypoMSzBase, huge);
