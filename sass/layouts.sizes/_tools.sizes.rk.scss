@@ -23,6 +23,18 @@
 					width:  #{$val + '%'};
 				}
 
+			@if $rkrSizesBResponsive {
+
+				@each $type,$name in $rkrRwdMBreakpointsNames {
+          @include rkrMxResponsive((from: $type)) {	
+						/* #{$selector} */
+						%lSize-#{$selector}--#{$type} {
+							$val: $i / $group * 100;
+							width:  #{$val + '%'};
+						}
+
+}}}
+
 				$lDefined: append($lDefined, $selector);
 
 			}
@@ -33,7 +45,16 @@
 
 }
 
+@mixin rkrMxSizesTest($_inRule, $_inParam, $type: '') {
 
+	@debug $_inRule;
+
+	[data-l-size="#{$_inRule}"] {
+		@extend %lSize-#{$_inParam}--#{$type};
+	}
+
+
+}
 
 //
 // rkrMxSizesOutput
@@ -45,8 +66,24 @@
 		@for $i from 1 to $group {
 
 			$selector: round($i / $group * 100);			
+
+			$rule: #{$rkrSizesNs}--#{$i}/#{$group};
+
 			[data-l-size="#{$rkrSizesNs}--#{$i}/#{$group}"] {
 				@extend %lSize-#{$selector};
+			}
+
+			@if $rkrSizesBResponsive {
+
+				@each $type,$name in $rkrRwdMBreakpointsNames {
+          @include rkrMxResponsive((from: $type)) {
+
+          	@include rkrMxSizesTest($rule, $selector, $type);
+
+					}
+
+				}
+
 			}
 
 		}
