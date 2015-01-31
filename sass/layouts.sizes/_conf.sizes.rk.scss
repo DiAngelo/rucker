@@ -11,3 +11,8 @@ $rkrSizesLGroups: 2, 3, 4 !default;
 
 // sizes specific flag to toggle responsive mode
 $rkrSizesBResponsive: $rkrRwdBActive !default;
+
+$rkrSizeAttrType: layout  !default;
+$rkrSizeAttrName: size !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute('size', $rkrSizeAttrType, $rkrSizeAttrName);

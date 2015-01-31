@@ -7,9 +7,9 @@
 //
 @mixin rkrMxSizesPlaceholder ($_inName, $_inVal) {
 
-	%#{$_inName} {
-		width: #{$_inVal + '%'};
-	}
+  %#{$_inName} {
+    width: #{$_inVal + '%'};
+  }
 
 }
 
@@ -19,43 +19,43 @@
 // rkrMxSizesSilent
 //
 @mixin rkrMxSizesSilent() {
-	
-	$lDefined: ();
+  
+  $lDefined: ();
 
-	@each $group in $rkrSizesLGroups {
+  @each $group in $rkrSizesLGroups {
 
-		@for $i from 1 to $group {
+    @for $i from 1 to $group {
 
-			$currentSize: $i / $group * 100;
-			$selector: round($currentSize);
+      $currentSize: $i / $group * 100;
+      $selector: round($currentSize);
 
-			@if index($lDefined, $selector) == null {
+      @if index($lDefined, $selector) == null {
 
-				/* Size #{$selector} base */
-				@include rkrMxSizesPlaceholder (lSize-#{$selector}, $currentSize);
+        /* Size #{$selector} base */
+        @include rkrMxSizesPlaceholder (lSize-#{$selector}, $currentSize);
 
-				@if $rkrSizesBResponsive {
+        @if $rkrSizesBResponsive {
 
-					@each $type,$name in $rkrRwdMBreakpointsNames {
+          @each $type,$name in $rkrRwdMBreakpointsNames {
 
-	          @include rkrMxResponsive((from: $type)) {	
+            @include rkrMxResponsive((from: $type)) {  
 
-							/* Size #{$selector} #{$type} */
-							@include rkrMxSizesPlaceholder (rkrFnBEM(lSize-#{$selector}, $type, false), $currentSize);
+              /* Size #{$selector} #{$type} */
+              @include rkrMxSizesPlaceholder (rkrFnBEM(lSize-#{$selector}, $type, false), $currentSize);
 
-						}
+            }
 
-					} // @each
+          } // @each
 
-				} // @if responsive
+        } // @if responsive
 
-				$lDefined: append($lDefined, $selector);
+        $lDefined: append($lDefined, $selector);
 
-			} // @if index
+      } // @if index
 
-		} // @for in group
+    } // @for in group
 
-	} // @each $group
+  } // @each $group
 
 }// @mixin
 
@@ -66,17 +66,17 @@
 //
 @mixin rkrMxSizesRule($_inRule, $_inParam, $type: '') {
 
-	$placeholder: lSize-#{$_inParam};
+  $placeholder: lSize-#{$_inParam};
 
-	@if $type != '' {
+  @if $type != '' {
 
-		$placeholder: rkrFnBEM($placeholder, $type, false);
+    $placeholder: rkrFnBEM($placeholder, $type, false);
 
-	}
+  }
 
-	[data-l-size="#{$_inRule}"] {
-		@extend %#{$placeholder};
-	}
+  @include rkrMxAttribute(size, $_inRule) {
+    @extend %#{$placeholder};
+  }
 
 }// @mixin
 
@@ -86,33 +86,33 @@
 // rkrMxSizesOutput
 //
 @mixin rkrMxSizesOutput() {
-	
-	@each $group in $rkrSizesLGroups {
+  
+  @each $group in $rkrSizesLGroups {
 
-		@for $i from 1 to $group {
+    @for $i from 1 to $group {
 
-			$selector: round($i / $group * 100);			
+      $selector: round($i / $group * 100);      
 
-			$rule: #{$rkrSizesNs}--#{$i}/#{$group};
+      $rule: #{$rkrSizesNs}--#{$i}/#{$group};
 
-			@include rkrMxSizesRule(#{$rkrSizesNs}--#{$i}/#{$group}, $selector);
-			
-			@if $rkrSizesBResponsive {
+      @include rkrMxSizesRule(#{$rkrSizesNs}--#{$i}/#{$group}, $selector);
 
-				@each $type,$name in $rkrRwdMBreakpointsNames {
+      @if $rkrSizesBResponsive {
+
+        @each $type,$name in $rkrRwdMBreakpointsNames {
 
           @include rkrMxResponsive((from: $type)) {
 
-          	@include rkrMxSizesRule($rule, $selector, $type);
+            @include rkrMxSizesRule($rule, $selector, $type);
 
-					}
+          }
 
-				}// @each breakpoint
+        }// @each breakpoint
 
-			}// @if responsive
+      }// @if responsive
 
-		}// @for in group
+    }// @for in group
 
-	}// @each group
+  }// @each group
 
 }// @mixin
