@@ -24,6 +24,30 @@
 
   @each $group in $rkrSizesLGroups {
 
+    @if $group == 1 {
+
+      /* 
+       * Size full 
+       */
+      @include rkrMxSizesPlaceholder (lSize-100, 100);
+
+      @if $rkrSizesBResponsive {
+
+        @each $type,$name in $rkrRwdMBreakpointsNames {
+
+          @include rkrMxResponsive((from: $type)) {  
+
+            /* Size full #{$type} */
+            @include rkrMxSizesPlaceholder (rkrFnBEM(lSize-100, $type, false), 100);
+
+          }
+
+        } // @each
+
+      } // @if responsive
+
+    }
+
     @for $i from 1 to $group {
 
       $currentSize: $i / $group * 100;
@@ -31,7 +55,9 @@
 
       @if index($lDefined, $selector) == null {
 
-        /* Size #{$selector} base */
+        /* 
+         * Size #{$selector} base 
+         */
         @include rkrMxSizesPlaceholder (lSize-#{$selector}, $currentSize);
 
         @if $rkrSizesBResponsive {
@@ -89,13 +115,9 @@
   
   @each $group in $rkrSizesLGroups {
 
-    @for $i from 1 to $group {
+    @if $group == 1 {
 
-      $selector: round($i / $group * 100);      
-
-      $rule: #{$rkrSizesNs}--#{$i}/#{$group};
-
-      @include rkrMxSizesRule(#{$rkrSizesNs}--#{$i}/#{$group}, $selector);
+      @include rkrMxSizesRule(rkrFnBEM(#{$rkrSizesNs}, '1/1', false), 100);
 
       @if $rkrSizesBResponsive {
 
@@ -103,7 +125,35 @@
 
           @include rkrMxResponsive((from: $type)) {
 
-            @include rkrMxSizesRule($rule, $selector, $type);
+            @include rkrMxSizesRule(rkrFnBEM(#{$rkrSizesNs}-#{$name}, '1/1', false), 100, $type);
+
+          }
+
+        }// @each breakpoint
+
+      }// @if responsive
+
+
+    }
+
+    @for $i from 1 to $group {
+
+      $selector: round($i / $group * 100);      
+
+      $rule: rkrFnBEM(#{$rkrSizesNs}, #{$i}/#{$group}, false);
+
+      @include rkrMxSizesRule($rule, $selector);
+
+      // Generate responsive rules
+      @if $rkrSizesBResponsive {
+
+        @each $type,$name in $rkrRwdMBreakpointsNames {
+
+          @include rkrMxResponsive((from: $type)) {
+
+		      	$rwdRule: rkrFnBEM(#{$rkrSizesNs}-#{$name}, #{$i}/#{$group}, false);
+
+            @include rkrMxSizesRule($rwdRule, $selector, $type);
 
           }
 

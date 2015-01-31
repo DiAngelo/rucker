@@ -43,7 +43,7 @@
 
       $x: map-get($rkrMAttributesNaming, $_inType);
 
-      @if $_inAttribute != null {
+      @if $_inAttributeVal != null {
         $rule: $rkrAttributesPrefix + $x + '~="' + $_inAttributeVal + '"';
       } @else {
         $rule: $rkrAttributesPrefix + $x; 
