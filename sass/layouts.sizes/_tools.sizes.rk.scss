@@ -31,21 +31,6 @@
        */
       @include rkrMxSizesPlaceholder (lSize-100, 100);
 
-      @if $rkrSizesBResponsive {
-
-        @each $type,$name in $rkrRwdMBreakpointsNames {
-
-          @include rkrMxResponsive((from: $type)) {  
-
-            /* Size full #{$type} */
-            @include rkrMxSizesPlaceholder (rkrFnBEM(lSize-100, $type, false), 100);
-
-          }
-
-        } // @each
-
-      } // @if responsive
-
     }
 
     @for $i from 1 to $group {
@@ -60,21 +45,6 @@
          */
         @include rkrMxSizesPlaceholder (lSize-#{$selector}, $currentSize);
 
-        @if $rkrSizesBResponsive {
-
-          @each $type,$name in $rkrRwdMBreakpointsNames {
-
-            @include rkrMxResponsive((from: $type)) {  
-
-              /* Size #{$selector} #{$type} */
-              @include rkrMxSizesPlaceholder (rkrFnBEM(lSize-#{$selector}, $type, false), $currentSize);
-
-            }
-
-          } // @each
-
-        } // @if responsive
-
         $lDefined: append($lDefined, $selector);
 
       } // @if index
@@ -82,6 +52,42 @@
     } // @for in group
 
   } // @each $group
+
+
+  @if $rkrSizesBResponsive {
+
+    @each $type,$name in $rkrRwdMBreakpointsNames {
+
+      @include rkrMxResponsive((from: $type)) {  
+
+	  		@each $group in $rkrSizesLGroups {
+
+			    @if $group == 1 {
+
+            /* Size full #{$type} */
+            @include rkrMxSizesPlaceholder (rkrFnBEM(lSize-100, $type, false), 100);
+
+
+					}// if group 1 	
+
+			    @for $i from 1 to $group {
+
+			      $currentSize: $i / $group * 100;
+			      $selector: round($currentSize);
+
+              /* Size #{$selector} #{$type} */
+              @include rkrMxSizesPlaceholder (rkrFnBEM(lSize-#{$selector}, $type, false), $currentSize);
+
+          }// @for
+
+        }// @each group
+
+      }// include mixin
+
+    } // @each
+
+  } // @if responsive
+
 
 }// @mixin
 
@@ -119,22 +125,7 @@
 
       @include rkrMxSizesRule(rkrFnBEM(#{$rkrSizesNs}, '1/1', false), 100);
 
-      @if $rkrSizesBResponsive {
-
-        @each $type,$name in $rkrRwdMBreakpointsNames {
-
-          @include rkrMxResponsive((from: $type)) {
-
-            @include rkrMxSizesRule(rkrFnBEM(#{$rkrSizesNs}-#{$name}, '1/1', false), 100, $type);
-
-          }
-
-        }// @each breakpoint
-
-      }// @if responsive
-
-
-    }
+    } // @if group 1
 
     @for $i from 1 to $group {
 
@@ -144,25 +135,44 @@
 
       @include rkrMxSizesRule($rule, $selector);
 
-      // Generate responsive rules
-      @if $rkrSizesBResponsive {
-
-        @each $type,$name in $rkrRwdMBreakpointsNames {
-
-          @include rkrMxResponsive((from: $type)) {
-
-		      	$rwdRule: rkrFnBEM(#{$rkrSizesNs}-#{$name}, #{$i}/#{$group}, false);
-
-            @include rkrMxSizesRule($rwdRule, $selector, $type);
-
-          }
-
-        }// @each breakpoint
-
-      }// @if responsive
-
     }// @for in group
 
   }// @each group
+
+  // Generate responsive rules
+  @if $rkrSizesBResponsive {
+
+    @each $type,$name in $rkrRwdMBreakpointsNames {
+
+      @include rkrMxResponsive((from: $type)) {
+
+			  @each $group in $rkrSizesLGroups {
+
+			    @if $group == 1 {
+
+            @include rkrMxSizesRule(rkrFnBEM(#{$rkrSizesNs}-#{$name}, '1/1', false), 100, $type);
+
+			    }
+
+			    @for $i from 1 to $group {
+
+			      $selector: round($i / $group * 100);      
+
+
+
+      			$rwdRule: rkrFnBEM(#{$rkrSizesNs}-#{$name}, #{$i}/#{$group}, false);
+
+        		@include rkrMxSizesRule($rwdRule, $selector, $type);
+
+        	} // @for
+
+        }// @each
+
+      }// @include mixin
+
+    }// @each breakpoint
+
+  }// @if responsive
+
 
 }// @mixin

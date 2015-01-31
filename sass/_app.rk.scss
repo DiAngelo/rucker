@@ -50,10 +50,12 @@
 // Functions and mixins
 @import "tools.responsive/tools.responsive.rkr";
 @import "base.typography/tools.typo.rk";
-@import "layouts.sizes/tools.sizes.rk";
+
 @import "layouts.wrapper/tools.wrapper.rk";
 @import "layouts.grid/tools.grid.rk";
 @import "layouts.flex/tools.flex.rk";
+@import "layouts.sizes/tools.sizes.rk";
+
 @import "objects.media/tools.media.rk";
 @import "objects.inline/tools.inline.rk";
 @import "objects.pack/tools.pack.rk";
@@ -86,10 +88,10 @@
 //
 // Extracted from objects layer, 
 // elements used to define the page layout, like grid system fe.
-@import "layouts.sizes/layouts.sizes.rk";
 @import "layouts.wrapper/layouts.wrapper.rk";
 @import "layouts.grid/layouts.grid.rk";
 @import "layouts.flex/layouts.flex.rk";
+@import "layouts.sizes/layouts.sizes.rk";
 
 
 
