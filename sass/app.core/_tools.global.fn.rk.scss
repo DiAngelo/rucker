@@ -8,11 +8,11 @@
 // TODO: comment parameters
 // TODO: use variable vor 'data'
 //
-@function rkrFnAttributeRule ($_inType, $_inAttribute)
-{
-	@if map-has-key($rkrMAttributesNaming, $_inType) {
+@function rkrFnAttributeRule ($_inType, $_inAttribute) {
 
-  	  $x: map-get($rkrMAttributesNaming, $_inType);
+  @if map-has-key($rkrMAttributesNaming, $_inType) {
+
+      $x: map-get($rkrMAttributesNaming, $_inType);
 
       @if $_inAttribute != null {
         @return '[' +$rkrAttributesPrefix + $x + '~="'+$_inAttribute+'"]';
@@ -20,12 +20,47 @@
         @return '[' + $rkrAttributesPrefix + $x + ']'; 
       }
 
-	}
+  }
 
-	@else {
-		@warn "Unfortunately, no type was not found `#{$_inType}`. "
-	}
+  @else {
+    @warn "Unfortunately, no type was not found `#{$_inType}`. "
+  }
 }
+
+//
+// Generate an attribute rule
+//
+// [data-{type}-{name} ~= "{value}"] { content }
+//
+//  $_inTpe           : A previously registered type of attributes
+//  $_inAttributeVal  : The value of the attribute
+//
+@mixin rkrMxAttribute ($_inType, $_inAttributeVal) {
+
+  $rule: '*';
+
+  @if map-has-key($rkrMAttributesNaming, $_inType) {
+
+      $x: map-get($rkrMAttributesNaming, $_inType);
+
+      @if $_inAttributeVal != null {
+        $rule: $rkrAttributesPrefix + $x + '~="' + $_inAttributeVal + '"';
+      } @else {
+        $rule: $rkrAttributesPrefix + $x; 
+      }
+
+  }
+
+  @else {
+    @warn "Unfortunately, no type was not found `#{$_inType}`. "
+  }
+
+  [#{$rule}] {
+    @content;
+  }
+
+}
+
 
 //
 // Generate an BEM element

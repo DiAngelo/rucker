@@ -7,4 +7,12 @@ $rkrSizesNs: $rkrNamespace !default;
 
 // Groups of sizes for which to define units
 // fe. for group 3 we define sizes for 1/3 and 2/3
-$rkrSizesLGroups: 2, 3, 4 !default;
+$rkrSizesLGroups: 1, 2, 3, 4 !default;
+
+// sizes specific flag to toggle responsive mode
+$rkrSizesBResponsive: $rkrRwdBActive !default;
+
+$rkrSizeAttrType: layout  !default;
+$rkrSizeAttrName: size !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute('size', $rkrSizeAttrType, $rkrSizeAttrName);

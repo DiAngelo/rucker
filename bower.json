@@ -1,0 +1,33 @@
+{
+  "name": "rucker",
+  "version": "0.1.1",
+  "homepage": "https://github.com/DiAngelo/rucker",
+  "authors": [
+    "Gabi Balasz <diangelo@bitvice.ro>"
+  ],
+  "description": "Front-end framework based on SASS",
+  "main": "sass/_app.rk.scss",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "sass",
+    "rucker",
+    "ruckercss",
+    "front-end",
+    "framework",
+    "web",
+    "responsive",
+    "grid"
+  ],
+  "license": "Apache 2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "**/_empty",
+    "*.md"
+  ]
+}
