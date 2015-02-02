@@ -33,3 +33,6 @@
 /*  7. Capitalize first letter of the text */
 #{rkrFnAttributeRule(text, -capital)}     { text-transform: capitalize !important; }
 
+/* rkrMxRwdVisibilities */
+@include rkrMxRwdVisibilities();
+/* rkrMxRwdVisibilities */

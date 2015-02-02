@@ -23,6 +23,13 @@
 		vertical-align: $rkrInlineAlign;
 	}
 
+  /**
+   * Inline object item
+   */
+  %oInlineItemLink { 
+    text-decoration: none;
+    color: inherit;
+  }
 
 /**
  * Inline object modifier to align text inisde item to top
@@ -54,8 +61,9 @@
 
 
 
-#{rkrFnInlineRule(parent)} { @extend %oInlineParent; }
-#{rkrFnInlineRule(item)}  	{ @extend %oInlineItem; 	}
+#{rkrFnInlineRule(parent) } { @extend %oInlineParent;    }
+#{rkrFnInlineRule(item)   } { @extend %oInlineItem; 	   }
+#{rkrFnInlineRule(link)   } { @extend %oInlineItemLink;  }
 
 #{rkrFnInlineRule(top 					, false)} { @extend %oInlineTop; 					}
 #{rkrFnInlineRule(bottom 		  	, false)} { @extend %oInlineBottom; 			}

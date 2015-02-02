@@ -28,19 +28,25 @@
 // Default configuration values
 @import "app.core/conf.settings.rk";
 @import "app.core/conf.attributes.rk";
+
 @import "tools.responsive/conf.responsive.rkr";
 @import "utilities.text/conf.text.rk";
 @import "base.typography/conf.typo.rk";
+
 @import "layouts.sizes/conf.sizes.rk";
 @import "layouts.wrapper/conf.wrapper.rk";
 @import "layouts.grid/conf.grid.rk";
 @import "layouts.flex/conf.flex.rk";
+
 @import "objects.media/conf.media.rk";
 @import "objects.inline/conf.inline.rk";
 @import "objects.pack/conf.pack.rk";
 @import "objects.box/conf.box.rk";
 @import "objects.band/conf.band.rk";
 @import "objects.page/conf.page.rk";
+
+@import "modules.tabs/conf.tabs.rkr";
+
 
 //       ____________________
 //      /                   /
@@ -63,6 +69,7 @@
 @import "objects.band/tools.band.rk";
 @import "objects.page/tools.page.rk";
 
+@import "modules.tabs/tools.tabs.rkr";
 
 
 /////////////// Start generating CSS rules ///////////////
@@ -123,6 +130,7 @@
 //    /___________________/
 //
 // Compound by more components
+@import "modules.tabs/mod.tabs.rkr";
 
 //       ____________________
 //      /                   /

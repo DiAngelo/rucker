@@ -1,0 +1,91 @@
+/*------------------------------------*\
+    #Tabs Module
+\*------------------------------------*/
+
+/**
+ *
+  <section data-m-tabs="rkr--base" >
+
+ 		<ul data-m-tabs="rkr__list">
+			<li data-m-tabs="rkr__item rkr--is-selected">{Label}</li>
+			<li data-m-tabs="rkr__item">{Label}</li>
+ 		</ul>
+
+ 		<ul data-m-tabs="rkr__content">
+ 			<li data-m-tabs="rkr__page rkr--is-selected">{content}</li>
+ 			<li data-m-tabs="rkr__page">{content}</li>
+ 		</ul>
+
+  </section>
+
+ *
+ */
+
+@include rkrMxModTabsRule(base, false) {
+	
+	display: block;
+
+	@include rkrMxModTabsRule(list) {
+		@extend %oInlineParent;
+	}
+
+	@include rkrMxModTabsRule(item) {
+		@extend %oInlineItem;
+	}
+
+}
+
+@include rkrMxModTabsRule(pack, false) {
+
+	@include rkrMxModTabsRule(list) {
+		@extend %oPack;
+	}
+
+	@include rkrMxModTabsRule(item) {
+		@extend %oPackItem;
+	}
+
+}
+
+@include rkrMxModTabsRule(list) {
+	background-color: $rkrModTabsCBgNav;
+
+	@include rkrMxModTabsRule(is-selected, false) {
+		background-color: $rkrModTabsCBgNavSelected;
+		color: $rkrModTabsCFgNavSelected;
+
+		&:hover {
+			background-color: $rkrModTabsCBgNavSelected;
+			color: $rkrModTabsCFgNavSelected;
+		}
+
+	}
+
+}
+
+@include rkrMxModTabsRule(item) {
+	background-color: $rkrModTabsCBgNavItem;
+	color: $rkrModTabsCFgNavItem;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $rkrModTabsCBgNavItemHover;
+	}
+
+}
+
+
+@include rkrMxModTabsRule(content) {
+
+	@include rkrMxModTabsRule(page) {
+		display: none;
+	}
+
+	@include rkrMxModTabsRule(is-selected, false) {
+		display: block;
+	}
+
+}
+
+
+

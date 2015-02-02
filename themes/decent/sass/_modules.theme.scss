@@ -1,0 +1,148 @@
+/*------------------------------------*\
+	Theme specific modules
+		# Header
+		# Navigation
+		# Content
+		# Tabs
+\*------------------------------------*/
+
+/**
+ * #Header
+ */
+.page-header {
+	text-align: center;
+	position: relative;
+}
+
+.page-header__fixed {
+
+	position: absolute;
+	top: 0;
+	background-color: $tCBgHeader;
+
+}
+
+.page-header__logo {
+	margin: 1rem 0;
+	width: 220px;
+}
+
+
+@include rkrMxResponsive((from: medium)) {
+
+	.page-header__fixed {
+
+		position: fixed;
+		height: 130px;
+
+	}
+
+	.page-header__logo {
+		width: 360px;
+	}
+
+}
+
+
+
+/**
+ * #Navigation
+ */
+.page-nav {
+	padding-top: 45px;
+}
+
+.page-nav__toggle {
+	font-size: 1rem;
+	color: $rkrCFgNavMenu;
+	cursor: pointer;
+}
+
+	.page-nav__toggle:before {
+		content: "\f0c9";
+		font: normal normal normal 1.4rem FontAwesome;
+		padding: 0rem .2rem 0 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+.page-nav__checkbox { display: none; }	
+
+@include rkrMxResponsive((from: medium)) {
+	.page-nav {
+		padding-top: 90px;
+	}
+
+	.page-nav:before { display: none; }
+}
+
+.page-nav [data-o-inline~="di__item"] {
+	padding: 0 .5rem;
+	text-transform: uppercase;
+	color: $tCFgNav;
+}
+
+.page-nav [data-o-inline~="di__item"]:hover {
+	color: $tCFgNavHover;
+}
+
+.page-nav [data-o-inline~="di--is-selected"] {
+	color: $tCFgNavActive;
+}
+
+.page-nav [data-o-inline~="di__item"]:first-child { padding-left: 0; }
+.page-nav [data-o-inline~="di__item"]:last-child  { padding-right: 0; }
+
+		.page-nav__list {}
+
+@include rkrMxResponsive((to: medium)) {
+
+		.page-nav__checkbox:checked + .page-nav__toggle { 
+			color: #fff;
+			text-shadow: 0 1px 0 #194d72 ;
+		}
+
+		.page-nav__checkbox:checked ~ .page-nav__list { 
+			display: block;
+		}
+
+		.page-nav__list { 
+				display: none;
+				position: absolute;
+				top: 106px;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				background-color: $tCBgHeader;
+		}	
+		.page-nav__list > [data-o-inline~="di__item"] {
+				display: block;
+				padding: 1rem;
+		} 
+
+}
+
+/**
+ * #Content
+ */
+.page-content { 
+	background-color: #fff; 
+	padding: 1rem 0;
+}
+
+
+/**
+ * #Tabs
+ */
+.listings-tab [data-m-tabs~="di__list"] {
+	padding-top: .25rem;
+}
+
+.listings-tab [data-m-tabs~="di__item"] {
+	padding: .25rem 1rem;
+}
+
+.listings-tab__content {
+	padding: 1rem 0;
+	background-color: $tCBgBase;
+}

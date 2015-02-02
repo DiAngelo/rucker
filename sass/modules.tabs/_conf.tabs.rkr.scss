@@ -1,0 +1,19 @@
+//
+// Tabs module settings
+//
+
+
+// Tabs namespace
+$rkrModTabsNs: $rkrNamespace !default;
+
+$rkrModTabsAttrType: module !default;
+$rkrModTabsAttrName: tabs !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(tabs, $rkrModTabsAttrType, $rkrModTabsAttrName);
+
+$rkrModTabsCBgNav: #eee !default;
+$rkrModTabsCBgNavItem: #fff !default;
+$rkrModTabsCFgNavItem: #333 !default;
+$rkrModTabsCBgNavSelected: #fff !default;
+$rkrModTabsCFgNavSelected: #333 !default;
+$rkrModTabsCBgNavItemHover: rgba(255, 255, 255, .1) !default;
