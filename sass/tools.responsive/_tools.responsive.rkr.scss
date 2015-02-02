@@ -14,7 +14,7 @@
   $to: map-get($_inMap, to);
 
   $fromSize:  null;
-  $toSize:     null;
+  $toSize:    null;
 
   @if $from != null {
 
@@ -33,7 +33,7 @@
 
     @if map-has-key($rkrRwdMBreakpoints, $to) {    
 
-      $toSize: map-get($rkrRwdMBreakpoints, $to);
+      $toSize: map-get($rkrRwdMBreakpoints, $to) - 1;
 
     } @else {
 

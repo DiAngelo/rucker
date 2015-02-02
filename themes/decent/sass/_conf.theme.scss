@@ -9,6 +9,18 @@ $rkrNamespace: 'di';
 $rkrSizesLGroups: 1, 2, 3, 4, 6, 8, 12;
 
 //
+// Typography
+//
+
+$rkrTypoMSzBase: (
+	tiny: 	12px,
+	small: 	14px,
+	medium: 16px,
+	large: 	16px,
+	huge: 	18px
+);
+
+//
 // Define colors
 //
 

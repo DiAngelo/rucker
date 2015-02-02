@@ -14,7 +14,7 @@ $rkrMAttributesNaming: rkrFnRegisterAttribute(typo, $rkTypoAttrType, $rkTypoAttr
 $rkrTypoBResponsive: $rkrRwdBActive !default;
 
 // map that contains font sizes to use for each responsive state
-$rkrTypoMSzBase: rkrFnMModifiers(12px, 2px, false);
+$rkrTypoMSzBase: rkrFnMModifiers(12px, 2px, false) !default;
 
 // base page font size
 $rkrTypoSzBase: map-get($rkrTypoMSzBase, medium) !default;
