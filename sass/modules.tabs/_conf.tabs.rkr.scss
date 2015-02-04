@@ -11,9 +11,15 @@ $rkrModTabsAttrName: tabs !default;
 
 $rkrMAttributesNaming: rkrFnRegisterAttribute(tabs, $rkrModTabsAttrType, $rkrModTabsAttrName);
 
+// tabs module specific flag to toggle responsive mode
+$rkrModTabsBResponsive: $rkrRwdBActive !default;
+
 $rkrModTabsCBgNav: #eee !default;
 $rkrModTabsCBgNavItem: #fff !default;
 $rkrModTabsCFgNavItem: #333 !default;
 $rkrModTabsCBgNavSelected: #fff !default;
 $rkrModTabsCFgNavSelected: #333 !default;
 $rkrModTabsCBgNavItemHover: rgba(255, 255, 255, .1) !default;
+
+$rkrModTabsCFgNavArrow: #333 !default;
+

@@ -89,3 +89,60 @@
 
 
 
+@if $rkrModTabsBResponsive {
+
+	@include rkrMxResponsive((to: medium)) {
+
+		@include rkrMxModTabsRule(base, false) {
+
+			@include rkrMxModTabsRule(box) {
+				display: none;
+
+				&:checked {
+		
+					@include rkrMxModTabsRule(list) {
+		
+						@include rkrMxModTabsRule(item) {
+							display: block;
+						}
+
+					}
+
+				}
+				
+			}
+
+			
+			@include rkrMxModTabsRule(list) {
+				display: block;
+				padding: .24rem;
+
+
+
+				@include rkrMxModTabsRule(item) {
+					display: none;
+				}
+
+				@include rkrMxModTabsRule(is-selected, false) {
+					display: block;
+					position: relative;
+
+					&:after {
+						content: '';
+		        width: .7rem;
+		        height: .7rem;
+		        right: .7rem;
+		        position: absolute; 
+		        transform: rotate(45deg);
+		        border-bottom: 1px solid $rkrModTabsCFgNavArrow;
+		        border-right: 1px solid $rkrModTabsCFgNavArrow;
+
+					}
+				}
+
+			}
+		}    
+
+  }	
+
+}
