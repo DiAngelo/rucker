@@ -72,6 +72,10 @@
 		background-color: $rkrModTabsCBgNavItemHover;
 	}
 
+	& > label {
+		display: block;
+	}
+
 }
 
 
@@ -87,33 +91,29 @@
 
 }
 
-
+@include rkrMxModTabsRule(box) {
+	display: none;
+}
 
 @if $rkrModTabsBResponsive {
 
 	@include rkrMxResponsive((to: medium)) {
 
-		@include rkrMxModTabsRule(base, false) {
+		@include rkrMxModTabsRule(box) {
 
-			@include rkrMxModTabsRule(box) {
-				display: none;
-
-				&:checked {
-		
-					@include rkrMxModTabsRule(list) {
-		
-						@include rkrMxModTabsRule(item) {
-							display: block;
-						}
-
+			&:checked + #{rkrFnModTabsRule(list)} {
+	
+					@include rkrMxModTabsRule(item) {
+						display: block;
 					}
 
-				}
-				
 			}
-
 			
-			@include rkrMxModTabsRule(list) {
+		}
+
+		@include rkrMxModTabsRule(box) {
+
+			& + #{rkrFnModTabsRule(list)} {
 				display: block;
 				padding: .24rem;
 
@@ -133,6 +133,8 @@
 		        height: .7rem;
 		        right: .7rem;
 		        position: absolute; 
+		        top: 3px;
+		        z-index: 1;
 		        transform: rotate(45deg);
 		        border-bottom: 1px solid $rkrModTabsCFgNavArrow;
 		        border-right: 1px solid $rkrModTabsCFgNavArrow;

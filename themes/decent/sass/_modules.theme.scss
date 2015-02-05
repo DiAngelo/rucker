@@ -219,14 +219,24 @@
  * #Tabs
  */
 .listings-tab [data-m-tabs~="di__list"] {
-	padding-top: .25rem;
+	padding-top: .25rem;	
 }
 
-.listings-tab [data-m-tabs~="di__item"] {
+.listings-tab [data-m-tabs~="di__item"] > label {
 	padding: .25rem 1rem;
+	cursor: pointer;
 }
 
 .listings-tab__content {
 	padding: 1rem 0;
 	background-color: $tCBgBase;
+}
+
+.listings__item {
+	padding: 1.5rem;
+}
+
+.listings__media {
+	background-color: $tCBgBoxLight;	
+	box-shadow: 0 0 3px 3px #ddd;
 }
