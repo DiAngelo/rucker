@@ -5,6 +5,7 @@
 		# Slider
 		# Content
 		# Tabs
+		# Banner
 \*------------------------------------*/
 
 /**
@@ -239,4 +240,41 @@
 .listings__media {
 	background-color: $tCBgBoxLight;	
 	box-shadow: 0 0 3px 3px #ddd;
+}
+
+.listings__media [data-o-media~="di__body"] {
+	display: table;
+	width: 100%;
+}
+
+	.listings__band {
+
+		height: 10rem;
+		vertical-align: middle;
+		display: table-cell;
+		width: 100%;
+	}
+
+		.listings__title {
+			color: $tCFgBoxLight;
+			font-weight: normal;
+		}
+
+		.listings__separator {
+			line-height: 2rem;
+		}
+
+		.listings__separator,
+		.listings__location {
+			color: $tCFgLocation;
+		}
+
+
+/**
+ * #Banner
+ */
+
+.banner {
+	background-color: $tCBgBanner;
+	height: 160px;
 }
