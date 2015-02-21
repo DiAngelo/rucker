@@ -107,7 +107,12 @@
       $prefix: '__';
     }
 
-    $param: $_inNs + $prefix + $_inAttr;
+    $param: $_inAttr;
+
+    @if $_inNs != '' {
+      $param: $_inNs + $prefix + $_inAttr;
+    }    
+
     $response: rkrFnAttributeRule($_inEntity, $param);
 
   }
