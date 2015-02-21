@@ -40,10 +40,13 @@
 
 @import "objects.media/conf.media.rk";
 @import "objects.inline/conf.inline.rk";
+@import "objects.bare/conf.bare.rkr";
 @import "objects.pack/conf.pack.rk";
 @import "objects.box/conf.box.rk";
 @import "objects.band/conf.band.rk";
 @import "objects.page/conf.page.rk";
+
+@import "components.panel/conf.panel.rkr";
 
 @import "modules.tabs/conf.tabs.rkr";
 
@@ -64,10 +67,13 @@
 
 @import "objects.media/tools.media.rk";
 @import "objects.inline/tools.inline.rk";
+@import "objects.bare/tools.bare.rkr";
 @import "objects.pack/tools.pack.rk";
 @import "objects.box/tools.box.rk";
 @import "objects.band/tools.band.rk";
 @import "objects.page/tools.page.rk";
+
+@import "components.panel/tools.panel.rkr";
 
 @import "modules.tabs/tools.tabs.rkr";
 
@@ -110,6 +116,7 @@
 // Sketch objects with no style
 @import "objects.media/obj.media.rk";
 @import "objects.inline/obj.inline.rk";
+@import "objects.bare/obj.bare.rkr";
 @import "objects.pack/obj.pack.rk";
 @import "objects.box/obj.box.rk";
 @import "objects.band/obj.band.rk";
@@ -123,6 +130,9 @@
 //    /___________________/
 // 
 // Objects with style
+@import "components.panel/com.panel.rkr";
+
+
 
 //       ____________________
 //      /                   /

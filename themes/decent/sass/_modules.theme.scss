@@ -6,6 +6,8 @@
 		# Content
 		# Tabs
 		# Banner
+		# Leads
+
 \*------------------------------------*/
 
 /**
@@ -276,5 +278,45 @@
 
 .banner {
 	background-color: $tCBgBanner;
-	height: 160px;
 }
+
+.banner__img { 
+	min-height: 75px;
+}
+
+.banner__text { 
+	text-align: right;
+	color: #fff; 
+	text-shadow: 1px 1px #333;
+}
+
+	.banner__text h3 { 
+		padding: .25rem 0;
+	}
+
+
+@include rkrMxResponsive((from: medium)) {
+	.banner__text h3 { 
+		padding: .5rem 0;
+	}
+}
+
+@include rkrMxResponsive((from: large)) {
+	.banner__text h3 { 
+		padding: 1rem 0;
+	}
+}
+
+
+
+/**
+ * #Leads
+ */
+.leads-list {}
+
+	.leads-list a {
+		display: block;
+		padding: 5px 0;
+		color: $rkrComPanelCFgHeading;
+	}
+

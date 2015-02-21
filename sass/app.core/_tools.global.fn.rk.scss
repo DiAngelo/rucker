@@ -114,3 +114,12 @@
 
   @return $response;
 }
+
+//
+// rkrMxListReset
+//
+@mixin rkrMxListReset() {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+}

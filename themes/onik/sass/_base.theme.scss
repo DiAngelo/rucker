@@ -1,0 +1,13 @@
+/*------------------------------------*\
+	HTML tags overrides specific to current theme
+\*------------------------------------*/
+
+body {
+	background-color: $tCBgBase;
+	color: $tCFgBase;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
