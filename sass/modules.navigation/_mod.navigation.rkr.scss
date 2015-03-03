@@ -1,0 +1,86 @@
+/*------------------------------------*\
+    #Navigation Module
+\*------------------------------------*/
+
+/**
+ *
+  <nav data-m-nav="rkr--main" >
+
+ 		<ul data-m-nav="rkr__list">
+			<li data-m-nav="rkr__item is-selected">
+				<a href="#" data-m-nav="rkr__link">{Label}</a>
+			</li>
+ 		</ul>
+
+  </nav>
+
+ *
+ */
+
+/**
+ * Main navigation 
+ */
+ @include rkrMxModNavRule(main, false) {
+	
+	@include rkrMxModNavRule(list) {
+		@extend %oInlineParent;
+	}
+
+	@include rkrMxModNavRule(item) {
+		@extend %oInlineItem;
+
+		font-size: $rkrModNavFontSize;
+		font-weight: $rkrModNavFontWeight;
+		font-family: $rkrModNavFontMain;
+
+		@if $rkrModNavLinkIcons {
+			margin-top: 1.2 * $rkrModNavLinkIconSize;
+		}
+
+	}
+
+	#{rkrFnModNavRule(link)} {
+		display: block;
+		color: $rkrModNavCFgMain;
+
+		&:hover {
+			color: $rkrModNavCFgMainHover;
+		}
+
+		position: relative;
+		padding: 1rem;
+
+		-webkit-transition: .5s ease;
+						transition: .5s ease;
+
+		&:before {
+		  width: $rkrModNavLinkIconSize;
+		  height: 1.2 * $rkrModNavLinkIconSize;
+		  left: 50%;
+
+		  position: absolute;
+		  display: inline-block;
+
+		  text-align: center;
+		  font-family: "FontAwesome";
+		  font-size: 1rem;
+		  
+/*			-webkit-transition: .5s ease;
+							transition: .5s ease;
+*/
+		  -webkit-transform: translateX(-50%) translateY(-120%);
+		  				transform: translateX(-50%) translateY(-120%); 
+		}
+
+/* animate
+		&:hover {
+			margin-top: -2.4 * $rkrModNavLinkIconSize;
+		}
+
+		&:hover:before {
+		  -webkit-transform: translateX(-50%) translateY(120%);
+		  				transform: translateX(-50%) translateY(120%);			
+		}
+*/	
+	}
+}

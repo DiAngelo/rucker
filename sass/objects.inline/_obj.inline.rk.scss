@@ -32,6 +32,13 @@
   }
 
 /**
+ * Inline object modifier to align text inisde item to midle
+ */
+%oInlineMiddle {
+  %oInlineItem { vertical-align: middle; }
+}
+
+/**
  * Inline object modifier to align text inisde item to top
  */
 %oInlineTop {
@@ -65,6 +72,8 @@
 #{rkrFnInlineRule(item)   } { @extend %oInlineItem; 	   }
 #{rkrFnInlineRule(link)   } { @extend %oInlineItemLink;  }
 
+#{rkrFnInlineRule(middle        , false)} { @extend %oInlineMiddle;       }
 #{rkrFnInlineRule(top 					, false)} { @extend %oInlineTop; 					}
 #{rkrFnInlineRule(bottom 		  	, false)} { @extend %oInlineBottom; 			}
 #{rkrFnInlineRule(with-splitter , false)} { @extend %oInlineWithSplitter; }
+

@@ -1,0 +1,12 @@
+//
+// Positions configuration file
+//
+
+// variable used in attribute naming
+$rkrPosAttrName: 'pos';
+
+$rkrPosAttrType: utility;
+
+
+// Register attribute type for media
+$rkrMAttributesNaming: rkrFnRegisterAttribute(pos, $rkrPosAttrType, $rkrPosAttrName);

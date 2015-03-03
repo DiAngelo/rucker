@@ -16,6 +16,6 @@
 
 }
 
-#{rkrFnAttributeRule(utility, 'clearfix')} {
+@include rkrMxAttribute(utility, 'clearfix') {
   @extend %uClearfix;
 }
