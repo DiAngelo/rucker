@@ -21,10 +21,74 @@
  * Main navigation 
  */
  @include rkrMxModNavRule(main, false) {
-	
+
 	@include rkrMxModNavRule(list) {
 		@extend %oInlineParent;
+		position: fixed;
+		top: 0;
+		right: 1rem;
+		z-index: 20;
+		
+
+		@include rkrMxResponsive((to: medium)) {
+			bottom:0;
+			height: 100%;
+			right: -100%;
+			width: 				 15rem;
+			padding-top: 		7rem;
+			padding-bottom: 1rem;
+			overflow: auto;
+			background-color: rgba(0,0,0, .8);
+			z-index: 1;
+
+			-webkit-transition: .2s ease-in-out; 
+							transition: .2s ease-in-out;			  		
+
+		}		
 	}
+
+	@include rkrMxModNavRule(label) {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1rem;
+		text-transform: uppercase;
+		color: #1C89C4;
+		cursor: pointer;
+		position: fixed;
+		z-index: 13;
+		top: 0;
+		right: 0;
+		padding: 1rem;
+
+		-webkit-backface-visibility: hidden;
+
+
+		&:before {
+			content: "\f0c9";
+			font: normal normal normal 1rem FontAwesome;
+			padding-right: .4rem;
+			margin-top: -.2rem;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		@include rkrMxResponsive((from: medium)) {
+			display: none;
+		}
+
+	}
+
+	input#{rkrFnModNavRule(toggle)} { display: none; }
+
+	@include rkrMxResponsive((to: medium)) {
+		input#{rkrFnModNavRule(toggle)}:checked ~ #{rkrFnModNavRule(list)} {
+			right: 0;
+		}
+	}
+
+	input#{rkrFnModNavRule(toggle)}:checked + #{rkrFnModNavRule(label)} {
+		color: $rkrModNavCFgMainHover;
+	}
+
 
 	@include rkrMxModNavRule(item) {
 		@extend %oInlineItem;
@@ -33,25 +97,25 @@
 		font-weight: $rkrModNavFontWeight;
 		font-family: $rkrModNavFontMain;
 
-		@if $rkrModNavLinkIcons {
-			margin-top: 1.2 * $rkrModNavLinkIconSize;
+		@include rkrMxResponsive((to: medium)) {
+			width: 100%;
+			text-align: center;
 		}
-
 	}
 
 	#{rkrFnModNavRule(link)} {
 		display: block;
-		color: $rkrModNavCFgMain;
-
-		&:hover {
-			color: $rkrModNavCFgMainHover;
-		}
-
+		line-height: 70px;
 		position: relative;
-		padding: 1rem;
+		padding: 1.8rem 1rem 0;
 
 		-webkit-transition: .5s ease;
 						transition: .5s ease;
+
+		color: $rkrModNavCFgMain;
+		&:hover {
+			color: $rkrModNavCFgMainHover;
+		}
 
 		&:before {
 		  width: $rkrModNavLinkIconSize;

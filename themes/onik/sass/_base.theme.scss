@@ -29,7 +29,6 @@ a {
 p {
 	line-height: 1.2;
 	margin-bottom: 1rem;
-	text-align: justify;
 }
 
 .noselect {
@@ -39,4 +38,8 @@ p {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+* {
+  box-sizing: border-box;
 }
