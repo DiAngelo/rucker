@@ -17,7 +17,7 @@ $rkrTypoMSzBase: (
 	small: 	14px,
 	medium: 14px,
 	large: 	16px,
-	huge: 	18px
+	huge: 	16px
 );
 
 
@@ -26,11 +26,19 @@ $rkrTypoMSzBase: (
 // Define colors
 //
 
+$onikCOrange: #E67817;
+$onikCBlue: 	#1C89C4;
 
-$tCBgBase: 			#424F5F ;
+$onikCBgNav:  		rgba(55,55,55,.3);
+$onikCBgNavHover: rgba(0,0,0,.3);
+$onikCLnNav:  		#444;
+
+
+$tCBgBase: 			#222 ;
 $tCFgBase: 			#eee ;
 
 $tCBgHeader:		rgba(255, 255, 255, .5);
 
-$rkrModNavCFgMain: 			#1C89C4;
-$rkrModNavCFgMainHover: #E67817;
+$rkrModNavCFgMain: 			#f5f5f5;
+$rkrModNavCFgMainHover: $onikCOrange;
+

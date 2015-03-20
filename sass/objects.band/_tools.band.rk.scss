@@ -12,6 +12,12 @@
 
 }
 
+@mixin rkrMxBandRule($_inAttr, $_inIsElem: true) {
+	#{rkrFnBandRule($_inAttr, $_inIsElem)} {
+		@content;
+	}
+}
+
 
 
 //

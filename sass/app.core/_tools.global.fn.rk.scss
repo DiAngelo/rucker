@@ -14,7 +14,7 @@
 
       $x: map-get($rkrMAttributesNaming, $_inType);
 
-      @if $_inAttribute != null {
+      @if $_inAttribute != null and $_inAttribute != "" {
         @return '[' +$rkrAttributesPrefix + $x + '~="'+$_inAttribute+'"]';
       } @else {
         @return '[' + $rkrAttributesPrefix + $x + ']'; 

@@ -44,3 +44,5 @@
 	bottom: 0;
 }
 
+#{rkrFnAttributeRule(pos, float-left)}  { float: left;  }
+#{rkrFnAttributeRule(pos, float-right)} { float: right; }
