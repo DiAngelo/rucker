@@ -88,6 +88,15 @@
 		input#{rkrFnModNavRule(toggle)}:checked + & > #{rkrFnModNavRule(list)} {
 			right: 0;
 		}
+	}
+
+	input#{rkrFnModNavRule(toggle)}:checked + #{rkrFnModNavRule(label)} {
+		color: $rkrModNavCFgMainHover;
+
+		&:before {
+			content: "\f00d";
+		}
+	}
 
 	input#{rkrFnModNavRule(toggle)}:checked + #{rkrFnModNavRule(label)} {
 		color: $rkrModNavCFgMainHover;
@@ -204,3 +213,4 @@ input#{rkrFnModNavRule(toggle)} { display: none; }
 
 	}
 }
+
