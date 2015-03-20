@@ -24,7 +24,6 @@
 
 	@include rkrMxModNavRule(list) {
 		@extend %oInlineParent;
-		
 
 		@include rkrMxResponsive((to: medium)) {
 		
@@ -40,12 +39,12 @@
 			padding-top: 		4rem;
 			padding-bottom: 1rem;
 			overflow: auto;
-			background-color: rgba(255,255,255, 1);
-			z-index: 1;
 
 			-webkit-transition: .2s ease-in-out; 
 							transition: .2s ease-in-out;			  		
 
+			background-color: rgba(0,0,0, .8);
+			z-index: map-get($rkrMZLayers, top-menu-xs);
 		}		
 	}
 
@@ -55,8 +54,9 @@
 		text-transform: uppercase;
 		color: $rkrModNavCFgMain;
 		cursor: pointer;
+
 		position: absolute;
-		z-index: 13;
+		z-index: map-get($rkrMZLayers, top-menu);
 		top: 0;
 		right: 0;
 		padding: 1rem;
@@ -76,16 +76,18 @@
 		@include rkrMxResponsive((from: medium)) {
 			display: none;
 		}
-
 	}
 
-	input#{rkrFnModNavRule(toggle)} { display: none; }
+
+
+	//
+	// Responsive active status
+	//
 
 	@include rkrMxResponsive((to: medium)) {
-		input#{rkrFnModNavRule(toggle)}:checked ~ #{rkrFnModNavRule(list)} {
+		input#{rkrFnModNavRule(toggle)}:checked + & > #{rkrFnModNavRule(list)} {
 			right: 0;
 		}
-	}
 
 	input#{rkrFnModNavRule(toggle)}:checked + #{rkrFnModNavRule(label)} {
 		color: $rkrModNavCFgMainHover;
@@ -94,6 +96,7 @@
 			content: "\f00d";
 		}
 	}
+
 
 
 	@include rkrMxModNavRule(item) {
@@ -165,5 +168,39 @@
 		  				transform: translateX(-50%) translateY(120%);			
 		}
 */	
+		@include rkrMxResponsive((to: medium)) {
+			font-size: 1rem;
+			line-height: 3rem;
+		}
+
+	}
+}
+
+input#{rkrFnModNavRule(toggle)} { display: none; }
+
+
+
+
+
+/**
+ * Footer navigation 
+ */
+@include rkrMxModNavRule(footer, false) {
+	list-style: none;
+
+	@include rkrMxModNavRule(item, false) {
+		display: block;
+		padding: 0 0 .3rem 2rem;
+	}
+
+	@include rkrMxModNavRule(link, false) {
+
+		&:before {
+			font-family: "FontAwesome";
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 1rem;
+		}
+
 	}
 }

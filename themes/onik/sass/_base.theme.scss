@@ -9,6 +9,7 @@ html, body { height: 100%; }
 body {
 	background-color: $tCBgBase;
 	color: $tCFgBase;
+  background-image:url('../images/body_bg.jpg');
 
 	/* TODO: move this at framework level */
   font-family: 'Open Sans', sans-serif;

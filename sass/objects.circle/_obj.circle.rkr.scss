@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #Circle Object
+\*------------------------------------*/
+
+@include rkrMxCircleRule("") {
+	border-radius: 50%;
+	min-height:  1rem;
+	min-width:   1rem;
+	line-height: 1;
+	text-align: center;
+}
+
+@include rkrMxCircleRule('outline', false) {
+	border: 1px solid #fff;
+}
+
+@include rkrMxCircleModifiers();
