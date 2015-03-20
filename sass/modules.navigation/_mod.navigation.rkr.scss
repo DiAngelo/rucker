@@ -24,22 +24,25 @@
 
 	@include rkrMxModNavRule(list) {
 		@extend %oInlineParent;
-/*		position: fixed;
-		top: 0;
-		right: 1rem;
-		z-index: map-get($rkrMZLayers, top-menu);
-*/
-		-webkit-transition: .4s ease-in-out; 
-						transition: .4s ease-in-out;
 
 		@include rkrMxResponsive((to: medium)) {
+		
+			position: fixed;
+			top: 0;
+			right: 1rem;
+			z-index: 20;
 			bottom:0;
 			height: 100%;
 			right: -100%;
-			width: 				 15rem;
-			padding-top: 		7rem;
+			width:  100%;
+
+			padding-top: 		4rem;
 			padding-bottom: 1rem;
 			overflow: auto;
+
+			-webkit-transition: .2s ease-in-out; 
+							transition: .2s ease-in-out;			  		
+
 			background-color: rgba(0,0,0, .8);
 			z-index: map-get($rkrMZLayers, top-menu-xs);
 		}		
@@ -49,9 +52,10 @@
 		font-family: 'Roboto', sans-serif;
 		font-size: 1rem;
 		text-transform: uppercase;
-		color: #1C89C4;
+		color: $rkrModNavCFgMain;
 		cursor: pointer;
-		position: fixed;
+
+		position: absolute;
 		z-index: map-get($rkrMZLayers, top-menu);
 		top: 0;
 		right: 0;
@@ -85,8 +89,11 @@
 			right: 0;
 		}
 
-		input#{rkrFnModNavRule(toggle)}:checked + & > #{rkrFnModNavRule(label)} {
-			color: $rkrModNavCFgMainHover;
+	input#{rkrFnModNavRule(toggle)}:checked + #{rkrFnModNavRule(label)} {
+		color: $rkrModNavCFgMainHover;
+
+		&:before {
+			content: "\f00d";
 		}
 	}
 
@@ -100,8 +107,12 @@
 		font-family: $rkrModNavFontMain;
 
 		@include rkrMxResponsive((to: medium)) {
-			width: 100%;
+			display: block;
+			width: 80%;
 			text-align: center;
+			border-bottom: 1px solid #f5f5f5;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
@@ -109,7 +120,7 @@
 		display: block;
 		line-height: 70px;
 		position: relative;
-		padding: 1.8rem 1rem 0;
+		padding: 1.2rem 1rem 0;
 
 		-webkit-transition: .5s ease;
 						transition: .5s ease;
@@ -137,6 +148,15 @@
 		  -webkit-transform: translateX(-50%) translateY(-120%);
 		  				transform: translateX(-50%) translateY(-120%); 
 		}
+
+		@include rkrMxResponsive((to: medium)) {
+			line-height: 5rem;
+			font-size: 1.2rem;
+			&:before {
+				font-size: 1.4rem;
+			}
+		}
+
 
 /* animate
 		&:hover {
