@@ -1,6 +1,4 @@
-# Rucker web framework naming conventions
-
-### SASS
+# Rucker naming conventions for SASS
 
 We use camelCase for variables and functions so it is easier to separate SASS code from CSS that it generates.
 
