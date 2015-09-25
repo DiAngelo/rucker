@@ -1,0 +1,143 @@
+//
+// Load the inversed triangle layers in the corresponding order
+//
+// We group entities by their final specificity
+//
+
+//
+// Naming conventions
+//
+// SCSS - camel-case
+//
+// CSS - SUIT CSS
+// https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
+//
+
+//       ____________________
+//      /                   /
+//     /   Virtual Layer   /
+//    /___________________/
+//
+// Prepare functions used to generate values for Settings layer
+//
+// @import "app.core/tools.global.fn.rkr";
+@import "app.core/tools.metrics.fn.rkr";
+
+//       ____________________
+//      /                   /
+//     /   Settings layer  /
+//    /___________________/
+//
+// Default configuration values
+@import "app.core/conf.settings.rkr";
+// @import "app.core/conf.attributes.rkr";
+// @import "tools.responsive/conf.responsive.rkr";
+// @import "utilities.text/conf.text.rkr";
+// @import "base.typography/conf.typo.rkr";
+// @import "layouts.sizes/conf.sizes.rkr";
+@import "layouts.wrapper/conf.wrapper.rkr";
+// @import "layouts.grid/conf.grid.rkr";
+// @import "layouts.flex/conf.flex.rkr";
+// @import "objects.media/conf.media.rkr";
+// @import "objects.inline/conf.inline.rkr";
+// @import "objects.pack/conf.pack.rkr";
+// @import "objects.box/conf.box.rkr";
+// @import "objects.band/conf.band.rkr";
+// @import "objects.page/conf.page.rkr";
+
+//       ____________________
+//      /                   /
+//     /    Tools layer    /
+//    /___________________/
+//
+// Functions and mixins
+@import "tools.responsive/tools.responsive.rkr";
+// @import "base.typography/tools.typo.rkr";
+
+// @import "layouts.wrapper/tools.wrapper.rkr";
+// @import "layouts.grid/tools.grid.rkr";
+// @import "layouts.flex/tools.flex.rkr";
+// @import "layouts.sizes/tools.sizes.rkr";
+
+// @import "objects.media/tools.media.rkr";
+// @import "objects.inline/tools.inline.rkr";
+// @import "objects.pack/tools.pack.rkr";
+// @import "objects.box/tools.box.rkr";
+// @import "objects.band/tools.band.rkr";
+// @import "objects.page/tools.page.rkr";
+
+
+
+/////////////// Start generating CSS rules ///////////////
+
+
+
+//       ____________________
+//      /                   /
+//     /    Base layer     /
+//    /___________________/
+//
+// Reset and normalize - if needed
+// Rules for HTML tags
+//
+@import "base.reset/base.reset.rkr";
+// @import "base.typography/base.typo.rkr";
+
+
+
+//       ____________________
+//      /                   /
+//     /   Layouts layer   /
+//    /___________________/
+//
+// Extracted from objects layer,
+// elements used to define the page layout, like grid system fe.
+//
+@import "layouts.wrapper/layouts.wrapper.rkr";
+// @import "layouts.grid/layouts.grid.rkr";
+// @import "layouts.flex/layouts.flex.rkr";
+// @import "layouts.sizes/layouts.sizes.rkr";
+
+
+
+//       ____________________
+//      /                   /
+//     /   Objects layer   /
+//    /___________________/
+//
+// Sketch objects with no style
+// @import "objects.media/obj.media.rkr";
+// @import "objects.inline/obj.inline.rkr";
+// @import "objects.pack/obj.pack.rkr";
+// @import "objects.box/obj.box.rkr";
+// @import "objects.band/obj.band.rkr";
+// @import "objects.page/obj.page.rkr";
+
+
+
+//       ____________________
+//      /                   /
+//     /  Components layer /
+//    /___________________/
+//
+// Objects with style
+
+//       ____________________
+//      /                   /
+//     /   Modules layer   /
+//    /___________________/
+//
+// Compound by more components
+
+//       ____________________
+//      /                   /
+//     /    Master layer   /
+//    /___________________/
+//
+// Highest level of specificity
+// Helpers and fixes
+// @import "utilities.clearfix/utils.clearfix.rkr";
+// @import "utilities.text/utils.text.rkr";
+// @import "base.typography/helper.typo.rkr";
+
+

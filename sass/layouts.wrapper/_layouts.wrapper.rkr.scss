@@ -1,0 +1,82 @@
+/*------------------------------------*\
+    #Wrapper Layout
+\*------------------------------------*/
+
+/**
+ * Wrapper's container
+ * [1] Maximum width of the container
+ * [2] Centering the conainer
+ * [3] Padding to left and right
+ */
+%lWrapperContainer {
+
+	margin-left:   auto; // [2]
+    margin-right:  auto; // [2]
+
+    padding-left:  $rkrWrapperVGutter; // [3]
+	padding-right: $rkrWrapperVGutter; // [3]
+}
+
+/**
+ * Wrapper's row
+ * Canceling container's padding value
+ */
+%lWrapperRow {
+	margin-left:  -$rkrWrapperVGutter;
+	margin-right: -$rkrWrapperVGutter;
+}
+
+.u-wrapper {
+    @if $rkrRwdIsActive {
+        $keySize: "huge";
+        @if $rkrRwdIsMobileFirst {
+            $keySize: "tiny";
+        }
+        max-width: #{map-get($rkrMWrapperSizes, $keySize)}px; // [1]
+    } @else {
+        max-width: #{$rkrWrapperVMaxWidth}px; // [1]
+    }
+
+	@extend %lWrapperContainer;
+}
+
+.u-wrapperRule {
+	@extend %lWrapperRow;
+}
+
+/* Responsive wrapper's sizes */
+
+@if $rkrRwdIsActive {
+    @each $rwdBreakpoint, $szVal in $rkrMWrapperSizes {
+
+        @if ($rkrRwdIsMobileFirst) {
+            $responsiveZone: map-get($rkrMRwdZonesMobileFirst, $rwdBreakpoint);
+            @include rkrMxResponsive($responsiveZone) {
+                .u-wrapper { max-width: #{$szVal}px; }
+                .u-wrapper\@#{$rwdBreakpoint} {
+                    max-width: #{$szVal}px;
+                    
+                    margin-left:   auto; // [2]
+                    margin-right:  auto; // [2]
+
+                    padding-left:  $rkrWrapperVGutter; // [3]
+                    padding-right: $rkrWrapperVGutter; // [3]
+                }
+            }
+        } @else {
+            $responsiveZone: map-get($rkrMRwdZonesDesktopFirst, $rwdBreakpoint);
+            @include rkrMxResponsive($responsiveZone) {
+                .u-wrapper { max-width: #{$szVal}px; }
+                .u-wrapper\@#{$rwdBreakpoint} {
+                    max-width: #{$szVal}px;
+
+                    margin-left:   auto; // [2]
+                    margin-right:  auto; // [2]
+
+                    padding-left:  $rkrWrapperVGutter; // [3]
+                    padding-right: $rkrWrapperVGutter; // [3]
+                }
+            }
+        }
+    }
+}

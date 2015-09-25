@@ -6,5 +6,6 @@
 
 @import "conf.theme";
 
-@import "app.rk";
+@import "../../../sass/app.rkr";
 
+@import "overrides.theme";
