@@ -1,0 +1,17 @@
+//
+// Responsive Settings
+//
+
+// Use the responsive system
+$rkrIsResponsive: 			true 	!default;
+
+// If true, use Mobile first technique, otherwise use desktop first
+$rkrRwdIsMobileFirst: 	false !default;
+
+$rkrRwdMBreakpoints: (
+  xs:     20rem,   // mobile portrait
+  sm:     30rem,   // mobile landscape
+  md:     48rem,   // iPad & tablet
+  lg:     60rem,   // laptop
+  xl:     80rem    // desktop
+) !default;

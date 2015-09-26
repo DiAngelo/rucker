@@ -1,0 +1,48 @@
+//
+// Helpers 
+//
+
+//
+// Generate a css rule based on framework settings
+//
+@function rkrRule ($_inEntityType, $_inEntityName) {
+
+	$rule: '.';
+	$ucFirst: false;
+
+	@if $rkrStyleWithAttributes {
+		$rule: '[' + $rkrBaseAttributePrefix + '-';
+	}
+
+	@if $rkrNamespace != null {
+		$rule: $rule + $rkrNamespace + '-';
+	}
+
+	@if $rkrStyleWithAttributes {
+		$rule: $rule + $_inEntityType + '~="';
+	}
+	@else {
+		@if $rkrUseEntitiesNamespaces {
+		  @if map-has-key($rkrEntitiesNamespacesMap, $_inEntityType) {
+	      $entityNamespace: map-get($rkrEntitiesNamespacesMap, $_inEntityType);
+	      $rule: $rule + $entityNamespace;
+	      $ucFirst: true;
+		  }
+		  @else {
+		    @warn "Unfortunately, no type was not found `#{$_inType}`. "
+		  }
+		}
+	}
+
+	@if $ucFirst {
+		$_inEntityName: to-upper-case(str-slice($_inEntityName, 1, 1)) + str-slice($_inEntityName, 2);
+	}
+
+	$rule: $rule + $_inEntityName;
+
+	@if $rkrStyleWithAttributes {
+		$rule: $rule + '"]';
+	}	
+
+	@return $rule;
+}

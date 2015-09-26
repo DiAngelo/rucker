@@ -1,0 +1,80 @@
+//
+// Rucker's default settings file
+//
+
+
+
+
+
+//
+// Base font settings
+//
+$rkrBaseFontSize: 						1rem 		!default;
+$rkrBaseLineHeight: 					1.5rem 	!default;
+
+
+
+
+
+//
+// Base units
+//
+$rkrBaseModifiers: 						xs, sm, md, lg, xl  !default;
+
+
+
+
+//
+// Namespacing
+//
+// Whether to prepended classes  with a namespace, if so, define it here.
+//
+$rkrNamespace:             		null !default;
+
+
+
+
+
+//
+// Define entities types
+//
+// These are used to prefix a css rule
+//
+$rkrUseEntitiesNamespaces:		true !default;
+$rkrEntitiesNamespacesMap:		(
+									layout:			l ,
+									object: 		o ,
+									component: 	c ,
+									module: 		m ,
+									utility: 		u ,
+									hack:				_ 
+									);
+
+
+
+
+
+//
+// Define framework's base spacing data
+//
+$rkrBaseSpacingUnit:					$rkrBaseLineHeight !default;
+$rkrBaseSpacingMap: 					(
+											xs:			round($rkrBaseSpacingUnit / 4),
+											sm:			round($rkrBaseSpacingUnit / 2),
+											md:			$rkrBaseSpacingUnit,
+											lg:			round($rkrBaseSpacingUnit * 2),
+											xl:			round($rkrBaseSpacingUnit * 4)
+											);
+
+
+
+
+
+//
+// Define rule type
+//
+// Use css classes by default, or use attributes instead: 
+// 		data-{entityPrefix}="{value}"
+//
+$rkrStyleWithAttributes:			false 	!default;
+$rkrBaseAttributePrefix:			data 		!default;

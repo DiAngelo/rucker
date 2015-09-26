@@ -21,7 +21,10 @@
 // Prepare functions used to generate values for Settings layer
 //
 // @import "app.core/tools.global.fn.rkr";
-@import "app.core/tools.metrics.fn.rkr";
+// @import "app.core/tools.metrics.fn.rkr";
+
+@import "virtual/helpers/helpers.virtual.rkr";
+
 
 //       ____________________
 //      /                   /
@@ -29,13 +32,18 @@
 //    /___________________/
 //
 // Default configuration values
-@import "app.core/conf.settings.rkr";
+
+@import "settings/defaults.conf.rkr";
+@import "layout/responsive/responsive.conf.rkr";
+@import "layout/container/container.conf.rkr";
+
+// @import "app.core/conf.settings.rkr";
 // @import "app.core/conf.attributes.rkr";
 // @import "tools.responsive/conf.responsive.rkr";
 // @import "utilities.text/conf.text.rkr";
 // @import "base.typography/conf.typo.rkr";
 // @import "layouts.sizes/conf.sizes.rkr";
-@import "layouts.wrapper/conf.wrapper.rkr";
+// @import "layouts.wrapper/conf.wrapper.rkr";
 // @import "layouts.grid/conf.grid.rkr";
 // @import "layouts.flex/conf.flex.rkr";
 // @import "objects.media/conf.media.rkr";
@@ -45,13 +53,17 @@
 // @import "objects.band/conf.band.rkr";
 // @import "objects.page/conf.page.rkr";
 
+
+
 //       ____________________
 //      /                   /
 //     /    Tools layer    /
 //    /___________________/
 //
 // Functions and mixins
-@import "tools.responsive/tools.responsive.rkr";
+
+@import "layout/responsive/responsive.tools.rkr";
+
 // @import "base.typography/tools.typo.rkr";
 
 // @import "layouts.wrapper/tools.wrapper.rkr";
@@ -80,7 +92,10 @@
 // Reset and normalize - if needed
 // Rules for HTML tags
 //
-@import "base.reset/base.reset.rkr";
+
+@import "base/reset/reset.base.rkr";
+@import "base/page/page.base.rkr";
+
 // @import "base.typography/base.typo.rkr";
 
 
@@ -93,11 +108,12 @@
 // Extracted from objects layer,
 // elements used to define the page layout, like grid system fe.
 //
-@import "layouts.wrapper/layouts.wrapper.rkr";
+// @import "layouts.wrapper/layouts.wrapper.rkr";
 // @import "layouts.grid/layouts.grid.rkr";
 // @import "layouts.flex/layouts.flex.rkr";
 // @import "layouts.sizes/layouts.sizes.rkr";
 
+@import "layout/container/container.layout.rkr";
 
 
 //       ____________________
@@ -122,12 +138,16 @@
 //
 // Objects with style
 
+
+
 //       ____________________
 //      /                   /
 //     /   Modules layer   /
 //    /___________________/
 //
 // Compound by more components
+
+
 
 //       ____________________
 //      /                   /
