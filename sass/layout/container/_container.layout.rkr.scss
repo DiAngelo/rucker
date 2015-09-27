@@ -4,6 +4,7 @@
 
 
 #{rkrRule($rkrContainerEntity, $rkrContainerBaseToken)} {
-	margin-left:  auto;
-	margin-right: auto;
+	@include rkrAutoSideMargins();
+	@include rkrSideSpacing();
+	@include rkrClearfix();
 }

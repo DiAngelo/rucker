@@ -65,16 +65,3 @@ $rkrBaseSpacingMap: 					(
 											lg:			round($rkrBaseSpacingUnit * 2),
 											xl:			round($rkrBaseSpacingUnit * 4)
 											);
-
-
-
-
-
-//
-// Define rule type
-//
-// Use css classes by default, or use attributes instead: 
-// 		data-{entityPrefix}="{value}"
-//
-$rkrStyleWithAttributes:			false 	!default;
-$rkrBaseAttributePrefix:			data 		!default;

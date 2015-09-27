@@ -34,6 +34,7 @@
 // Default configuration values
 
 @import "settings/defaults.conf.rkr";
+@import "settings/rules.conf.rkr";
 @import "layout/responsive/responsive.conf.rkr";
 @import "layout/container/container.conf.rkr";
 
@@ -62,7 +63,10 @@
 //
 // Functions and mixins
 
+@import "tools/clearfix.tools.rkr";
+
 @import "layout/responsive/responsive.tools.rkr";
+@import "layout/container/container.tools.rkr";
 
 // @import "base.typography/tools.typo.rkr";
 

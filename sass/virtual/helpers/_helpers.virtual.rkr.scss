@@ -10,15 +10,15 @@
 	$rule: '.';
 	$ucFirst: false;
 
-	@if $rkrStyleWithAttributes {
-		$rule: '[' + $rkrBaseAttributePrefix + '-';
+	@if $rkrRuleWithAttributes {
+		$rule: '[' + $rkrRuleAttributePrefix + '-';
 	}
 
 	@if $rkrNamespace != null {
 		$rule: $rule + $rkrNamespace + '-';
 	}
 
-	@if $rkrStyleWithAttributes {
+	@if $rkrRuleWithAttributes {
 		$rule: $rule + $_inEntityType + '~="';
 	}
 	@else {
@@ -34,13 +34,19 @@
 		}
 	}
 
-	@if $ucFirst {
-		$_inEntityName: to-upper-case(str-slice($_inEntityName, 1, 1)) + str-slice($_inEntityName, 2);
+	@if $rkrRuleDashedStyle {
+		$rule: $rule + "-" + $_inEntityName;
+	}
+	@else {
+		@if $ucFirst {
+			$_inEntityName: to-upper-case(str-slice($_inEntityName, 1, 1)) + str-slice($_inEntityName, 2);
+		}
+
+		$rule: $rule + $_inEntityName;
 	}
 
-	$rule: $rule + $_inEntityName;
 
-	@if $rkrStyleWithAttributes {
+	@if $rkrRuleWithAttributes {
 		$rule: $rule + '"]';
 	}	
 
