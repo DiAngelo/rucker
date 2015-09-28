@@ -91,4 +91,3 @@
   $response: rkrFnBEM($_inEntity, map-get($rkrRwdMBreakpointsNames, $_inType), false);
   @return $response;
 }
-
