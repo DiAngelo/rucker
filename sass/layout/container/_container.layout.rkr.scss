@@ -1,13 +1,16 @@
+//
+// Container
+//
+
 @if $rkrHasContainer {
   /**
    * Layout Container
    */
 
-
-
   //
   // Responsive container
   //
+
   @each $key,$gutter in $rkrContainerRwdGutter {
     $rwdZone: (zone: $key);
 
@@ -29,6 +32,10 @@
       #{rkrRuleBEM($rkrContainerEntity, (block: container, modifier: $rkrContainerFluidModifier))},
       #{rkrRuleBEM($rkrContainerEntity, (block: container, modifier: $currentFluidToken))} {
         @include rkrSideSpacing($gutter);
+
+	      #{rkrRuleBEM($rkrContainerEntity, (block: container, element: $rkrContainerRowElement))} {
+        	@include rkrSideSpacing($gutter * -1);
+	      }
       }
 
       /* Define container's width constraint */
