@@ -3,8 +3,14 @@
 //
 
 
-.page-header {
+.pageHeader {
     background-color: blue;
     color: yellow;
+    line-height: 2; 
+}
+
+.pageContent {
+    background-color: #eee;
+    color: #333;
     line-height: 2; 
 }

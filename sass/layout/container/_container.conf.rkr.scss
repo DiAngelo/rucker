@@ -11,10 +11,10 @@ $rkrContainerRowElement:      row       !default;
 $rkrContainerRwdGutter: $rkrBaseSpacingMap;
 
 $rkrContainerRwdMaxWidths: (
-                    __:       75rem,
                     xs:       20rem,
                     sm:       20rem,
                     md:       30rem,
-                    lg:       40rem,
-                    xl:       75rem
+                    lg:       48rem,
+                    xl:       60rem,
+                    __:       80rem
                   );
