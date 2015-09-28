@@ -2,6 +2,11 @@
 // Responsive Tools
 //
 
+
+
+//
+// Media Query 
+//
 @mixin rkrMQ($_inRwdData) {
   @if map-has-key($_inRwdData, zone) {
     $rwdZone: map-get($_inRwdData, zone);
@@ -39,6 +44,43 @@
 
 
 
+//
+// Media Query from a specific value
+//
+@mixin rkrMqUp($_inBreakpoint) {
+  @if map-has-key($rkrRwdBreakpoints, $_inBreakpoint) == false {
+    @error "Breakpoint '" + $_inBreakpoint + "' not found";
+  }
+
+  $mqCondition: '(min-width:' + map-get($rkrRwdBreakpoints, $_inBreakpoint) + ')';
+
+  @media #{$mqCondition} {
+    @content;
+  }  
+}
+
+
+
+//
+// Media Query to a specific value
+//
+@mixin rkrMqDown($_inBreakpoint) {
+  @if map-has-key($rkrRwdBreakpoints, $_inBreakpoint) == false {
+    @debug "Breakpoint '" + $_inBreakpoint + "' not found";
+  }
+
+  $mqCondition: '(max-width:' + map-get($rkrRwdBreakpoints, $_inBreakpoint) + ')';
+
+  @media #{$mqCondition} {
+    @content;
+  }  
+}
+
+
+
+//
+// Generate the responsive token, if it is not the default one , '__'
+//
 @function rkrResponsiveToken ($_inToken, $_inKey) {
   @if ($_inKey != '__') {
     $_inToken: $_inToken + $rkrRwdSeparator + $_inKey;
