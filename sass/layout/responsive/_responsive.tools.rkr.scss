@@ -1,3 +1,48 @@
 //
 // Responsive Tools
 //
+
+@mixin rkrMQ($_inRwdData) {
+  @if map-has-key($_inRwdData, zone) {
+    $rwdZone: map-get($_inRwdData, zone);
+
+    @if $rwdZone == '__' {
+      @content;
+    }
+    @else {
+      $mqCondition: null;
+      $zoneData: map-get($rkrRwdBreakpointZones, $rwdZone);
+
+      @if (map-has-key($zoneData, from)) {
+        $mqCondition: '(min-width:' + map-get($zoneData, from) + ')';
+      }
+
+      @if (map-has-key($zoneData, to)) {
+        @if $mqCondition != null {
+          $mqCondition: $mqCondition + ' and ';
+        } @else {
+          $mqCondition: '';
+        }
+
+        $mqCondition: $mqCondition + '(max-width:' + map-get($zoneData, to) + ')';
+      }
+
+      // @debug $mqCondition;
+
+      @media #{$mqCondition} {
+        @content;
+      }
+    }
+
+  }
+}
+
+
+
+@function rkrResponsiveToken ($_inToken, $_inKey) {
+  @if ($_inKey != '__') {
+    $_inToken: $_inToken + $rkrRwdSeparator + $_inKey;
+  }
+  
+  @return $_inToken;
+}

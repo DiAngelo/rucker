@@ -47,7 +47,7 @@ $rkrEntitiesNamespacesMap:		(
 									component: 	c ,
 									module: 		m ,
 									utility: 		u ,
-									hack:				_ 
+									hack:				_
 									);
 
 
@@ -59,9 +59,10 @@ $rkrEntitiesNamespacesMap:		(
 //
 $rkrBaseSpacingUnit:					$rkrBaseLineHeight !default;
 $rkrBaseSpacingMap: 					(
-											xs:			round($rkrBaseSpacingUnit / 4),
-											sm:			round($rkrBaseSpacingUnit / 2),
+											__:			$rkrBaseSpacingUnit,
+											xs:			$rkrBaseSpacingUnit / 3,
+											sm:			$rkrBaseSpacingUnit / 2,
 											md:			$rkrBaseSpacingUnit,
-											lg:			round($rkrBaseSpacingUnit * 2),
-											xl:			round($rkrBaseSpacingUnit * 4)
+											lg:			$rkrBaseSpacingUnit * 2,
+											xl:			$rkrBaseSpacingUnit * 3
 											);

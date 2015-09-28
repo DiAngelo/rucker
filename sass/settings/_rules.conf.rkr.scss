@@ -18,18 +18,3 @@ $rkrRuleDashedStyle:					false		!default ;
 //
 $rkrRuleWithAttributes:				false 	!default ;
 $rkrRuleAttributePrefix:			data 		!default ;
-
-
-
-
-
-//
-// BEM settings
-//
-@if $rkrRuleDashedStyle {
-	$rkrBemSeparatorModifier: 	'--' ;
-	$rkrBemSeparatorElement:		'__' ;
-}
-
-$rkrBemSeparatorModifier: 		'-' !default ;
-$rkrBemSeparatorElement:			'_' !default ;

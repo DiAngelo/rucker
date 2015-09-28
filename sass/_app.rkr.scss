@@ -23,7 +23,6 @@
 // @import "app.core/tools.global.fn.rkr";
 // @import "app.core/tools.metrics.fn.rkr";
 
-@import "virtual/helpers/helpers.virtual.rkr";
 
 
 //       ____________________
@@ -35,6 +34,9 @@
 
 @import "settings/defaults.conf.rkr";
 @import "settings/rules.conf.rkr";
+
+@import "tools/bem/bem.conf.rkr";
+
 @import "layout/responsive/responsive.conf.rkr";
 @import "layout/container/container.conf.rkr";
 
@@ -63,6 +65,8 @@
 //
 // Functions and mixins
 
+@import "tools/helpers/helpers.tools.rkr";
+@import "tools/bem/bem.tools.rkr";
 @import "tools/clearfix.tools.rkr";
 
 @import "layout/responsive/responsive.tools.rkr";
@@ -163,5 +167,3 @@
 // @import "utilities.clearfix/utils.clearfix.rkr";
 // @import "utilities.text/utils.text.rkr";
 // @import "base.typography/helper.typo.rkr";
-
-

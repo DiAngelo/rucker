@@ -21,7 +21,11 @@
 //
 // Apply gutter spacing
 //
-@mixin rkrSideSpacing () {
-  padding-left:  ($rkrBaseSpacingUnit / 2);
-  padding-right: ($rkrBaseSpacingUnit / 2);
+@mixin rkrSideSpacing ($gutter: null) {
+  @if $gutter == null {
+    $gutter: $rkrBaseSpacingUnit;
+  }
+  
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
 }
