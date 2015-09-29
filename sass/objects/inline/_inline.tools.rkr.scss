@@ -1,0 +1,37 @@
+//
+// Inline object tools
+//
+
+@mixin rkrMakeObjectInline ($_inBreakpoint) {
+  $baseToken:   rkrGetResponsiveToken($rkrInlineBaseToken, $_inBreakpoint);
+  $middleToken: rkrGetResponsiveToken($rkrInlineModifierMiddle, $_inBreakpoint);
+  $bottomToken: rkrGetResponsiveToken($rkrInlineModifierBottom, $_inBreakpoint);
+
+  #{rkrRule($rkrInlineEntity, $baseToken)} {
+      display: inline-block;
+      vertical-align: top;
+  }
+
+  #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $middleToken))} {
+      display: inline-block;
+      vertical-align: middle;
+  }
+
+  #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $bottomToken))} {
+      display: inline-block;
+      vertical-align: bottom;
+  }
+
+}
+
+@mixin rkrMakeInlineResponsive () {
+
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+    /**
+     * Inline #{$breakpoint}
+     */
+    @include rkrMQ((zone: $breakpoint)) {
+        @include rkrMakeObjectInline($breakpoint);
+    }
+  }
+}
