@@ -39,7 +39,11 @@
 
 @import "layout/responsive/responsive.conf.rkr";
 @import "layout/container/container.conf.rkr";
+@import "layout/grid/grid.conf.rkr";
 @import "layout/sizes/sizes.conf.rkr";
+
+@import "objects/inline/inline.conf.rkr";
+
 
 // @import "app.core/conf.settings.rkr";
 // @import "app.core/conf.attributes.rkr";
@@ -124,6 +128,7 @@
 // @import "layouts.sizes/layouts.sizes.rkr";
 
 @import "layout/container/container.layout.rkr";
+@import "layout/grid/grid.layout.rkr";
 @import "layout/sizes/sizes.layout.rkr";
 
 
@@ -140,6 +145,7 @@
 // @import "objects.band/obj.band.rkr";
 // @import "objects.page/obj.page.rkr";
 
+@import "objects/inline/inline.obj.rkr";
 
 
 //       ____________________

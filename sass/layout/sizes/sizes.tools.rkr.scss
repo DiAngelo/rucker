@@ -137,12 +137,8 @@
      * Sizes #{$breakpoint}
      */
     @include rkrMQ((zone: $breakpoint)) {
-
-      body { background:red; }
-
       @include rkrSizesSilent(#{$breakpoint});
       @include rkrSizesBuild(#{$breakpoint});
     }
   }
-  
 } // @mixin

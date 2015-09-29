@@ -1,0 +1,14 @@
+//
+// Inline object
+//
+
+#{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineListToken))} {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineListToken, element: $rkrInlineItemToken))} {
+    display: inline-block;
+    vertical-align: top;
+}
