@@ -39,6 +39,7 @@
 
 @import "layout/responsive/responsive.conf.rkr";
 @import "layout/container/container.conf.rkr";
+@import "layout/sizes/sizes.conf.rkr";
 
 // @import "app.core/conf.settings.rkr";
 // @import "app.core/conf.attributes.rkr";
@@ -71,6 +72,7 @@
 
 @import "layout/responsive/responsive.tools.rkr";
 @import "layout/container/container.tools.rkr";
+@import "layout/sizes/sizes.tools.rkr";
 
 // @import "base.typography/tools.typo.rkr";
 
@@ -122,6 +124,7 @@
 // @import "layouts.sizes/layouts.sizes.rkr";
 
 @import "layout/container/container.layout.rkr";
+@import "layout/sizes/sizes.layout.rkr";
 
 
 //       ____________________

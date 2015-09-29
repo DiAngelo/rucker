@@ -1,0 +1,104 @@
+//
+// Sizes tools
+//
+
+
+
+//
+// rkrSizesPlaceholder
+//
+@mixin rkrSizesPlaceholder ($_inName, $_inVal) {
+  %#{$_inName} {
+    width: #{$_inVal + '%'};
+  }
+}
+
+
+
+//
+// rkrSizesSilent
+//
+@mixin rkrSizesSilent() {
+  
+  $lDefined: ();
+
+  @each $group in $rkrSizesGroups {
+
+    @if $group == 1 {
+
+      /*
+       * Size full
+       */
+      @include rkrSizesPlaceholder (lSize-100, 100);
+
+    }
+
+    @for $i from 1 to $group {
+
+      $currentSize: $i / $group * 100;
+      $selector: round($currentSize);
+
+      @if index($lDefined, $selector) == null {
+
+        /*
+         * Size #{$selector}%
+         */
+        @include rkrSizesPlaceholder (lSize-#{$selector}, $currentSize);
+
+        $lDefined: append($lDefined, $selector);
+
+      } // @if index
+
+    } // @for in group
+
+  } // @each $group
+
+}// @mixin
+
+
+
+//
+// rkrSizesRule
+//
+@mixin rkrSizesRule($_inRule, $_inParam, $type: '') {
+
+  $placeholder: lSize-#{$_inParam};
+
+  @if $type != '' {
+
+    $placeholder: $placeholder + $type;
+
+  }
+
+  #{rkrRuleBEM($rkrSizesEntity, (block: $rkrSizesBaseToken, modifier: $_inRule))} {
+    @extend %#{$placeholder};
+  }
+
+}// @mixin
+
+
+
+//
+// rkrSizesBuild
+//
+@mixin rkrSizesBuild() {
+  
+  @each $group in $rkrSizesGroups {
+
+    @if $group == 1 {
+
+      @include rkrSizesRule('1\\/1', 100);
+
+    } // @if group 1
+
+    @for $i from 1 to $group {
+
+      $selector: round($i / $group * 100);
+
+      $rule: #{$i}\/#{$group};
+
+      @include rkrSizesRule($rule, $selector);
+
+    } // @for in group
+  } // @each group
+} // @mixin
