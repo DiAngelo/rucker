@@ -18,18 +18,25 @@
 //
 // rkrSizesSilent
 //
-@mixin rkrSizesSilent() {
+@mixin rkrSizesSilent($_inBreakpoint) {
   
   $lDefined: ();
+  $prefix: lSize;
+  $sizesGroups: $rkrSizesGroups;
 
-  @each $group in $rkrSizesGroups {
+  @if $_inBreakpoint != null {
+    $prefix: $prefix + $_inBreakpoint;
+    $sizesGroups: map-get($rkrSizesResponsiveGroups, $_inBreakpoint);
+  }
+
+  @each $group in $sizesGroups {
 
     @if $group == 1 {
 
       /*
        * Size full
        */
-      @include rkrSizesPlaceholder (lSize-100, 100);
+      @include rkrSizesPlaceholder (#{$prefix}-100, 100);
 
     }
 
@@ -43,7 +50,7 @@
         /*
          * Size #{$selector}%
          */
-        @include rkrSizesPlaceholder (lSize-#{$selector}, $currentSize);
+        @include rkrSizesPlaceholder (#{$prefix}-#{$selector}, $currentSize);
 
         $lDefined: append($lDefined, $selector);
 
@@ -60,9 +67,9 @@
 //
 // rkrSizesRule
 //
-@mixin rkrSizesRule($_inRule, $_inParam, $type: '') {
+@mixin rkrSizesRule($_inPrefix, $_inRule, $_inParam, $type: '') {
 
-  $placeholder: lSize-#{$_inParam};
+  $placeholder: #{$_inPrefix}-#{$_inParam};
 
   @if $type != '' {
 
@@ -81,13 +88,24 @@
 //
 // rkrSizesBuild
 //
-@mixin rkrSizesBuild() {
+@mixin rkrSizesBuild($_inBreakpoint) {
   
-  @each $group in $rkrSizesGroups {
+  $prefix: lSize;
+  $sizesGroups: $rkrSizesGroups;
+
+  @if $_inBreakpoint != null {
+    $prefix: $prefix + $_inBreakpoint;
+    $sizesGroups: map-get($rkrSizesResponsiveGroups, $_inBreakpoint);
+  }
+
+
+
+
+  @each $group in $sizesGroups {
 
     @if $group == 1 {
 
-      @include rkrSizesRule('1\\/1', 100);
+      @include rkrSizesRule($prefix, '1\\/1', 100);
 
     } // @if group 1
 
@@ -97,8 +115,34 @@
 
       $rule: #{$i}\/#{$group};
 
-      @include rkrSizesRule($rule, $selector);
+      @if $_inBreakpoint != null {
+        $rule: $rule + $rkrRwdSeparator + $_inBreakpoint;
+      }
+
+      @include rkrSizesRule($prefix, $rule, $selector);
 
     } // @for in group
   } // @each group
+} // @mixin
+
+
+
+//
+// rkrSizesBuildResponsive
+//
+@mixin rkrSizesBuildResponsive() {
+
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+    /**
+     * Sizes #{$breakpoint}
+     */
+    @include rkrMQ((zone: $breakpoint)) {
+
+      body { background:red; }
+
+      @include rkrSizesSilent(#{$breakpoint});
+      @include rkrSizesBuild(#{$breakpoint});
+    }
+  }
+  
 } // @mixin

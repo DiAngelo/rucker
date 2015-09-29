@@ -7,7 +7,15 @@
      * #SIZES
      */
 
-     @include rkrSizesSilent();
+     @include rkrSizesSilent(null);
 
-     @include rkrSizesBuild();
+     @include rkrSizesBuild(null);
+}
+
+@if $rkrSizesIsResponsive {
+    /**
+     * #SIZES RESPONSIVE
+     */
+
+     @include rkrSizesBuildResponsive();
 }

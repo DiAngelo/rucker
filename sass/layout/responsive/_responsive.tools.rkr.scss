@@ -18,6 +18,10 @@
       $mqCondition: null;
       $zoneData: map-get($rkrRwdBreakpointZones, $rwdZone);
 
+      @if $zoneData == null {
+        @error $zoneData + ' breakpoint zone not found.'
+      }
+
       @if (map-has-key($zoneData, from)) {
         $mqCondition: '(min-width:' + map-get($zoneData, from) + ')';
       }
