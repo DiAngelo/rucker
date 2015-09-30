@@ -12,11 +12,11 @@ $rkrRwdIsMobileFirst: 	false !default;
 $rkrRwdSeparator:       \@    !default;
 
 $rkrRwdBreakpoints: (
-                xs:     20rem,   // mobile portrait
-                sm:     30rem,   // mobile landscape
-                md:     48rem,   // iPad & tablet
-                lg:     60rem,   // laptop
-                xl:     80rem    // desktop
+                xs:      30rem,  //  480px - mobile
+                sm:      48rem,  //  768px - iPad & tablet
+                md:      60rem,  //  960px - laptop
+                lg:      80rem,  // 1280px - desktop
+                xl:     120rem   // 1920px - tv
               ) !default;
 
 @if $rkrRwdIsMobileFirst {
