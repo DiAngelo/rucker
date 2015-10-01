@@ -1,0 +1,94 @@
+//
+// Media object tools
+//
+
+//
+// Mixin that generates the rules for the specific responsive breakpoint
+//
+@mixin rkrMakeObjectMedia ($_inBreakpoint) {
+  $tokenBase:   rkrGetResponsiveToken($rkrMediaTokenBase,  $_inBreakpoint);
+  $tokenImg:    rkrGetResponsiveToken($rkrMediaTokenImage, $_inBreakpoint);
+  $tokenBody:   rkrGetResponsiveToken($rkrMediaTokenBody,  $_inBreakpoint);
+  $tokenTop:    rkrGetResponsiveToken($rkrMediaTokenTop,  $_inBreakpoint);
+  $tokenBottom: rkrGetResponsiveToken($rkrMediaTokenBottom,  $_inBreakpoint);
+
+  $bemImage: (
+    block: $rkrMediaTokenBase,
+    element: $tokenImg
+  );
+
+  $bemBody: (
+    block: $rkrMediaTokenBase,
+    element: $tokenBody
+  );
+
+  $bemTop: (
+    block: $rkrMediaTokenBase,
+    modifier: $tokenTop
+  );
+
+  $bemBottom: (
+    block: $rkrMediaTokenBase,
+    modifier: $tokenBottom
+  );
+
+
+
+  $baseRule:    #{rkrRule($rkrMediaEntity, $tokenBase)};
+  $imgRule:     #{rkrRuleBEM($rkrMediaEntity, $bemImage)};
+  $bodyRule:    #{rkrRuleBEM($rkrMediaEntity, $bemBody)};
+  $ruleTop:     rkrRuleBEM($rkrMediaEntity, $bemTop);
+  $ruleBottom:  #{rkrRuleBEM($rkrMediaEntity, $bemBottom)};
+
+
+
+  #{$baseRule} {
+    display: table;
+  }
+
+
+
+  //
+  // Elements
+  //
+
+  #{$imgRule}, 
+  #{$bodyRule} {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  #{$imgRule}:first-child {
+    padding-right: $rkrMediaSpacingUnit;
+  }
+
+  #{$imgRule}:last-child {
+    padding-left: $rkrMediaSpacingUnit;
+  }
+
+  //
+  // Modifiers
+  //
+
+  #{$ruleTop} { vertical-align: top; }
+
+  #{$ruleBottom} { vertical-align: bottom; }
+
+}
+
+
+
+//
+// Mixin that generates Media's responsive rules
+//
+@mixin rkrMakeMediaResponsive () {
+
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+    /**
+     * Object Box #{$breakpoint}
+     */
+    @include rkrMQ((zone: $breakpoint)) {
+        @include rkrMakeObjectMedia($breakpoint);
+    }
+  }
+}
