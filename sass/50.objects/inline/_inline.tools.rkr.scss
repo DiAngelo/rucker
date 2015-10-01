@@ -12,12 +12,43 @@
   $bottomToken: rkrGetResponsiveToken($rkrInlineModifierBottom, $_inBreakpoint);
   $spacedToken: rkrGetResponsiveToken($rkrInlineModifierSpaced, $_inBreakpoint);
 
-  $currentGutter: $rkrInlineGutter / -2;
+  $currentGutter: $rkrInlineGutter / 2;
 
   @if map-has-key($rkrInlineRwdGutter, $_inBreakpoint) {
-    $currentGutter: map-get($rkrInlineRwdGutter, $_inBreakpoint);
+    $currentGutter: map-get($rkrInlineRwdGutter, $_inBreakpoint) / 2;
   }
 
+  $bemList: (
+    block: $rkrInlineBaseToken,
+    element: $listToken
+  );
+
+  $bemSpaced: (
+    block:    $rkrInlineBaseToken,
+    element:  $rkrInlineElementList,
+    modifier: $rkrInlineModifierSpaced
+  );
+
+  $bemSpacedRwd: (
+    block:    $rkrInlineBaseToken,
+    element:  $rkrInlineElementList,
+    modifier: $spacedToken
+  );
+
+  $bemMiddle: (
+    block: $rkrInlineBaseToken,
+    modifier: $middleToken
+  );
+
+  $bemBottom: (
+    block: $rkrInlineBaseToken,
+    modifier: $bottomToken
+  )  ;
+
+
+  /**
+   * The Inline Object #{$_inBreakpoint}
+   */
   #{rkrRule($rkrInlineEntity, $baseToken)} {
       display: inline-block;
       vertical-align: top;
@@ -30,33 +61,24 @@
   // Elements
   //
 
-  #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, element: $listToken))},
-  #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, element: $rkrInlineElementList, modifier: $spacedToken))} {
+  #{rkrRuleBEM($rkrInlineEntity, $bemList)},
+  #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)} {
       font-size: 0;
 
       > #{rkrRule($rkrInlineEntity, $baseToken)},
-      > #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $middleToken))},
-      > #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $bottomToken))} {
+      > #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)},
+      > #{rkrRuleBEM($rkrInlineEntity, $bemBottom)} {
         font-size: 1rem;
       }
   }
 
-  #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, element: $rkrInlineElementList, modifier: $spacedToken))} {
-      margin-left:  $currentGutter;
-      margin-right: $currentGutter;
-      > #{rkrRule($rkrInlineEntity, $baseToken)},
-      > #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $middleToken))},
-      > #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $bottomToken))} {
-        padding-left: $currentGutter;
-      }
-  }
 
 
   //
   // Modifiers
   //
 
-  #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $middleToken))} {
+  #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)} {
       display: inline-block;
       vertical-align: middle;
   }
@@ -64,6 +86,17 @@
   #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $bottomToken))} {
       display: inline-block;
       vertical-align: bottom;
+  }
+
+  #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)},
+  #{rkrRuleBEM($rkrInlineEntity, $bemSpacedRwd)} {
+      margin-left:  -1 * $currentGutter;
+      margin-right: -1 * $currentGutter;
+      > #{rkrRule($rkrInlineEntity, $baseToken)},
+      > #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $middleToken))},
+      > #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $bottomToken))} {
+        padding-left: $currentGutter;
+      }
   }
 
 }
