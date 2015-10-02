@@ -18,7 +18,7 @@
 
 
 //
-// Media Query 
+// Media Query
 //
 @mixin rkrMQ($_inRwdData) {
   @if map-has-key($_inRwdData, zone) {
@@ -73,7 +73,7 @@
 
   @media #{$mqCondition} {
     @content;
-  }  
+  }
 }
 
 
@@ -90,7 +90,7 @@
 
   @media #{$mqCondition} {
     @content;
-  }  
+  }
 }
 
 

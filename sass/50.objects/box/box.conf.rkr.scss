@@ -5,6 +5,7 @@
 $rkrHasBox:                   true      !default;
 $rkrBoxEntity:                object    !default;
 $rkrBoxBaseToken:             box       !default;
+$rkrBoxUseModifiers:          true      !default;
 
 $rkrBoxGutter:                $rkrBaseSpacingUnit    !default;
 $rkrBoxRwdGutter:             $rkrContainerRwdGutter !default;

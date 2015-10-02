@@ -27,7 +27,17 @@
     @include rkrClearfix();
   }
 
+  @if $_inBreakpoint != null {
+    $bemBox: (
+      block: $rkrBoxBaseToken,
+      modifier: $_inBreakpoint
+    );
 
+    #{rkrRuleBEM($rkrBoxEntity, $bemBox)} {
+      padding: map-get($rkrBoxRwdGutter, $_inBreakpoint);
+    }
+
+  }
 
   //
   // Modifiers
