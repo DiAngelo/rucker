@@ -46,6 +46,8 @@
 @import "50.objects/box/box.conf.rkr";
 @import "50.objects/media/media.conf.rkr";
 
+@import "80.utilities/align/align.conf.rkr";
+
 
 // @import "app.core/conf.settings.rkr";
 // @import "app.core/conf.attributes.rkr";
@@ -84,6 +86,8 @@
 @import "50.objects/inline/inline.tools.rkr";
 @import "50.objects/box/box.tools.rkr";
 @import "50.objects/media/media.tools.rkr";
+
+@import "80.utilities/align/align.tools.rkr";
 
 // @import "base.typography/tools.typo.rkr";
 
@@ -181,11 +185,21 @@
 
 //       ____________________
 //      /                   /
+//     /  Utilities layer  /
+//    /___________________/
+//
+// Ueseful classes to force a specific rule
+
+@import "80.utilities/align/align.util.rkr";
+
+
+//       ____________________
+//      /                   /
 //     /    Master layer   /
 //    /___________________/
 //
 // Highest level of specificity
-// Helpers and fixes
+// Hacks and fixes
 // @import "utilities.clearfix/utils.clearfix.rkr";
 // @import "utilities.text/utils.text.rkr";
 // @import "base.typography/helper.typo.rkr";

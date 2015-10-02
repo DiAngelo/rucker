@@ -1,0 +1,27 @@
+//
+// Alignment configuration
+//
+
+$rkrHasAlign:                 true      !default;
+$rkrAlignEntity:              utility   !default;
+
+
+
+//
+// Tokens
+//
+$rkrAlignTokenHorizontal:     hAlign    !default;
+$rkrAlignTokenVertical:       vAlign    !default;
+$rkrAlignTokenLeft:           left      !default;
+$rkrAlignTokenRight:          right     !default;
+$rkrAlignTokenCenter:         middle    !default;
+$rkrAlignTokenTop:            top       !default;
+$rkrAlignTokenBottom:         bottom    !default;
+$rkrAlignTokenMiddle:         middle    !default;
+
+
+
+//
+// Define if we should use responsive inline objects
+//
+$rkrAlignIsResponsive:        $rkrIsResponsive !default;

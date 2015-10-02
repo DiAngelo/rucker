@@ -1,0 +1,11 @@
+//
+// Alignment utilities
+//
+
+@if $rkrHasAlign {
+    @include rkrMakeAlignment(null);
+}
+
+@if $rkrHasAlign {
+    @include rkrMakeAlignmentResponsive();
+}

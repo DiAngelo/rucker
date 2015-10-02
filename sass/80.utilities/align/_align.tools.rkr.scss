@@ -1,0 +1,79 @@
+//
+// Alignment tools
+//
+
+
+
+//
+// Mixin that generates the rules for the specific responsive breakpoint
+//
+@mixin rkrMakeAlignment ($_inBreakpoint) {
+  $tokenH:      rkrGetResponsiveToken($rkrAlignTokenHorizontal, $_inBreakpoint);
+  $tokenLeft:   rkrGetResponsiveToken($rkrAlignTokenLeft, $_inBreakpoint);
+  $tokenRight:  rkrGetResponsiveToken($rkrAlignTokenRight, $_inBreakpoint);
+  $tokenCenter: rkrGetResponsiveToken($rkrAlignTokenCenter, $_inBreakpoint);
+  $tokenTop:    rkrGetResponsiveToken($rkrAlignTokenTop, $_inBreakpoint);
+  $tokenBottom: rkrGetResponsiveToken($rkrAlignTokenBottom, $_inBreakpoint);
+  $tokenMiddle: rkrGetResponsiveToken($rkrAlignTokenMiddle, $_inBreakpoint);
+
+  @if map-has-key($rkrInlineRwdGutter, $_inBreakpoint) {
+    $currentGutter: map-get($rkrInlineRwdGutter, $_inBreakpoint) / 2;
+  }
+
+  $bemHLeft: (
+    block: $rkrAlignTokenHorizontal,
+    modifier: $tokenLeft
+  );
+
+  $bemHRight: (
+    block: $rkrAlignTokenHorizontal,
+    modifier: $tokenRight
+  );
+
+  $bemHCenter: (
+    block: $rkrAlignTokenHorizontal,
+    modifier: $tokenCenter
+  );
+
+  $bemHTop: (
+    block: $rkrAlignTokenVertical,
+    modifier: $tokenTop
+  );
+
+  $bemHBottom: (
+    block: $rkrAlignTokenVertical,
+    modifier: $tokenBottom
+  );
+
+  $bemHMiddle: (
+    block: $rkrAlignTokenVertical,
+    modifier: $tokenMiddle
+  );
+
+
+
+  /**
+   * Alignments utilities #{$_inBreakpoint}
+   */
+  #{rkrRuleBEM($rkrAlignEntity, $bemHLeft)}   { text-align: left    !important; }
+  #{rkrRuleBEM($rkrAlignEntity, $bemHRight)}  { text-align: right   !important; }
+  #{rkrRuleBEM($rkrAlignEntity, $bemHCenter)} { text-align: center  !important; }
+
+  #{rkrRuleBEM($rkrAlignEntity, $bemHTop)}    { vertical-align: top     !important; }
+  #{rkrRuleBEM($rkrAlignEntity, $bemHBottom)} { vertical-align: bottom  !important; }
+  #{rkrRuleBEM($rkrAlignEntity, $bemHMiddle)} { vertical-align: middle  !important; }
+}
+
+
+
+//
+// Mixin that generates Inline's responsive rules
+//
+@mixin rkrMakeAlignmentResponsive () {
+
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+    @include rkrMQ((zone: $breakpoint)) {
+        @include rkrMakeAlignment($breakpoint);
+    }
+  }
+}
