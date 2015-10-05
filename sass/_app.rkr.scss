@@ -46,6 +46,8 @@
 @import "50.objects/box/box.conf.rkr";
 @import "50.objects/media/media.conf.rkr";
 
+@import "60.components/sidebar/sidebar.conf.rkr";
+
 @import "80.utilities/align/align.conf.rkr";
 
 
@@ -171,6 +173,8 @@
 //    /___________________/
 //
 // Objects with style
+
+@import "60.components/sidebar/sidebar.com.rkr";
 
 
 

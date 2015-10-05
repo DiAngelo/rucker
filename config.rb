@@ -22,10 +22,10 @@ require 'compass/import-once/activate'
 
 preferred_syntax = 	:scss
 http_path = 		'/'
-css_dir =  			'themes/default/css'
-sass_dir = 			'themes/default/sass'
-images_dir = 		'themes/default/img'
-javascripts_dir = 	'themes/default/scripts'
+css_dir =  			'themes/admin/css'
+sass_dir = 			'themes/admin/sass'
+images_dir = 		'themes/admin/img'
+javascripts_dir = 	'themes/admin/scripts'
 relative_assets = 	true
 line_comments = 	true
 output_style = 		(environment == :production) ? :compressed : :expanded
