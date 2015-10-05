@@ -12,6 +12,7 @@
   $tokenLeft:   rkrGetResponsiveToken($rkrAlignTokenLeft, $_inBreakpoint);
   $tokenRight:  rkrGetResponsiveToken($rkrAlignTokenRight, $_inBreakpoint);
   $tokenCenter: rkrGetResponsiveToken($rkrAlignTokenCenter, $_inBreakpoint);
+  $tokenJustify:rkrGetResponsiveToken($rkrAlignTokenJustify, $_inBreakpoint);
   $tokenTop:    rkrGetResponsiveToken($rkrAlignTokenTop, $_inBreakpoint);
   $tokenBottom: rkrGetResponsiveToken($rkrAlignTokenBottom, $_inBreakpoint);
   $tokenMiddle: rkrGetResponsiveToken($rkrAlignTokenMiddle, $_inBreakpoint);
@@ -33,6 +34,11 @@
   $bemHCenter: (
     block: $rkrAlignTokenHorizontal,
     modifier: $tokenCenter
+  );
+
+  $bemHJustify: (
+    block: $rkrAlignTokenHorizontal,
+    modifier: $tokenJustify
   );
 
   $bemHTop: (
@@ -58,6 +64,7 @@
   #{rkrRuleBEM($rkrAlignEntity, $bemHLeft)}   { text-align: left    !important; }
   #{rkrRuleBEM($rkrAlignEntity, $bemHRight)}  { text-align: right   !important; }
   #{rkrRuleBEM($rkrAlignEntity, $bemHCenter)} { text-align: center  !important; }
+  #{rkrRuleBEM($rkrAlignEntity, $bemHJustify)}{ text-align: justify !important; }
 
   #{rkrRuleBEM($rkrAlignEntity, $bemHTop)}    { vertical-align: top     !important; }
   #{rkrRuleBEM($rkrAlignEntity, $bemHBottom)} { vertical-align: bottom  !important; }

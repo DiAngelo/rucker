@@ -104,8 +104,8 @@
   @each $group in $sizesGroups {
 
     @if $group == 1 {
-
-      @include rkrSizesRule($prefix, '1\\/1', 100);
+      $full: rkrGetResponsiveToken('1\\/1', $_inBreakpoint);
+      @include rkrSizesRule($prefix, $full, 100);
 
     } // @if group 1
 

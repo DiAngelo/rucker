@@ -43,8 +43,8 @@
 
         @each $name,$side in $rkrMarginSides {
             $bemSide: (
-                block: $rkrSpacingTokenMargin,
-                modifier: $side + capitalize($mod)
+                block: $side + capitalize($rkrSpacingTokenMargin),
+                modifier: $mod
             );
 
             #{rkrRuleBEM($rkrSpacingEntity, $bemSide)} {
