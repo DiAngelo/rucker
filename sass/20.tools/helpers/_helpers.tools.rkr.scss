@@ -2,6 +2,17 @@
 // Helpers 
 //
 
+
+
+//
+// Capitalize text by uppercasing the first letter
+//
+@function capitalize($_inText) {
+	@return to-upper-case(str-slice($_inText, 1, 1)) + str-slice($_inText, 2);
+}
+
+
+
 //
 // Generate a css rule based on framework settings
 //
@@ -39,7 +50,7 @@
 	}
 	@else {
 		@if $ucFirst {
-			$_inEntityName: to-upper-case(str-slice($_inEntityName, 1, 1)) + str-slice($_inEntityName, 2);
+			$_inEntityName: capitalize($_inEntityName);
 		}
 
 		$rule: $rule + $_inEntityName;

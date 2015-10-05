@@ -1,0 +1,55 @@
+//
+// Spacing tools
+//
+
+
+
+@mixin rkrSpacingMarginSide($_inSide, $_inValue) {
+    @if $_inSide == "horizontal" {
+        margin-left:   $_inValue !important;
+        margin-right:  $_inValue !important;
+    }
+    @if $_inSide == "vertical" {
+        margin-top:    $_inValue !important;
+        margin-bottom: $_inValue !important;
+    }
+}
+
+
+//
+//
+//
+@mixin rkrSpacingMarginAuto() {
+
+    $marginModifiers: (
+        none: none,
+        auto: auto,
+        xs:   .4rem,
+        sm:   .8rem,
+        md:    1rem,
+        lg:  1.5rem,
+        hg:    2rem
+    );
+
+    @each $mod,$v in $marginModifiers {
+        $bemModifier: (
+            block: $rkrSpacingTokenMargin,
+            modifier: $mod
+        );
+
+        #{rkrRuleBEM($rkrSpacingEntity, $bemModifier)} {
+            margin: $v !important;
+        }
+
+        @each $name,$side in $rkrMarginSides {
+            $bemSide: (
+                block: $rkrSpacingTokenMargin,
+                modifier: $side + capitalize($mod)
+            );
+
+            #{rkrRuleBEM($rkrSpacingEntity, $bemSide)} {
+                @include rkrSpacingMarginSide($name, $v);
+            }
+        }
+    }
+}
