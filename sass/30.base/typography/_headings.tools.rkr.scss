@@ -1,0 +1,23 @@
+//
+// Typography Headings tools
+//
+
+@mixin rkrTypoHeadings () {
+    %headingCommon {
+        color: $rkrHeadingColor;
+        line-height: $rkrHeadingsLineHeight;
+    }
+
+    @each $mod,$sz in $rkrHeadingsSizes {
+        $bemHeading: (
+            block: $rkrTypoTokenHeading,
+            modifier: $mod
+        );
+
+        #{rkrRuleBEM($rkrTypoHeadingEntity, $bemHeading)} {
+            font-size: $sz;
+
+            @extend %headingCommon;
+        }
+    }
+}

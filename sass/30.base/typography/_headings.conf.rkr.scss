@@ -1,0 +1,20 @@
+//
+// Typography Headings settings
+//
+
+$rkrHasTypoHeadings:          true !default;
+$rkrTypoHeadingEntity:        base !default;
+
+$rkrTypoTokenHeading:         heading !default;
+
+$rkrHeadingsSizes:            (
+                      xs:     1.2rem,
+                      sm:     1.5rem,
+                      md:     2rem,
+                      lg:     2.5rem,
+                      xl:     3rem
+                    ) !default;
+
+$rkrHeadingsLineHeight:       2 !default;
+
+$rkrHeadingColor:             map-get($rkrTheme, headingText);

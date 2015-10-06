@@ -1,0 +1,10 @@
+//
+// Typography settigns
+//
+
+$rkrHasTypography:            true !default;
+
+$rkrTypoBaseFontSize:         $rkrBaseFontSize !default;
+$rkrTypoBaseLineHeight:       $rkrBaseLineHeight !default;
+
+$rkrTypoBaseColor:            map-get($rkrTheme, baseText);
