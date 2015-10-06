@@ -7,4 +7,14 @@ $rkrHasTypography:            true !default;
 $rkrTypoBaseFontSize:         $rkrBaseFontSize !default;
 $rkrTypoBaseLineHeight:       $rkrBaseLineHeight !default;
 
-$rkrTypoBaseColor:            map-get($rkrTheme, baseText);
+$rkrTypoBaseColor:            map-get($rkrTheme, baseText) !default;
+
+$rkrTypoIsResponsive:         true !default;
+
+$rkrTypoRwdFontSizes:         (
+                        xs:   14px ,
+                        sm:   15px ,
+                        md:   16px ,
+                        lg:   18px ,
+                        xl:   20px
+                      );

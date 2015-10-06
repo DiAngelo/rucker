@@ -50,6 +50,8 @@
 @import "50.objects/box/box.conf.rkr";
 @import "50.objects/media/media.conf.rkr";
 
+@import "60.components/sidebar/sidebar.conf.rkr";
+
 @import "80.utilities/align/align.conf.rkr";
 @import "80.utilities/spacing/spacing.conf.rkr";
 
@@ -129,6 +131,7 @@
 
 @import "30.base/reset/reset.base.rkr";
 @import "30.base/page/page.base.rkr";
+@import "30.base/typography/typography.base.rkr";
 @import "30.base/typography/headings.base.rkr";
 
 
@@ -181,6 +184,8 @@
 //    /___________________/
 //
 // Objects with style
+
+@import "60.components/sidebar/sidebar.com.rkr";
 
 
 
