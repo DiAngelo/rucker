@@ -3,6 +3,8 @@
 //
 
 $rkrHasSpacing:               true      !default;
+$rkrHasSpacingMargins:        true      !default;
+$rkrHasSpacingPaddings:       true      !default;
 $rkrSpacingEntity:            utility   !default;
 
 
@@ -11,10 +13,14 @@ $rkrSpacingEntity:            utility   !default;
 // Tokens
 //
 $rkrSpacingTokenBase:         spacing   !default;
-$rkrSpacingTokenMargin:       mg    !default;
-$rkrSpacingTokenPadding:      pd      !default;
+$rkrSpacingTokenMargin:       mg        !default;
+$rkrSpacingTokenPadding:      pd        !default;
 $rkrSpacingTokenAuto:         auto      !default;
 $rkrSpacingTokenNone:         none      !default;
+$rkrSpacingTokenTop:          t         !default;
+$rkrSpacingTokenRight:        r         !default;
+$rkrSpacingTokenBottom:       b         !default;
+$rkrSpacingTokenLeft:         l         !default;
 
 
 $rkrMarginSides:              (

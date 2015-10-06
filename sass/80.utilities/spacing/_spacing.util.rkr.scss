@@ -6,5 +6,11 @@
   /**
    * Spacing - Margins
    **/
-  @include rkrSpacingMarginAuto();
+  @include rkrSpacingMargins();
+
+  /**
+   * Spacing - Paddings
+   **/
+  @include rkrSpacingPaddings();
+
 }
