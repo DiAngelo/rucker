@@ -16,11 +16,11 @@
  *    render text using sub-pixel anti-aliasing.
  */
 html {
-    font-size: $rkrBaseFontSize; /* [1] */
-    line-height: $rkrBaseLineHeight / $rkrBaseFontSize; /* [1] */
+    font-size: $rkrTypoBaseFontSize; /* [1] */
+    line-height: $rkrTypoBaseLineHeight / $rkrTypoBaseFontSize; /* [1] */
 
-    // background-color: $inuit-base-background-color;
-    // color: $inuit-base-text-color;
+    color: $rkrTypoBaseColor;
+    background-color: map-get($rkrTheme, baseBackground);
 
     overflow-y: scroll; /* [2] */
     min-height: 100%; /* [3] */
