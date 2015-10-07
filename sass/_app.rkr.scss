@@ -38,8 +38,8 @@
 
 @import "20.tools/bem/bem.conf.rkr";
 
-@import "30.base/typography/typography.conf.rkr";
-@import "30.base/typography/headings.conf.rkr";
+@import "35.typography/typography.conf.rkr";
+@import "35.typography/headings/headings.conf.rkr";
 
 @import "40.layout/responsive/responsive.conf.rkr";
 @import "40.layout/container/container.conf.rkr";
@@ -86,7 +86,7 @@
 @import "20.tools/clearfix.tools.rkr";
 @import "20.tools/lists.tools.rkr";
 
-@import "30.base/typography/headings.tools.rkr";
+@import "35.typography/headings/headings.tools.rkr";
 
 @import "40.layout/responsive/responsive.tools.rkr";
 @import "40.layout/container/container.tools.rkr";
@@ -131,8 +131,9 @@
 
 @import "30.base/reset/reset.base.rkr";
 @import "30.base/page/page.base.rkr";
-@import "30.base/typography/typography.base.rkr";
-@import "30.base/typography/headings.base.rkr";
+
+@import "35.typography/typography.typo.rkr";
+@import "35.typography/headings/headings.typo.rkr";
 
 
 // @import "base.typography/base.typo.rkr";

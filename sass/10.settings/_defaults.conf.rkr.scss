@@ -43,11 +43,13 @@ $rkrNamespace:             		null !default;
 $rkrUseEntitiesNamespaces:		true !default;
 $rkrEntitiesNamespacesMap:		(
 									base: 			b ,
+									typography: t ,
 									layout:			l ,
 									object: 		o ,
 									component: 	c ,
 									module: 		m ,
 									utility: 		u ,
+									palette:		p ,
 									hack:				_
 									);
 
