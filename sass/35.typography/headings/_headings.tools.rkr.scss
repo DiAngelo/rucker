@@ -1,0 +1,34 @@
+//
+// Typography Headings tools
+//
+
+@mixin rkrTypoHeadings () {
+    %headingCommon {
+        color: $rkrHeadingColor;
+        line-height: $rkrHeadingsLineHeight;
+    }
+
+    @each $mod,$sz in $rkrHeadingsSizes {
+
+        %heading-#{$mod} {
+            font-size: $sz;
+
+            @extend %headingCommon;
+        }
+
+        $bemHeading: (
+            block: $rkrTypoTokenHeading,
+            modifier: $mod
+        );
+
+        #{rkrRuleBEM($rkrTypoHeadingEntity, $bemHeading)} {
+            @extend %heading-#{$mod};
+        }
+
+        @if map-has-key($rkrHeadingsTypes, $mod) {
+            #{map-get($rkrHeadingsTypes, $mod)} {
+                @extend %heading-#{$mod};
+            }
+        }
+    }
+}

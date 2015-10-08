@@ -1,0 +1,21 @@
+//
+// Sizes layout
+//
+
+@if $rkrHasSizes {
+    /**
+     * #SIZES
+     */
+
+     @include rkrSizesSilent(null);
+
+     @include rkrSizesBuild(null);
+}
+
+@if $rkrSizesIsResponsive {
+    /**
+     * #SIZES RESPONSIVE
+     */
+
+     @include rkrSizesBuildResponsive();
+}

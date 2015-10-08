@@ -1,0 +1,20 @@
+//
+// Layout Container settings
+//
+
+$rkrHasContainer:             true      !default;
+$rkrContainerEntity:		      layout 		!default;
+$rkrContainerBaseToken:				container !default;
+$rkrContainerFluidModifier:   fluid     !default;
+$rkrContainerRowElement:      row       !default;
+
+$rkrContainerRwdGutter: $rkrBaseSpacingMap;
+
+$rkrContainerRwdMaxWidths: (
+                    xs:       30rem,
+                    sm:       35rem,
+                    md:       40rem,
+                    lg:       48rem,
+                    xl:       60rem,
+                    __:       80rem
+                  );

@@ -1,0 +1,14 @@
+//
+// Box object
+//
+
+@if $rkrHasBox {
+    /**
+     * Object Box default
+     */
+    @include rkrMakeObjectBox(null);
+}
+
+@if $rkrBoxIsResponsive {
+    @include rkrMakeBoxResponsive();
+}

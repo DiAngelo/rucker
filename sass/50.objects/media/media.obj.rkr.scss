@@ -1,0 +1,14 @@
+//
+// Media object 
+//
+
+@if $rkrHasMedia {
+    /**
+     * Object Media default
+     */
+    @include rkrMakeObjectMedia(null);
+}
+
+@if $rkrMediaIsResponsive {
+    @include rkrMakeMediaResponsive();
+}

@@ -1,0 +1,26 @@
+//
+// Layout sizes configurations
+//
+
+$rkrHasSizes:             		true    !default;
+$rkrSizesEntity:		      		layout 	!default;
+$rkrSizesBaseToken:						'' 			!default;
+
+// Groups of sizes for which to define units
+// fe. for group 3 we define sizes for 1/3 and 2/3
+$rkrSizesGroups:              1, 2, 3, 4, 5 !default;
+
+
+
+//
+// Define if we should use responsive rules for sizes
+//
+$rkrSizesIsResponsive:				$rkrIsResponsive !default;
+
+$rkrSizesResponsiveGroups:    (
+                        xs:   (1, 2),
+                        sm:   (1, 2, 3),
+                        md:   $rkrSizesGroups,
+                        lg:   $rkrSizesGroups,
+                        xl:   $rkrSizesGroups,
+                              ) !default;

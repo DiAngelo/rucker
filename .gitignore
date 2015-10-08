@@ -4,3 +4,4 @@ themes/default/css
 themes/*/css
 *.css
 sass/media
+*.scssc
