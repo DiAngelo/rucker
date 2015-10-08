@@ -1,0 +1,43 @@
+//
+// Wrapper Layout Tools
+//
+
+//
+// rkrFnRuleWrapper
+// Generate Wrapper Object related rule
+//
+@function rkrFnWrapperRule($_inAttr, $_inIsElem: true) {
+
+  @return rkrFnEntityRule(wrapper, $rkrWrapperNs, $_inAttr, $_inIsElem);
+
+}
+
+
+
+//
+// rkrMxWrapperModifiers
+// Generate wrapper modifiers
+//
+
+@mixin rkrMxWrapperModifiers() {
+
+  $mWrapperSpacing: fnModifiersMap(5px, 10px, false);
+
+  @each $key,$gutter in $mWrapperSpacing {
+
+    /* Wrapper Layout with '#{$key}' modifier */
+    #{rkrFnWrapperRule(map-get($rkrMModifiersNaming, $key), false)} {
+      
+      padding-left:  $gutter;
+      padding-right: $gutter;
+
+      #{rkrFnWrapperRule(row)} {
+        margin-left:  -$gutter;
+        margin-right: -$gutter;
+      }
+
+    }
+
+  }
+
+}

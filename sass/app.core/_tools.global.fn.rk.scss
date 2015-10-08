@@ -14,7 +14,7 @@
 
       $x: map-get($rkrMAttributesNaming, $_inType);
 
-      @if $_inAttribute != null {
+      @if $_inAttribute != null and $_inAttribute != "" {
         @return '[' +$rkrAttributesPrefix + $x + '~="'+$_inAttribute+'"]';
       } @else {
         @return '[' + $rkrAttributesPrefix + $x + ']'; 
@@ -107,10 +107,24 @@
       $prefix: '__';
     }
 
-    $param: $_inNs + $prefix + $_inAttr;
+    $param: $_inAttr;
+
+    @if $_inNs != '' {
+      $param: $_inNs + $prefix + $_inAttr;
+    }    
+
     $response: rkrFnAttributeRule($_inEntity, $param);
 
   }
 
   @return $response;
+}
+
+//
+// rkrMxListReset
+//
+@mixin rkrMxListReset() {
+    margin:  0;
+    padding: 0;
+    list-style: none;
 }

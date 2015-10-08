@@ -1,0 +1,16 @@
+@mixin rkrBorderRadius {
+	$tokenBrdRad: $rkrBorderToken + capitalize($rkrBorderTokenRadius);
+
+	@each $mod,$v in $rkrBorderRadiusModifiers {
+
+		$bemRadTop: (
+			block: $tokenBrdRad,
+			modifier: $v + capitalize(md)
+		);
+
+		#{rkrRuleBEM($rkrBorderEntity, $bemRadTop)} {
+			border-top-left-radius: 1rem;
+			border-top-right-radius: 1rem;
+		}
+	}
+}

@@ -56,6 +56,11 @@
     modifier: $tokenMiddle
   );
 
+  $bemFloatLeft: (
+    block: $rkrAlignTokenHorizontal,
+    modifier: $rkrAlignTokenFloat + capitalize($tokenLeft)
+  );
+
 
 
   /**
@@ -69,6 +74,8 @@
   #{rkrRuleBEM($rkrAlignEntity, $bemHTop)}    { vertical-align: top     !important; }
   #{rkrRuleBEM($rkrAlignEntity, $bemHBottom)} { vertical-align: bottom  !important; }
   #{rkrRuleBEM($rkrAlignEntity, $bemHMiddle)} { vertical-align: middle  !important; }
+
+  #{rkrRuleBEM($rkrAlignEntity, $bemFloatLeft)} { float: left  !important; }
 }
 
 

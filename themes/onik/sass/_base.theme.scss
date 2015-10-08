@@ -1,0 +1,46 @@
+/*------------------------------------*\
+	HTML tags overrides specific to current theme
+\*------------------------------------*/
+
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);*/
+
+html, body { height: 100%; }
+
+body {
+	background-color: $tCBgBase;
+	color: $tCFgBase;
+  background-image:url('../images/body_bg.jpg');
+
+	/* TODO: move this at framework level */
+  font-family: 'Open Sans', sans-serif;
+  /*font-weight: 400;*/
+  line-height: 1.8em;
+
+}
+
+h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {
+	line-height: 1.2;
+	margin-bottom: 1rem;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+* {
+  box-sizing: border-box;
+}

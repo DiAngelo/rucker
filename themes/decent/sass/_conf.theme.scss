@@ -1,0 +1,70 @@
+//
+// Theme specific settings
+//
+
+// current theme's namespace: DI - Decent Imobiliare
+$rkrNamespace: 'di';
+
+// what types of grids are we using
+$rkrSizesLGroups: 1, 2, 3, 4, 6, 8, 12;
+
+//
+// Typography
+//
+
+$rkrTypoMSzBase: (
+	tiny: 	12px,
+	small: 	14px,
+	medium: 16px,
+	large: 	16px,
+	huge: 	18px
+);
+
+//
+// Define colors
+//
+
+
+$tCBgBase: 			#f0f0f0 ;
+$tCFgBase: 			#333		;
+
+$tCBgHeader:		rgba(255, 255, 255, .5);
+
+$tCFgNav:				#333		;
+$tCFgNavHover:  #2c81c1 ;
+$tCFgNavActive: $tCFgNavHover;
+$rkrCFgNavMenu: #194d72 ;
+
+$tCBgBox: 			#f0f0f0 ;
+$tCFgBox: 			#1b4d70 ;
+
+$tCBgBoxLight: 	#fff    ;
+$tCFgBoxLight: 	#184e70 ;
+
+$tCFgLocation: 	#777 		;
+
+$rkrModTabsCBgNav: #6498bf;
+$rkrModTabsCBgNavItem: $rkrModTabsCBgNav;
+$rkrModTabsCFgNavItem: #fff !default;
+$rkrModTabsCBgNavSelected: $tCBgBase;
+$rkrModTabsCFgNavSelected: $rkrModTabsCBgNav;
+
+$tCBgBanner: #6498bf;
+
+// Panel default
+$rkrComPanelCLn: 				#eee;
+$rkrComPanelCFgHeading: #174d71;
+$rkrComPanelCLnHeading: #eee;
+
+
+// Panel dark theme
+$rkrComPanelCBgDark: 				#edf2f6;
+$rkrComPanelCLnDark: 				$rkrComPanelCBgDark;
+$rkrComPanelCFgHeadingDark: #184e70;
+$rkrComPanelCLnHeadingDark: #fff;
+$rkrComPanelCFgBodyDark: 		#555;
+
+
+// $tMCBase: 			( bg: #f0f0f0, fg: #333		, ln: #999		 );
+// $tMCBoxBlue : 	( bg: #edf2f6, fg: #1b4d70, ln: null		 );
+// $tMCBoxLight: 	( bg: #fff   , fg: #184e70, ln:	#eee		 );

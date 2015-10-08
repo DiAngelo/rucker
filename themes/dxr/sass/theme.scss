@@ -1,0 +1,24 @@
+/**
+ * Onik-Sistem theme
+ *
+ * A theme for a construction client
+ */
+
+/*@import "conf.theme";
+
+@import "app.rk";
+
+@import "base.theme";
+
+@import "modules.theme";
+
+@import "master.theme";
+*/
+
+@import "conf.theme";
+
+@import "../../../sass/app.rkr";
+
+@import "common-modules.theme";
+
+@import "overrides.theme";

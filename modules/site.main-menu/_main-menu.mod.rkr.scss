@@ -1,0 +1,25 @@
+/**
+/* Main Menu
+/*/
+
+$rkrMainMenuEntity: 					module !default;
+$rkrMainMenuToken: 						mainMenu !default;
+$rkrMainMenuTokenItem: 				item !default;
+$rkrMainMenuTokenLink: 				link !default;
+
+
+
+$bemMenuItem: (
+	block: $rkrMainMenuToken,
+	element: $rkrMainMenuTokenItem
+);
+
+$bemMenuLink: (
+	block: $rkrMainMenuToken,
+	element: $rkrMainMenuTokenLink
+);
+
+
+	#{rkrRuleBEM($rkrMainMenuEntity, $bemMenuLink)} {
+		color: map-get($rkrTheme, mainMenuText);
+	}

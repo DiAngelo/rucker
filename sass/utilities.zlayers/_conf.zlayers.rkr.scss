@@ -1,0 +1,14 @@
+//
+// Define some names for z-index layers
+//
+
+
+// Register attribute type for media
+$rkrMZLayers: (
+	none: 		 	 	 0,
+	first: 				10,
+	carousel: 		20,
+	top-menu-xs:	89,
+	header: 			90,
+	top-menu:			91
+);

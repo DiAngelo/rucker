@@ -1,0 +1,32 @@
+//
+// Borderment configuration
+//
+
+$rkrHasBorder:                true      !default;
+$rkrHasBorderRadius:          true      !default;
+$rkrBorderEntity:             utility   !default;
+
+
+
+//
+// Tokens
+//
+$rkrBorderToken:           		brd   !default;
+$rkrBorderTokenRadius:    		rad   !default;
+$rkrBorderTokenLeft:          l     !default;
+$rkrBorderTokenRight:         r     !default;
+$rkrBorderTokenTop:           t     !default;
+$rkrBorderTokenBottom:        b    	!default;
+
+
+
+$rkrBorderRadiusModifiers: (
+	top: $rkrBorderTokenTop,
+	bottom: $rkrBorderTokenTop
+);
+
+
+//
+// Define if we should use responsive inline objects
+//
+$rkrBorderIsResponsive:        $rkrIsResponsive !default;

@@ -22,19 +22,21 @@
 
 @mixin rkrMxGridModifiers() {
 
-  $mGridSpacing: fnModifiersMap(5px, 10px, false);
-
+  $mGridSpacing: rkrFnMModifiers(.5rem, .5rem, false);
+     
   @each $key,$gutter in $mGridSpacing {
 
     /* Grid Layout with '#{$key}' modifier */
     #{rkrFnGridRule(map-get($rkrMModifiersNaming, $key), false)} {
-      
-      padding-left:  $gutter;
-      padding-right: $gutter;
+      /*margin-left:  -2*$gutter;*/
+      /*margin-right: -$gutter;*/
 
-      #{rkrFnGridRule(row)} {
-        margin-left:  -$gutter;
-        margin-right: -$gutter;
+      #{rkrFnGridRule(column)} {
+        padding-left:   $gutter;
+        padding-right:  $gutter;
+        padding-bottom: $gutter;
+        margin-bottom:  $gutter;
+        /*padding-right: $gutter;*/
       }
     }
   }

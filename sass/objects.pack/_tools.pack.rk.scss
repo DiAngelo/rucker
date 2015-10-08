@@ -12,6 +12,13 @@
 
 }
 
+@mixin rkrMxPackRule($_inAttr, $_inIsElem: true) {
+
+  #{rkrFnPackRule($_inAttr, $_inIsElem)} {
+  	@content;
+  }
+
+}
 
 //
 // rkrMxPackModifiers

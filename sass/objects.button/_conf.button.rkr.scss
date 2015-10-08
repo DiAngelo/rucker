@@ -1,0 +1,13 @@
+//
+// Button Object configurations
+//
+
+// Band namespace
+$rkrButtonNs: $rkrNamespace !default;
+
+$rkrButtonAttrType: object !default;
+$rkrButtonAttrName: button !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(button, $rkrButtonAttrType, $rkrButtonAttrName);
+
+

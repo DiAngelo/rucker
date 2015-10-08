@@ -1,0 +1,21 @@
+//
+// Basic typography tags
+//
+
+// html { font-size: $rkrTypoSzBase; }
+
+@include rkrMxTypoResponsiveBase();
+
+%h1 { font-size: $rkrTypoSzH1; line-height: $rkrTypoLineHeight; }
+%h2 { font-size: $rkrTypoSzH2; line-height: $rkrTypoLineHeight; }
+%h3 { font-size: $rkrTypoSzH3; line-height: $rkrTypoLineHeight; }
+%h4 { font-size: $rkrTypoSzH4; line-height: $rkrTypoLineHeight; }
+%h5 { font-size: $rkrTypoSzH5; line-height: $rkrTypoLineHeight; }
+%h6 { font-size: $rkrTypoSzH6; line-height: $rkrTypoLineHeight; }
+
+h1 { @extend %h1; }
+h2 { @extend %h2; }
+h3 { @extend %h3; }
+h4 { @extend %h4; }
+h5 { @extend %h5; }
+h6 { @extend %h6; }

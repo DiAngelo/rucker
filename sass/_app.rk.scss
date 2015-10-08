@@ -1,0 +1,169 @@
+//
+// Load the inversed triangle layers in the corresponding order
+//
+// We group entities by their final specificity
+//
+
+// SCSS Naming convention - camel-case:
+// https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
+//
+// CSS Naming convention - BEM style - no uppercase letters
+//
+
+//       ____________________
+//      /                   /
+//     /   Virtual Layer   /
+//    /___________________/
+//
+// Prepare functions used to generate values for Settings layer
+//
+@import "app.core/tools.global.fn.rk";
+@import "app.core/tools.metrics.fn.rk";
+
+//       ____________________
+//      /                   /
+//     /   Settings layer  /
+//    /___________________/
+// 
+// Default configuration values
+@import "app.core/conf.settings.rk";
+@import "app.core/conf.attributes.rk";
+
+@import "tools.responsive/conf.responsive.rkr";
+@import "utilities.text/conf.text.rk";
+@import "utilities.positions/conf.positions.rk";
+@import "base.typography/conf.typo.rk";
+
+@import "layouts.sizes/conf.sizes.rk";
+@import "layouts.wrapper/conf.wrapper.rk";
+@import "layouts.grid/conf.grid.rk";
+@import "layouts.flex/conf.flex.rk";
+
+@import "objects.media/conf.media.rk";
+@import "objects.inline/conf.inline.rk";
+@import "objects.bare/conf.bare.rkr";
+@import "objects.pack/conf.pack.rk";
+@import "objects.box/conf.box.rk";
+@import "objects.band/conf.band.rk";
+@import "objects.button/conf.button.rkr";
+@import "objects.circle/conf.circle.rkr";
+@import "objects.page/conf.page.rk";
+
+@import "components.panel/conf.panel.rkr";
+
+@import "modules.navigation/conf.navigation.rkr";
+@import "modules.tabs/conf.tabs.rkr";
+
+@import "utilities.zlayers/conf.zlayers.rkr";
+
+
+//       ____________________
+//      /                   /
+//     /    Tools layer    /
+//    /___________________/
+//
+// Functions and mixins
+@import "tools.responsive/tools.responsive.rkr";
+@import "base.typography/tools.typo.rk";
+
+@import "layouts.wrapper/tools.wrapper.rk";
+@import "layouts.grid/tools.grid.rk";
+@import "layouts.flex/tools.flex.rk";
+@import "layouts.sizes/tools.sizes.rk";
+
+@import "objects.media/tools.media.rk";
+@import "objects.inline/tools.inline.rk";
+@import "objects.bare/tools.bare.rkr";
+@import "objects.pack/tools.pack.rk";
+@import "objects.box/tools.box.rk";
+@import "objects.band/tools.band.rk";
+@import "objects.button/tools.button.rkr";
+@import "objects.circle/tools.circle.rkr";
+@import "objects.page/tools.page.rk";
+
+@import "components.panel/tools.panel.rkr";
+
+@import "modules.navigation/tools.navigation.rkr";
+@import "modules.tabs/tools.tabs.rkr";
+
+
+/////////////// Start generating CSS rules ///////////////
+
+
+
+//       ____________________
+//      /                   /
+//     /    Base layer     /
+//    /___________________/
+//
+// Reset and normalize - if needed
+// Rules for HTML tags
+@import "base.reset/base.reset.rk";
+@import "base.typography/base.typo.rk";
+
+
+
+//       ____________________
+//      /                   /
+//     /   Layouts layer   /
+//    /___________________/
+//
+// Extracted from objects layer, 
+// elements used to define the page layout, like grid system fe.
+@import "layouts.wrapper/layouts.wrapper.rk";
+@import "layouts.grid/layouts.grid.rk";
+@import "layouts.flex/layouts.flex.rk";
+@import "layouts.sizes/layouts.sizes.rk";
+
+
+
+//       ____________________
+//      /                   /
+//     /   Objects layer   /
+//    /___________________/
+//
+// Sketch objects with no style
+@import "objects.media/obj.media.rk";
+@import "objects.inline/obj.inline.rk";
+@import "objects.bare/obj.bare.rkr";
+@import "objects.pack/obj.pack.rk";
+@import "objects.box/obj.box.rk";
+@import "objects.band/obj.band.rk";
+@import "objects.button/obj.button.rkr";
+@import "objects.circle/obj.circle.rkr";
+@import "objects.page/obj.page.rk";
+
+
+
+//       ____________________
+//      /                   /
+//     /  Components layer /
+//    /___________________/
+// 
+// Objects with style
+@import "components.panel/com.panel.rkr";
+
+
+
+//       ____________________
+//      /                   /
+//     /   Modules layer   /
+//    /___________________/
+//
+// Compound by more components
+@import "modules.navigation/mod.navigation.rkr";
+@import "modules.tabs/mod.tabs.rkr";
+
+//       ____________________
+//      /                   /
+//     /    Master layer   /
+//    /___________________/
+//
+// Highest level of specificity
+// Helpers and fixes
+@import "utilities.clearfix/utils.clearfix.rk";
+@import "utilities.text/utils.text.rk";
+@import "utilities.positions/utils.positions.rkr";
+@import "base.typography/helper.typo.rk";
+
+

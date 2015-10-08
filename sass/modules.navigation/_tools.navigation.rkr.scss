@@ -1,0 +1,21 @@
+//
+// Navigation module funtions
+//
+
+//
+// rkrFnModNavRule
+// Generate Navigation module related rule
+//
+@function rkrFnModNavRule($_inAttr, $_inIsElem: true) {
+
+  @return rkrFnEntityRule(nav, $rkrModNavNs, $_inAttr, $_inIsElem);
+
+}
+
+@mixin rkrMxModNavRule($_inAttr, $_inIsElem: true) {
+
+  #{rkrFnEntityRule(nav, $rkrModNavNs, $_inAttr, $_inIsElem)} {
+  	@content;
+  }
+
+}

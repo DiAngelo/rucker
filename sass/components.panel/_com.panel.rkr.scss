@@ -1,0 +1,60 @@
+/*------------------------------------*\
+    #Panel component
+\*------------------------------------*/
+
+
+
+@include rkrMxComPanelRule(container) {
+	display: block;
+	margin-bottom: 1rem;
+	border: 1px solid $rkrComPanelCLn;	
+}
+
+@include rkrMxComPanelRule(header) {
+	color: $rkrComPanelCFgHeading;
+	border-bottom: 1px solid $rkrComPanelCLnHeading;
+	padding: 1rem;
+}
+
+@include rkrMxComPanelRule(body) {
+	padding: 1rem;
+	color: $rkrComPanelCFgBody;
+}
+
+//
+// Theming
+//
+
+@include rkrMxComPanelRule(light, false) {
+
+	background-color: $rkrComPanelCBgLight;
+	border: 1px solid $rkrComPanelCLnLight;
+
+	@include rkrMxComPanelRule(header) {
+		color: $rkrComPanelCFgHeadingLight;
+		border-bottom-color: $rkrComPanelCLnHeadingLight;
+	}
+
+	@include rkrMxComPanelRule(body) {
+		color: $rkrComPanelCFgBodyLight;
+	}
+
+}
+
+@include rkrMxComPanelRule(dark, false) {
+
+	background-color: $rkrComPanelCBgDark;
+	border: 1px solid $rkrComPanelCLnDark;
+
+	@include rkrMxComPanelRule(header) {
+		color: $rkrComPanelCFgHeadingDark;
+		border-bottom-color: $rkrComPanelCLnHeadingDark;
+	}
+
+	@include rkrMxComPanelRule(body) {
+		color: $rkrComPanelCFgBodyDark;
+	}
+
+}
+
+@include rkrMxComPanelRadius();

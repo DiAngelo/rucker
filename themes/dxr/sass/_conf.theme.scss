@@ -1,0 +1,48 @@
+//
+// Theme specific settings
+//
+/*
+// current theme's namespace: no namespace used
+$rkrNamespace: '';
+
+// what types of grids are we using
+$rkrSizesLGroups: 1, 2, 3, 4, 6, 8, 12;
+
+//
+// Typography
+//
+
+$rkrTypoMSzBase: (
+	tiny: 	12px,
+	small: 	14px,
+	medium: 14px,
+	large: 	16px,
+	huge: 	16px
+);
+
+*/
+
+$rkrMainMenuToken: 						mainNav;
+
+//
+// Define colors
+//
+
+$dxrCGreen: #9fc40c;
+$white: #fff;
+
+$customPalette: 							(
+            baseText:         #f5f5f5,
+            baseBackground:   #333,
+            headingText:      $white,
+            headerBg: 				$white,
+            mainMenuText: 		#999,
+            mainMenuHover: 		red,
+					);
+
+/*
+
+$rkrModNavCFgMain: 			#aaa;
+$rkrModNavCFgMainHover: $dxrCGreen;
+
+*/
