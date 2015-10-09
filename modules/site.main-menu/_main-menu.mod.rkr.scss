@@ -36,10 +36,13 @@
     display: block;
     font-size: 1.5rem;
     margin: 0 0 1rem;
+    padding: 0;
   }
 
   #{rkrMainMenuRule($rkrMainMenuTokenSandwich)} {
-    color: red;
+    position: relative;
+    z-index: 10;
+    color: map-get($rkrTheme, mainMenuText);
     cursor: pointer;
   }
 
@@ -48,9 +51,29 @@
     &:checked + #{rkrMainMenuRule($rkrMainMenuTokenContainer)} #{rkrMainMenuRule($rkrMainMenuTokenSandwich)} {
       position: absolute;
       z-index: 10;
-      top:     10px;
-      right:   10px;
-      content: "Inchide";
+      top:     1rem;
+      right:   1rem;
+
+      .iSandwich-sm {
+
+        &:before ,
+        &:after {
+          top:  0;
+          left: 0;
+        }
+
+        &:before {
+          border-bottom: none;
+          transform: rotate(45deg);
+          margin-left: -15%;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          margin-top:   0;
+          margin-left: 15%;
+        }
+      }
     }
 
     &:checked + #{rkrMainMenuRule($rkrMainMenuTokenContainer)} #{rkrMainMenuRule($rkrMainMenuTokenNav)} {
