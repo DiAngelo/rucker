@@ -1,16 +1,36 @@
-@mixin rkrBorderRadius {
+//
+// Border Radius tools
+//
+
+@mixin rkrBorderRadius ($_inBreakpoint) {
 	$tokenBrdRad: $rkrBorderToken + capitalize($rkrBorderTokenRadius);
+	
+	@each $mod,$sz in $rkrBorderRadiusSizes {
+		@each $type,$v in $rkrBorderRadiusModifiers {
+		  $tokenModifier: rkrGetResponsiveToken($v + capitalize($mod), $_inBreakpoint);
 
-	@each $mod,$v in $rkrBorderRadiusModifiers {
+			$bemRadTop: (
+				block: $tokenBrdRad,
+				modifier: $tokenModifier
+			);
 
-		$bemRadTop: (
-			block: $tokenBrdRad,
-			modifier: $v + capitalize(md)
-		);
-
-		#{rkrRuleBEM($rkrBorderEntity, $bemRadTop)} {
-			border-top-left-radius: 1rem;
-			border-top-right-radius: 1rem;
+			#{rkrRuleBEM($rkrBorderEntity, $bemRadTop)} {
+				border-top-left-radius: $sz;
+				border-top-right-radius: $sz;
+			}
 		}
 	}
+}
+
+
+
+@mixin rkrBorderRadiusResponsive () {
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+    /**
+     * Border Radius utilities #{$breakpoint}
+     */
+    @include rkrMQ((zone: $breakpoint)) {
+        @include rkrBorderRadius($breakpoint);
+    }
+  }	
 }
