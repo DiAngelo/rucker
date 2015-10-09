@@ -2,12 +2,20 @@
 /* Main Menu
 /*/
 
-$rkrMainMenuEntity: 					module !default;
+$rkrMainMenuEntity: 					module   !default;
 $rkrMainMenuToken: 						mainMenu !default;
-$rkrMainMenuTokenItem: 				item !default;
-$rkrMainMenuTokenLink: 				link !default;
+$rkrMainMenuTokenList:        list     !default;
+$rkrMainMenuTokenItem: 				item     !default;
+$rkrMainMenuTokenLink: 				link     !default;
+$rkrMainMenuTokenSwitch:      switch   !default;
+$rkrMainMenuTokenSandwich:    sandwich !default;
 
 
+
+$bemMenuList: (
+  block: $rkrMainMenuToken,
+  element: $rkrMainMenuTokenList
+);
 
 $bemMenuItem: (
 	block: $rkrMainMenuToken,
@@ -19,7 +27,30 @@ $bemMenuLink: (
 	element: $rkrMainMenuTokenLink
 );
 
+$bemMenuSwitch: (
+    block: $rkrMainMenuToken,
+    element: $rkrMainMenuTokenSwitch
+);
+
+$bemMenuSandwich: (
+    block: $rkrMainMenuToken,
+    element: $rkrMainMenuTokenSandwich
+);
+
+
+$ruleMain:   rkrRule($rkrMainMenuEntity, $rkrMainMenuToken) ;
+$ruleSwitch: rkrRuleBEM($rkrMainMenuEntity, $bemMenuSwitch) ;
+$ruleList:   rkrRuleBEM($rkrMainMenuEntity, $bemMenuList)   ;
+
+
 
 	#{rkrRuleBEM($rkrMainMenuEntity, $bemMenuLink)} {
 		color: map-get($rkrTheme, mainMenuText);
 	}
+
+@include rkrMqDown(sm) {
+  #{$ruleSwitch} {
+    color: red;
+    &:checked + #{$ruleMain} #{$ruleList} { display: block; }
+  }
+}
