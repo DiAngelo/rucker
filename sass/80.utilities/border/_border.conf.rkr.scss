@@ -22,7 +22,9 @@ $rkrBorderTokenBottom:        b    	!default;
 
 $rkrBorderRadiusModifiers: 		(
 											top: 		$rkrBorderTokenTop,
-											bottom: $rkrBorderTokenTop
+                      right:  $rkrBorderTokenRight,
+											bottom: $rkrBorderTokenBottom,
+                      left:   $rkrBorderTokenLeft
 										);
 
 $rkrBorderRadiusSizes:        (

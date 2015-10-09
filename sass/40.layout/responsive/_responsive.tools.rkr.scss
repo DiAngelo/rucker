@@ -6,7 +6,7 @@
 
 //
 // Get Responsive Token
-//
+  //
 @function rkrGetResponsiveToken ($token, $_inBreakpoint) {
     @if $_inBreakpoint != null {
         $token: $token + $rkrRwdSeparator + $_inBreakpoint;

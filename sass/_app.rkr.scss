@@ -42,6 +42,7 @@
 @import "35.typography/headings/headings.conf.rkr";
 
 @import "40.layout/responsive/responsive.conf.rkr";
+@import "40.layout/display/display.conf.rkr";
 @import "40.layout/container/container.conf.rkr";
 @import "40.layout/grid/grid.conf.rkr";
 @import "40.layout/sizes/sizes.conf.rkr";
@@ -90,6 +91,7 @@
 @import "35.typography/headings/headings.tools.rkr";
 
 @import "40.layout/responsive/responsive.tools.rkr";
+@import "40.layout/display/display.tools.rkr";
 @import "40.layout/container/container.tools.rkr";
 @import "40.layout/sizes/sizes.tools.rkr";
 
@@ -156,8 +158,8 @@
 // @import "layouts.flex/layouts.flex.rkr";
 // @import "layouts.sizes/layouts.sizes.rkr";
 
+@import "40.layout/display/display.layout.rkr";
 @import "40.layout/container/container.layout.rkr";
-@import "40.layout/grid/grid.layout.rkr";
 @import "40.layout/sizes/sizes.layout.rkr";
 
 @debug "Done Layouts layer";
