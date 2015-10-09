@@ -1,56 +1,61 @@
+//
+// Main Menu Module
+//
+
+@import "main-menu.conf.rkr";
+@import "main-menu.tools.rkr";
+
+
+
 /**
 /* Main Menu
-/*/
-
-$rkrMainMenuEntity: 					module   !default;
-$rkrMainMenuToken: 						mainMenu !default;
-$rkrMainMenuTokenList:        list     !default;
-$rkrMainMenuTokenItem: 				item     !default;
-$rkrMainMenuTokenLink: 				link     !default;
-$rkrMainMenuTokenSwitch:      switch   !default;
-$rkrMainMenuTokenSandwich:    sandwich !default;
+/**/
+#{rkrMainMenuRule($rkrMainMenuTokenLink)} {
+	color: map-get($rkrTheme, mainMenuText);
+}
 
 
-
-$bemMenuList: (
-  block: $rkrMainMenuToken,
-  element: $rkrMainMenuTokenList
-);
-
-$bemMenuItem: (
-	block: $rkrMainMenuToken,
-	element: $rkrMainMenuTokenItem
-);
-
-$bemMenuLink: (
-	block: $rkrMainMenuToken,
-	element: $rkrMainMenuTokenLink
-);
-
-$bemMenuSwitch: (
-    block: $rkrMainMenuToken,
-    element: $rkrMainMenuTokenSwitch
-);
-
-$bemMenuSandwich: (
-    block: $rkrMainMenuToken,
-    element: $rkrMainMenuTokenSandwich
-);
-
-
-$ruleMain:   rkrRule($rkrMainMenuEntity, $rkrMainMenuToken) ;
-$ruleSwitch: rkrRuleBEM($rkrMainMenuEntity, $bemMenuSwitch) ;
-$ruleList:   rkrRuleBEM($rkrMainMenuEntity, $bemMenuList)   ;
-
-
-
-	#{rkrRuleBEM($rkrMainMenuEntity, $bemMenuLink)} {
-		color: map-get($rkrTheme, mainMenuText);
-	}
 
 @include rkrMqDown(sm) {
-  #{$ruleSwitch} {
+  #{rkrMainMenuRule($rkrMainMenuTokenNav)} {
+    background-color: rgba(50,50,50, .9);
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  #{rkrMainMenuRule($rkrMainMenuTokenList)} {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  #{rkrMainMenuRule($rkrMainMenuTokenItem)} {
+    display: block;
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+  }
+
+  #{rkrMainMenuRule($rkrMainMenuTokenSandwich)} {
     color: red;
-    &:checked + #{$ruleMain} #{$ruleList} { display: block; }
+    cursor: pointer;
+  }
+
+  #{rkrMainMenuRule($rkrMainMenuTokenSwitch)} {
+
+    &:checked + #{rkrMainMenuRule($rkrMainMenuTokenContainer)} #{rkrMainMenuRule($rkrMainMenuTokenSandwich)} {
+      position: absolute;
+      z-index: 10;
+      top:     10px;
+      right:   10px;
+      content: "Inchide";
+    }
+
+    &:checked + #{rkrMainMenuRule($rkrMainMenuTokenContainer)} #{rkrMainMenuRule($rkrMainMenuTokenNav)} {
+      display: block;
+      display: auto;
+    }
   }
 }
