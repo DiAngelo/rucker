@@ -6,10 +6,15 @@
 $rkrIsResponsive:             true 	!default;
 
 // If true, use Mobile first technique, otherwise use desktop first
-$rkrRwdIsMobileFirst: 	      false !default;
+$rkrRwdIsMobileFirst: 	      true  !default;
 
 // Token used to indicate a specific breakpoint directive
 $rkrRwdSeparator:             \@    !default;
+
+// Responsive tokens
+$rkrRwdTokenUp:               up    !default;
+$rkrRwdTokenDown:             down  !default;
+
 
 
 

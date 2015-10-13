@@ -8,9 +8,9 @@
 // rkrSizesPlaceholder
 //
 @mixin rkrSizesPlaceholder ($_inName, $_inVal) {
-  %#{$_inName} {
-    width: #{$_inVal + '%'};
-  }
+
+  %#{$_inName} { width: #{$_inVal + '%'}; }
+
 }
 
 
@@ -18,7 +18,7 @@
 //
 // rkrSizesSilent
 //
-@mixin rkrSizesSilent($_inBreakpoint) {
+@mixin rkrSizesSilent($_inBreakpoint, $_inSuffix: '') {
   
   $lDefined: ();
   $prefix: lSize;
@@ -36,7 +36,7 @@
       /*
        * Size full
        */
-      @include rkrSizesPlaceholder (#{$prefix}-100, 100);
+      @include rkrSizesPlaceholder (#{$prefix + $_inSuffix}-100, 100);
 
     }
 
@@ -50,7 +50,7 @@
         /*
          * Size #{$selector}%
          */
-        @include rkrSizesPlaceholder (#{$prefix}-#{$selector}, $currentSize);
+        @include rkrSizesPlaceholder (#{$prefix + $_inSuffix}-#{$selector}, $currentSize);
 
         $lDefined: append($lDefined, $selector);
 
@@ -67,9 +67,9 @@
 //
 // rkrSizesRule
 //
-@mixin rkrSizesRule($_inPrefix, $_inRule, $_inParam, $type: '') {
+@mixin rkrSizesRule($_inPrefix, $_inRule, $_inParam, $type: '', $_inSuffix: '') {
 
-  $placeholder: #{$_inPrefix}-#{$_inParam};
+  $placeholder: #{$_inPrefix + $_inSuffix}-#{$_inParam};
 
   @if $type != '' {
 
@@ -78,7 +78,9 @@
   }
 
   #{rkrRuleBEM($rkrSizesEntity, (block: $rkrSizesBaseToken, modifier: $_inRule))} {
+
     @extend %#{$placeholder};
+
   }
 
 }// @mixin
@@ -88,7 +90,7 @@
 //
 // rkrSizesBuild
 //
-@mixin rkrSizesBuild($_inBreakpoint) {
+@mixin rkrSizesBuild($_inBreakpoint, $_inSuffix: '') {
   
   $prefix: lSize;
   $sizesGroups: $rkrSizesGroups;
@@ -104,8 +106,8 @@
   @each $group in $sizesGroups {
 
     @if $group == 1 {
-      $full: rkrGetResponsiveToken('1\\/1', $_inBreakpoint);
-      @include rkrSizesRule($prefix, $full, 100);
+      $full: rkrGetResponsiveToken('1\\/1', $_inBreakpoint) + capitalize($_inSuffix);
+      @include rkrSizesRule($prefix, $full, 100, '', $_inSuffix);
 
     } // @if group 1
 
@@ -116,10 +118,10 @@
       $rule: #{$i}\/#{$group};
 
       @if $_inBreakpoint != null {
-        $rule: $rule + $rkrRwdSeparator + $_inBreakpoint;
+        $rule: $rule + $rkrRwdSeparator + $_inBreakpoint + capitalize($_inSuffix);
       }
 
-      @include rkrSizesRule($prefix, $rule, $selector);
+      @include rkrSizesRule($prefix, $rule, $selector, '', $_inSuffix);
 
     } // @for in group
   } // @each group
@@ -137,8 +139,30 @@
      * Sizes #{$breakpoint}
      */
     @include rkrMQ((zone: $breakpoint)) {
+
       @include rkrSizesSilent(#{$breakpoint});
       @include rkrSizesBuild(#{$breakpoint});
+
+    }
+
+    @if $rkrRwdIsMobileFirst {
+
+      @include rkrMQ((from: $breakpoint)) {
+
+        @include rkrSizesSilent(#{$breakpoint}, up);
+        @include rkrSizesBuild(#{$breakpoint}, up);
+
+      }
+
+    } @else {
+
+      @include rkrMQ((to: $breakpoint)) {
+
+        @include rkrSizesSilent(#{$breakpoint}, down);
+        @include rkrSizesBuild(#{$breakpoint}, down);
+
+      }
+
     }
   }
 } // @mixin
