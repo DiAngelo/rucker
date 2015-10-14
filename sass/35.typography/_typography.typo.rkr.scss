@@ -11,17 +11,5 @@
         }
     }
 
-
-
-    body { font-family: $rkrTypoFontBase; }
-
-    @if $rkrUseWebFonts {
-      @if $rkrTypoWebFontBase != null {
-
-        #{$rkrTypoWebFontClass} body {
-            font-family: $rkrTypoWebFontBase;
-        }
-        
-      }
-    }
+    @include rkrTypoRule(body, $rkrTypoWebFontBase);   
 }
