@@ -130,6 +130,34 @@
 
 
 //
+//
+//
+@mixin rkrRwdUpOrDown () {
+  
+  @if $rkrRwdIsMobileFirst {
+
+    @include rkrMQ((from: $breakpoint)) {
+
+      @include rkrSizesSilent(#{$breakpoint}, up);
+      @include rkrSizesBuild(#{$breakpoint}, up);
+
+    }
+
+  } @else {
+
+    @include rkrMQ((to: $breakpoint)) {
+
+      @include rkrSizesSilent(#{$breakpoint}, down);
+      @include rkrSizesBuild(#{$breakpoint}, down);
+
+    }
+
+  }
+
+}
+
+
+//
 // rkrSizesBuildResponsive
 //
 @mixin rkrSizesBuildResponsive() {

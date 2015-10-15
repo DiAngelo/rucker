@@ -6,11 +6,43 @@
   /**
    * Spacing - Margins
    **/
-  @include rkrSpacingMargins();
+  @include rkrSpacingMargins(null);
 
   /**
    * Spacing - Paddings
    **/
-  @include rkrSpacingPaddings();
+  @include rkrSpacingPaddings(null);
 
+}
+
+
+@if $rkrAlignIsResponsive {
+
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+
+    @include rkrMQ((zone: $breakpoint)) {
+
+      /**
+       * Spacing - Margins responsive #{$breakpoint}
+       **/
+
+      @include rkrSpacingMargins($breakpoint);
+
+      /**
+       * Spacing - Paddings responsive #{$breakpoint}
+       **/
+      @include rkrSpacingPaddings($breakpoint);
+    }
+
+      /**
+       * Spacing - Paddings responsive #{$breakpoint} UP ####
+       **/
+
+    @include rkrMQ((from: $breakpoint)) {
+
+      @include rkrSpacingMargins($breakpoint, up);
+      @include rkrSpacingPaddings($breakpoint, up);
+
+    }
+  }
 }
