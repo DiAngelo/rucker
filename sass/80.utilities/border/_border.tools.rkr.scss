@@ -4,8 +4,25 @@
 
 @mixin rkrBorderRadius ($_inBreakpoint) {
 	$tokenBrdRad: $rkrBorderToken + capitalize($rkrBorderTokenRadius);
+
+    $borderModifierTypes: (
+        t: (top-left, top-right),
+        l: (top-left, bottom-left),
+        b: (bottom-left, bottom-right),
+        r: (bottom-right, top-right)
+    );
 	
 	@each $mod,$sz in $rkrBorderRadiusSizes {
+
+        $bemRadius: (
+            block: $tokenBrdRad,
+            modifier: $mod
+        );
+
+        #{rkrRuleBEM($rkrBorderEntity, $bemRadius)} { border-radius: $sz !important; }
+
+
+
 		@each $type,$v in $rkrBorderRadiusModifiers {
 		  $tokenModifier: rkrGetResponsiveToken($v + capitalize($mod), $_inBreakpoint);
 
@@ -14,9 +31,12 @@
 				modifier: $tokenModifier
 			);
 
+            $modifierTypes: map-get($borderModifierTypes, $v);
+
 			#{rkrRuleBEM($rkrBorderEntity, $bemRadTop)} {
-				border-top-left-radius: $sz;
-				border-top-right-radius: $sz;
+
+                @each $modType in $modifierTypes { border-#{$modType}-radius:  $sz !important; }
+                
 			}
 		}
 	}
