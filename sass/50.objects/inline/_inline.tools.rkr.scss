@@ -6,11 +6,17 @@
 // Mixin that generates the rules for the specific responsive breakpoint
 //
 @mixin rkrMakeObjectInline ($_inBreakpoint, $_inSuffix: '') {
-  $baseToken:   rkrGetResponsiveToken($rkrInlineBaseToken, $_inBreakpoint);
+  $baseToken:   rkrGetResponsiveToken($rkrInlineBaseToken, $_inBreakpoint) + capitalize($_inSuffix);
   $listToken:   rkrGetResponsiveToken($rkrInlineElementList, $_inBreakpoint);
   $middleToken: rkrGetResponsiveToken($rkrInlineModifierMiddle, $_inBreakpoint);
   $bottomToken: rkrGetResponsiveToken($rkrInlineModifierBottom, $_inBreakpoint);
   $spacedToken: rkrGetResponsiveToken($rkrInlineModifierSpaced, $_inBreakpoint);
+
+  $fsz: map-get($rkrTypoRwdFontSizes, $_inBreakpoint);
+
+  @if $fsz == null {
+      $fsz: 1rem;
+  }
 
   $currentGutter: $rkrInlineGutter / 2;
 
@@ -49,11 +55,9 @@
   /**
    * The Inline Object #{$_inBreakpoint}
    */
-  #{rkrRule($rkrInlineEntity, $baseToken + capitalize($_inSuffix))} {
+  #{rkrRule($rkrInlineEntity, $baseToken)} {
       display: inline-block;
       vertical-align: top;
-      font-size: 1rem;
-     // box-sizing: border-box;
   }
 
 
@@ -62,17 +66,70 @@
   // Elements
   //
 
+  %rkrInlineNoFontSize-#{$_inBreakpoint}-#{$_inSuffix} { font-size: 0; }
+
+  %rkrInlineFontSize-#{$_inBreakpoint}-#{$_inSuffix}   { font-size: $fsz; }
+
+
   #{rkrRuleBEM($rkrInlineEntity, $bemList)},
   #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)} {
-      font-size: 0;
 
-      > #{rkrRule($rkrInlineEntity, $baseToken)},
-      > #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)},
-      > #{rkrRuleBEM($rkrInlineEntity, $bemBottom)} {
-        font-size: 1rem;
+    @extend %rkrInlineNoFontSize-#{$_inBreakpoint}-#{$_inSuffix};
+
+    > #{rkrRule($rkrInlineEntity, $baseToken)},
+    > #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)},
+    > #{rkrRuleBEM($rkrInlineEntity, $bemBottom)} {
+
+      @at-root {
+        @each $breakpoint,$sz in $rkrTypoRwdFontSizes {
+          @include rkrMQ((zone: $breakpoint)) {
+            font-size: $sz;
+          }
+        }
       }
+    }
   }
 
+
+
+  @if ($_inSuffix == '') {
+
+    $bemList: (
+      block: $rkrInlineBaseToken,
+      element: $rkrInlineElementList
+    );
+
+    $bemSpaced: (
+      block:    $rkrInlineBaseToken,
+      element:  $rkrInlineElementList,
+      modifier: $rkrInlineModifierSpaced
+    );
+
+    $bemMiddle: (
+      block: $rkrInlineBaseToken,
+      modifier: $rkrInlineModifierMiddle
+    );
+
+    $bemBottom: (
+      block: $rkrInlineBaseToken,
+      modifier: $rkrInlineModifierBottom
+    )  ;
+
+
+    #{rkrRuleBEM($rkrInlineEntity, $bemList)},
+    #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)} {
+
+      @extend %rkrInlineNoFontSize-#{$_inBreakpoint}-#{$_inSuffix};
+
+      > #{rkrRule($rkrInlineEntity, $rkrInlineBaseToken)},
+      > #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)},
+      > #{rkrRuleBEM($rkrInlineEntity, $bemBottom)} {
+
+        @extend %rkrInlineFontSize-#{$_inBreakpoint}-#{$_inSuffix};
+
+      }
+    }
+  }
 
 
   //
