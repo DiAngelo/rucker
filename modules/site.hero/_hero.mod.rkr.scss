@@ -1,0 +1,14 @@
+/**
+/* Hero module
+/**/
+
+$rkrHeroToken: 							hero !default;
+$rkrHeroEntity: 						module !default;
+
+
+
+#{rkrRule($rkrHeroEntity, $rkrHeroToken)} {
+  display: block;
+  overflow: hidden;
+  max-height: 30rem;
+}
