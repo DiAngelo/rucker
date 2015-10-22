@@ -5,6 +5,8 @@
 $rkrFooterToken:       Footer !default;
 $rkrFooterEntity:      module !default;
 
+$rkrFooterTokenCopy:   copyright !default;
+
 
 //
 // Footer colors
@@ -21,4 +23,13 @@ $showFooterColors: false;
         color:            map-get($rkrTheme, footerText);
         background-color: map-get($rkrTheme, footerBg);
     }
+
+    $bemCopy: (
+        block: $rkrFooterToken,
+        element: $rkrFooterTokenCopy
+    );
+
+    #{rkrRuleBEM($rkrFooterEntity, $bemCopy)} {
+      color: map-get($rkrTheme, footerCopyrightText);
+    };
 }
