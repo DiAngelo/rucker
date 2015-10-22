@@ -76,14 +76,19 @@
 
     @extend %rkrInlineNoFontSize-#{$_inBreakpoint}-#{$_inSuffix};
 
-    > #{rkrRule($rkrInlineEntity, $baseToken)},
-    > #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)},
-    > #{rkrRuleBEM($rkrInlineEntity, $bemBottom)} {
+    @at-root (without:all) {
 
-      @at-root {
-        @each $breakpoint,$sz in $rkrTypoRwdFontSizes {
-          @include rkrMQ((zone: $breakpoint)) {
-            font-size: $sz;
+      #{rkrRuleBEM($rkrInlineEntity, $bemList)},
+      #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)} {
+
+        > #{rkrRule($rkrInlineEntity, $baseToken)},
+        > #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)},
+        > #{rkrRuleBEM($rkrInlineEntity, $bemBottom)} {
+
+          @each $breakpoint,$sz in $rkrTypoRwdFontSizes {
+            @include rkrMQ((zone: $breakpoint)) {
+              font-size: $sz;
+            }
           }
         }
       }
