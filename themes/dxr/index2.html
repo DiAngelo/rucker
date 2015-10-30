@@ -55,7 +55,7 @@
                     <a href="index.html" class="mMainMenu_link">Despre noi</a>
                   </li>
                   <li class="mMainMenu_item oInline uPd-lMd@mdUp">
-                    <a href="index2.html" class="mMainMenu_link">Pentru medici</a>
+                    <a href="#" class="mMainMenu_link">Pentru medici</a>
                   </li>
                   <li class="mMainMenu_item oInline uPd-lMd@mdUp">
                     <a href="#" class="mMainMenu_link">Servicii</a>
@@ -169,35 +169,16 @@
       }
     });
 
-
-
-    var $body = $("body");
-
     $(document).ready(function () {
-
+      var $body = $("body");
       setTimeout(function () {
         $body.addClass("is-loaded");
       }, 1000);
-
-      $(".mMainMenu_item a").on("click", function (event) {
-          var $link = $(this);
-
-          event.preventDefault();
-          event.stopPropagation();
-
-          $body.removeClass("is-loaded");
-
-          setTimeout(function () {
-            window.location = $link.attr("href");
-          }, 700);
-
-      });
     });
 
-    // $(window).bind('beforeunload', function(){
-    //     $body.removeClass("is-loaded");
-    //     return false;
-    // });
+    $(window).bind('beforeunload', function(){
+        $body.removeClass("is-loaded");
+    });
 
   </script>
 
