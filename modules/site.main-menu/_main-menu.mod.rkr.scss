@@ -78,7 +78,27 @@
 
     &:checked + #{rkrMainMenuRule($rkrMainMenuTokenContainer)} #{rkrMainMenuRule($rkrMainMenuTokenNav)} {
       display: block;
-      display: auto;
+
+      -webkit-animation-duration: .5s;
+              animation-duration: .5s;
+
+      -webkit-animation-name: mobileMenu;
+              animation-name: mobileMenu;
     }
+  }
+}
+
+// TODO: Create framework animation methods
+@keyframes mobileMenu {
+  from {
+    top:      0%;
+    bottom: 100%;
+  }
+
+  to {
+    top:    0;
+    bottom: 0;
+    left:   0;
+    right:  0;
   }
 }
