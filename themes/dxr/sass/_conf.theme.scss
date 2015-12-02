@@ -22,23 +22,40 @@ $rkrTypoMSzBase: (
 
 */
 
-$rkrMainMenuToken: 						mainNav;
+/*$rkrMainMenuToken: 						mainMenu;*/
+
+//
+// Typography
+//
+
+$rkrUseWebFonts:              true;
+$rkrTypoWebFontBase:          'Open Sans';
+$rkrHeadingsWebFont:          'Open Sans Condensed';
+
 
 //
 // Define colors
 //
 
-$dxrCGreen: #9fc40c;
-$white: #fff;
+$dxrCGreen:                   #9fc40c;
+$white:                       #fff;
+
+$blackAplpha5:                rgba(0,0,0,.5);
+$whiteAplpha5:                rgba(255,255,255,.5);
 
 $customPalette: 							(
-            baseText:         #f5f5f5,
-            baseBackground:   #333,
-            headingText:      $white,
-            headerBg: 				$white,
-            mainMenuText: 		#999,
-            mainMenuHover: 		red,
-					);
+        baseText:             #444,
+        baseBackground:       #333,
+        wrapperBg:            $white,
+        headingText:          $dxrCGreen,
+        mainMenuText: 		    #B4D605,
+        mainMenuHover: 		    #666,
+        footerText:           $whiteAplpha5,
+        footerBg:             $blackAplpha5,
+        footerCopyrightText:  #666
+			);
+
+$rkrBodyBgImage: "../images/bg_pattern.png";
 
 /*
 

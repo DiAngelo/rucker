@@ -1,0 +1,17 @@
+//
+// Responsive layout
+//
+
+@if $rkrHasLayoutDisplay {
+    /**
+    /* Layout display
+    /**/
+    @include rkrLayoutDisplay(null);
+}
+
+@if $rkrDisplayIsResponsive {
+    /**
+    /* Responsive layout display
+    /**/
+    @include rkrLayoutDisplayResponsive();
+}

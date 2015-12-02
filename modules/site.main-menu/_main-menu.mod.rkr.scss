@@ -1,25 +1,104 @@
+//
+// Main Menu Module
+//
+
+@import "main-menu.conf.rkr";
+@import "main-menu.tools.rkr";
+
+
+
 /**
 /* Main Menu
-/*/
-
-$rkrMainMenuEntity: 					module !default;
-$rkrMainMenuToken: 						mainMenu !default;
-$rkrMainMenuTokenItem: 				item !default;
-$rkrMainMenuTokenLink: 				link !default;
+/**/
+#{rkrMainMenuRule($rkrMainMenuTokenLink)} {
+	color: map-get($rkrTheme, mainMenuText);
+}
 
 
 
-$bemMenuItem: (
-	block: $rkrMainMenuToken,
-	element: $rkrMainMenuTokenItem
-);
+@include rkrMqDown(sm) {
+  #{rkrMainMenuRule($rkrMainMenuTokenNav)} {
+    background-color: rgba(50,50,50, .9);
+    padding: 2rem 0;
+    text-align: center;
+  }
 
-$bemMenuLink: (
-	block: $rkrMainMenuToken,
-	element: $rkrMainMenuTokenLink
-);
+  #{rkrMainMenuRule($rkrMainMenuTokenList)} {
+    position: absolute;
+    top: 50%;
+    width: 100%;
 
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
 
-	#{rkrRuleBEM($rkrMainMenuEntity, $bemMenuLink)} {
-		color: map-get($rkrTheme, mainMenuText);
-	}
+  #{rkrMainMenuRule($rkrMainMenuTokenItem)} {
+    display: block;
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+
+  #{rkrMainMenuRule($rkrMainMenuTokenSandwich)} {
+    position: relative;
+    z-index: 10;
+    color: map-get($rkrTheme, mainMenuText);
+    cursor: pointer;
+  }
+
+  #{rkrMainMenuRule($rkrMainMenuTokenSwitch)} {
+
+    &:checked + #{rkrMainMenuRule($rkrMainMenuTokenContainer)} #{rkrMainMenuRule($rkrMainMenuTokenSandwich)} {
+      position: absolute;
+      z-index: 10;
+      top:     1rem;
+      right:   1rem;
+
+      .iSandwich-sm {
+
+        &:before ,
+        &:after {
+          top:  0;
+          left: 0;
+        }
+
+        &:before {
+          border-bottom: none;
+          transform: rotate(45deg);
+          margin-left: -20%;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          margin-top:   0;
+          margin-left: 15%;
+        }
+      }
+    }
+
+    &:checked + #{rkrMainMenuRule($rkrMainMenuTokenContainer)} #{rkrMainMenuRule($rkrMainMenuTokenNav)} {
+      display: block;
+
+      -webkit-animation-duration: .5s;
+              animation-duration: .5s;
+
+      -webkit-animation-name: mobileMenu;
+              animation-name: mobileMenu;
+    }
+  }
+}
+
+// TODO: Create framework animation methods
+@keyframes mobileMenu {
+  from {
+    top:      0%;
+    bottom: 100%;
+  }
+
+  to {
+    top:    0;
+    bottom: 0;
+    left:   0;
+    right:  0;
+  }
+}

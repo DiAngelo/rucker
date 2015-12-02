@@ -6,7 +6,7 @@
 
 //
 // Get Responsive Token
-//
+  //
 @function rkrGetResponsiveToken ($token, $_inBreakpoint) {
     @if $_inBreakpoint != null {
         $token: $token + $rkrRwdSeparator + $_inBreakpoint;
@@ -21,40 +21,93 @@
 // Media Query
 //
 @mixin rkrMQ($_inRwdData) {
+  
+  $mqCondition: null;
+
   @if map-has-key($_inRwdData, zone) {
+    
     $rwdZone: map-get($_inRwdData, zone);
 
     @if $rwdZone == '__' {
+
       @content;
-    }
-    @else {
-      $mqCondition: null;
+
+    } @else {
+
       $zoneData: map-get($rkrRwdBreakpointZones, $rwdZone);
 
       @if $zoneData == null {
+
         @error $zoneData + ' breakpoint zone not found.'
       }
 
       @if (map-has-key($zoneData, from)) {
+
         $mqCondition: '(min-width:' + map-get($zoneData, from) + ')';
       }
 
       @if (map-has-key($zoneData, to)) {
+
         @if $mqCondition != null {
+
           $mqCondition: $mqCondition + ' and ';
+
         } @else {
+
           $mqCondition: '';
         }
 
         $mqCondition: $mqCondition + '(max-width:' + map-get($zoneData, to) + ')';
-      }
 
-      // @debug $mqCondition;
-
-      @media #{$mqCondition} {
-        @content;
       }
     }
+  } @else {
+
+    @if (map-has-key($_inRwdData, from)) {
+
+      $zoneFrom: map-get($_inRwdData, from);
+      $zoneData: map-get($rkrRwdBreakpointZones, $zoneFrom);
+
+      @if map-has-key($zoneData, from) {
+        
+        $mqCondition: '(min-width:' + map-get($zoneData, from) + ')';
+
+      }
+    }
+
+    @if (map-has-key($_inRwdData, to)) {
+
+      $zoneTo: map-get($_inRwdData, to);
+      $zoneData: map-get($rkrRwdBreakpointZones, $zoneTo);
+
+      @if $mqCondition != null {
+
+        $mqCondition: $mqCondition + ' and ';
+
+      }
+
+      @if map-has-key($zoneData, to) {
+
+        $mqCondition: '(max-width:' + map-get($zoneData, to) + ')';
+
+      }
+    }
+  }
+
+//  @debug $_inRwdData;
+//  @debug $mqCondition;
+
+  @if $mqCondition != null {
+
+    @media #{$mqCondition} {
+      
+      @content;
+
+    }
+
+  } @else {
+
+      @content;
 
   }
 }

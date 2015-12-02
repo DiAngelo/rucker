@@ -1,0 +1,14 @@
+//
+// Sandwich icon settings
+//
+
+$rkrHasIconSandwich: 					true 			!default ;
+$rkrIconSandwichEntity:				icon 			!default ;
+$rkrIconSandwichToken:				sandwich 	!default ;
+$rkrIconSandwichModifiers:		(
+												xs: 	.6rem,
+												sm:		.8rem,
+												md:		1rem,
+												lg:		1.2rem,
+												xl:		1.5rem,
+											) !default;

@@ -1,0 +1,12 @@
+//
+// Main Menu Tools
+//
+
+@function rkrMainMenuRule($_inToken) {
+	$bemMenu: (
+	  block: $rkrMainMenuToken,
+	  element: $_inToken
+	);
+
+	@return rkrRuleBEM($rkrMainMenuEntity, $bemMenu);
+}

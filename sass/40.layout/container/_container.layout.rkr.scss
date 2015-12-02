@@ -27,7 +27,7 @@
         @include rkrClearfix();
       }
 
-      #{rkrRule($rkrContainerEntity, $rkrContainerBaseToken)},
+/*      #{rkrRule($rkrContainerEntity, $rkrContainerBaseToken)},
       #{rkrRule($rkrContainerEntity, $currentContainerToken)},
       #{rkrRuleBEM($rkrContainerEntity, (block: container, modifier: $rkrContainerFluidModifier))},
       #{rkrRuleBEM($rkrContainerEntity, (block: container, modifier: $currentFluidToken))} {
@@ -37,7 +37,7 @@
         	@include rkrSideSpacing($gutter * -1);
 	      }
       }
-
+*/
       /* Define container's width constraint */
       @at-root #{rkrRule($rkrContainerEntity, $rkrContainerBaseToken)} {
         max-width: map-get($rkrContainerRwdMaxWidths, $key);

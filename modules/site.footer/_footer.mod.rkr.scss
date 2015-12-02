@@ -1,0 +1,35 @@
+/**
+/* Main container module
+/**/
+
+$rkrFooterToken:       Footer !default;
+$rkrFooterEntity:      module !default;
+
+$rkrFooterTokenCopy:   copyright !default;
+
+
+//
+// Footer colors
+//
+$showFooterColors: false;
+
+@if map-has-key ($rkrTheme, footerBg) {
+    $showFooterColors: true;
+}
+
+@if $showFooterColors {
+
+    #{rkrRule($rkrFooterEntity, $rkrFooterToken)} {
+        color:            map-get($rkrTheme, footerText);
+        background-color: map-get($rkrTheme, footerBg);
+    }
+
+    $bemCopy: (
+        block: $rkrFooterToken,
+        element: $rkrFooterTokenCopy
+    );
+
+    #{rkrRuleBEM($rkrFooterEntity, $bemCopy)} {
+      color: map-get($rkrTheme, footerCopyrightText);
+    };
+}

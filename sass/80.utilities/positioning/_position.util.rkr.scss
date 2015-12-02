@@ -1,0 +1,11 @@
+//
+// Positioning utilities
+//
+
+@if $rkrHasPositioning {
+    @include rkrPositioning(null);
+}
+
+@if $rkrPositioningIsResponsive {
+    @include rkrPositioningResponsive();
+}
