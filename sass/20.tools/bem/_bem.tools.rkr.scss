@@ -1,0 +1,25 @@
+//
+// BEM tools
+//
+
+
+
+//
+// Generate a css rule based on framework settings
+//
+@function rkrRuleBEM ($_inEntityType, $_inBemData) {
+
+    $ruleName: map-get($_inBemData, block);
+
+    @if map-has-key($_inBemData, element) {
+        $ruleName: $ruleName + $rkrBemSeparatorElement + map-get($_inBemData, element);
+    }
+
+    @if map-has-key($_inBemData, modifier) {
+        $ruleName: $ruleName + $rkrBemSeparatorModifier + map-get($_inBemData, modifier);
+    }
+
+    $rule: rkrRule($_inEntityType, $ruleName);
+
+    @return $rule;
+}

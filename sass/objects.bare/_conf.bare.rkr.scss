@@ -1,0 +1,20 @@
+//
+// Bare Object configuration
+//
+
+// Band namespace
+$rkrBareNs: $rkrNamespace !default;
+
+$rkrBareAttrType:         object 	  !default;
+$rkrBareAttrName:        	bare 		!default;
+$rkrBareAttrNameParent:		list			!default;
+
+// Register attribute type for 'bare'
+$rkrMAttributesNaming: rkrFnRegisterAttribute(bare, $rkrBareAttrType, $rkrBareAttrName);
+
+// Align of text inside items
+// Possible values:
+//		* left (default)
+//		* center
+//		* right
+$rkrBareAlign: left !default; 

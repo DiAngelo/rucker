@@ -1,0 +1,32 @@
+//
+// Media object configuration
+//
+
+$rkrHasMedia:                 true      !default;
+$rkrMediaEntity:              object    !default;
+
+
+
+//
+// Tokens
+//
+$rkrMediaTokenBase:           media     !default;
+$rkrMediaTokenImage:					image 		!default;
+$rkrMediaTokenBody:						body 			!default;
+$rkrMediaTokenTop:						top 			!default;
+$rkrMediaTokenBottom:					bottom		!default;
+
+
+
+
+//
+// Units
+//
+$rkrMediaSpacingUnit: 				$rkrBaseSpacingUnit !default;
+
+
+
+//
+// Define if we should use responsive media objects
+//
+$rkrMediaIsResponsive:          $rkrIsResponsive !default;

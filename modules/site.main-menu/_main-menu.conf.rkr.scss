@@ -1,0 +1,17 @@
+//
+// Main Menu Module Settings
+//
+
+$rkrMainMenuEntity: 					module   !default;
+$rkrMainMenuToken: 						mainMenu !default;
+$rkrMainMenuTokenList:        list     !default;
+$rkrMainMenuTokenItem: 				item     !default;
+$rkrMainMenuTokenLink: 				link     !default;
+$rkrMainMenuTokenSwitch:      switch   !default;
+$rkrMainMenuTokenSandwich:    sandwich !default;
+$rkrMainMenuTokenContainer:   container!default;
+$rkrMainMenuTokenNav:         nav      !default;
+
+
+
+$ruleMain:      							rkrRule($rkrMainMenuEntity, $rkrMainMenuToken) ;

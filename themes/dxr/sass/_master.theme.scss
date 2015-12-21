@@ -1,0 +1,22 @@
+/*------------------------------------*\
+	Theme overrides with high specificity
+\*------------------------------------*/
+
+.bitvice {
+	display: inline-block;
+	vertical-align: middle;
+	width:  80px;
+	height: 33px;
+	text-indent: -9999px;
+	overflow: hidden;
+
+	background-image: url("../images/bitvice.png");
+	background-size: cover;
+}
+
+.bitvice:hover {
+	background-image: url("../images/bitvice-hover.png");	
+}
+
+
+.bitvice__text { color: #555; }

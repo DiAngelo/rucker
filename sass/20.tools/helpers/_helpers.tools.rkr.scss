@@ -1,0 +1,65 @@
+//
+// Helpers 
+//
+
+
+
+//
+// Capitalize text by uppercasing the first letter
+//
+@function capitalize($_inText) {
+	@return to-upper-case(str-slice($_inText, 1, 1)) + str-slice($_inText, 2);
+}
+
+
+
+//
+// Generate a css rule based on framework settings
+//
+@function rkrRule ($_inEntityType, $_inEntityName) {
+
+	$rule: '.';
+	$ucFirst: false;
+
+	@if $rkrRuleWithAttributes {
+		$rule: '[' + $rkrRuleAttributePrefix + '-';
+	}
+
+	@if $rkrNamespace != null {
+		$rule: $rule + $rkrNamespace + '-';
+	}
+
+	@if $rkrRuleWithAttributes {
+		$rule: $rule + $_inEntityType + '~="';
+	}
+	@else {
+		@if $rkrUseEntitiesNamespaces {
+		  @if map-has-key($rkrEntitiesNamespacesMap, $_inEntityType) {
+	      $entityNamespace: map-get($rkrEntitiesNamespacesMap, $_inEntityType);
+	      $rule: $rule + $entityNamespace;
+	      $ucFirst: true;
+		  }
+		  @else {
+		    @warn "Unfortunately, no type was not found `#{$_inType}`. "
+		  }
+		}
+	}
+
+	@if $rkrRuleDashedStyle {
+		$rule: $rule + "-" + $_inEntityName;
+	}
+	@else {
+		@if $ucFirst {
+			$_inEntityName: capitalize($_inEntityName);
+		}
+
+		$rule: $rule + $_inEntityName;
+	}
+
+
+	@if $rkrRuleWithAttributes {
+		$rule: $rule + '"]';
+	}	
+
+	@return $rule;
+}

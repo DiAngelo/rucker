@@ -1,0 +1,36 @@
+//
+// Circle Object funtions
+//
+
+//
+// rkrFnCircleRule
+// Generate Circle Object related rule
+//
+@function rkrFnCircleRule($_inAttr, $_inIsElem: true) {
+  @return rkrFnEntityRule(circle, $rkrCircleNs, $_inAttr, $_inIsElem);
+}
+
+@mixin rkrMxCircleRule($_inAttr, $_inIsElem: true) {
+  #{rkrFnCircleRule($_inAttr, $_inIsElem)} {
+  	@content;
+  }
+}
+
+
+//
+// rkrMxCircleModifiers
+// Generate media modifiers
+//
+
+@mixin rkrMxCircleModifiers() {
+
+  $mBoxMediaSpacing: rkrFnMModifiers(.5rem, .5rem, true);
+
+  @each $key,$val in $mBoxMediaSpacing {
+
+    /* Box Object with '#{$key}' modifier */
+    #{rkrFnCircleRule(map-get($rkrMModifiersNaming, $key), false)} {
+      padding: $val; 
+    }
+  }
+}

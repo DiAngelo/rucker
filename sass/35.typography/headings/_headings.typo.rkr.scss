@@ -1,0 +1,10 @@
+//
+// Typography Headings
+//
+
+@if $rkrHasTypoHeadings {
+  /**
+   * Typography Headings
+   */
+  @include rkrTypoHeadings();
+}

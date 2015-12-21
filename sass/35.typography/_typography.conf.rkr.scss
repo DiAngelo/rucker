@@ -1,0 +1,40 @@
+//
+// Typography settigns
+//
+
+$rkrHasTypography:            true !default;
+
+$rkrTypoBaseFontSize:         $rkrBaseFontSize   !default;
+$rkrTypoBaseLineHeight:       $rkrBaseLineHeight !default;
+
+$rkrTypoBaseColor:            map-get($rkrTheme, baseText) !default;
+
+$rkrTypoIsResponsive:         true !default;
+
+$rkrTypoRwdFontSizes:         (
+                        xs:   14px ,
+                        sm:   15px ,
+                        md:   16px ,
+                        lg:   18px ,
+                        xl:   20px
+                      );
+
+
+//
+// Web Fonts settings
+//
+$rkrUseWebFonts:              false   !default;
+$rkrTypoWebFontPrefix:        wf      !default;
+$rkrTypoWebFontActive:        active  !default;
+
+$rkrTypoWebFontClass:         '.' + $rkrTypoWebFontPrefix + '-' + $rkrTypoWebFontActive !default;
+$rkrTypoWebFontBase:          null !default;
+
+
+
+
+$rkrTypoFontBase:             Arial,sans-serif !default;
+$rkrTypoFontHeading:          $rkrTypoFontBase !default;
+$rkrTypoFontMenu:             $rkrTypoFontBase !default;
+$rkrTypoFontLink:             $rkrTypoFontBase !default;
+$rkrTypoFontButton:           $rkrTypoFontBase !default;

@@ -3,8 +3,8 @@
 \*------------------------------------*/
 
 /** 
- * Place any image and a text-like content side-by-side, or one above the other as per:
- * stubbornella.org/content/2010/06/25/theMedia-object-saves-hundreds-of-lines-of-code
+ * Place any image and a text-like content in different positions: 
+ * side-by-side, or one above the other, or one overlapping the other
  */
 
 
@@ -81,8 +81,8 @@
 //
 
 #{rkrFnMediaRule($rkrMediaAttrNameBase, false)} {
+  
   @extend %oMedia;  
-}
 
   #{rkrFnMediaRule($rkrMediaAttrNameImage)} {
     @extend %oMedia_image;
@@ -92,34 +92,44 @@
     @extend %oMedia_body;
   }
 
-@if $rkrMediaBUseReversed {
-  #{rkrFnMediaRule($rkrMediaAttrNameReversed, false)} {
-    @extend %oMedia-rev;  
-  }  
-}
+  @if $rkrMediaBUseReversed {
+    #{rkrFnMediaRule($rkrMediaAttrNameReversed, false)} {
+      @extend %oMedia-rev;  
+    }  
+  }
 
-@if $rkrMediaBUseSticked {
-  #{rkrFnMediaRule($rkrMediaAttrNameSticked, false)} {
-    @extend %oMedia-sticked;  
-  }  
-}
+  @if $rkrMediaBUseSticked {
+    #{rkrFnMediaRule($rkrMediaAttrNameSticked, false)} {
+      @extend %oMedia-sticked;  
+    }  
+  }
 
-@if $rkrMediaBUseModifiers {
-  @include rkrMxMediaModifiers();
+  @if $rkrMediaBUseModifiers {
+    @include rkrMxMediaModifiers();
+  }  
+
 }
 
 
 
 @if $rkrMediaBUseBlock {
+  
   #{rkrFnMediaRule($rkrMediaAttrNameBlock, false)} {
+  
     @extend %oMedia-block;  
+  
   }  
+
 }
 
 
-
+/**
+ * Media object positioned inline
+ */
 @if $rkrMediaBUseInline {
+  
   #{rkrFnMediaRule($rkrMediaAttrNameInline, false)} {
+  
     #{rkrFnMediaRule($rkrMediaAttrNameImage)},
     #{rkrFnMediaRule($rkrMediaAttrNameBody)}
      {
@@ -127,5 +137,73 @@
       display: inline-block;
       vertical-align: $rkrMediaVInlineAlign;
     }
+
   }  
+
+}
+
+
+
+/**
+ * Media object having the body overlapping the image
+ */
+@if $rkrMediaBUseAbsolute {
+  
+  #{rkrFnMediaRule($rkrMediaAttrNameAbsolute, false)} {
+    
+    position: relative;
+
+    #{rkrFnMediaRule($rkrMediaAttrNameImage)} {
+
+    }
+
+    #{rkrFnMediaRule($rkrMediaAttrNameBody)}
+    {
+      display: block;
+      position: absolute;
+      z-index: 1;
+    }
+
+  } 
+
+  #{rkrFnMediaRule('top-left', false)} {
+
+    #{rkrFnMediaRule($rkrMediaAttrNameBody)}
+    {
+      top: 0;
+      left: 0;
+    }    
+
+  }   
+
+  #{rkrFnMediaRule('top-right', false)} {
+
+    #{rkrFnMediaRule($rkrMediaAttrNameBody)}
+    {
+      top: 0;
+      right: 0;
+    }    
+
+  }   
+
+  #{rkrFnMediaRule('bottom-right', false)} {
+
+    #{rkrFnMediaRule($rkrMediaAttrNameBody)}
+    {
+      bottom: 0;
+      right: 0;
+    }    
+
+  }   
+
+  #{rkrFnMediaRule('bottom-left', false)} {
+
+    #{rkrFnMediaRule($rkrMediaAttrNameBody)}
+    {
+      bottom: 0;
+      left: 0;
+    }    
+
+  }   
+
 }

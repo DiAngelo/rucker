@@ -1,0 +1,49 @@
+//
+// Panel component settings
+//
+
+
+// Tabs namespace
+$rkrComPanelNs: $rkrNamespace !default;
+
+$rkrComPanelAttrType: component !default;
+$rkrComPanelAttrName: panel !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(panel, $rkrComPanelAttrType, $rkrComPanelAttrName);
+
+// tabs module specific flag to toggle responsive mode
+$rkrComPanelBResponsive: $rkrRwdBActive !default;
+
+$rkrComPanelCBg: transparent !default;
+$rkrComPanelCFg: 				#333 !default;
+$rkrComPanelCLn: 				#333 !default;
+$rkrComPanelCFgHeading: #33d !default;
+$rkrComPanelCLnHeading: #fff !default;
+$rkrComPanelCFgBody: 		#000 !default;
+
+
+// Light theme
+$rkrComPanelCBgLight:  				#eee !default;
+$rkrComPanelCFgLight: 				#333 !default;
+$rkrComPanelCLnLight: 				#333 !default;
+$rkrComPanelCFgHeadingLight: 	#777 !default;
+$rkrComPanelCLnHeadingLight: 	#777 !default;
+$rkrComPanelCFgBodyLight: 		#000 !default;
+
+// Dark theme
+$rkrComPanelCBgDark: 				#333 !default;
+$rkrComPanelCFgDark: 				#ddd !default;
+$rkrComPanelCLnDark: 				#ddd !default;
+$rkrComPanelCFgHeadingDark: #fff !default;
+$rkrComPanelCLnHeadingDark: #fff !default;
+$rkrComPanelCFgBodyDark: 		#eee !default;
+
+
+
+$rkrComPanelMRadius: (
+	xs: 4px,
+	sm: 7px,
+	md: 12px,
+	lg: 18px,
+	hg: 24px
+);

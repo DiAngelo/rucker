@@ -1,0 +1,15 @@
+//
+// Typography
+//
+
+@if $rkrHasTypography {
+    @if $rkrTypoIsResponsive {
+        @each $breakpoint,$sz in $rkrTypoRwdFontSizes {
+            @include rkrMQ((zone: $breakpoint)) {
+                body { font-size: $sz; }
+            }
+        }
+    }
+
+    @include rkrTypoRule(body, $rkrTypoWebFontBase);
+}

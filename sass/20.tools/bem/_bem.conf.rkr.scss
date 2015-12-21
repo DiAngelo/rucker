@@ -1,0 +1,17 @@
+//
+// BEM settings
+//
+
+
+
+//
+// Define BEM separators based on CSS rule style used
+//
+
+@if $rkrRuleDashedStyle {
+    $rkrBemSeparatorElement:  '__' ;
+    $rkrBemSeparatorModifier: '--' ;
+}
+
+$rkrBemSeparatorElement:      '_' !default ;
+$rkrBemSeparatorModifier:     '-' !default ;

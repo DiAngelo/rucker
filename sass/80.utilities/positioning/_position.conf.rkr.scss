@@ -1,0 +1,26 @@
+//
+// Positioning utilities settings
+//
+
+//
+// Spacing configuration
+//
+
+$rkrHasPositioning:           true      !default;
+$rkrPositioningEntity:        utility   !default;
+$rkrPositioningToken:         pos       !default;
+$rkrPositioningTokenFull:     full      !default;
+
+
+$rkrPositioningModifiers:     (
+                        abs:  absolute,
+                        fix:  fixed,
+                        stc:  static
+                      );
+
+
+
+//
+// Define if we should use responsive inline objects
+//
+$rkrPositioningIsResponsive:  $rkrIsResponsive !default;

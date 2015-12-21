@@ -1,0 +1,27 @@
+//
+// Navigation module settings
+//
+
+
+// Nav namespace
+$rkrModNavNs: $rkrNamespace !default;
+
+$rkrModNavAttrType: module !default;
+$rkrModNavAttrName: nav !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(nav, $rkrModNavAttrType, $rkrModNavAttrName);
+
+// Navigation module specific flag to toggle responsive mode
+$rkrModNavBResponsive: $rkrRwdBActive !default;
+
+
+$rkrModNavCFgMain: 			#333 !default;
+$rkrModNavCFgMainHover: #f33 !default;
+
+$rkrModNavFontMain: 'Roboto', sans-serif !default;
+$rkrModNavFontSize: .8rem !default;
+$rkrModNavFontWeight: 500 !default;
+
+$rkrModNavLinkIcons: true !default;
+
+$rkrModNavLinkIconSize: 1rem !default;

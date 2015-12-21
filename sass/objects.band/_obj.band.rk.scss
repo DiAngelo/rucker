@@ -6,8 +6,11 @@
   display: block;
 }
 
-#{rkrFnBandRule(null, false)} {
+@include rkrMxBandRule(null, false) {
   @extend %oBand;
 }
 
 @include rkrMxBandModifiers();
+
+@include rkrMxBandRule(bottom, false) { padding-top: 0; }
+@include rkrMxBandRule(top, false)    { padding-bottom: 0; }

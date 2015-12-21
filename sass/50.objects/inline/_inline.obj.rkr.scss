@@ -1,0 +1,11 @@
+//
+// Inline object
+//
+
+@if $rkrHasInline {
+    @include rkrMakeObjectInline(null);
+}
+
+@if $rkrInlineIsResponsive {
+    @include rkrMakeInlineResponsive();
+}

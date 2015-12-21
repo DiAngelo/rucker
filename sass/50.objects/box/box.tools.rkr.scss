@@ -1,0 +1,64 @@
+//
+// Box object tools
+//
+
+//
+// Mixin that generates the rules for the specific responsive breakpoint
+//
+@mixin rkrMakeObjectBox ($_inBreakpoint) {
+  $baseToken:   rkrGetResponsiveToken($rkrBoxBaseToken, $_inBreakpoint);
+
+  $currentGutter: $rkrBoxGutter / 2;
+
+  @if map-has-key($rkrInlineRwdGutter, $_inBreakpoint) {
+    $currentGutter: map-get($rkrInlineRwdGutter, $_inBreakpoint) / 2;
+  }
+
+  $baseRule: #{rkrRule($rkrBoxEntity, $rkrBoxBaseToken)};
+
+  @if $_inBreakpoint {
+    $baseRule: #{$baseRule}, #{rkrRule($rkrBoxEntity, $baseToken)};
+  }
+
+  #{$baseRule} {
+    display: block;
+    padding: $currentGutter;
+
+    @include rkrClearfix();
+  }
+
+  @if $_inBreakpoint != null {
+    $bemBox: (
+      block: $rkrBoxBaseToken,
+      modifier: $_inBreakpoint
+    );
+
+    #{rkrRuleBEM($rkrBoxEntity, $bemBox)} {
+      padding: map-get($rkrBoxRwdGutter, $_inBreakpoint);
+    }
+
+  }
+
+  //
+  // Modifiers
+  //
+
+
+}
+
+
+
+//
+// Mixin that generates Inline's responsive rules
+//
+@mixin rkrMakeBoxResponsive () {
+
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+    /**
+     * Object Box #{$breakpoint}
+     */
+    @include rkrMQ((zone: $breakpoint)) {
+        @include rkrMakeObjectBox($breakpoint);
+    }
+  }
+}

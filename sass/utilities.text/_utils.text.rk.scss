@@ -13,23 +13,27 @@
 
 
 /* 1. Centering text */
-#{rkrFnAttributeRule(text, -center)}      { text-align: center !important; }
+#{rkrFnAttributeRule(text, center)}      { text-align: center !important; }
 
 /*  2. Align text to left */
-#{rkrFnAttributeRule(text, -left)}        { text-align: left   !important; }
+#{rkrFnAttributeRule(text, left)}        { text-align: left   !important; }
 
 /*  3. Align text to right */
-#{rkrFnAttributeRule(text, -right)}       { text-align: right  !important; }
+#{rkrFnAttributeRule(text, right)}       { text-align: right  !important; }
 
 /*  4. Underline text */
-#{rkrFnAttributeRule(text, -underlined)}  { text-decoration: underlined !important; }
+#{rkrFnAttributeRule(text, underlined)}  { text-decoration: underlined !important; }
 
 /*  5. Transform text to uppercase */
-#{rkrFnAttributeRule(text, -upper)}       { text-transform: uppercase !important; }
+#{rkrFnAttributeRule(text, upper)}       { text-transform: uppercase !important; }
 
 /*  6. Transform text to lowercase */
-#{rkrFnAttributeRule(text, -lower)}       { text-transform: lowercase !important; }
+#{rkrFnAttributeRule(text, lower)}       { text-transform: lowercase !important; }
 
 /*  7. Capitalize first letter of the text */
-#{rkrFnAttributeRule(text, -capital)}     { text-transform: capitalize !important; }
+#{rkrFnAttributeRule(text, capital)}     { text-transform: capitalize !important; }
 
+
+/* rkrMxRwdVisibilities */
+@include rkrMxRwdVisibilities();
+/* rkrMxRwdVisibilities */

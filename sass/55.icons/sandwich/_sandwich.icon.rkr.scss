@@ -1,0 +1,7 @@
+//
+// Sandwich icon
+//
+
+@if $rkrHasIconSandwich {
+	@include rkrIconSandwich(null);
+}

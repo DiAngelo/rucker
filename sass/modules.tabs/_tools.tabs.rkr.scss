@@ -1,0 +1,21 @@
+//
+// Tabs module funtions
+//
+
+//
+// rkrFnModTabsRule
+// Generate Tabs module related rule
+//
+@function rkrFnModTabsRule($_inAttr, $_inIsElem: true) {
+
+  @return rkrFnEntityRule(tabs, $rkrModTabsNs, $_inAttr, $_inIsElem);
+
+}
+
+@mixin rkrMxModTabsRule($_inAttr, $_inIsElem: true) {
+
+  #{rkrFnEntityRule(tabs, $rkrModTabsNs, $_inAttr, $_inIsElem)} {
+  	@content;
+  }
+
+}

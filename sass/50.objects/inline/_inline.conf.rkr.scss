@@ -1,0 +1,19 @@
+//
+// Inline object configuration
+//
+
+$rkrHasInline:                true      !default;
+$rkrInlineEntity:             object    !default;
+$rkrInlineBaseToken:          inline    !default;
+$rkrInlineElementList:        list      !default;
+$rkrInlineModifierMiddle:     mid       !default;
+$rkrInlineModifierBottom:     bot       !default;
+$rkrInlineModifierSpaced:     spaced    !default;
+
+$rkrInlineGutter:             $rkrBaseSpacingUnit    !default;
+$rkrInlineRwdGutter:          $rkrContainerRwdGutter !default;
+
+//
+// Define if we should use responsive inline objects
+//
+$rkrInlineIsResponsive:       $rkrIsResponsive !default;
