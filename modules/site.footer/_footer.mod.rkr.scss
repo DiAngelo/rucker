@@ -22,6 +22,23 @@ $showFooterColors: false;
     #{rkrRule($rkrFooterEntity, $rkrFooterToken)} {
         color:            map-get($rkrTheme, footerText);
         background-color: map-get($rkrTheme, footerBg);
+
+        h4 {
+            border-bottom: 1px solid map-get($rkrTheme, headingText);
+        }
+
+        p.fa {
+            display: block;
+            margin-left:   2rem;
+            margin-bottom: 1rem;
+        }
+
+        p.fa:before {
+            width:      1.8rem;
+            margin-left: -2rem;
+            display: inline-block;
+            text-align: center;
+        }
     }
 
     $bemCopy: (
