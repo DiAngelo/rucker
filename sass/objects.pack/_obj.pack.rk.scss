@@ -37,11 +37,35 @@
 
 #{rkrFnPackRule(list, false)} {
   @extend %oPack;
+
+  @include rkrMxResponsive((from: tiny)) {
+    #{rkrFnPackRule(xs--visible)} 
+    { display: table-cell; }
+  }
+  @include rkrMxResponsive((from: small)) {
+    #{rkrFnPackRule(sm--visible)}
+    { display: table-cell; }
+  }
+  @include rkrMxResponsive((from: medium)) {
+    #{rkrFnPackRule(md--visible)}
+    { display: table-cell; }
+  }
+  @include rkrMxResponsive((from: large)) {
+    #{rkrFnPackRule(lg--visible)}
+    { display: table-cell; }
+  }
+  @include rkrMxResponsive((from: huge)) {
+    #{rkrFnPackRule(hg--visible)}
+    { display: table-cell; }
+  }
 }
 
 #{rkrFnPackRule(item)} {
   @extend %oPackItem;
 }
+
+
+
 
 
 #{rkrFnPackRule(top, false)} {

@@ -1,0 +1,48 @@
+/**
+ * Positioning helpers
+ *
+ *  1. Fixed top
+ *  2. Fixed right
+ *  3. Fixed bottom
+ *  4. Fixed left
+ */
+
+%oFixed {
+	position: fixed;
+	z-index: 2;	
+}
+
+/* 1. Fixed top */
+#{rkrFnAttributeRule(pos, fixed-top)}      { 
+	@extend %oFixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+/* 2. Fixed right */
+#{rkrFnAttributeRule(pos, fixed-right)}      { 
+	@extend %oFixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+/* 3. Fixed bottom */
+#{rkrFnAttributeRule(pos, fixed-bottom)}      { 
+	@extend %oFixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* 4. Fixed left */
+#{rkrFnAttributeRule(pos, fixed-left)}      { 
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+#{rkrFnAttributeRule(pos, float-left)}  { float: left;  }
+#{rkrFnAttributeRule(pos, float-right)} { float: right; }

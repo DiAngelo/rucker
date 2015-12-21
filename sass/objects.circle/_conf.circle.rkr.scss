@@ -1,0 +1,13 @@
+//
+// Circle Object configurations
+//
+
+// Circle namespace
+$rkrCircleNs: $rkrNamespace !default;
+
+$rkrCircleAttrType: object !default;
+$rkrCircleAttrName: circle !default;
+
+$rkrMAttributesNaming: rkrFnRegisterAttribute(circle, $rkrCircleAttrType, $rkrCircleAttrName);
+
+

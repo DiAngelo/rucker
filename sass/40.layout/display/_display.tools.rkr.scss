@@ -1,0 +1,28 @@
+//
+// Layout display tools
+//
+
+@mixin rkrLayoutDisplay ($_inBreakpoint) {
+
+  @each $mod,$displayType in $rkrDisplayModifiers {
+
+    $tokenVisibility: rkrGetResponsiveToken($mod, $_inBreakpoint);
+
+    $bemVisibility: (
+      block: $rkrDisplayToken,
+      modifier: $tokenVisibility
+    );
+
+    #{rkrRuleBEM($rkrDisplayEntity, $bemVisibility)} { display: $displayType; }
+  }
+}
+
+@mixin rkrLayoutDisplayResponsive () {
+
+  @each $bkp,$val in $rkrRwdBreakpoints {
+
+    @include rkrMQ ((zone: $bkp)) {
+      @include rkrLayoutDisplay($bkp);
+    }
+  }
+}

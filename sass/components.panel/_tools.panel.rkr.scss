@@ -1,0 +1,37 @@
+//
+// Panel component funtions
+//
+
+//
+// rkrFnComPanelRule
+// Generate Panel component related rule
+//
+@function rkrFnComPanelRule($_inAttr, $_inIsElem: true) {
+
+  @return rkrFnEntityRule(panel, $rkrModTabsNs, $_inAttr, $_inIsElem);
+
+}
+
+@mixin rkrMxComPanelRule($_inAttr, $_inIsElem: true) {
+
+  #{rkrFnEntityRule(panel, $rkrModTabsNs, $_inAttr, $_inIsElem)} {
+  	@content;
+  }
+
+}
+
+
+//
+// rkrMxComPanelRadius
+// Generate panel radius modifiers
+//
+@mixin rkrMxComPanelRadius() {
+
+  @each $key,$val in $rkrComPanelMRadius {
+
+    /* Panel component with '#{$key}' radius modifier */
+    @include rkrMxComPanelRule(#{$key}-round, false) {
+    	border-radius: $val; 
+    }
+  }
+}

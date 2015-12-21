@@ -1,0 +1,19 @@
+/**
+/* Header module
+/**/
+
+$rkrHeaderToken: 							header !default;
+$rkrHeaderEntity: 						module !default;
+
+$showRule: false;
+
+@if map-has-key ($rkrTheme, headerBg) {
+	$showRule: true;
+}
+
+@if $showRule {
+
+	#{rkrRule($rkrHeaderEntity, $rkrHeaderToken)} {
+		background-color: map-get($rkrTheme, headerBg);
+	} 
+}

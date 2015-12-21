@@ -1,0 +1,148 @@
+//
+// Spacing tools
+//
+
+
+
+@mixin rkrSpacingMarginSide($_inSide, $_inValue) {
+  @if $_inSide == "horizontal" {
+    margin-left:   $_inValue !important;
+    margin-right:  $_inValue !important;
+  }
+  @if $_inSide == "vertical" {
+    margin-top:    $_inValue !important;
+    margin-bottom: $_inValue !important;
+  }
+}
+
+@mixin rkrSpacingPaddingSide($_inSide, $_inValue) {
+  @if $_inSide == "horizontal" {
+    padding-left:   $_inValue !important;
+    padding-right:  $_inValue !important;
+  }
+  @if $_inSide == "vertical" {
+    padding-top:    $_inValue !important;
+    padding-bottom: $_inValue !important;
+  }
+}
+
+
+
+//
+// Mixin that generates margings modifiers
+//
+@mixin rkrSpacingMargins($_inBreakpoint: null, $_inSuffix: '') {
+
+  $marginModifiers: (
+    at:    auto,
+    no:    0,
+    xs:   .4rem,
+    sm:   .8rem,
+    md:    1rem,
+    lg:  1.5rem,
+    xl:    2rem
+  );
+
+  $rkrSpacingTokenTop: (
+    top: $rkrSpacingTokenTop,
+    right: $rkrSpacingTokenRight,
+    bottom: $rkrSpacingTokenBottom,
+    left: $rkrSpacingTokenLeft
+  );
+
+  @each $mod,$v in $marginModifiers {
+    $tokenModifier: rkrGetResponsiveToken($mod, $_inBreakpoint) + capitalize($_inSuffix);
+    $bemModifier: (
+      block: $rkrSpacingTokenMargin,
+      modifier: $tokenModifier
+    );
+
+    #{rkrRuleBEM($rkrSpacingEntity, $bemModifier)} { margin: $v !important; }
+
+
+
+    /* Margin Types */
+    @each $mType, $mToken in $rkrSpacingTokenTop {
+      $tokenModifier: rkrGetResponsiveToken($mToken + capitalize($mod), $_inBreakpoint) + capitalize($_inSuffix);
+      $bemModifier: (
+          block: $rkrSpacingTokenMargin,
+          modifier: $tokenModifier
+      );
+
+      #{rkrRuleBEM($rkrSpacingEntity, $bemModifier)} { margin-#{$mType}: $v !important; }
+    }
+
+
+
+    /* Margin Sides */
+    @each $name,$side in $rkrMarginSides {
+        $tokenModifier: rkrGetResponsiveToken($side + capitalize($mod), $_inBreakpoint) + capitalize($_inSuffix);      
+        $bemSide: (
+            block: $rkrSpacingTokenMargin,
+            modifier: $tokenModifier
+        );
+
+        #{rkrRuleBEM($rkrSpacingEntity, $bemSide)} { @include rkrSpacingMarginSide($name, $v); }
+    }
+  }
+}
+
+
+
+//
+// Mixin that generates paddings modifiers
+//
+@mixin rkrSpacingPaddings($_inBreakpoint, $_inSuffix: '') {
+
+  $paddingModifiers: (
+    no:    0,
+    xs:   .4rem,
+    sm:   .8rem,
+    md:    1rem,
+    lg:  1.5rem,
+    xl:    2rem
+  );
+
+  $paddingTypes: (
+    top: $rkrSpacingTokenTop,
+    right: $rkrSpacingTokenRight,
+    bottom: $rkrSpacingTokenBottom,
+    left: $rkrSpacingTokenLeft
+  );
+
+  @each $mod,$v in $paddingModifiers {
+    $tokenModifier: rkrGetResponsiveToken($mod, $_inBreakpoint) + capitalize($_inSuffix);          
+    $bemModifier: (
+      block: $rkrSpacingTokenPadding,
+      modifier: $tokenModifier
+    );
+
+    #{rkrRuleBEM($rkrSpacingEntity, $bemModifier)} { padding: $v !important; }
+
+
+
+    /* Padding Types */
+    @each $mType, $mToken in $paddingTypes {
+      $tokenModifier: rkrGetResponsiveToken($mToken + capitalize($mod), $_inBreakpoint) + capitalize($_inSuffix);      
+      $bemModifier: (
+          block: $rkrSpacingTokenPadding,
+          modifier: $tokenModifier
+      );
+
+      #{rkrRuleBEM($rkrSpacingEntity, $bemModifier)} { padding-#{$mType}: $v !important; }
+    }
+
+
+
+    /* Padding Sides */
+    @each $name,$side in $rkrMarginSides {
+        $tokenModifier: rkrGetResponsiveToken($side + capitalize($mod), $_inBreakpoint) + capitalize($_inSuffix);      
+        $bemSide: (
+            block: $rkrSpacingTokenPadding,
+            modifier: $tokenModifier
+        );
+
+        #{rkrRuleBEM($rkrSpacingEntity, $bemSide)} { @include rkrSpacingPaddingSide($name, $v); }
+    }
+  }
+}

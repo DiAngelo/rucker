@@ -1,0 +1,18 @@
+//
+// Display layout settings
+//
+
+// Whether to display the responsive layout visibilities rules
+$rkrHasLayoutDisplay:         true    !default;
+$rkrDisplayEntity:            layout  !default;
+$rkrDisplayToken:             display !default;
+
+$rkrDisplayModifiers:         (
+                        no:   none,
+                        bl:   block,
+                        in:   inline,
+                        ib:   inline-block,
+                        fx:   flex
+                      ) !default;
+
+$rkrDisplayIsResponsive:      true !default;

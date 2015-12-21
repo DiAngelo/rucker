@@ -1,0 +1,150 @@
+/*------------------------------------*\
+    #Tabs Module
+\*------------------------------------*/
+
+/**
+ *
+  <section data-m-tabs="rkr--base" >
+
+ 		<ul data-m-tabs="rkr__list">
+			<li data-m-tabs="rkr__item rkr--is-selected">{Label}</li>
+			<li data-m-tabs="rkr__item">{Label}</li>
+ 		</ul>
+
+ 		<ul data-m-tabs="rkr__content">
+ 			<li data-m-tabs="rkr__page rkr--is-selected">{content}</li>
+ 			<li data-m-tabs="rkr__page">{content}</li>
+ 		</ul>
+
+  </section>
+
+ *
+ */
+
+@include rkrMxModTabsRule(base, false) {
+	
+	display: block;
+
+	@include rkrMxModTabsRule(list) {
+		@extend %oInlineParent;
+	}
+
+	@include rkrMxModTabsRule(item) {
+		@extend %oInlineItem;
+	}
+
+}
+
+@include rkrMxModTabsRule(pack, false) {
+
+	@include rkrMxModTabsRule(list) {
+		@extend %oPack;
+	}
+
+	@include rkrMxModTabsRule(item) {
+		@extend %oPackItem;
+	}
+
+}
+
+@include rkrMxModTabsRule(list) {
+	background-color: $rkrModTabsCBgNav;
+
+	@include rkrMxModTabsRule(is-selected, false) {
+		background-color: $rkrModTabsCBgNavSelected;
+		color: $rkrModTabsCFgNavSelected;
+
+		&:hover {
+			background-color: $rkrModTabsCBgNavSelected;
+			color: $rkrModTabsCFgNavSelected;
+		}
+
+	}
+
+}
+
+@include rkrMxModTabsRule(item) {
+	background-color: $rkrModTabsCBgNavItem;
+	color: $rkrModTabsCFgNavItem;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $rkrModTabsCBgNavItemHover;
+	}
+
+	& > label {
+		display: block;
+	}
+
+}
+
+
+@include rkrMxModTabsRule(content) {
+
+	@include rkrMxModTabsRule(page) {
+		display: none;
+	}
+
+	@include rkrMxModTabsRule(is-selected, false) {
+		display: block;
+	}
+
+}
+
+@include rkrMxModTabsRule(box) {
+	display: none;
+}
+
+@if $rkrModTabsBResponsive {
+
+	@include rkrMxResponsive((to: medium)) {
+
+		@include rkrMxModTabsRule(box) {
+
+			&:checked + #{rkrFnModTabsRule(list)} {
+	
+					@include rkrMxModTabsRule(item) {
+						display: block;
+					}
+
+			}
+			
+		}
+
+		@include rkrMxModTabsRule(box) {
+
+			& + #{rkrFnModTabsRule(list)} {
+				display: block;
+				padding: .24rem;
+
+
+
+				@include rkrMxModTabsRule(item) {
+					display: none;
+				}
+
+				@include rkrMxModTabsRule(is-selected, false) {
+					display: block;
+					position: relative;
+
+					&:after {
+						content: '';
+		        width: .7rem;
+		        height: .7rem;
+		        right: .7rem;
+		        position: absolute; 
+		        top: 3px;
+		        z-index: 1;
+		        transform: rotate(45deg);
+		        border-bottom: 1px solid $rkrModTabsCFgNavArrow;
+		        border-right: 1px solid $rkrModTabsCFgNavArrow;
+
+					}
+				}
+
+			}
+		}    
+
+  }	
+
+}

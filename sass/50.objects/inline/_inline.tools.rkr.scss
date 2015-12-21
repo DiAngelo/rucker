@@ -1,0 +1,186 @@
+//
+// Inline object tools
+//
+
+//
+// Mixin that generates the rules for the specific responsive breakpoint
+//
+@mixin rkrMakeObjectInline ($_inBreakpoint, $_inSuffix: '') {
+  $baseToken:   rkrGetResponsiveToken($rkrInlineBaseToken, $_inBreakpoint) + capitalize($_inSuffix);
+  $listToken:   rkrGetResponsiveToken($rkrInlineElementList, $_inBreakpoint);
+  $middleToken: rkrGetResponsiveToken($rkrInlineModifierMiddle, $_inBreakpoint);
+  $bottomToken: rkrGetResponsiveToken($rkrInlineModifierBottom, $_inBreakpoint);
+  $spacedToken: rkrGetResponsiveToken($rkrInlineModifierSpaced, $_inBreakpoint);
+
+  $fsz: map-get($rkrTypoRwdFontSizes, $_inBreakpoint);
+
+  @if $fsz == null {
+      $fsz: 1rem;
+  }
+
+  $currentGutter: $rkrInlineGutter / 2;
+
+  @if map-has-key($rkrInlineRwdGutter, $_inBreakpoint) {
+    $currentGutter: map-get($rkrInlineRwdGutter, $_inBreakpoint) / 2;
+  }
+
+  $bemList: (
+    block: $rkrInlineBaseToken,
+    element: $listToken + capitalize($_inSuffix)
+  );
+
+  $bemSpaced: (
+    block:    $rkrInlineBaseToken,
+    element:  $rkrInlineElementList,
+    modifier: $rkrInlineModifierSpaced + capitalize($_inSuffix)
+  );
+
+  $bemSpacedRwd: (
+    block:    $rkrInlineBaseToken,
+    element:  $rkrInlineElementList,
+    modifier: $spacedToken + capitalize($_inSuffix)
+  );
+
+  $bemMiddle: (
+    block: $rkrInlineBaseToken,
+    modifier: $middleToken + capitalize($_inSuffix)
+  );
+
+  $bemBottom: (
+    block: $rkrInlineBaseToken,
+    modifier: $bottomToken + capitalize($_inSuffix)
+  )  ;
+
+
+  /**
+   * The Inline Object #{$_inBreakpoint}
+   */
+  #{rkrRule($rkrInlineEntity, $baseToken)} {
+      display: inline-block;
+      vertical-align: top;
+  }
+
+
+
+  //
+  // Elements
+  //
+
+  %rkrInlineNoFontSize-#{$_inBreakpoint}-#{$_inSuffix} { font-size: 0; }
+
+  %rkrInlineFontSize-#{$_inBreakpoint}-#{$_inSuffix}   { font-size: $fsz; }
+
+
+  #{rkrRuleBEM($rkrInlineEntity, $bemList)},
+  #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)} {
+
+    @extend %rkrInlineNoFontSize-#{$_inBreakpoint}-#{$_inSuffix};
+
+    @at-root (without:all) {
+
+      #{rkrRuleBEM($rkrInlineEntity, $bemList)},
+      #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)} {
+
+        > #{rkrRule($rkrInlineEntity, $baseToken)},
+        > #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)},
+        > #{rkrRuleBEM($rkrInlineEntity, $bemBottom)} {
+
+          @each $breakpoint,$sz in $rkrTypoRwdFontSizes {
+            @include rkrMQ((zone: $breakpoint)) {
+              font-size: $sz;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  @if ($_inSuffix == '') {
+
+    $bemList: (
+      block: $rkrInlineBaseToken,
+      element: $rkrInlineElementList
+    );
+
+    $bemSpaced: (
+      block:    $rkrInlineBaseToken,
+      element:  $rkrInlineElementList,
+      modifier: $rkrInlineModifierSpaced
+    );
+
+    $bemMiddle: (
+      block: $rkrInlineBaseToken,
+      modifier: $rkrInlineModifierMiddle
+    );
+
+    $bemBottom: (
+      block: $rkrInlineBaseToken,
+      modifier: $rkrInlineModifierBottom
+    )  ;
+
+
+    #{rkrRuleBEM($rkrInlineEntity, $bemList)},
+    #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)} {
+
+      @extend %rkrInlineNoFontSize-#{$_inBreakpoint}-#{$_inSuffix};
+
+      > #{rkrRule($rkrInlineEntity, $rkrInlineBaseToken)},
+      > #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)},
+      > #{rkrRuleBEM($rkrInlineEntity, $bemBottom)} {
+
+        @extend %rkrInlineFontSize-#{$_inBreakpoint}-#{$_inSuffix};
+
+      }
+    }
+  }
+
+
+  //
+  // Modifiers
+  //
+
+  #{rkrRuleBEM($rkrInlineEntity, $bemMiddle)} {
+      display: inline-block;
+      vertical-align: middle;
+  }
+
+  #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $bottomToken))} {
+      display: inline-block;
+      vertical-align: bottom;
+  }
+
+  #{rkrRuleBEM($rkrInlineEntity, $bemSpaced)},
+  #{rkrRuleBEM($rkrInlineEntity, $bemSpacedRwd)} {
+      margin-left:  -1 * $currentGutter;
+      margin-right: -1 * $currentGutter;
+      > #{rkrRule($rkrInlineEntity, $baseToken)},
+      > #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $middleToken))},
+      > #{rkrRuleBEM($rkrInlineEntity, (block: $rkrInlineBaseToken, modifier: $bottomToken))} {
+        padding-left: $currentGutter;
+      }
+  }
+
+}
+
+
+
+//
+// Mixin that generates Inline's responsive rules
+//
+@mixin rkrMakeInlineResponsive () {
+
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+    /**
+     * Inline #{$breakpoint}
+     */
+    @include rkrMQ((zone: $breakpoint)) {
+        @include rkrMakeObjectInline($breakpoint);
+    }
+
+    @include rkrMQ((from: $breakpoint)) {
+        @include rkrMakeObjectInline($breakpoint, up);
+    }
+  }
+}

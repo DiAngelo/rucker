@@ -1,0 +1,20 @@
+//
+// Define rule settings
+//
+
+//
+// Default - true  : use dashes to split rule's components
+//					 false : use camel cased rules
+//
+$rkrRuleDashedStyle:					false		!default ;
+
+
+
+
+
+//
+// Use css classes by default, or use attributes instead: 
+// 		data-{entityPrefix}="{value}"
+//
+$rkrRuleWithAttributes:				false 	!default ;
+$rkrRuleAttributePrefix:			data 		!default ;

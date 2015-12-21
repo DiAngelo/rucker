@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #Bare Object
+\*------------------------------------*/
+
+/** 
+ * Objects that can sit one under another of the same type
+ */
+
+@include rkrMxBareRule($rkrBareAttrNameParent) {
+ 	@include rkrMxListReset();
+}
+
+@include rkrMxBareRule(item) {
+ 	display: block;
+}

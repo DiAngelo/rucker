@@ -1,0 +1,68 @@
+//
+// Positioning utilities tools
+//
+
+@mixin rkrPositioning ($_inBreakpoint) {
+
+  @each $mod,$positionType in $rkrPositioningModifiers {
+
+    $tokenPosition: rkrGetResponsiveToken($mod, $_inBreakpoint);
+
+
+
+    $bemPosition: (
+      block: $rkrPositioningToken,
+      modifier: $tokenPosition
+    );
+
+    $rulePosition: rkrRuleBEM($rkrPositioningEntity, $bemPosition);
+
+
+
+    #{$rulePosition} { position: $positionType; }
+  }
+
+
+
+    $tokenFix:  rkrGetResponsiveToken(fix,  $_inBreakpoint);
+    $tokenFull: rkrGetResponsiveToken(full, $_inBreakpoint);
+
+
+
+    $bemFix: (
+      block: $rkrPositioningToken,
+      modifier: $tokenFix
+    );
+
+    $bemFull: (
+      block: $rkrPositioningToken,
+      modifier: $tokenFull
+    );
+
+    $ruleFix:  rkrRuleBEM($rkrPositioningEntity, $bemFix);
+    $ruleFull: rkrRuleBEM($rkrPositioningEntity, $bemFull);
+
+
+
+    #{$ruleFull} {
+      @extend #{$ruleFix};
+
+      top:    0 ;
+      right:  0 ;
+      bottom: 0 ;
+      left:   0 ;
+    }
+
+
+}
+
+
+
+@mixin rkrPositioningResponsive () {
+  @each $bkp,$val in $rkrRwdBreakpoints {
+
+    @include rkrMQ ((zone: $bkp)) {
+      @include rkrPositioning($bkp);
+    }
+  }
+}

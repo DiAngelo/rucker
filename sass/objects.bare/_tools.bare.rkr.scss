@@ -1,0 +1,27 @@
+//
+// Inline functions
+//
+
+//
+// rkrFnBareRule
+// Generate Bare Object related rule
+//
+@function rkrFnBareRule($_inAttr, $_inIsElem: true) {
+
+  @return rkrFnEntityRule(bare, $rkrInlineNs, $_inAttr, $_inIsElem); 
+
+}
+
+//
+// rkrMxBareRule
+// Generate Bare Object related rule mixin
+//
+@mixin rkrMxBareRule($_inAttr, $_inIsElem: true) {
+
+  #{rkrFnEntityRule(bare, $rkrInlineNs, $_inAttr, $_inIsElem)} {
+
+  	@content;
+  	
+  }
+
+}

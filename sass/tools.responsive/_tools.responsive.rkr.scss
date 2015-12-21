@@ -14,7 +14,7 @@
   $to: map-get($_inMap, to);
 
   $fromSize:  null;
-  $toSize:     null;
+  $toSize:    null;
 
   @if $from != null {
 
@@ -31,9 +31,9 @@
 
   @if $to != null {
 
-    @if map-has-key($rkrRwdMBreakpoints, $from) {    
+    @if map-has-key($rkrRwdMBreakpoints, $to) {    
 
-      $toSize: map-get($rkrRwdMBreakpoints, $to);
+      $toSize: map-get($rkrRwdMBreakpoints, $to) - 1;
 
     } @else {
 
@@ -90,3 +90,30 @@
   @return $response;
 }
 
+
+
+@mixin rkrMxRwdVisibilities() {
+
+  @if $rkrRwdBActive {
+
+    @each $type,$name in $rkrRwdMBreakpointsNames {
+
+      #{rkrFnEntityRule(utility, #{$rkrNamespace}-#{$name}, 'visible', false)} {
+      }
+
+      @include rkrMxResponsive((from: $type)) {
+
+        #{rkrFnEntityRule(utility, #{$rkrNamespace}-#{$name}, 'visible', false)} {
+          display: block;
+        }
+
+        #{rkrFnEntityRule(utility, #{$rkrNamespace}-#{$name}, 'hidden', false)} {
+          display: none;
+        }
+
+   
+      }    
+    }
+  }
+
+}

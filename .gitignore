@@ -2,5 +2,7 @@ tmp/
 themes/.sass-cache
 themes/default/css
 themes/*/css
+themes/aspnet_client
 *.css
 sass/media
+*.scssc

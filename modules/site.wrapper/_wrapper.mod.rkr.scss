@@ -1,0 +1,24 @@
+/**
+/* Main container module
+/**/
+
+$rkrWrapperToken:       wrapper !default;
+$rkrWrapperEntity:      module !default;
+
+
+
+//
+// Wrapper colors
+//
+$showWrapperColor: false;
+
+@if map-has-key ($rkrTheme, wrapperBg) {
+    $showWrapperColor: true;
+}
+
+@if $showWrapperColor {
+
+    #{rkrRule($rkrWrapperEntity, $rkrWrapperToken)} {
+        background-color: map-get($rkrTheme, wrapperBg);
+    }
+}

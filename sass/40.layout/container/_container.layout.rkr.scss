@@ -1,0 +1,47 @@
+//
+// Container
+//
+
+@if $rkrHasContainer {
+  /**
+   * Layout Container
+   */
+
+  //
+  // Responsive container
+  //
+
+  @each $key,$gutter in $rkrContainerRwdGutter {
+    $rwdZone: (zone: $key);
+
+    @include rkrMQ($rwdZone) {
+
+      /*@include rkrSideSpacing($gutter);*/
+
+      $currentContainerToken: rkrResponsiveToken($rkrContainerBaseToken, $key);
+      $currentFluidToken: rkrResponsiveToken($rkrContainerFluidModifier, $key);
+
+      #{rkrRule($rkrContainerEntity, $currentContainerToken)},
+      #{rkrRuleBEM($rkrContainerEntity, (block: container, modifier: $currentFluidToken))} {
+        @include rkrAutoSideMargins();
+        @include rkrClearfix();
+      }
+
+/*      #{rkrRule($rkrContainerEntity, $rkrContainerBaseToken)},
+      #{rkrRule($rkrContainerEntity, $currentContainerToken)},
+      #{rkrRuleBEM($rkrContainerEntity, (block: container, modifier: $rkrContainerFluidModifier))},
+      #{rkrRuleBEM($rkrContainerEntity, (block: container, modifier: $currentFluidToken))} {
+        @include rkrSideSpacing($gutter);
+
+	      #{rkrRuleBEM($rkrContainerEntity, (block: container, element: $rkrContainerRowElement))} {
+        	@include rkrSideSpacing($gutter * -1);
+	      }
+      }
+*/
+      /* Define container's width constraint */
+      @at-root #{rkrRule($rkrContainerEntity, $rkrContainerBaseToken)} {
+        max-width: map-get($rkrContainerRwdMaxWidths, $key);
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+//
+// Responsive Settings
+//
+
+// Use the responsive system
+$rkrIsResponsive:             true 	!default;
+
+// If true, use Mobile first technique, otherwise use desktop first
+$rkrRwdIsMobileFirst: 	      true  !default;
+
+// Token used to indicate a specific breakpoint directive
+$rkrRwdSeparator:             \@    !default;
+
+// Responsive tokens
+$rkrRwdTokenUp:               up    !default;
+$rkrRwdTokenDown:             down  !default;
+
+
+
+
+// The default responsive breakpoints
+$rkrRwdBreakpoints:           (
+                        xs:   30rem,  //  480px - mobile
+                        sm:   48rem,  //  768px - iPad & tablet
+                        md:   60rem,  //  960px - laptop
+                        lg:   80rem,  // 1280px - desktop
+                        xl:   120rem  // 1920px - tv
+                      ) !default;
+//
+// Default map for responsive zones is for desktop first
+//
+
+
+
+//
+// Default map for responsive zones is for desktop first
+//
+@if $rkrRwdIsMobileFirst {
+  $rkrRwdBreakpointZones:     (
+                        xs:   (from: map-get($rkrRwdBreakpoints, xs), to: map-get($rkrRwdBreakpoints, sm)),
+                        sm:   (from: map-get($rkrRwdBreakpoints, sm), to: map-get($rkrRwdBreakpoints, md)),
+                        md:   (from: map-get($rkrRwdBreakpoints, md), to: map-get($rkrRwdBreakpoints, lg)),
+                        lg:   (from: map-get($rkrRwdBreakpoints, lg), to: map-get($rkrRwdBreakpoints, xl)),
+                        xl:   (from: map-get($rkrRwdBreakpoints, xl)),
+                      );
+}
+
+$rkrRwdBreakpointZones:       (
+                      xs:     (to:   map-get($rkrRwdBreakpoints, xs)),
+                      sm:     (from: map-get($rkrRwdBreakpoints, xs), to: map-get($rkrRwdBreakpoints, sm)),
+                      md:     (from: map-get($rkrRwdBreakpoints, sm), to: map-get($rkrRwdBreakpoints, md)),
+                      lg:     (from: map-get($rkrRwdBreakpoints, md), to: map-get($rkrRwdBreakpoints, lg)),
+                      xl:     (from: map-get($rkrRwdBreakpoints, lg), to: map-get($rkrRwdBreakpoints, xl)),
+                    ) !default;

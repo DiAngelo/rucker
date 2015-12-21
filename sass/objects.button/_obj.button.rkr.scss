@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #Button Object
+\*------------------------------------*/
+
+%oButton {
+  display: inline-block;
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  font-family: 'Roboto', sans-serif;  
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@include rkrMxButtonRule() {
+	@extend %oButton;
+}
+
+@include rkrMxButtonRule(outline) {
+	background: transparent;
+	border-width: 1px;
+	border-style: solid;
+  &:hover {
+    /*background-color: rgba(0,0,0,.5);*/
+  }
+}
+
+@include rkrMxButtonRule(circle) {
+	border-radius: 2rem;
+}

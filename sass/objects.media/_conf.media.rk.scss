@@ -8,14 +8,15 @@ $rkrMediaNs: $rkrNamespace !default;
 $rkrMediaAttrType:          object !default;
 
 // Configure media object naming - abbreviations used
-$rkrMediaAttrName:          'media' !default;
-$rkrMediaAttrNameBase:      'base'  !default;
-$rkrMediaAttrNameImage:     'img'   !default;
-$rkrMediaAttrNameBody:      'body'  !default;
-$rkrMediaAttrNameBlock:     'block' !default;
-$rkrMediaAttrNameReversed:  'rev'   !default;
-$rkrMediaAttrNameSticked:   'stkd'  !default;
-$rkrMediaAttrNameInline:    'inline'!default;
+$rkrMediaAttrName:          'media' 		!default;
+$rkrMediaAttrNameBase:      'base'  		!default;
+$rkrMediaAttrNameImage:     'img'   		!default;
+$rkrMediaAttrNameBody:      'body'  		!default;
+$rkrMediaAttrNameBlock:     'block' 		!default;
+$rkrMediaAttrNameReversed:  'rev'   		!default;
+$rkrMediaAttrNameSticked:   'stkd'  		!default;
+$rkrMediaAttrNameInline:    'inline'		!default;
+$rkrMediaAttrNameAbsolute:  'overlap'	  !default;
 
 // Register attribute type for media
 $rkrMAttributesNaming: rkrFnRegisterAttribute(media, $rkrMediaAttrType, $rkrMediaAttrName);
@@ -42,3 +43,6 @@ $rkrMediaBUseInline: true !default;
 
 // Vertical align of inline image and body
 $rkrMediaVInlineAlign: middle;
+
+// Use media--absolute to display body container over the image
+$rkrMediaBUseAbsolute: true !default;

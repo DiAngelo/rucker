@@ -1,0 +1,13 @@
+//
+// Define default colors to use
+//
+
+$rkrDefaultPalette:           (
+            baseText:         #666,
+            baseBackground:   #fff,
+            headingText:      #000
+          );
+
+$customPalette: 							() !default;
+
+$rkrTheme: map-merge($rkrDefaultPalette, $customPalette);

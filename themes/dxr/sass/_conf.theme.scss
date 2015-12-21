@@ -1,0 +1,65 @@
+//
+// Theme specific settings
+//
+/*
+// current theme's namespace: no namespace used
+$rkrNamespace: '';
+
+// what types of grids are we using
+$rkrSizesLGroups: 1, 2, 3, 4, 6, 8, 12;
+
+//
+// Typography
+//
+
+$rkrTypoMSzBase: (
+	tiny: 	12px,
+	small: 	14px,
+	medium: 14px,
+	large: 	16px,
+	huge: 	16px
+);
+
+*/
+
+/*$rkrMainMenuToken: 						mainMenu;*/
+
+//
+// Typography
+//
+
+$rkrUseWebFonts:              true;
+$rkrTypoWebFontBase:          'Open Sans';
+$rkrHeadingsWebFont:          'Open Sans Condensed';
+
+
+//
+// Define colors
+//
+
+$dxrCGreen:                   #9fc40c;
+$white:                       #fff;
+
+$blackAplpha5:                rgba(0,0,0,.5);
+$whiteAplpha5:                rgba(255,255,255,.5);
+
+$customPalette: 							(
+        baseText:             #444,
+        baseBackground:       #333,
+        wrapperBg:            $white,
+        headingText:          $dxrCGreen,
+        mainMenuText: 		    #B4D605,
+        mainMenuHover: 		    #666,
+        footerText:           $whiteAplpha5,
+        footerBg:             $blackAplpha5,
+        footerCopyrightText:  #666
+			);
+
+$rkrBodyBgImage: "../images/bg_pattern.png";
+
+/*
+
+$rkrModNavCFgMain: 			#aaa;
+$rkrModNavCFgMainHover: $dxrCGreen;
+
+*/

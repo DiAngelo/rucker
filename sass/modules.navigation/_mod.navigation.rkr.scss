@@ -1,0 +1,216 @@
+/*------------------------------------*\
+    #Navigation Module
+\*------------------------------------*/
+
+/**
+ *
+  <nav data-m-nav="rkr--main" >
+
+ 		<ul data-m-nav="rkr__list">
+			<li data-m-nav="rkr__item is-selected">
+				<a href="#" data-m-nav="rkr__link">{Label}</a>
+			</li>
+ 		</ul>
+
+  </nav>
+
+ *
+ */
+
+/**
+ * Main navigation 
+ */
+ @include rkrMxModNavRule(main, false) {
+
+	@include rkrMxModNavRule(list) {
+		@extend %oInlineParent;
+
+		@include rkrMxResponsive((to: medium)) {
+		
+			position: fixed;
+			top: 0;
+			right: 1rem;
+			z-index: 20;
+			bottom:0;
+			height: 100%;
+			right: -100%;
+			width:  100%;
+
+			padding-top: 		4rem;
+			padding-bottom: 1rem;
+			overflow: auto;
+
+			-webkit-transition: .2s ease-in-out; 
+							transition: .2s ease-in-out;			  		
+
+			background-color: rgba(0,0,0, .8);
+			z-index: map-get($rkrMZLayers, top-menu-xs);
+		}		
+	}
+
+	@include rkrMxModNavRule(label) {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1rem;
+		text-transform: uppercase;
+		color: $rkrModNavCFgMain;
+		cursor: pointer;
+
+		position: absolute;
+		z-index: map-get($rkrMZLayers, top-menu);
+		top: 0;
+		right: 0;
+		padding: 1rem;
+
+		-webkit-backface-visibility: hidden;
+
+
+		&:before {
+			content: "\f0c9";
+			font: normal normal normal 1rem FontAwesome;
+			padding-right: .4rem;
+			margin-top: -.2rem;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		@include rkrMxResponsive((from: medium)) {
+			display: none;
+		}
+	}
+
+
+
+	//
+	// Responsive active status
+	//
+
+	@include rkrMxResponsive((to: medium)) {
+		input#{rkrFnModNavRule(toggle)}:checked + & > #{rkrFnModNavRule(list)} {
+			right: 0;
+		}
+	}
+
+	input#{rkrFnModNavRule(toggle)}:checked + #{rkrFnModNavRule(label)} {
+		color: $rkrModNavCFgMainHover;
+
+		&:before {
+			content: "\f00d";
+		}
+	}
+
+	input#{rkrFnModNavRule(toggle)}:checked + #{rkrFnModNavRule(label)} {
+		color: $rkrModNavCFgMainHover;
+
+		&:before {
+			content: "\f00d";
+		}
+	}
+
+
+
+	@include rkrMxModNavRule(item) {
+		@extend %oInlineItem;
+
+		font-size: $rkrModNavFontSize;
+		font-weight: $rkrModNavFontWeight;
+		font-family: $rkrModNavFontMain;
+
+		@include rkrMxResponsive((to: medium)) {
+			display: block;
+			width: 80%;
+			text-align: center;
+			border-bottom: 1px solid #f5f5f5;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	#{rkrFnModNavRule(link)} {
+		display: block;
+		line-height: 70px;
+		position: relative;
+		padding: 1.2rem 1rem 0;
+
+		-webkit-transition: .5s ease;
+						transition: .5s ease;
+
+		color: $rkrModNavCFgMain;
+		&:hover {
+			color: $rkrModNavCFgMainHover;
+		}
+
+		&:before {
+		  width: $rkrModNavLinkIconSize;
+		  height: 1.2 * $rkrModNavLinkIconSize;
+		  left: 50%;
+
+		  position: absolute;
+		  display: inline-block;
+
+		  text-align: center;
+		  font-family: "FontAwesome";
+		  font-size: 1rem;
+		  
+/*			-webkit-transition: .5s ease;
+							transition: .5s ease;
+*/
+		  -webkit-transform: translateX(-50%) translateY(-120%);
+		  				transform: translateX(-50%) translateY(-120%); 
+		}
+
+		@include rkrMxResponsive((to: medium)) {
+			line-height: 5rem;
+			font-size: 1.2rem;
+			&:before {
+				font-size: 1.4rem;
+			}
+		}
+
+
+/* animate
+		&:hover {
+			margin-top: -2.4 * $rkrModNavLinkIconSize;
+		}
+
+		&:hover:before {
+		  -webkit-transform: translateX(-50%) translateY(120%);
+		  				transform: translateX(-50%) translateY(120%);			
+		}
+*/	
+		@include rkrMxResponsive((to: medium)) {
+			font-size: 1rem;
+			line-height: 3rem;
+		}
+
+	}
+}
+
+input#{rkrFnModNavRule(toggle)} { display: none; }
+
+
+
+
+
+/**
+ * Footer navigation 
+ */
+@include rkrMxModNavRule(footer, false) {
+	list-style: none;
+
+	@include rkrMxModNavRule(item, false) {
+		display: block;
+		padding: 0 0 .3rem 2rem;
+	}
+
+	@include rkrMxModNavRule(link, false) {
+
+		&:before {
+			font-family: "FontAwesome";
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 1rem;
+		}
+
+	}
+}
+

@@ -1,0 +1,160 @@
+//
+// Responsive Tools
+//
+
+
+
+//
+// Get Responsive Token
+  //
+@function rkrGetResponsiveToken ($token, $_inBreakpoint) {
+    @if $_inBreakpoint != null {
+        $token: $token + $rkrRwdSeparator + $_inBreakpoint;
+    }
+
+    @return $token;
+}
+
+
+
+//
+// Media Query
+//
+@mixin rkrMQ($_inRwdData) {
+  
+  $mqCondition: null;
+
+  @if map-has-key($_inRwdData, zone) {
+    
+    $rwdZone: map-get($_inRwdData, zone);
+
+    @if $rwdZone == '__' {
+
+      @content;
+
+    } @else {
+
+      $zoneData: map-get($rkrRwdBreakpointZones, $rwdZone);
+
+      @if $zoneData == null {
+
+        @error $zoneData + ' breakpoint zone not found.'
+      }
+
+      @if (map-has-key($zoneData, from)) {
+
+        $mqCondition: '(min-width:' + map-get($zoneData, from) + ')';
+      }
+
+      @if (map-has-key($zoneData, to)) {
+
+        @if $mqCondition != null {
+
+          $mqCondition: $mqCondition + ' and ';
+
+        } @else {
+
+          $mqCondition: '';
+        }
+
+        $mqCondition: $mqCondition + '(max-width:' + map-get($zoneData, to) + ')';
+
+      }
+    }
+  } @else {
+
+    @if (map-has-key($_inRwdData, from)) {
+
+      $zoneFrom: map-get($_inRwdData, from);
+      $zoneData: map-get($rkrRwdBreakpointZones, $zoneFrom);
+
+      @if map-has-key($zoneData, from) {
+        
+        $mqCondition: '(min-width:' + map-get($zoneData, from) + ')';
+
+      }
+    }
+
+    @if (map-has-key($_inRwdData, to)) {
+
+      $zoneTo: map-get($_inRwdData, to);
+      $zoneData: map-get($rkrRwdBreakpointZones, $zoneTo);
+
+      @if $mqCondition != null {
+
+        $mqCondition: $mqCondition + ' and ';
+
+      }
+
+      @if map-has-key($zoneData, to) {
+
+        $mqCondition: '(max-width:' + map-get($zoneData, to) + ')';
+
+      }
+    }
+  }
+
+//  @debug $_inRwdData;
+//  @debug $mqCondition;
+
+  @if $mqCondition != null {
+
+    @media #{$mqCondition} {
+      
+      @content;
+
+    }
+
+  } @else {
+
+      @content;
+
+  }
+}
+
+
+
+//
+// Media Query from a specific value
+//
+@mixin rkrMqUp($_inBreakpoint) {
+  @if map-has-key($rkrRwdBreakpoints, $_inBreakpoint) == false {
+    @error "Breakpoint '" + $_inBreakpoint + "' not found";
+  }
+
+  $mqCondition: '(min-width:' + map-get($rkrRwdBreakpoints, $_inBreakpoint) + ')';
+
+  @media #{$mqCondition} {
+    @content;
+  }
+}
+
+
+
+//
+// Media Query to a specific value
+//
+@mixin rkrMqDown($_inBreakpoint) {
+  @if map-has-key($rkrRwdBreakpoints, $_inBreakpoint) == false {
+    @debug "Breakpoint '" + $_inBreakpoint + "' not found";
+  }
+
+  $mqCondition: '(max-width:' + map-get($rkrRwdBreakpoints, $_inBreakpoint) + ')';
+
+  @media #{$mqCondition} {
+    @content;
+  }
+}
+
+
+
+//
+// Generate the responsive token, if it is not the default one , '__'
+//
+@function rkrResponsiveToken ($_inToken, $_inKey) {
+  @if ($_inKey != '__') {
+    $_inToken: $_inToken + $rkrRwdSeparator + $_inKey;
+  }
+  
+  @return $_inToken;
+}
