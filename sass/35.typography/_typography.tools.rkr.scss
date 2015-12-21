@@ -1,0 +1,24 @@
+//
+// Typography tools
+//
+
+@mixin rkrTypoFamily ($_inRule, $_inFontFamily) {
+  #{$_inRule} { font-family: $_inFontFamily; }
+}
+
+
+
+@mixin rkrTypoRule ($_inRule, $_inWebFont: null) {
+
+  @include rkrTypoFamily ($_inRule, $rkrTypoFontBase);
+
+  @if $rkrUseWebFonts {
+
+    @if $_inWebFont != null {
+
+      $rule: $rkrTypoWebFontClass + ' ' + $_inRule;
+      @include rkrTypoFamily ($rule, $_inWebFont);
+
+    }
+  }
+}

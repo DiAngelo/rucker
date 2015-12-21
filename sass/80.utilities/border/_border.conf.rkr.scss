@@ -20,13 +20,24 @@ $rkrBorderTokenBottom:        b    	!default;
 
 
 
-$rkrBorderRadiusModifiers: (
-	top: $rkrBorderTokenTop,
-	bottom: $rkrBorderTokenTop
-);
+$rkrBorderRadiusModifiers: 		(
+											top: 		$rkrBorderTokenTop,
+                      right:  $rkrBorderTokenRight,
+											bottom: $rkrBorderTokenBottom,
+                      left:   $rkrBorderTokenLeft
+										);
+
+$rkrBorderRadiusSizes:        (
+											xs:			.2rem ,
+											sm:			.5rem ,
+											md:			1rem	,
+											lg:			1.5rem,
+											xl:			2rem
+										) !default;
 
 
 //
 // Define if we should use responsive inline objects
 //
 $rkrBorderIsResponsive:        $rkrIsResponsive !default;
+$rkrBorderRadiusIsResponsive:  $rkrIsResponsive !default;

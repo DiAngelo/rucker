@@ -4,8 +4,14 @@
 
 @mixin rkrTypoHeadings () {
     %headingCommon {
-        color: $rkrHeadingColor;
+        color: $rkrHeadingsColor;
         line-height: $rkrHeadingsLineHeight;
+        font-family: $rkrTypoFontHeading;
+        margin-bottom: $rkrHeadingsMarginBottom;
+
+        @if $rkrHeadingsWebFont != null {
+            #{$rkrTypoWebFontClass} & { font-family: $rkrHeadingsWebFont; }
+        }
     }
 
     @each $mod,$sz in $rkrHeadingsSizes {

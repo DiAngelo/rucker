@@ -1,0 +1,13 @@
+/**
+ * WPAdmin for Rucker theme
+ *
+ * A theme for a WordPress admin panel
+ */
+
+@import "conf.theme";
+
+@import "../../../sass/app.rkr";
+
+@import "common-modules.theme";
+
+@import "overrides.theme";

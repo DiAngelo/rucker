@@ -1,4 +1,11 @@
+//
+// Border utilities
+//
 
 @if $rkrHasBorderRadius {
-	@include rkrBorderRadius();
+	@include rkrBorderRadius(null);
+}
+
+@if $rkrBorderRadiusIsResponsive {
+	@include rkrBorderRadiusResponsive();	
 }

@@ -20,7 +20,6 @@ html {
     line-height: $rkrTypoBaseLineHeight / $rkrTypoBaseFontSize; /* [1] */
 
     color: $rkrTypoBaseColor;
-    background-color: map-get($rkrTheme, baseBackground);
 
     overflow-y: scroll; /* [2] */
     min-height: 100%; /* [3] */
@@ -30,4 +29,15 @@ html {
 
     -moz-osx-font-smoothing: grayscale; /* [5] */
      -webkit-font-smoothing: antialiased; /* [5] */
+}
+
+
+
+$rkrBodyBgImage:              null !default;
+
+body {
+  @if $rkrBodyBgImage != null {
+    background-image: url(#{$rkrBodyBgImage});
+  }
+  background-color: map-get($rkrTheme, baseBackground);
 }

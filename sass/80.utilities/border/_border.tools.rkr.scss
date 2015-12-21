@@ -1,16 +1,56 @@
-@mixin rkrBorderRadius {
+//
+// Border Radius tools
+//
+
+@mixin rkrBorderRadius ($_inBreakpoint) {
 	$tokenBrdRad: $rkrBorderToken + capitalize($rkrBorderTokenRadius);
 
-	@each $mod,$v in $rkrBorderRadiusModifiers {
+    $borderModifierTypes: (
+        t: (top-left, top-right),
+        l: (top-left, bottom-left),
+        b: (bottom-left, bottom-right),
+        r: (bottom-right, top-right)
+    );
+	
+	@each $mod,$sz in $rkrBorderRadiusSizes {
 
-		$bemRadTop: (
-			block: $tokenBrdRad,
-			modifier: $v + capitalize(md)
-		);
+        $bemRadius: (
+            block: $tokenBrdRad,
+            modifier: $mod
+        );
 
-		#{rkrRuleBEM($rkrBorderEntity, $bemRadTop)} {
-			border-top-left-radius: 1rem;
-			border-top-right-radius: 1rem;
+        #{rkrRuleBEM($rkrBorderEntity, $bemRadius)} { border-radius: $sz !important; }
+
+
+
+		@each $type,$v in $rkrBorderRadiusModifiers {
+		  $tokenModifier: rkrGetResponsiveToken($v + capitalize($mod), $_inBreakpoint);
+
+			$bemRadTop: (
+				block: $tokenBrdRad,
+				modifier: $tokenModifier
+			);
+
+            $modifierTypes: map-get($borderModifierTypes, $v);
+
+			#{rkrRuleBEM($rkrBorderEntity, $bemRadTop)} {
+
+                @each $modType in $modifierTypes { border-#{$modType}-radius:  $sz !important; }
+                
+			}
 		}
 	}
+}
+
+
+
+@mixin rkrBorderRadiusResponsive () {
+  @each $breakpoint,$val in $rkrRwdBreakpoints {
+    /**
+     * Border Radius utilities #{$breakpoint}
+     */
+    @include rkrMQ((zone: $breakpoint)) {
+        @include rkrBorderRadius($breakpoint);
+    }
+  }
 }

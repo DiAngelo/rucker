@@ -23,6 +23,7 @@ $rkrHeadingsTypes:            (
                       xl:     h1
                     ) !default;
 
-$rkrHeadingsLineHeight:       2 !default;
-
-$rkrHeadingColor:             map-get($rkrTheme, headingText);
+$rkrHeadingsLineHeight:       1.5 !default;
+$rkrHeadingsMarginBottom:     1rem !default;
+$rkrHeadingsColor:            map-get($rkrTheme, headingText);
+$rkrHeadingsWebFont:          null !default;
